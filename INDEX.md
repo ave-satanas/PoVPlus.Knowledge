@@ -18,6 +18,7 @@ This vault is the current entry point for PoVPlus.Compat. Reviewers: start with 
 | How is the plugin built and initialized? | [[SYS-compat-architecture]] |
 | Build, package, release hashes | [[OPS-build-release]] |
 | Sync client, server and allow-list | [[OPS-deployment-sync]] |
+| Gale records, updates not taken, pack version | [[OPS-gale-profile]] |
 | Save interval, shutdown, character store | [[OPS-saves-shutdown]] |
 | Backups | [[OPS-backups]] |
 | Memory headroom, test against normal workload | [[OPS-memory]] |

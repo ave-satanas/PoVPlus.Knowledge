@@ -44,6 +44,8 @@ Superseded 1.0.0 package: `patches\archived\PoVPlus_Compat-1.0.0.zip`, zip `ac0b
 
 `[checked]` from `SHA256SUMS.txt` on 2026-11-01. Do not copy these elsewhere; link here.
 
+Gale holds this release as a local import, so a change of DLL also needs a new import. See [[OPS-gale-profile]].
+
 Dependencies in the manifest: only `denikson-BepInExPack_Valheim-5.4.2360`, because each integration is optional. A mod manager install will not pull in the mods listed in [[MOD-inventory]].
 
 Icon, empty `website_url` and license attribution are placeholders chosen by the agent.

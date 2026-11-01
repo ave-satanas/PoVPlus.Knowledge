@@ -7,7 +7,7 @@ $g = Get-Process valheim -EA 0; if ($g) { $g.CloseMainWindow() | Out-Null; if (-
 $old = "$w\patches\archived\standalone-superseded"; New-Item -ItemType Directory -Force $old | Out-Null
 foreach ($dir in 'PoVPlusPlus-Compat', 'SenealUI-UsefulTankards-Bridge-2.1.0') { $src = "$b\plugins\$dir"; if (Test-Path $src) { robocopy $src "$old\$dir" /E /NFL /NDL /NJH /NJS /NP | Out-Null; Remove-Item $src -Recurse -Force } }
 Remove-Item "$b\plugins\_CallerTrace", "$b\plugins\_IdsProbe" -Recurse -Force -EA 0
-New-Item -ItemType Directory -Force "$b\plugins\PoVPlus.Compat" | Out-Null; Copy-Item "$w\.sandbox\build\compat\PoVPlus.Compat.dll" "$b\plugins\PoVPlus.Compat\" -Force
+New-Item -ItemType Directory -Force "$b\plugins\PoVPlus_Compat" | Out-Null; Copy-Item "$w\.sandbox\build\compat\PoVPlus.Compat.dll" "$b\plugins\PoVPlus_Compat\" -Force
 if ($NoTest) { Remove-Item "$b\plugins\_ClientProbe", "$b\clientprobe" -Recurse -Force -EA 0; Remove-Item "$w\.sandbox\srv-saves\adminlist.txt" -EA 0; if ($Admin) { Set-Content "$w\.sandbox\srv-saves\adminlist.txt" '<steamid>' } }
 else { New-Item -ItemType Directory -Force "$b\plugins\_ClientProbe" | Out-Null; Copy-Item "$w\.cache\clientprobe\ClientProbe.dll" "$b\plugins\_ClientProbe\" -Force; Set-Content "$w\.sandbox\srv-saves\adminlist.txt" '<steamid>' }
 pwsh -NoProfile -File "$p\Update Server Mods.ps1" 2>&1 | Select-Object -Last 1 | ForEach-Object { "$_".Substring(0, [Math]::Min(60, "$_".Length)) }

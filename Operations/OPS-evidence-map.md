@@ -29,6 +29,7 @@ Source records: [EVIDENCE.md](../EvidenceBundle/reports/EVIDENCE.md), files unde
 | M30, M31 | FineDining before and after 1.0.1 | `evidence\fdcheck\` |
 | M32 | 1.0.1 acceptance | `evidence\acceptance-1.0.1\` |
 | M33 | Older-vault comparison | Commands in `EVIDENCE.md` |
+| M37 | Corrected Gale profile, acceptance, memory timeline, inventory | `evidence\acceptance-gale\`, `evidence\pack-inventory\` |
 
 `round4` is empty and superseded.
 

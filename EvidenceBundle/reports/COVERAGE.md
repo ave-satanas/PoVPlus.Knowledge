@@ -54,3 +54,5 @@ It is the **server's** map; client-only runtime patching is not in it. Two-peer 
 - What destroys `PT_BlueRunePebble` at the second return to the menu. It is restored on the next join.
 - A populated PortalRules catalog through recovery; test worlds showed `entries=0`.
 - A full cook of the restored Monstrum, Warfare and Wizardry foods. A live server-owned FineDining container.
+- EpicLoot 0.15.6, MyDirtyHoe 2.3.4 and CreatureManager 1.3.11, offered by Gale and not applied.
+- Bytes of the 15 packages with no Gale cache copy, against any upstream source.

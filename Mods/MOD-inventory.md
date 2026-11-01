@@ -10,11 +10,11 @@ specimen: live-profile
 ---
 # Mod inventory
 
-Read-only scan of plugin folder manifests in the **live profile**, 2026-11-01 00:40 America/Los_Angeles. 87 folders, 88 DLLs. `[checked]` Upstream mods are separate from the custom plugin. Only versions come from manifests; compatibility is not implied. `PoVPlus.txt` in the profile is stale, so do not use it.
+Read-only scan of plugin folder manifests in the **live profile**, 2026-11-01 00:40 America/Los_Angeles. 87 folders, 88 DLLs. `[checked]` Upstream mods are separate from the custom plugin. Only versions come from manifests; compatibility is not implied. Rechecked against Gale's records on 2026-11-01: 88 records, all versions as below, none updated upstream by choice. See [[OPS-gale-profile]].
 
 Pack base: Valheim 1.0.21, BepInExPack 5.4.2360. `[runtime]`
 
-**Custom:** `PoVPlus.Compat` 1.0.1 (updated after the scan), no manifest in its folder, see [[OPS-build-release]].
+**Custom:** `PoVPlus.Compat` 1.0.1, a Gale local import in `plugins\PoVPlus_Compat`, see [[OPS-build-release]].
 
 | Author | Mods |
 |---|---|

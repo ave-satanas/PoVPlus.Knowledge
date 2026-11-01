@@ -71,3 +71,8 @@ Resume point for interrupted work. Newest at the bottom.
 ## 2026-11-01 — Cooking conversions
 
 - FineDining check ran. ValheimCuisine's rebuild was removing 11 conversions; fixed in PoVPlus.Compat 1.0.1, deployed, clean acceptance passed. Older-vault comparison corrected.
+
+## 2026-11-01 — Gale profile
+
+- Gale now records PoVPlus.Compat 1.0.1 in `plugins\PoVPlus_Compat`, 88 packages. `PoVPlus.txt` regenerated. No upstream mod updated. Clean acceptance passed with a full memory timeline. Pack inventory captured. Game, server and Gale stopped.
+- Open: pack version, three offered updates, `PoVPlus.Review` refresh.

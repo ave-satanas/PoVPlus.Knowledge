@@ -20,6 +20,13 @@ From `memory.csv` in each evidence folder. `[runtime]` "Remainder" is total minu
 | `evidence\final` | 21,482 | 3,146 | 11,748 | 6,517 | 10,450 | Yes |
 | `evidence\acceptance` | 21,539 | 5,520 | 9,024 | 6,580 | 10,737 | Yes |
 | `evidence\acceptance-1.0.1` | 19,389 | **597** | 10,982 | 6,584 | 13,698 | **No** |
+| `evidence\acceptance-gale` | 17,999 | 3,296 | 11,349 | 6,583 | 10,633 | Yes, first full timeline |
+
+## Full timeline, `evidence\acceptance-gale`
+
+Detached sampler, 13:48:22–13:58:39, join through both Log Outs. `[runtime]` M37. The low was at 13:56:42, with commit 98,011 of 127,861 MB, client private bytes 15,190 MB and server 5,615 MB. Peaks: client working set 11,859 and private 15,999; server working set 7,113 and private 6,140; commit 98,720. No sample fell below 3 GB, so no process list was written.
+
+This run started with less available memory than the 597 MB run and stayed above 3 GB, so that reading is not inherent to the pack. Its cause stays `[unknown]`. This run did not include cooking.
 
 ## The 597 MB reading
 
@@ -51,13 +58,13 @@ Long sessions and more connected players were not measured. All figures come fro
 
 ## Practical guidance
 
-- **About 21 GB available is provisional guidance, not a demonstrated requirement or a guarantee.** Two runs starting there stayed above 3 GB at their sampled lows. One run starting at 19.4 GB reached 597 MB at an incomplete sample. Three runs do not establish a threshold.
+- **About 21 GB available is provisional guidance, not a demonstrated requirement or a guarantee.** Two runs starting there stayed above 3 GB at their sampled lows. One run starting at 19.4 GB reached 597 MB at an incomplete sample. One run starting at 18.0 GB held 3.3 GB across a full timeline. Four short runs do not establish a threshold.
 - Close other applications before a combined run, or run the server alone.
 - A low-memory reaper killed a test at about 3.8 GB free while the session was idle, on 2026-10-31.
 - For the first production session, sample throughout with the fields under Sampling.
 
 ## Sampling
 
-`tools\memlog.ps1` records available memory, committed memory, commit limit, and client and server working set and private bytes. Under 3 GB available it writes top process groups, with working set and private bytes, to `<out>.top.txt`. Start it as a detached process, not a job inside a tool call, so that it covers the whole run. Tested on its own with a raised threshold on 2026-11-01, not during a game run.
+`tools\memlog.ps1` records available memory, committed memory, commit limit, and client and server working set and private bytes. Under 3 GB available it writes top process groups, with working set and private bytes, to `<out>.top.txt`. Start it as a detached process, not a job inside a tool call, so that it covers the whole run. Its process-list branch was tested on its own with a raised threshold on 2026-11-01, not during a game run.
 
-**Next timeline:** collect it during the next already-needed cooking and rejoin test. No separate test campaign is needed. Existing `memory.csv` files use the older columns.
+**Next timeline:** collect it during the next already-needed cooking test. No separate test campaign is needed. `memory.csv` files before `acceptance-gale` use the older columns.

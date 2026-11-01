@@ -1,0 +1,87 @@
+# Sanitized snapshot, not raw evidence. Generated from evidence/pack-inventory/plugins-loaded.txt.
+SeneaL API Early 1.2.0  __seneaL.valheim.api.early
+Conditional Config Sync 1.0.11  _shudnal.ConditionalConfigSync
+PoVPlus.Compat 1.0.1  0.povplus.compat
+Armoire 1.2.2  advize.Armoire
+Jotunn 2.30.2  com.jotunn.jotunn
+Newtonsoft.Json Detector 1.0.0  com.ValheimModding.NewtonsoftJsonDetector
+BowsBeforeHoes 2.0.2  Azumatt.BowsBeforeHoes
+Epic Loot 0.15.4  randyknapp.mods.epicloot
+AzuCraftyBoxes 1.8.28  Azumatt.AzuCraftyBoxes
+HelheimHarmonizer 1.0.11  Azumatt.HelheimHarmonizer
+Unshamed 1.0.9  Azumatt.Unshamed
+MagicPlugin 2.2.2  blacks7ar.MagicPlugin
+RegenWhileSitting 1.0.8  blacks7ar.RegenWhileSitting
+MissingPieces 2.3.2  com.Bento.MissingPieces
+VNEI 0.17.6  com.maxsch.valheim.vnei
+OdinsTraps 1.2.1  com.odinplus.odinstraps
+LogoutTweaks 1.0.0  com.orianaventure.mod.LogoutTweaks
+MutedMist 1.0.1  com.orianaventure.mod.MutedMist
+VentureFloatingItems 1.0.1  com.orianaventure.mod.VentureFloatingItems
+YamlDotNet Detector 1.0.0  com.ValheimModding.YamlDotNetDetector
+Comfortable 1.2.3.0  dev.crystal.comfortable
+Riverheim 1.2.1  dev.gurebu.riverheim.stable
+Artisan_Mastery 1.1.1  Dreanegade.Artisan_Mastery
+Magic_Supremacy 3.1.6  Dreanegade.Magic_Supremacy
+Expand World Data 1.79  expand_world_data
+Expand World Music 1.16  expand_world_music
+Expand World Prefabs 1.65  expand_world_prefabs
+MyDirtyHoe 2.3.3  MagicMike.MyDirtyHoe
+ValheimArmory 1.37.0  MidnightsFX.ValheimArmory
+OdinsKingdom 1.6.3  odinplus.plugins.odinskingdom
+Resurrection 1.0.15  org.bepinex.plugins.resurrection
+Bestiary 1.2.2  radamanto.Bestiary
+OdinHorse 1.9.4  Raelaziel.OdinHorse
+SeneaL API 1.2.0  seneaL.valheim.api
+SeneaL UI 1.2.8  seneaL.valheim.ui
+Server Devcommands 1.116  server_devcommands
+Gamma of Night Lights 1.0.10  shudnal.GammaOfNightLights
+More Gates Extended 1.0.5  shudnal.MoreGatesExtended
+AdditiveDamageModifier 1.2.4  sighsorry.AdditiveDamageModifier
+BlastedSwimmingTarredBugFix 1.2.6  sighsorry.blastedswimmingtarredbugfix
+YouAreNotWorthy 1.1.0  sighsorry.YouAreNotWorthy
+BossRules 1.1.8  sighsorry.BossRules
+Path of Valheiman 5.3.6  treextr.pathofvalheiman
+BottleShips 1.1.17  sighsorry.BottleShips
+CaptainValheim 1.1.1  sighsorry.CaptainValheim
+Clan 1.1.5  sighsorry.Clan
+ConfigManager 1.0.8  sighsorry.ConfigManager
+CreatureManager 1.3.10  sighsorry.CreatureManager
+ValheimCuisine 2.3.4  XutzBR.ValheimCuisine
+DataForge 1.4.0  sighsorry.DataForge
+DiveIn 1.2.7  sighsorry.DiveIn
+DropNSpawn 1.4.9  sighsorry.DropNSpawn
+FearNoSpear 1.1.3  sighsorry.FearNoSpear
+Warfare 1.9.6  Therzie.Warfare
+Monstrum 1.6.1  Therzie.Monstrum
+FeedLikeGrandma 1.2.1  sighsorry.FeedLikeGrandma
+FineDining 1.1.12  sighsorry.FineDining
+Groundwork 1.1.21  sighsorry.Groundwork
+NoCapLumber 1.0.8  sighsorry.NoCapLumber
+NoSnowyBiome 1.1.2  sighsorry.NoSnowyBiome
+PathOfValheiman CraftyBoxes Bridge 1.0.1  sighsorry.PathOfValheimanCraftyBoxesBridge
+PortalRules 1.1.8  sighsorry.PortalRules
+ReferToCompendium 1.0.2  sighsorry.ReferToCompendium
+RepairRequiresMaterials 1.1.2  sighsorry.RepairRequiresMaterials
+Wizardry 1.2.3  Therzie.Wizardry
+SecondaryAttacks 1.2.21  sighsorry.SecondaryAttacks
+Upgrade World 1.87  upgrade_world
+ServerManager 1.2.6  sighsorry.ServerManager
+ServeYouRight 1.0.7  sighsorry.ServeYouRight
+SkadiNet 1.1.6  sighsorry.SkadiNet
+TerrainMistile 1.1.2  sighsorry.TerrainMistile
+TouchGrass 1.0.7  sighsorry.TouchGrass
+TrollingFishing 1.1.5  sighsorry.TrollingFishing
+UsefulRunestones 1.0.3  sighsorry.UsefulRunestones
+UsefulTankards 1.0.9  sighsorry.UsefulTankards
+HarnessPrefabs 1.1.6  sighsorry.valheim.harnessprefabs
+WarfareTweaks 1.0.5  sighsorry.WarfareTweaks
+RtDOcean 2.3.2  soloredis.rtdocean
+SouthsilArmor 3.2.2  southsil.SouthsilArmor
+Structure Tweaks 1.37  structure_tweaks
+NoSmokeStayLit 2.4.4  TastyChickenLegs.NoSmokeStayLit
+Armory 1.4.3  Therzie.Armory
+PoV Link 0.3.0  treextr.povlink
+BetterSleepBruh 2.1.2  vapok.mods.BetterSleepBruh
+LichKing 1.1.0  Voidey.LichKing
+WowArmors 1.1.2  Voidey.WowArmors

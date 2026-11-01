@@ -10,7 +10,7 @@ related: [DEC-planbuild-removal, INV-planbuild, DIAG-warning-ledger]
 
 ## BeeQueen
 
-Prefab hash `-806391820` ×11 in `Wraeclast` matches `BeeQueen` from OdinPlus-BeeQueen in Gale's cache, which is not in this pack. Hash match plus creature fields. `[runtime]` M25 The dead spawn entry was removed at the user's request. Backup: `backups\dns-spawnsystem-pre-beequeen\`. M26
+Prefab hash `-806391820` ×11 in `Wraeclast` matches `BeeQueen` from OdinPlus-BeeQueen in Gale's cache, which is not in this pack. Hash match plus creature fields. `[runtime]` M25 The dead spawn entry was removed at the user's request. Backup: `backups\dns-spawnsystem-pre-beequeen\`. M26 Gale's 1.5.5 pack snapshot included OdinPlus-BeeQueen, which accounts for how the creatures got into the world. `[checked]` M37
 
 ## PlanHammer
 

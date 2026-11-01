@@ -29,4 +29,4 @@ Compare hashes across all three locations, not counts. Compare **all** config fi
 
 Each must delete `PoVPlusPlus-Compat` and `SenealUI-UsefulTankards-Bridge-*`, remove PlanBuild, install the release to one folder, and match the pack, including FLG 1.2.1, FineDining 1.1.12 and OdinHorse 1.9.4.
 
-Installing through a mod manager changes the folder name, so remove `plugins\PoVPlus.Compat` first or the plugin loads twice, then sync. Server-held DropNSpawn config reaches clients by its own sync. `[runtime]` log line `Loaded 1 synchronized character configuration`.
+The folder is `plugins\PoVPlus_Compat`, the name Gale gives the package. An install under the older `plugins\PoVPlus.Compat` must be removed first or the plugin loads twice, then sync. This machine's profile has moved. See [[OPS-gale-profile]]. Server-held DropNSpawn config reaches clients by its own sync. `[runtime]` log line `Loaded 1 synchronized character configuration`.

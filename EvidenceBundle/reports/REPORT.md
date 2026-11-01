@@ -6,6 +6,8 @@
 
 **Knowledge base:** `Knowledge/INDEX.md`. Warnings below are documented or bounded, not all resolved.
 
+**Gale profile corrected, 2026-11-01:** Gale now records PoVPlus.Compat 1.0.1, 88 packages, and `PoVPlus.txt` is regenerated. No upstream mod changed. Gale offers EpicLoot 0.15.6, MyDirtyHoe 2.3.4 and CreatureManager 1.3.11, which are not tested, so do not use Update all. Clean acceptance passed on the corrected profile. Its pack version is still undecided. Details: `Knowledge/Operations/OPS-gale-profile.md`, EVIDENCE M37.
+
 **Defect found and fixed in 1.0.1:** ValheimCuisine's post-load rebuild was removing 11 Monstrum, Warfare and Wizardry cooking conversions on client and server. Those foods could not be cooked at those stations, and raw meats never spoiled. Details: `Knowledge/Investigations/INV-cooking-conversions.md`. No warning ever appeared for it, so the 1.0.0 clean logs below did not reveal it. 1.0.1 passed its own clean acceptance, M32. A full cook was not run.
 
 **Final production-readiness pass, 2026-10-31:** no production code change was justified, so PoVPlus.Compat stays 1.0.0 with the same hashes. One config fix was added, the `SeekerBrood` page drop. Final clean acceptance passed: join, gameplay, `save` confirmed by `server.saved`, Log Out, rejoin, Log Out, quit, graceful server close.
@@ -25,7 +27,7 @@ Records: [EVIDENCE.md](EVIDENCE.md) M15–M36, coverage: [COVERAGE.md](COVERAGE.
 | Production contents | Compiler inputs are exactly the nine module files plus generated attributes; a `--no-incremental` rebuild reproduces the same hash. All 172 embedded strings and all method and member references contain no probe, test, fake, census, trace or dump terms. References are the game, BepInEx, Harmony, EpicLoot and SeneaL-API only |
 | Identity | GUID `0.povplus.compat`, one BepInEx entry, one DLL. The GUID sorts first; the deferred stage runs just before FLG and FineDining `Start`, where their contract checks live |
 | Source | `patches\PoVPlus.Compat\` |
-| Live | `...\profiles\PoVPlus\BepInEx\plugins\PoVPlus.Compat\` |
+| Live | `...\profiles\PoVPlus\BepInEx\plugins\PoVPlus_Compat\` |
 
 **Included:** ItemDataStack, HealthRegen, BurstMultiShot, RodBag, Tankards (the SeneaL UsefulTankards bridge), SleepHud (was BetterSleepHudBridge, plus wave and strip fixes), QuietLookups, EpicMapChips, and CuisineConversions (1.0.1). A missing integration logs one warning and leaves the others on. Original Harmony owner IDs are kept so existing guards still match. No config, no saved data.
 
@@ -33,9 +35,9 @@ Records: [EVIDENCE.md](EVIDENCE.md) M15–M36, coverage: [COVERAGE.md](COVERAGE.
 
 **Dependencies:** the Hexium manifest requires only BepInExPack, because each integration is optional; a site install of it does not pull in the mods below. **Tested with:** Valheim 1.0.21, BepInExPack 5.4.2360, EpicLoot 0.15.4, FLG 1.2.1, FineDining 1.1.12, BetterSleepBruh 2.1.2, SeneaL UI 1.2.8, UsefulTankards 1.0.9, TrollingFishing 1.1.5. Upstream DLLs stay separate.
 
-**Other clients must, all at once:** delete `PoVPlusPlus-Compat` and `SenealUI-UsefulTankards-Bridge-*` from `plugins`, remove PlanBuild, install the zip through their mod manager, or into `plugins\PoVPlus.Compat\`, and have FLG 1.2.1, FineDining 1.1.12 and OdinHorse 1.9.4. Otherwise the allow-list refuses them.
+**Other clients must, all at once:** delete `PoVPlusPlus-Compat` and `SenealUI-UsefulTankards-Bridge-*` from `plugins`, remove PlanBuild, install the zip through their mod manager, or into `plugins\PoVPlus_Compat\`, and have FLG 1.2.1, FineDining 1.1.12 and OdinHorse 1.9.4. Otherwise the allow-list refuses them.
 
-**If you switch your own install to the Hexium package,** remove `plugins\PoVPlus.Compat` first or the plugin loads twice, then sync: the folder name changes, and the file path under `required` changes with it.
+**An install under the older `plugins\PoVPlus.Compat` folder** must remove it first or the plugin loads twice, then sync. This machine's profile has already moved.
 
 **After any DLL change:** run `Update Server Mods.ps1` with the game closed. It remains the sync process; `tools\compatsetup.ps1 -NoTest` wraps it.
 
@@ -107,7 +109,7 @@ Logs: `evidence\baseline\` (before config change), `evidence\acceptance\` (final
 
 `backups\pre-foodtimer-migration\` verified against live data: ServerManager store 33/33, Wraeclast 73/73, Clan, Homestead, 123 local world files, 5 characters, admin lists, all identical. Steam cloud differs only for disposable `povserver` and `PovTestWorld`. Also `backups\planbuild-trial\`, `backups\pre-deploy-20261030\`, `backups\server-pre-sync\`.
 
-**PoVPlus.Compat only** (no save impact, server and clients stopped): delete `plugins\PoVPlus.Compat`, copy `patches\archived\standalone-superseded\PoVPlusPlus-Compat` and `SenealUI-UsefulTankards-Bridge-2.1.0` back, delete `PlanBuildRejoinCompat.dll` unless restoring PlanBuild, run `Update Server Mods.ps1`.
+**PoVPlus.Compat only** (no save impact, server and clients stopped): remove PoVPlus_Compat in Gale, copy `patches\archived\standalone-superseded\PoVPlusPlus-Compat` and `SenealUI-UsefulTankards-Bridge-2.1.0` back, delete `PlanBuildRejoinCompat.dll` unless restoring PlanBuild, run `Update Server Mods.ps1`.
 
 **FineDining save-format boundary:** the first upgraded save converts timers to a format older FineDining cannot read, so older binaries must not be loaded on converted saves. No downgrade testing or rollback preparation is planned; revisit recovery only if an upgrade actually breaks the pack. Existing backups stay in place, and normal save backups continue before updates.
 

@@ -10,7 +10,9 @@ related: [CURRENT-STATE, DEC-production-session-hold, INV-config-reconciliation,
 
 | Item | Needs | Record |
 |---|---|---|
-| Cook a restored food end to end, and rejoin, with a full memory timeline | Disposable data; one test covers both | [[INV-cooking-conversions]], [[OPS-memory]] |
+| Cook a restored food end to end, with a memory timeline | Disposable data | [[INV-cooking-conversions]], [[OPS-memory]] |
+| Refresh `PoVPlus.Review`: it predates the Gale record, inventory and M37 | User's go-ahead to upload, then export | [[OPS-gale-profile]] |
+| Assign a pack version; ignore or evaluate the three offered updates | User | [[OPS-gale-profile]] |
 | Establish whether the host normally plays on this PC | User | [[OPS-memory]] |
 | Confirm whether inactive location YAML is intended | User | [[INV-location-data]] |
 | Trace the five report-file differences, if they matter | Reading only | [[INV-config-reconciliation]] |

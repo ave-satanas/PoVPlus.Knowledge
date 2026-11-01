@@ -1,0 +1,20 @@
+# Sanitized snapshot, not raw evidence. Generated from evidence/acceptance-gale/final.txt.
+logout1 True, rejoin True, logout2 True
+save: newest world file _main.55.db2 -> _main.56.db2, new file True, age 17s
+[Message:   BepInEx] Chainloader startup complete (86 loaded, 0 skipped, 0 failed)
+[Message:   BepInEx] Chainloader startup complete (90 loaded, 0 skipped, 0 failed)
+Exception : client 0, server 0
+Gave up building sleep HUD : client 0, server 0
+Feed Barrel dispensing stopped : client 0, server 0
+final character save : client 0, server 0
+transpiler bypassed : client 0, server 0
+HarmonyX: client 0, server 0
+client 88 server 92 required 88; diffs client/server 0, client/required 0
+old/test files: 0
+Enable Testing Mode = false
+Fake Total Players = 10
+Simulate Players In Bed = 18
+Pause Spoilage In Winter = false
+PoVPlus.Compat deployed 8B766887E53A9FD285D68DF4150FE153C8E3831BA07E57FFAB0BF4CA487A75EB
+required 8B766887E53A9FD285D68DF4150FE153C8E3831BA07E57FFAB0BF4CA487A75EB
+DONE
