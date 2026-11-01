@@ -57,7 +57,7 @@ Do not install it unless your own user asks you to. Having the DLL proves which 
 
 ## Frozen configuration
 
-`config-1.0.1/` was taken once, from the live client profile, after the 1.0.1 acceptance run, with no included file changed since that run ended. **It is never regenerated**, because live config files change on every game launch. `--check` verifies it against `CONFIG-MANIFEST.tsv` only. All 274 files still matched the live client after the Gale profile acceptance run.
+`config-1.0.1/` was taken once, from the live client profile, after the 1.0.1 acceptance run, with no included file changed since that run ended. **It is never regenerated**, because live config files change on every game launch. `--snapshot-config` refuses to run while this folder or its manifest exists, so a later configuration needs its own snapshot name. That guard stops an accidental rerun. It cannot stop someone editing the files and manifest by hand; git history is the record of that. `--check` verifies it against `CONFIG-MANIFEST.tsv` only. All 274 files still matched the live client after the Gale profile acceptance run.
 
 - **Included:** 274 `.cfg`, `.yml`, `.yaml`, `.json` and `.txt` files, 6 of them redacted.
 - **Excluded, 295 files:** player identity and state files, caches, generated reference files, logs, backups, translations, media, and data shipped by mods, such as EpicLoot's `baseconfig`. `configstate.json` records hashes for that EpicLoot data.

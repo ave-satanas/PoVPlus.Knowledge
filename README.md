@@ -14,9 +14,10 @@ This repository holds records, not the plugin. It does not show that the whole p
 | Tested DLL SHA-256 | `8b766887e53a9fd285d68df4150fe153c8e3831ba07e57ffab0bf4ca487a75eb` | Hashed from deployed files. Exact bytes in [`EvidenceBundle/release/`](EvidenceBundle/release/PoVPlus.Compat.dll) |
 | Release zip SHA-256 | `77419c0891888222c794938e2710d172107b5c187a9d91adf4c7b6d2fd2159c1` | [`EvidenceBundle/release/SHA256SUMS.txt`](EvidenceBundle/release/SHA256SUMS.txt) |
 | Source commit | [`eed8d74`](https://github.com/ave-satanas/PoVPlus.Compat/tree/eed8d74b3700a044eb9dbce7053fe0ec2018ca69) | See below |
-| IL digest of tested DLL | `1DC63390417AF3FA3B0626A8DBE6BFDA221EE0CB70BB65AAC29195374B20DF1D`, 124 method bodies, 37 types | From `tools/il-digest.ps1` in the source repository |
+| Managed image digest of tested DLL | `F2B5F7F0ECC30338D23C091EBFC1ADC4106119FC8470324C4154F4F02016CC29`, 124 method bodies, 37 types | From `tools/il-digest.ps1` on `main` of the source repository |
+| IL-only digest, limited | `1DC63390417AF3FA3B0626A8DBE6BFDA221EE0CB70BB65AAC29195374B20DF1D` | Instructions only. A changed string does not change it |
 
-**Source relationship:** the DLL was built from the working tree on 2026-11-01, and the git repository was created afterwards. `eed8d74` is that source: a clone of it built to identical method bodies and types, with source text identical after line endings (M34). The file hash differs, because the build path and module ID are embedded. So the link is proven at the level of IL, not by byte-identical rebuild.
+**Source relationship:** the DLL was built from the working tree on 2026-11-01, and the git repository was created afterwards. Rebuilds of `eed8d74` match the release's managed image: IL, exception handlers, strings, signatures, attributes and references, excluding only the module ID (M39). **The rebuild is not byte-identical.** With paths aligned, 72 of 42,496 bytes still differ: the timestamp, module ID and debug data. Why those derived values differ is `[unknown]`. The match rests on the same referenced assemblies and SDK on the original machine. An earlier version of this page said the link was proven by IL alone, which overstated it.
 
 **Latest, which may move:** [PoVPlus.Compat `main`](https://github.com/ave-satanas/PoVPlus.Compat). Use the pinned commit above for audit claims.
 

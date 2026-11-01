@@ -12,6 +12,7 @@ Kept so wrong claims are not rediscovered. Older ones: `REPORT.md`, "Corrections
 
 | Earlier claim | Current | Record |
 |---|---|---|
+| Source to DLL "proven by IL" | Method-body hashes miss strings and metadata, found by an independent review. The managed image now matches, excluding the module ID; the rebuild is not byte-identical | [[OPS-build-release]] |
 | "No meaningful warning remains unresolved" | Several are bounded and documented, not fixed | [[INV-config-reconciliation]] |
 | 597 MB free came "from other load on the machine" | Game and server working sets were 17.6 GB; the 13.7 GB remainder is accounting, not process memory; 597 MB is the last sample, not the low | [[OPS-memory]] |
 | Start combined runs with 19 GB free | 19.4 GB left little margin; about 21 GB is provisional, not a requirement | [[OPS-memory]] |

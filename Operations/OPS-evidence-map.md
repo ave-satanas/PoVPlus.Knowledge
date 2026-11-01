@@ -30,6 +30,7 @@ Source records: [EVIDENCE.md](../EvidenceBundle/reports/EVIDENCE.md), files unde
 | M32 | 1.0.1 acceptance | `evidence\acceptance-1.0.1\` |
 | M33 | Older-vault comparison | Commands in `EVIDENCE.md` |
 | M37 | Corrected Gale profile, acceptance, memory timeline, inventory | `evidence\acceptance-gale\`, `evidence\pack-inventory\` |
+| M39 | Independent review findings, rebuild comparison, image digest, snapshot guard | Commands in `EVIDENCE.md`; `tools/il-digest.test.ps1` in `PoVPlus.Compat` |
 
 `round4` is empty and superseded.
 

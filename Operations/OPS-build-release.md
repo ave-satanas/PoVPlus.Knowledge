@@ -36,7 +36,8 @@ Raise `version_number` in `package\manifest.json` and `Version` in `Plugin.cs` t
 
 | File | SHA-256 |
 |---|---|
-| Tested source | `eed8d74` of `PoVPlus.Compat`, proven by method bodies, not byte identity, M34 |
+| Tested source | `eed8d74` of `PoVPlus.Compat`, by managed image match, not byte identity, M39 |
+| Managed image digest | `F2B5F7F0ECC30338D23C091EBFC1ADC4106119FC8470324C4154F4F02016CC29`, from `tools/il-digest.ps1` |
 | `patches\dist\PoVPlus.Compat.dll` 1.0.1 | `8b766887e53a9fd285d68df4150fe153c8e3831ba07e57ffab0bf4ca487a75eb` |
 | `patches\dist\PoVPlus_Compat-1.0.1.zip` | `77419c0891888222c794938e2710d172107b5c187a9d91adf4c7b6d2fd2159c1` |
 
@@ -53,6 +54,8 @@ Icon, empty `website_url` and license attribution are placeholders chosen by the
 ## Fresh clone
 
 `[runtime]` M34. A clone of `PoVPlus.Compat` at `eed8d74` built with 0 errors on this machine, then packaged once the DLL was copied to `../dist/`, a step the README lacked until the next commit. All 124 method bodies matched the release. The file hash differed, `62F3E78B…` against `8B766887…`, because the build path and module ID differ. So a hash match proves a shipped file, and a mismatch from another path does not prove different code. Building needs the installed pack, so it was not tested on a machine without one.
+
+`[runtime]` M39 corrects that comparison. Method-body hashes omit strings, signatures, attributes and exception handlers, and that clone's version string carried the git commit, so its managed image did differ. Build with `-p:IncludeSourceRevisionInInformationalVersion=false` and compare Image SHA-256.
 
 ## Release maintenance
 

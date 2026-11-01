@@ -151,8 +151,17 @@ def as_bytes(value):
     return value if isinstance(value, bytes) else value.encode("utf-8")
 
 
+def refuse_refreeze(bundle):
+    """A frozen snapshot is evidence of what was tested. Replacing it would leave new hashes that still verify."""
+    found = [p for p in (bundle / CONFIG_TARGET, bundle / CONFIG_MANIFEST) if p.exists()]
+    if found:
+        # shortcut: verify() reads one manifest, extend it when a second snapshot is actually needed.
+        sys.exit("Refusing to replace frozen config: " + ", ".join(p.name for p in found) + ". A later config needs its own snapshot name and manifest.")
+
+
 def snapshot_config():
     """Freeze the tested client config. Live files change on every run, so this is never compared again."""
+    refuse_refreeze(BUNDLE)
     terms, outputs, rows = load_terms(), {}, [HEADER]
     paths = sorted(p for p in CONFIG_ROOT.rglob("*") if p.is_file())
     excluded = 0
@@ -246,6 +255,15 @@ def self_test():
         (bundle / "extra.txt").write_bytes(b"x")
         assert sorted(stale(outputs, bundle)) == ["missing a/one.txt", "stale two.txt", "unexpected extra.txt"], stale(outputs, bundle)
         assert "unlisted extra.txt" in verify(bundle), verify(bundle)
+        refuse_refreeze(bundle)  # nothing frozen yet, so this must pass
+        for name in (CONFIG_TARGET, CONFIG_MANIFEST):
+            with tempfile.TemporaryDirectory() as other:
+                (Path(other) / name).write_bytes(b"x")
+                try:
+                    refuse_refreeze(Path(other))
+                except SystemExit:
+                    continue
+                raise AssertionError("an existing " + name + " must block a new snapshot")
 
 
 def main():

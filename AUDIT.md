@@ -23,7 +23,7 @@ For an independent reviewer. The aim is to let you challenge these conclusions, 
 
 | Link | Status |
 |---|---|
-| Source → DLL | Proven by IL, not by byte identity. See [README](README.md#what-the-evidence-concerns) |
+| Source → DLL | Managed image matches on rebuild, excluding the module ID. **Not byte-identical**, and not independently reproduced. See [README](README.md#what-the-evidence-concerns), M39 |
 | DLL → deployment | Hashes matched on client, server and allow-list. `[checked]` on the original machine |
 | Deployment → runtime evidence | M31, M32 and M37 ran 1.0.1. **Most feature evidence predates it.** See below |
 | Pack → reviewer | Every package, version, DLL hash and parity result in `EvidenceBundle/results/pack-inventory.tsv`. See [Gale profile](Operations/OPS-gale-profile.md). The mods themselves are not included |
@@ -97,10 +97,10 @@ Tiers: S static, H server harness, C real client, SV real client on a dedicated 
 | Level | Needs | What you can do |
 |---|---|---|
 | **1. Clean clone** | Python 3 | `python tools/validate.py`, `python tools/make_evidence_bundle.py --verify`, read everything here |
-| **2. Build** | .NET SDK, PowerShell 7, your own legally obtained Valheim and the mods | Build the source; compare with `tools/il-digest.ps1`. See the [source README](https://github.com/ave-satanas/PoVPlus.Compat) |
+| **2. Build** | .NET SDK, PowerShell 7, your own legally obtained Valheim and the mods | Build the source; compare the Image SHA-256 from `tools/il-digest.ps1`. See the [source README](https://github.com/ave-satanas/PoVPlus.Compat) |
 | **3. Runtime** | Valheim on Steam, the 87-mod pack at the versions in [inventory](Mods/MOD-inventory.md), a dedicated server | Rerun checks. `EvidenceBundle/harness/` shows how; adapt paths and UI coordinates, which assume 2560×1440 |
 | **4. Historical only** | Cannot be reproduced from here | Raw logs, saves, screenshots, `Wraeclast`, and runs on the original machine |
 
-Level 2's digest should match only with the same referenced assemblies and a similar compiler: SDK 10.0.100 was used. A mismatch needs investigating, but does not prove different source.
+Level 2's digest should match only with the same referenced assemblies and a similar compiler: SDK 10.0.100 was used. In a git clone, build with `-p:IncludeSourceRevisionInInformationalVersion=false`, or the commit stamped into the version string changes the digest. A mismatch needs investigating, but does not prove different source.
 
 The pack itself is not distributed here. Rebuilding it needs the versions in the inventory from their own sources, plus `EvidenceBundle/config-1.0.1/`. That snapshot omits files listed in the bundle README, so a rebuilt pack is an approximation of the tested environment. Differences between client and server configs are in the [reconciliation record](Investigations/INV-config-reconciliation.md).
