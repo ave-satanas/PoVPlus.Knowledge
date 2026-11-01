@@ -79,4 +79,4 @@ Resume point for interrupted work. Newest at the bottom.
 
 ## 2026-11-01 — Independent review findings
 
-- Both findings confirmed and fixed. Source link now rests on a managed image digest, which three rebuilds match; the rebuild is still not byte-identical. Frozen config can no longer be replaced by rerunning the tool. Commits local.
+- Both findings confirmed and fixed. Source link now rests on a managed image digest, which three rebuilds match; the rebuild is still not byte-identical. Frozen config can no longer be replaced by rerunning the tool.
