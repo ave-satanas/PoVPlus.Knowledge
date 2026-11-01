@@ -17,6 +17,7 @@ related: [CURRENT-STATE, DEC-production-session-hold, INV-config-reconciliation,
 | First production session | Prerequisites met | [[DEC-production-session-hold]] |
 | Find the real launch configuration | Reading BakaLoader's store | [[OPS-saves-shutdown#Launch]] |
 | `baka_save` cause | Test on disposable | [[OPS-saves-shutdown]] |
+| Grant reviewer access to `PoVPlus.Review` and `PoVPlus.Compat` | User, with the reviewer's account | [[SYS-environments]] |
 | Hexium upload | User | [[OPS-build-release]] |
 | Populated portal catalog through recovery | World with public portals | [[INV-portal-race]] |
 | What destroys `PT_BlueRunePebble` | Tracer | [[INV-objectdb-null]] |
