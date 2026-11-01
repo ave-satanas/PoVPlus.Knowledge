@@ -13,7 +13,7 @@ applies_to:
 ---
 # ItemDataStack
 
-Source: [ItemDataStack.cs](../../patches/PoVPlus.Compat/ItemDataStack.cs).
+Source: [ItemDataStack.cs](https://github.com/ave-satanas/PoVPlus.Compat/blob/eed8d74b3700a044eb9dbce7053fe0ec2018ca69/ItemDataStack.cs).
 
 **Problem and cause:** FLG and FineDining support EpicLoot's replacement of `ItemDrop.AutoStackItems` but refuse any other transpiler there. ItemDataManager, bundled in several mods, adds one. EpicLoot 0.15.4's prefix returns false on every path, so that transpiler is dead code, but the contracts cannot prove it. `[code]`
 

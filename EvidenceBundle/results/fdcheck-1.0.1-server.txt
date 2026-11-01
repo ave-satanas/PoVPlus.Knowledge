@@ -1,0 +1,179 @@
+# Sanitized snapshot, not raw evidence. Generated from evidence/fdcheck/server-probe.txt.
+12:42:28 CONVT bound reapply=True
+12:43:08 CONVT ZNetScene.Awake before
+12:43:09 CONVT Reapply before cookingstation=8/tw0 cookingstation_iron=15/tw0 oven=14/tw0 fermenter=20/tw0 caller=ConversionsZNetScene_AwakePost_Patch.DMD<ValheimCuisine.ValheimCuisinePlugin+ConversionsZNetScene_AwakePost_Patch::ReapplyConversions><ConversionsZNetScene_AwakePost_Patch.DMD<ValheimCuisine.ValheimCuisinePlugin+ConversionsZNetScene_AwakePost_Patch::Postfix><ZNetScene.DMD<ZNetScene::Awake>
+12:43:09 CONVT Reapply after cookingstation=10/tw0 cookingstation_iron=20/tw0 oven=31/tw0 fermenter=41/tw0
+12:43:10 CONVT ZNetScene.Awake after cookingstation=12/tw2 cookingstation_iron=23/tw3 oven=32/tw1 fermenter=46/tw5
+12:43:10 CONVT postfixes: 39:ConversionsZNetScene_AwakePost_Patch pri400 | 92:WarfareCookingFermentingZNetScene_AwakePost_Patch pri400 | 98:CookingFermentindMonstrumZNetScene_AwakePost_Patch pri400 | 120:WarfareWizardryCookingFermentingZNetScene_AwakePost_Patch pri400 | 138:CuisineConversions pri0
+12:43:38 CONVT Reapply before cookingstation=12/tw2 cookingstation_iron=23/tw3 oven=32/tw1 fermenter=46/tw5 caller=ConversionsZNetScene_AwakePost_Patch.DMD<ValheimCuisine.ValheimCuisinePlugin+ConversionsZNetScene_AwakePost_Patch::ReapplyConversions><ValheimCuisinePlugin.Update
+12:43:38 CONVT Reapply after cookingstation=12/tw2 cookingstation_iron=23/tw3 oven=32/tw1 fermenter=46/tw5
+12:44:44 --- round 0 peers=0
+12:44:44 CONV piece_cookingstation total=12 match=RawMeat>CookedMeat,FoxMeat_TW>CookedFoxMeat_TW,BearSteak_TW>CookedBearSteak_TW
+12:44:44 CONV piece_cookingstation_iron total=23 match=RawMeat>CookedMeat,SharkMeat_TW>CookedSharkMeat_TW,FoxMeat_TW>CookedFoxMeat_TW,BearSteak_TW>CookedBearSteak_TW
+12:44:44 CONV piece_oven total=32 match=UncookedBerryCakePlains_TW>BerryCakePlains_TW
+12:44:44 CONVT now cookingstation=12/tw2 cookingstation_iron=23/tw3 oven=32/tw1 fermenter=46/tw5
+12:44:44 RULE CookedBearSteak_TW state=Enabled group=CookingStationOutput hours=72.0 rot=RottenMeat
+12:44:44 RULE CookedFoxMeat_TW state=Enabled group=CookingStationOutput hours=72.0 rot=RottenMeat
+12:44:45 RULE CookedSharkMeat_TW state=Enabled group=CookingStationOutput hours=72.0 rot=RottenMeat
+12:44:45 RULE BerryCakePlains_TW state=Enabled group=CookingStationOutput hours=72.0 rot=RottenMeat
+12:44:45 RULE BearSteak_TW state=Enabled group=CookingStationInput hours=48.0 rot=RottenMeat
+12:44:45 RULE FoxMeat_TW state=Enabled group=CookingStationInput hours=48.0 rot=RottenMeat
+12:44:45 RULE SharkMeat_TW state=Enabled group=CookingStationInput hours=48.0 rot=RottenMeat
+12:44:45 RULE UncookedBerryCakePlains_TW state=Enabled group=CookingStationInput hours=48.0 rot=RottenMeat
+12:44:45 RULE CookedMeat state=Enabled group=CookingStationOutput hours=72.0 rot=RottenMeat
+12:44:45 RULE NeckTailGrilled state=Enabled group=CookingStationOutput hours=72.0 rot=RottenMeat
+12:44:45 RULE Raspberry state=Enabled group=FarmingHarvest hours=96.0 rot=
+12:44:46 RULE RawMeat state=Enabled group=CookingStationInput hours=48.0 rot=RottenMeat
+12:45:45 --- round 1 peers=0
+12:45:45 CONV piece_cookingstation total=12 match=RawMeat>CookedMeat,FoxMeat_TW>CookedFoxMeat_TW,BearSteak_TW>CookedBearSteak_TW
+12:45:45 CONV piece_cookingstation_iron total=23 match=RawMeat>CookedMeat,SharkMeat_TW>CookedSharkMeat_TW,FoxMeat_TW>CookedFoxMeat_TW,BearSteak_TW>CookedBearSteak_TW
+12:45:45 CONV piece_oven total=32 match=UncookedBerryCakePlains_TW>BerryCakePlains_TW
+12:45:45 CONVT now cookingstation=12/tw2 cookingstation_iron=23/tw3 oven=32/tw1 fermenter=46/tw5
+12:45:45 RULE CookedBearSteak_TW state=Enabled group=CookingStationOutput hours=72.0 rot=RottenMeat
+12:45:46 RULE CookedFoxMeat_TW state=Enabled group=CookingStationOutput hours=72.0 rot=RottenMeat
+12:45:46 RULE CookedSharkMeat_TW state=Enabled group=CookingStationOutput hours=72.0 rot=RottenMeat
+12:45:46 RULE BerryCakePlains_TW state=Enabled group=CookingStationOutput hours=72.0 rot=RottenMeat
+12:45:46 RULE BearSteak_TW state=Enabled group=CookingStationInput hours=48.0 rot=RottenMeat
+12:45:46 RULE FoxMeat_TW state=Enabled group=CookingStationInput hours=48.0 rot=RottenMeat
+12:45:46 RULE SharkMeat_TW state=Enabled group=CookingStationInput hours=48.0 rot=RottenMeat
+12:45:46 RULE UncookedBerryCakePlains_TW state=Enabled group=CookingStationInput hours=48.0 rot=RottenMeat
+12:45:46 RULE CookedMeat state=Enabled group=CookingStationOutput hours=72.0 rot=RottenMeat
+12:45:46 RULE NeckTailGrilled state=Enabled group=CookingStationOutput hours=72.0 rot=RottenMeat
+12:45:46 RULE Raspberry state=Enabled group=FarmingHarvest hours=96.0 rot=
+12:45:47 RULE RawMeat state=Enabled group=CookingStationInput hours=48.0 rot=RottenMeat
+12:46:48 --- round 2 peers=1
+12:46:48 CONV piece_cookingstation total=12 match=RawMeat>CookedMeat,FoxMeat_TW>CookedFoxMeat_TW,BearSteak_TW>CookedBearSteak_TW
+12:46:48 CONV piece_cookingstation_iron total=23 match=RawMeat>CookedMeat,SharkMeat_TW>CookedSharkMeat_TW,FoxMeat_TW>CookedFoxMeat_TW,BearSteak_TW>CookedBearSteak_TW
+12:46:48 CONV piece_oven total=32 match=UncookedBerryCakePlains_TW>BerryCakePlains_TW
+12:46:48 CONVT now cookingstation=12/tw2 cookingstation_iron=23/tw3 oven=32/tw1 fermenter=46/tw5
+12:46:48 RULE CookedBearSteak_TW state=Enabled group=CookingStationOutput hours=72.0 rot=RottenMeat
+12:46:48 RULE CookedFoxMeat_TW state=Enabled group=CookingStationOutput hours=72.0 rot=RottenMeat
+12:46:48 RULE CookedSharkMeat_TW state=Enabled group=CookingStationOutput hours=72.0 rot=RottenMeat
+12:46:48 RULE BerryCakePlains_TW state=Enabled group=CookingStationOutput hours=72.0 rot=RottenMeat
+12:46:48 RULE BearSteak_TW state=Enabled group=CookingStationInput hours=48.0 rot=RottenMeat
+12:46:48 RULE FoxMeat_TW state=Enabled group=CookingStationInput hours=48.0 rot=RottenMeat
+12:46:49 RULE SharkMeat_TW state=Enabled group=CookingStationInput hours=48.0 rot=RottenMeat
+12:46:49 RULE UncookedBerryCakePlains_TW state=Enabled group=CookingStationInput hours=48.0 rot=RottenMeat
+12:46:49 RULE CookedMeat state=Enabled group=CookingStationOutput hours=72.0 rot=RottenMeat
+12:46:49 RULE NeckTailGrilled state=Enabled group=CookingStationOutput hours=72.0 rot=RottenMeat
+12:46:49 RULE Raspberry state=Enabled group=FarmingHarvest hours=96.0 rot=
+12:46:49 RULE RawMeat state=Enabled group=CookingStationInput hours=48.0 rot=RottenMeat
+12:47:49 --- round 3 peers=1
+12:47:49 CONV piece_cookingstation total=12 match=RawMeat>CookedMeat,FoxMeat_TW>CookedFoxMeat_TW,BearSteak_TW>CookedBearSteak_TW
+12:47:49 CONV piece_cookingstation_iron total=23 match=RawMeat>CookedMeat,SharkMeat_TW>CookedSharkMeat_TW,FoxMeat_TW>CookedFoxMeat_TW,BearSteak_TW>CookedBearSteak_TW
+12:47:49 CONV piece_oven total=32 match=UncookedBerryCakePlains_TW>BerryCakePlains_TW
+12:47:49 CONVT now cookingstation=12/tw2 cookingstation_iron=23/tw3 oven=32/tw1 fermenter=46/tw5
+12:47:49 RULE CookedBearSteak_TW state=Enabled group=CookingStationOutput hours=72.0 rot=RottenMeat
+12:47:49 RULE CookedFoxMeat_TW state=Enabled group=CookingStationOutput hours=72.0 rot=RottenMeat
+12:47:49 RULE CookedSharkMeat_TW state=Enabled group=CookingStationOutput hours=72.0 rot=RottenMeat
+12:47:49 RULE BerryCakePlains_TW state=Enabled group=CookingStationOutput hours=72.0 rot=RottenMeat
+12:47:49 RULE BearSteak_TW state=Enabled group=CookingStationInput hours=48.0 rot=RottenMeat
+12:47:50 RULE FoxMeat_TW state=Enabled group=CookingStationInput hours=48.0 rot=RottenMeat
+12:47:50 RULE SharkMeat_TW state=Enabled group=CookingStationInput hours=48.0 rot=RottenMeat
+12:47:50 RULE UncookedBerryCakePlains_TW state=Enabled group=CookingStationInput hours=48.0 rot=RottenMeat
+12:47:50 RULE CookedMeat state=Enabled group=CookingStationOutput hours=72.0 rot=RottenMeat
+12:47:50 RULE NeckTailGrilled state=Enabled group=CookingStationOutput hours=72.0 rot=RottenMeat
+12:47:50 RULE Raspberry state=Enabled group=FarmingHarvest hours=96.0 rot=
+12:47:50 RULE RawMeat state=Enabled group=CookingStationInput hours=48.0 rot=RottenMeat
+12:48:50 --- round 4 peers=1
+12:48:50 CONV piece_cookingstation total=12 match=RawMeat>CookedMeat,FoxMeat_TW>CookedFoxMeat_TW,BearSteak_TW>CookedBearSteak_TW
+12:48:50 CONV piece_cookingstation_iron total=23 match=RawMeat>CookedMeat,SharkMeat_TW>CookedSharkMeat_TW,FoxMeat_TW>CookedFoxMeat_TW,BearSteak_TW>CookedBearSteak_TW
+12:48:50 CONV piece_oven total=32 match=UncookedBerryCakePlains_TW>BerryCakePlains_TW
+12:48:50 CONVT now cookingstation=12/tw2 cookingstation_iron=23/tw3 oven=32/tw1 fermenter=46/tw5
+12:48:50 RULE CookedBearSteak_TW state=Enabled group=CookingStationOutput hours=72.0 rot=RottenMeat
+12:48:50 RULE CookedFoxMeat_TW state=Enabled group=CookingStationOutput hours=72.0 rot=RottenMeat
+12:48:50 RULE CookedSharkMeat_TW state=Enabled group=CookingStationOutput hours=72.0 rot=RottenMeat
+12:48:51 RULE BerryCakePlains_TW state=Enabled group=CookingStationOutput hours=72.0 rot=RottenMeat
+12:48:51 RULE BearSteak_TW state=Enabled group=CookingStationInput hours=48.0 rot=RottenMeat
+12:48:51 RULE FoxMeat_TW state=Enabled group=CookingStationInput hours=48.0 rot=RottenMeat
+12:48:51 RULE SharkMeat_TW state=Enabled group=CookingStationInput hours=48.0 rot=RottenMeat
+12:48:51 RULE UncookedBerryCakePlains_TW state=Enabled group=CookingStationInput hours=48.0 rot=RottenMeat
+12:48:51 RULE CookedMeat state=Enabled group=CookingStationOutput hours=72.0 rot=RottenMeat
+12:48:51 RULE NeckTailGrilled state=Enabled group=CookingStationOutput hours=72.0 rot=RottenMeat
+12:48:51 RULE Raspberry state=Enabled group=FarmingHarvest hours=96.0 rot=
+12:48:51 RULE RawMeat state=Enabled group=CookingStationInput hours=48.0 rot=RottenMeat
+12:49:51 --- round 5 peers=1
+12:49:51 CONV piece_cookingstation total=12 match=RawMeat>CookedMeat,FoxMeat_TW>CookedFoxMeat_TW,BearSteak_TW>CookedBearSteak_TW
+12:49:51 CONV piece_cookingstation_iron total=23 match=RawMeat>CookedMeat,SharkMeat_TW>CookedSharkMeat_TW,FoxMeat_TW>CookedFoxMeat_TW,BearSteak_TW>CookedBearSteak_TW
+12:49:51 CONV piece_oven total=32 match=UncookedBerryCakePlains_TW>BerryCakePlains_TW
+12:49:51 CONVT now cookingstation=12/tw2 cookingstation_iron=23/tw3 oven=32/tw1 fermenter=46/tw5
+12:49:51 RULE CookedBearSteak_TW state=Enabled group=CookingStationOutput hours=72.0 rot=RottenMeat
+12:49:52 RULE CookedFoxMeat_TW state=Enabled group=CookingStationOutput hours=72.0 rot=RottenMeat
+12:49:52 RULE CookedSharkMeat_TW state=Enabled group=CookingStationOutput hours=72.0 rot=RottenMeat
+12:49:52 RULE BerryCakePlains_TW state=Enabled group=CookingStationOutput hours=72.0 rot=RottenMeat
+12:49:52 RULE BearSteak_TW state=Enabled group=CookingStationInput hours=48.0 rot=RottenMeat
+12:49:52 RULE FoxMeat_TW state=Enabled group=CookingStationInput hours=48.0 rot=RottenMeat
+12:49:52 RULE SharkMeat_TW state=Enabled group=CookingStationInput hours=48.0 rot=RottenMeat
+12:49:52 RULE UncookedBerryCakePlains_TW state=Enabled group=CookingStationInput hours=48.0 rot=RottenMeat
+12:49:52 RULE CookedMeat state=Enabled group=CookingStationOutput hours=72.0 rot=RottenMeat
+12:49:52 RULE NeckTailGrilled state=Enabled group=CookingStationOutput hours=72.0 rot=RottenMeat
+12:49:53 RULE Raspberry state=Enabled group=FarmingHarvest hours=96.0 rot=
+12:49:53 RULE RawMeat state=Enabled group=CookingStationInput hours=48.0 rot=RottenMeat
+12:50:53 --- round 6 peers=0
+12:50:53 CONV piece_cookingstation total=12 match=RawMeat>CookedMeat,FoxMeat_TW>CookedFoxMeat_TW,BearSteak_TW>CookedBearSteak_TW
+12:50:53 CONV piece_cookingstation_iron total=23 match=RawMeat>CookedMeat,SharkMeat_TW>CookedSharkMeat_TW,FoxMeat_TW>CookedFoxMeat_TW,BearSteak_TW>CookedBearSteak_TW
+12:50:53 CONV piece_oven total=32 match=UncookedBerryCakePlains_TW>BerryCakePlains_TW
+12:50:53 CONVT now cookingstation=12/tw2 cookingstation_iron=23/tw3 oven=32/tw1 fermenter=46/tw5
+12:50:53 RULE CookedBearSteak_TW state=Enabled group=CookingStationOutput hours=72.0 rot=RottenMeat
+12:50:53 RULE CookedFoxMeat_TW state=Enabled group=CookingStationOutput hours=72.0 rot=RottenMeat
+12:50:53 RULE CookedSharkMeat_TW state=Enabled group=CookingStationOutput hours=72.0 rot=RottenMeat
+12:50:53 RULE BerryCakePlains_TW state=Enabled group=CookingStationOutput hours=72.0 rot=RottenMeat
+12:50:53 RULE BearSteak_TW state=Enabled group=CookingStationInput hours=48.0 rot=RottenMeat
+12:50:53 RULE FoxMeat_TW state=Enabled group=CookingStationInput hours=48.0 rot=RottenMeat
+12:50:53 RULE SharkMeat_TW state=Enabled group=CookingStationInput hours=48.0 rot=RottenMeat
+12:50:53 RULE UncookedBerryCakePlains_TW state=Enabled group=CookingStationInput hours=48.0 rot=RottenMeat
+12:50:53 RULE CookedMeat state=Enabled group=CookingStationOutput hours=72.0 rot=RottenMeat
+12:50:54 RULE NeckTailGrilled state=Enabled group=CookingStationOutput hours=72.0 rot=RottenMeat
+12:50:54 RULE Raspberry state=Enabled group=FarmingHarvest hours=96.0 rot=
+12:50:54 RULE RawMeat state=Enabled group=CookingStationInput hours=48.0 rot=RottenMeat
+12:51:54 --- round 7 peers=1
+12:51:54 CONV piece_cookingstation total=12 match=RawMeat>CookedMeat,FoxMeat_TW>CookedFoxMeat_TW,BearSteak_TW>CookedBearSteak_TW
+12:51:54 CONV piece_cookingstation_iron total=23 match=RawMeat>CookedMeat,SharkMeat_TW>CookedSharkMeat_TW,FoxMeat_TW>CookedFoxMeat_TW,BearSteak_TW>CookedBearSteak_TW
+12:51:54 CONV piece_oven total=32 match=UncookedBerryCakePlains_TW>BerryCakePlains_TW
+12:51:54 CONVT now cookingstation=12/tw2 cookingstation_iron=23/tw3 oven=32/tw1 fermenter=46/tw5
+12:51:54 RULE CookedBearSteak_TW state=Enabled group=CookingStationOutput hours=72.0 rot=RottenMeat
+12:51:54 RULE CookedFoxMeat_TW state=Enabled group=CookingStationOutput hours=72.0 rot=RottenMeat
+12:51:54 RULE CookedSharkMeat_TW state=Enabled group=CookingStationOutput hours=72.0 rot=RottenMeat
+12:51:54 RULE BerryCakePlains_TW state=Enabled group=CookingStationOutput hours=72.0 rot=RottenMeat
+12:51:54 RULE BearSteak_TW state=Enabled group=CookingStationInput hours=48.0 rot=RottenMeat
+12:51:54 RULE FoxMeat_TW state=Enabled group=CookingStationInput hours=48.0 rot=RottenMeat
+12:51:54 RULE SharkMeat_TW state=Enabled group=CookingStationInput hours=48.0 rot=RottenMeat
+12:51:54 RULE UncookedBerryCakePlains_TW state=Enabled group=CookingStationInput hours=48.0 rot=RottenMeat
+12:51:55 RULE CookedMeat state=Enabled group=CookingStationOutput hours=72.0 rot=RottenMeat
+12:51:55 RULE NeckTailGrilled state=Enabled group=CookingStationOutput hours=72.0 rot=RottenMeat
+12:51:55 RULE Raspberry state=Enabled group=FarmingHarvest hours=96.0 rot=
+12:51:55 RULE RawMeat state=Enabled group=CookingStationInput hours=48.0 rot=RottenMeat
+12:52:55 --- round 8 peers=1
+12:52:55 CONV piece_cookingstation total=12 match=RawMeat>CookedMeat,FoxMeat_TW>CookedFoxMeat_TW,BearSteak_TW>CookedBearSteak_TW
+12:52:55 CONV piece_cookingstation_iron total=23 match=RawMeat>CookedMeat,SharkMeat_TW>CookedSharkMeat_TW,FoxMeat_TW>CookedFoxMeat_TW,BearSteak_TW>CookedBearSteak_TW
+12:52:55 CONV piece_oven total=32 match=UncookedBerryCakePlains_TW>BerryCakePlains_TW
+12:52:55 CONVT now cookingstation=12/tw2 cookingstation_iron=23/tw3 oven=32/tw1 fermenter=46/tw5
+12:52:55 RULE CookedBearSteak_TW state=Enabled group=CookingStationOutput hours=72.0 rot=RottenMeat
+12:52:55 RULE CookedFoxMeat_TW state=Enabled group=CookingStationOutput hours=72.0 rot=RottenMeat
+12:52:55 RULE CookedSharkMeat_TW state=Enabled group=CookingStationOutput hours=72.0 rot=RottenMeat
+12:52:55 RULE BerryCakePlains_TW state=Enabled group=CookingStationOutput hours=72.0 rot=RottenMeat
+12:52:55 RULE BearSteak_TW state=Enabled group=CookingStationInput hours=48.0 rot=RottenMeat
+12:52:55 RULE FoxMeat_TW state=Enabled group=CookingStationInput hours=48.0 rot=RottenMeat
+12:52:56 RULE SharkMeat_TW state=Enabled group=CookingStationInput hours=48.0 rot=RottenMeat
+12:52:56 RULE UncookedBerryCakePlains_TW state=Enabled group=CookingStationInput hours=48.0 rot=RottenMeat
+12:52:56 RULE CookedMeat state=Enabled group=CookingStationOutput hours=72.0 rot=RottenMeat
+12:52:56 RULE NeckTailGrilled state=Enabled group=CookingStationOutput hours=72.0 rot=RottenMeat
+12:52:56 RULE Raspberry state=Enabled group=FarmingHarvest hours=96.0 rot=
+12:52:56 RULE RawMeat state=Enabled group=CookingStationInput hours=48.0 rot=RottenMeat
+12:53:56 --- round 9 peers=0
+12:53:56 CONV piece_cookingstation total=12 match=RawMeat>CookedMeat,FoxMeat_TW>CookedFoxMeat_TW,BearSteak_TW>CookedBearSteak_TW
+12:53:56 CONV piece_cookingstation_iron total=23 match=RawMeat>CookedMeat,SharkMeat_TW>CookedSharkMeat_TW,FoxMeat_TW>CookedFoxMeat_TW,BearSteak_TW>CookedBearSteak_TW
+12:53:56 CONV piece_oven total=32 match=UncookedBerryCakePlains_TW>BerryCakePlains_TW
+12:53:56 CONVT now cookingstation=12/tw2 cookingstation_iron=23/tw3 oven=32/tw1 fermenter=46/tw5
+12:53:56 RULE CookedBearSteak_TW state=Enabled group=CookingStationOutput hours=72.0 rot=RottenMeat
+12:53:56 RULE CookedFoxMeat_TW state=Enabled group=CookingStationOutput hours=72.0 rot=RottenMeat
+12:53:56 RULE CookedSharkMeat_TW state=Enabled group=CookingStationOutput hours=72.0 rot=RottenMeat
+12:53:56 RULE BerryCakePlains_TW state=Enabled group=CookingStationOutput hours=72.0 rot=RottenMeat
+12:53:56 RULE BearSteak_TW state=Enabled group=CookingStationInput hours=48.0 rot=RottenMeat
+12:53:56 RULE FoxMeat_TW state=Enabled group=CookingStationInput hours=48.0 rot=RottenMeat
+12:53:57 RULE SharkMeat_TW state=Enabled group=CookingStationInput hours=48.0 rot=RottenMeat
+12:53:57 RULE UncookedBerryCakePlains_TW state=Enabled group=CookingStationInput hours=48.0 rot=RottenMeat
+12:53:57 RULE CookedMeat state=Enabled group=CookingStationOutput hours=72.0 rot=RottenMeat
+12:53:57 RULE NeckTailGrilled state=Enabled group=CookingStationOutput hours=72.0 rot=RottenMeat
+12:53:57 RULE Raspberry state=Enabled group=FarmingHarvest hours=96.0 rot=
+12:53:57 RULE RawMeat state=Enabled group=CookingStationInput hours=48.0 rot=RottenMeat

@@ -9,7 +9,7 @@ related: [DEC-production-builds, DEC-test-constraints, OPS-evidence-map]
 ---
 # Test tools
 
-All under `tools\`. `[checked]` None belong in a release. Remove test plugins before acceptance.
+All under `tools\` on the original machine, with sanitized reading copies of the main ones in `EvidenceBundle/harness/`. `[checked]` None belong in a release. Remove test plugins before acceptance.
 
 | Tool | Use |
 |---|---|

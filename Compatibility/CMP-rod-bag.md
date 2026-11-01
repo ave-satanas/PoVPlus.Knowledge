@@ -13,7 +13,7 @@ applies_to:
 ---
 # RodBag
 
-Source: [RodBag.cs](../../patches/PoVPlus.Compat/RodBag.cs).
+Source: [RodBag.cs](https://github.com/ave-satanas/PoVPlus.Compat/blob/eed8d74b3700a044eb9dbce7053fe0ec2018ca69/RodBag.cs).
 
 **Problem and cause:** TrollingFishing binds `EpicLoot.ShardStones.SocketsUI`, which EpicLoot 0.15 removed. The failed bind leaves `EpicLootBagCompatibility.ShouldYieldUse` true, so Use over a rod does nothing. `[code]` confirmed in F3 `[runtime]`.
 

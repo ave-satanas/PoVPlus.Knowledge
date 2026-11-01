@@ -55,7 +55,7 @@ Runtime evidence also carries its tier from `EVIDENCE.md`: **S** static, **H** s
 
 ## Repository
 
-`Knowledge/` is its own private git repository. Commit and push vault changes there. Relative links out of the vault, such as `../../patches/...`, and `evidence\...` paths resolve only in the local workspace, not on GitHub. `EvidenceBundle/README.md` explains the layout. After report or release changes, follow [[OPS-build-release#Release maintenance]].
+`Knowledge/` is its own private git repository. Commit and push vault changes there. Source links are pinned to the tested commit of `PoVPlus.Compat`. `evidence\...` paths are provenance identifiers from the original machine, not links; `python tools/validate.py --external` lists them. Root files `README.md`, `AUDIT.md`, `AGENTS.md` and `CLAUDE.md` have no frontmatter. `EvidenceBundle/README.md` explains the bundle. After report or release changes, follow [[OPS-build-release#Release maintenance]].
 
 ## Maintenance rules
 

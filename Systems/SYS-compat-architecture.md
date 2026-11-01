@@ -12,7 +12,7 @@ applies_to:
 ---
 # PoVPlus.Compat architecture
 
-All of this was read from [the project](../../patches/PoVPlus.Compat/) on 2026-11-01. `[checked]`
+All of this was read from [the project](https://github.com/ave-satanas/PoVPlus.Compat/tree/eed8d74b3700a044eb9dbce7053fe0ec2018ca69) on 2026-11-01. `[checked]`
 
 ## Build
 

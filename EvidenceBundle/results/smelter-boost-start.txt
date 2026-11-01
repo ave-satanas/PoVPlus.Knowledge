@@ -1,0 +1,13 @@
+# Sanitized snapshot, not raw evidence. Generated from evidence/compat/smelter-boost-start.txt.
+real=1538.1 net=45867.5 wave=45867.57 grown=2730 bake=0.0 ore=10 | day=0.4862 extra=0
+real=1542.8 net=45872.5 wave=45872.57 grown=2735 bake=4.0 ore=10 | day=0.4882 extra=0
+real=1547.6 net=45877.2 wave=45877.35 grown=2740 bake=8.0 ore=10 | day=0.4901 extra=0
+real=1552.3 net=45882.0 wave=45882.09 grown=2745 bake=14.0 ore=10 | day=0.4920 extra=0
+real=1557.1 net=45886.7 wave=45886.85 grown=2750 bake=18.0 ore=10 | day=0.4939 extra=0
+real=1561.9 net=45891.5 wave=45891.61 grown=2754 bake=23.0 ore=10 | day=0.4958 extra=0
+real=1566.6 net=45896.3 wave=45896.37 grown=2759 bake=27.0 ore=10 | day=0.4977 extra=0
+real=1571.4 net=45901.0 wave=45901.11 grown=2764 bake=3.0 ore=9 | day=0.4996 extra=0
+real=1576.1 net=45911.2 wave=45906.26 grown=2768 bake=6.0 ore=9 | day=0.5022 extra=3.00000011920929
+real=1580.9 net=45930.4 wave=45911.54 grown=2774 bake=12.0 ore=9 | day=0.5089 extra=3.00000011920929
+real=1585.6 net=45949.6 wave=45916.82 grown=2778 bake=16.0 ore=9 | day=0.5164 extra=3.00000011920929
+real=1590.4 net=45968.4 wave=45922.13 grown=2783 bake=21.0 ore=9 | day=0.5239 extra=3.00000011920929

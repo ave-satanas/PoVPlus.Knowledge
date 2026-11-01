@@ -1,0 +1,27 @@
+# Sanitized snapshot, not raw evidence. Generated from evidence/compat/chips-toggle.txt.
+=== chip toggle, real clicks, after rejoin
+--- start
+FILTER _bountyPinFilter self=True hierarchy=True visiblePins=True at 2479,823
+FILTER _treasurePinFilter self=True hierarchy=True visiblePins=True at 2479,880
+--- bounty chip clicked
+FILTER _bountyPinFilter self=True hierarchy=True visiblePins=True at 2479,823
+FILTER _treasurePinFilter self=True hierarchy=True visiblePins=False at 2479,880
+--- bounty chip clicked again
+FILTER _bountyPinFilter self=True hierarchy=True visiblePins=True at 2479,823
+FILTER _treasurePinFilter self=True hierarchy=True visiblePins=True at 2479,880
+--- treasure chip clicked
+FILTER _bountyPinFilter self=True hierarchy=True visiblePins=True at 2479,823
+FILTER _treasurePinFilter self=True hierarchy=True visiblePins=False at 2479,880
+--- treasure chip clicked again
+FILTER _bountyPinFilter self=True hierarchy=True visiblePins=True at 2479,823
+FILTER _treasurePinFilter self=True hierarchy=True visiblePins=True at 2479,880
+=== bounty chip at its real position
+--- start
+FILTER _bountyPinFilter self=True hierarchy=True visiblePins=True at 2479,823
+FILTER _treasurePinFilter self=True hierarchy=True visiblePins=True at 2479,880
+--- bounties clicked
+FILTER _bountyPinFilter self=True hierarchy=True visiblePins=False at 2479,823
+FILTER _treasurePinFilter self=True hierarchy=True visiblePins=True at 2479,880
+--- bounties clicked again
+FILTER _bountyPinFilter self=True hierarchy=True visiblePins=True at 2479,823
+FILTER _treasurePinFilter self=True hierarchy=True visiblePins=True at 2479,880

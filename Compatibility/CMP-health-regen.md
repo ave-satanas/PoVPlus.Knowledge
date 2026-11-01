@@ -12,7 +12,7 @@ applies_to:
 ---
 # HealthRegen
 
-Source: [HealthRegen.cs](../../patches/PoVPlus.Compat/HealthRegen.cs).
+Source: [HealthRegen.cs](https://github.com/ave-satanas/PoVPlus.Compat/blob/eed8d74b3700a044eb9dbce7053fe0ec2018ca69/HealthRegen.cs).
 
 **Problem and cause:** FineDining replaces `Player.UpdateFood`, so EpicLoot's transpiler adding `AddHealthRegen` sits in a body that never runs. `[code]`
 

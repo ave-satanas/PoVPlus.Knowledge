@@ -8,7 +8,7 @@ related: [MOD-inventory, CMP-index, OPS-evidence-map]
 ---
 # Coverage
 
-**This does not establish whole-pack compatibility.** Canonical detail: [COVERAGE.md](../../COVERAGE.md).
+**This does not establish whole-pack compatibility.** Canonical detail: [COVERAGE.md](../EvidenceBundle/reports/COVERAGE.md).
 
 **Patch map:** 8,114 patches on 1,921 methods, 598 shared by two or more owners. It is the server's map from `evidence\runtime\B-patch\harmony-dump.tsv`, predating the migration, and omits client-only runtime patching. `[runtime]`
 

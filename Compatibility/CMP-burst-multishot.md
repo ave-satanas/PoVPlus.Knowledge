@@ -12,7 +12,7 @@ applies_to:
 ---
 # BurstMultiShot
 
-Source: [BurstMultiShot.cs](../../patches/PoVPlus.Compat/BurstMultiShot.cs).
+Source: [BurstMultiShot.cs](https://github.com/ave-satanas/PoVPlus.Compat/blob/eed8d74b3700a044eb9dbce7053fe0ec2018ca69/BurstMultiShot.cs).
 
 **Problem and cause:** EpicLoot's multishot multiplies `Attack.m_projectiles` for one shot and clears only the damage scale. SecondaryAttacks' burst fires later shots without returning through `FireProjectileBurst`, so they inherit the count at full damage. SecondaryAttacks' own compat no longer binds to EpicLoot 0.15. `[code]`
 

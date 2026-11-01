@@ -1,0 +1,24 @@
+# Sanitized snapshot, not raw evidence. Generated from evidence/ops/graceful.txt.
+=== graceful stop on the disposable deployment
+store 04:38:45 62773 9DAFEA173A
+_main.34.db2 04:38:45
+rcon port: True
+logged out: True
+store 04:38:45 62773 9DAFEA173A
+rcon auth: Login Success
+rcon reply: 
+server.saved delta: 0
+_main.34.db2 04:38:45
+store 04:38:45 62773 9DAFEA173A
+main window handle: 13900428
+CloseMainWindow: True
+exited: True after 5s
+10/31/2026 05:30:01: Game - OnApplicationQuit
+10/31/2026 05:30:01: ZNet Shutdown
+10/31/2026 05:30:01: World save (5/5) done. Total time [113ms]
+_main.35.db2 05:30:01
+store 05:30:01 63690 70288864BF
+=== after restart and rejoin
+item 0,3 Dandelion x7 q1 eq=False magic=False data=AssignedLifetimeTicks|ExpiryWorldTicks
+item 1,3 Thistle x3 q1 eq=False magic=False data=AssignedLifetimeTicks|ExpiryWorldTicks
+DONE

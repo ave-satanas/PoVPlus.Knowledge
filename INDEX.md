@@ -5,9 +5,9 @@ status: active
 created: 2026-11-01
 updated: 2026-11-01
 ---
-# PoVPlus knowledge base
+# Vault index
 
-This vault is the current entry point for PoVPlus.Compat. Start here, then read only the records your task needs. Do not read the whole vault. Rules for notes: [[SCHEMA]].
+This vault is the current entry point for PoVPlus.Compat. Reviewers: start with `AUDIT.md`. Start here, then read only the records your task needs. Do not read the whole vault. Rules for notes: [[SCHEMA]].
 
 ## Where do I look?
 

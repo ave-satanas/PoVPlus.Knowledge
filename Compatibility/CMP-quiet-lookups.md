@@ -15,7 +15,7 @@ applies_to:
 ---
 # QuietLookups
 
-Source: [QuietLookups.cs](../../patches/PoVPlus.Compat/QuietLookups.cs).
+Source: [QuietLookups.cs](https://github.com/ave-satanas/PoVPlus.Compat/blob/eed8d74b3700a044eb9dbce7053fe0ec2018ca69/QuietLookups.cs).
 
 **Problem:** mods probe optional targets through `AccessTools`, which warns on every miss.
 

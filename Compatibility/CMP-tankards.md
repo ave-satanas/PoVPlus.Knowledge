@@ -13,7 +13,7 @@ applies_to:
 ---
 # Tankards
 
-Source: [Tankards.cs](../../patches/PoVPlus.Compat/Tankards.cs). Replaces the SeneaLUI UsefulTankards Bridge. An earlier version lives in `S:\Valheim-Modding\UsefulTankards-Bridge` (machine-local).
+Source: [Tankards.cs](https://github.com/ave-satanas/PoVPlus.Compat/blob/eed8d74b3700a044eb9dbce7053fe0ec2018ca69/Tankards.cs). Replaces the SeneaLUI UsefulTankards Bridge. An earlier version lives in `S:\Valheim-Modding\UsefulTankards-Bridge` (machine-local).
 
 **Problem and cause:** UsefulTankards 1.0.9 binds `EpicLoot.ShardStones.SocketsUI`, gone since EpicLoot 0.15, then yields every Use press. `[code]`, F3 `[runtime]`.
 

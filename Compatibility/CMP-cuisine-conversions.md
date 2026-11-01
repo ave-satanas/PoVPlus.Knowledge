@@ -14,7 +14,7 @@ applies_to:
 ---
 # CuisineConversions
 
-Source: [CuisineConversions.cs](../../patches/PoVPlus.Compat/CuisineConversions.cs). Added in 1.0.1.
+Source: [CuisineConversions.cs](https://github.com/ave-satanas/PoVPlus.Compat/blob/eed8d74b3700a044eb9dbce7053fe0ec2018ca69/CuisineConversions.cs). Added in 1.0.1.
 
 **Problem and cause:** see [[INV-cooking-conversions]].
 

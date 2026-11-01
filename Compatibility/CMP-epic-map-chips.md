@@ -12,7 +12,7 @@ applies_to:
 ---
 # EpicMapChips
 
-Source: [EpicMapChips.cs](../../patches/PoVPlus.Compat/EpicMapChips.cs).
+Source: [EpicMapChips.cs](https://github.com/ave-satanas/PoVPlus.Compat/blob/eed8d74b3700a044eb9dbce7053fe0ec2018ca69/EpicMapChips.cs).
 
 **Problem and cause:** EpicLoot replaced its bounty and treasure toggles with pin filters in the vanilla panel, which SeneaL's map covers. SeneaL UI still looks for the old toggles, so its chips hide and the filters are unreachable. `[runtime]`
 

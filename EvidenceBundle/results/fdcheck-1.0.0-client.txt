@@ -1,0 +1,85 @@
+# Sanitized snapshot, not raw evidence. Generated from evidence/fdcheck/run2-baseline/probe-log.txt.
+12:30:47.275 CONVT bound reapply=True
+12:31:40.358 CONVT ZNetScene.Awake before
+12:31:41.301 CONVT Reapply before cookingstation=8/tw0 cookingstation_iron=15/tw0 oven=14/tw0 fermenter=20/tw0 caller=ConversionsZNetScene_AwakePost_Patch.DMD<ValheimCuisine.ValheimCuisinePlugin+ConversionsZNetScene_AwakePost_Patch::ReapplyConversions><ConversionsZNetScene_AwakePost_Patch.DMD<ValheimCuisine.ValheimCuisinePlugin+ConversionsZNetScene_AwakePost_Patch::Postfix><ZNetScene.DMD<ZNetScene::Awake>
+12:31:41.307 CONVT Reapply after cookingstation=10/tw0 cookingstation_iron=20/tw0 oven=31/tw0 fermenter=41/tw0
+12:31:42.750 CONVT ZNetScene.Awake after cookingstation=12/tw2 cookingstation_iron=23/tw3 oven=32/tw1 fermenter=46/tw5
+12:31:42.751 CONVT postfixes: 38:ConversionsZNetScene_AwakePost_Patch pri400 | 91:WarfareCookingFermentingZNetScene_AwakePost_Patch pri400 | 97:CookingFermentindMonstrumZNetScene_AwakePost_Patch pri400 | 119:WarfareWizardryCookingFermentingZNetScene_AwakePost_Patch pri400
+12:32:25.598 CONVT Reapply before cookingstation=12/tw2 cookingstation_iron=23/tw3 oven=32/tw1 fermenter=46/tw5 caller=ConversionsZNetScene_AwakePost_Patch.DMD<ValheimCuisine.ValheimCuisinePlugin+ConversionsZNetScene_AwakePost_Patch::ReapplyConversions><ValheimCuisinePlugin.Update
+12:32:25.603 CONVT Reapply after cookingstation=10/tw0 cookingstation_iron=20/tw0 oven=31/tw0 fermenter=41/tw0
+12:33:52.861 CMD rem fixture: console spawn near player, auto-pickup
+12:34:03.762 FDSTAMP CookedSharkMeat_TW
+12:34:06.156 FDSTAMP BerryCakePlains_TW
+12:34:40.658 CMD rem no pickup yet, toggling auto-pickup
+12:34:52.531 CMD rem observe A
+12:34:52.743 CONVT now cookingstation=10/tw0 cookingstation_iron=20/tw0 oven=31/tw0 fermenter=41/tw0
+12:34:52.847 FDCLOCK world=True ticks=1152924677689014617
+12:34:52.936 FDCLOCK CookedSharkMeat_TW x2 state=Enabled group=OtherEdible ruleHours=48.0 rot=FineDining_RottenFood hasClock=True remainingHours=47.99 paused=False
+12:34:53.022 FDCLOCK BerryCakePlains_TW x2 state=Enabled group=OtherEdible ruleHours=48.0 rot=FineDining_RottenFood hasClock=True remainingHours=47.99 paused=False
+12:34:53.108 FDCLOCK BearSteak_TW x2 state=NotTracked group=OtherEdible ruleHours=0.0 rot= hasClock=False remainingHours=0.00 paused=False
+12:34:53.195 FDCLOCK FoxMeat_TW x2 state=NotTracked group=OtherEdible ruleHours=0.0 rot= hasClock=False remainingHours=0.00 paused=False
+12:34:53.281 FDCLOCK SharkMeat_TW x2 state=NotTracked group=OtherEdible ruleHours=0.0 rot= hasClock=False remainingHours=0.00 paused=False
+12:34:53.283 FDCONV piece_cookingstation total=10 match=RawMeat>CookedMeat
+12:34:53.283 FDCONV piece_cookingstation_iron total=20 match=RawMeat>CookedMeat
+12:34:53.283 FDCONV piece_oven total=31 match=
+12:34:53.365 FDRULE CookedBearSteak_TW state=Enabled hours=48.0 group=OtherEdible rot=FineDining_RottenFood
+12:34:53.446 FDRULE CookedFoxMeat_TW state=Enabled hours=48.0 group=OtherEdible rot=FineDining_RottenFood
+12:34:53.529 FDRULE CookedSharkMeat_TW state=Enabled hours=48.0 group=OtherEdible rot=FineDining_RottenFood
+12:34:53.609 FDRULE BerryCakePlains_TW state=Enabled hours=48.0 group=OtherEdible rot=FineDining_RottenFood
+12:34:53.690 FDRULE BearSteak_TW state=NotTracked hours=0.0 group=OtherEdible rot=
+12:34:53.771 FDRULE FoxMeat_TW state=NotTracked hours=0.0 group=OtherEdible rot=
+12:34:53.851 FDRULE SharkMeat_TW state=NotTracked hours=0.0 group=OtherEdible rot=
+12:34:53.929 FDRULE UncookedBerryCakePlains_TW state=NotTracked hours=0.0 group=OtherEdible rot=
+12:34:54.008 FDRULE CookedMeat state=Enabled hours=72.0 group=CookingStationOutput rot=RottenMeat
+12:34:54.093 FDRULE NeckTailGrilled state=Enabled hours=72.0 group=CookingStationOutput rot=RottenMeat
+12:34:54.179 FDRULE Raspberry state=Enabled hours=96.0 group=FarmingHarvest rot=
+12:34:54.265 FDRULE RawMeat state=Enabled hours=48.0 group=CookingStationInput rot=RottenMeat
+12:35:58.348 CMD rem observe B, 60 s later
+12:35:58.658 FDCLOCK world=True ticks=1152924678330414364
+12:35:58.752 FDCLOCK CookedSharkMeat_TW x2 state=Enabled group=OtherEdible ruleHours=48.0 rot=FineDining_RottenFood hasClock=True remainingHours=47.97 paused=False
+12:35:58.843 FDCLOCK BerryCakePlains_TW x2 state=Enabled group=OtherEdible ruleHours=48.0 rot=FineDining_RottenFood hasClock=True remainingHours=47.97 paused=False
+12:35:58.938 FDCLOCK BearSteak_TW x2 state=NotTracked group=OtherEdible ruleHours=0.0 rot= hasClock=False remainingHours=0.00 paused=False
+12:35:59.054 FDCLOCK FoxMeat_TW x2 state=NotTracked group=OtherEdible ruleHours=0.0 rot= hasClock=False remainingHours=0.00 paused=False
+12:35:59.138 FDCLOCK SharkMeat_TW x2 state=NotTracked group=OtherEdible ruleHours=0.0 rot= hasClock=False remainingHours=0.00 paused=False
+12:36:19.817 CMD rem save: server.saved 49 -> 50
+12:36:37.631 CMD rem logout True
+12:36:56.985 CONVT ZNetScene.Awake before
+12:36:57.981 CONVT ZNetScene.Awake after cookingstation=12/tw2 cookingstation_iron=23/tw3 oven=32/tw1 fermenter=46/tw5
+12:36:57.981 CONVT postfixes: 38:ConversionsZNetScene_AwakePost_Patch pri400 | 91:WarfareCookingFermentingZNetScene_AwakePost_Patch pri400 | 97:CookingFermentindMonstrumZNetScene_AwakePost_Patch pri400 | 119:WarfareWizardryCookingFermentingZNetScene_AwakePost_Patch pri400
+12:37:17.171 CONVT Reapply before cookingstation=12/tw2 cookingstation_iron=23/tw3 oven=32/tw1 fermenter=46/tw5 caller=ConversionsZNetScene_AwakePost_Patch.DMD<ValheimCuisine.ValheimCuisinePlugin+ConversionsZNetScene_AwakePost_Patch::ReapplyConversions><ValheimCuisinePlugin.Update
+12:37:17.174 CONVT Reapply after cookingstation=10/tw0 cookingstation_iron=20/tw0 oven=31/tw0 fermenter=41/tw0
+12:37:30.732 CONVT Reapply before cookingstation=10/tw0 cookingstation_iron=20/tw0 oven=31/tw0 fermenter=41/tw0 caller=ConversionsZNetScene_AwakePost_Patch.DMD<ValheimCuisine.ValheimCuisinePlugin+ConversionsZNetScene_AwakePost_Patch::ReapplyConversions><ValheimCuisinePlugin.Update
+12:37:30.736 CONVT Reapply after cookingstation=10/tw0 cookingstation_iron=20/tw0 oven=31/tw0 fermenter=41/tw0
+12:37:51.526 CMD rem rejoin connect=True world=True
+12:38:19.241 CMD rem observe C, after rejoin
+12:38:19.458 CONVT now cookingstation=10/tw0 cookingstation_iron=20/tw0 oven=31/tw0 fermenter=41/tw0
+12:38:19.544 FDCLOCK world=True ticks=1152924679234814006
+12:38:19.627 FDCLOCK CookedSharkMeat_TW x2 state=Enabled group=OtherEdible ruleHours=48.0 rot=FineDining_RottenFood hasClock=True remainingHours=47.94 paused=False
+12:38:19.709 FDCLOCK BerryCakePlains_TW x2 state=Enabled group=OtherEdible ruleHours=48.0 rot=FineDining_RottenFood hasClock=True remainingHours=47.94 paused=False
+12:38:19.791 FDCLOCK BearSteak_TW x2 state=NotTracked group=OtherEdible ruleHours=0.0 rot= hasClock=False remainingHours=0.00 paused=False
+12:38:19.871 FDCLOCK FoxMeat_TW x2 state=NotTracked group=OtherEdible ruleHours=0.0 rot= hasClock=False remainingHours=0.00 paused=False
+12:38:19.951 FDCLOCK SharkMeat_TW x2 state=NotTracked group=OtherEdible ruleHours=0.0 rot= hasClock=False remainingHours=0.00 paused=False
+12:38:20.031 FDRULE CookedBearSteak_TW state=Enabled hours=48.0 group=OtherEdible rot=FineDining_RottenFood
+12:38:20.112 FDRULE CookedFoxMeat_TW state=Enabled hours=48.0 group=OtherEdible rot=FineDining_RottenFood
+12:38:20.193 FDRULE CookedSharkMeat_TW state=Enabled hours=48.0 group=OtherEdible rot=FineDining_RottenFood
+12:38:20.273 FDRULE BerryCakePlains_TW state=Enabled hours=48.0 group=OtherEdible rot=FineDining_RottenFood
+12:38:20.354 FDRULE BearSteak_TW state=NotTracked hours=0.0 group=OtherEdible rot=
+12:38:20.433 FDRULE FoxMeat_TW state=NotTracked hours=0.0 group=OtherEdible rot=
+12:38:20.514 FDRULE SharkMeat_TW state=NotTracked hours=0.0 group=OtherEdible rot=
+12:38:20.599 FDRULE UncookedBerryCakePlains_TW state=NotTracked hours=0.0 group=OtherEdible rot=
+12:38:20.686 FDRULE CookedMeat state=Enabled hours=72.0 group=CookingStationOutput rot=RottenMeat
+12:38:20.771 FDRULE NeckTailGrilled state=Enabled hours=72.0 group=CookingStationOutput rot=RottenMeat
+12:38:20.857 FDRULE Raspberry state=Enabled hours=96.0 group=FarmingHarvest rot=
+12:38:20.939 FDRULE RawMeat state=Enabled hours=48.0 group=CookingStationInput rot=RottenMeat
+12:38:25.954 FDEXPIRE BerryCakePlains_TW
+12:38:25.959 FDEXPIRE CookedSharkMeat_TW
+12:38:25.963 FDEXPIRE Thistle
+12:38:25.964 FDEXPIRE Dandelion
+12:38:56.346 CMD rem observe D, after 75 h skip
+12:38:56.641 FDCLOCK world=True ticks=1152927380622213499
+12:38:56.724 FDCLOCK BearSteak_TW x2 state=NotTracked group=OtherEdible ruleHours=0.0 rot= hasClock=False remainingHours=0.00 paused=False
+12:38:56.806 FDCLOCK FoxMeat_TW x2 state=NotTracked group=OtherEdible ruleHours=0.0 rot= hasClock=False remainingHours=0.00 paused=False
+12:38:56.890 FDCLOCK SharkMeat_TW x2 state=NotTracked group=OtherEdible ruleHours=0.0 rot= hasClock=False remainingHours=0.00 paused=False
+12:38:56.973 FDCLOCK FineDining_RottenFood x2 state=NotTracked group=OtherEdible ruleHours=0.0 rot= hasClock=False remainingHours=0.00 paused=False
+12:38:57.058 FDCLOCK FineDining_RottenFood x2 state=NotTracked group=OtherEdible ruleHours=0.0 rot= hasClock=False remainingHours=0.00 paused=False
+12:39:19.697 CMD rem logout2 True

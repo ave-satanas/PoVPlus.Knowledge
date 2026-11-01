@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <AssemblyName>FdServerProbe</AssemblyName>
+    <LangVersion>7.3</LangVersion>
+    <AutomaticallyUseReferenceAssemblyPackages>false</AutomaticallyUseReferenceAssemblyPackages>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <GameManaged Condition="'$(GameManaged)' == ''"><steam-library>\Valheim\valheim_Data\Managed</GameManaged>
+    <Profile Condition="'$(Profile)' == ''">$(APPDATA)\com.kesomannen.gale\valheim\profiles\PoVPlus\BepInEx</Profile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="$(Profile)\core\BepInEx.dll" Private="false" />
+    <Reference Include="$(Profile)\core\0Harmony.dll" Private="false" />
+    <Reference Include="$(GameManaged)\assembly_valheim.dll" Private="false" />
+    <Reference Include="$(GameManaged)\SoftReferenceableAssets.dll" Private="false" />
+    <Reference Include="$(GameManaged)\assembly_utils.dll" Private="false" />
+    <Reference Include="$(GameManaged)\UnityEngine.CoreModule.dll" Private="false" />
+    <Reference Include="$(GameManaged)\UnityEngine.UI.dll" Private="false" />
+    <Reference Include="$(GameManaged)\UnityEngine.dll" Private="false" />
+  </ItemGroup>
+</Project>
+
+

@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
 """Read-only checks for the PoVPlus knowledge base. Standard library only.
 
-    python Knowledge/tools/validate.py                  self-test, then vault
-    python Knowledge/tools/validate.py --applies EpicLoot   records to review after that mod updates
+    python tools/validate.py                     self-test, then the vault and bundle manifest
+    python tools/validate.py --applies EpicLoot  records to review after that mod updates
+    python tools/validate.py --external          references to material outside this repository
 
 Failures: missing metadata, bad values, duplicate ids, broken links, unknown related or
-superseded records, missing entry points. Review information never fails the run.
+superseded records, missing entry points, and bundle hash mismatches. Review information never
+fails the run. Read-only.
 It checks structure only. It cannot find semantic contradictions or prove compatibility.
 """
 import argparse
@@ -20,7 +22,10 @@ TYPES = {"index", "state", "schema", "system", "mod", "compat", "investigation",
 STATUSES = {"active", "open", "resolved", "bounded", "retired", "superseded", "deferred", "blocked", "historical"}
 ENTRY_POINTS = ("INDEX.md", "CURRENT-STATE.md", "SCHEMA.md")
 LINK_FIELDS = ("related", "supersedes", "superseded_by")
-SKIP_DIRS = {"Templates", "tools", ".obsidian", "EvidenceBundle"}
+SKIP_DIRS = {"Templates", "tools", ".obsidian", "EvidenceBundle", ".git"}
+ROOT_DOCS = {"README.md", "AUDIT.md", "AGENTS.md", "CLAUDE.md"}  # plain documents, no frontmatter
+MARKDOWN_LINK = re.compile(r"\]\(([^)\s]+)\)")
+LOCAL_REFERENCE = re.compile(r"`((?:evidence|tools|backups|patches|\.sandbox|\.cache)\\[^`]*|[A-Z]:\\[^`]*|%[A-Z]+%\\[^`]*)`")
 DATE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 WIKILINK = re.compile(r"!?\[\[([^\]]+)\]\]")
 FENCE = re.compile(r"^(```|~~~).*?^\1\s*$", re.M | re.S)
@@ -60,10 +65,36 @@ def as_list(value):
     return value if isinstance(value, list) else [value]
 
 
+def documents(root):
+    """Every Markdown file a reader can follow, including root documents."""
+    return [p for p in sorted(root.rglob("*.md")) if not ({"Templates", ".git", ".obsidian"} & set(p.relative_to(root).parts)) and "reports" not in p.relative_to(root).parts]
+
+
+def relative_link_errors(root):
+    errors = []
+    for path in documents(root):
+        text = CODE_SPAN.sub("", FENCE.sub("", path.read_text(encoding="utf-8")))
+        for target in MARKDOWN_LINK.findall(text):
+            if re.match(r"[a-z]+:", target) or target.startswith("#"):
+                continue
+            resolved = (path.parent / target.split("#")[0]).resolve()
+            if not resolved.exists() or root.resolve() not in resolved.parents and resolved != root.resolve():
+                errors.append(path.relative_to(root).as_posix() + ": missing relative link " + target)
+    return errors
+
+
+def external_references(root):
+    found = {}
+    for path in documents(root):
+        for match in LOCAL_REFERENCE.finditer(path.read_text(encoding="utf-8")):
+            found.setdefault(match.group(1), []).append(path.relative_to(root).as_posix())
+    return found
+
+
 def load(root):
     notes = []
     for path in sorted(root.rglob("*.md")):
-        if SKIP_DIRS & set(path.relative_to(root).parts[:-1]):
+        if SKIP_DIRS & set(path.relative_to(root).parts[:-1]) or (path.parent == root and path.name in ROOT_DOCS):
             continue
         meta, body = parse(path.read_text(encoding="utf-8"))
         notes.append({"path": path, "rel": path.relative_to(root).as_posix(), "meta": meta, "body": body})
@@ -121,6 +152,7 @@ def validate(root):
             linked.add(destination["path"].stem)
             if heading and re.sub(r"\s+", " ", heading).strip().lower() not in headings(destination["body"]):
                 errors.append(note["rel"] + ": no heading in [[" + target + "]]")
+    errors.extend(relative_link_errors(root))
     for note in notes:
         meta = note["meta"] or {}
         if meta.get("type") == "investigation" and meta.get("status") in ("open", "bounded"):
@@ -153,11 +185,12 @@ def self_test():
              "missing status": {"C.md": "---\nid: C\ntype: decision\ncreated: 2026-01-01\nupdated: 2026-01-01\n---\n"},
              "broken link": {"C.md": good.format(i="C", r="", b="[[Nope]]")},
              "no heading": {"C.md": good.format(i="C", r="", b="[[A#Missing]]")},
-             "unknown record": {"C.md": good.format(i="C", r="Ghost", b="")}}
+             "unknown record": {"C.md": good.format(i="C", r="Ghost", b="")},
+             "missing relative": {"C.md": good.format(i="C", r="", b="[x](nope.md)")}}
     for label, extra in cases.items():
         found = " ".join(run(extra))
         assert found, label + " was not detected"
-        assert label.split()[-1] in found or label == "unknown record" and "unknown record" in found, label + ": " + found
+        assert label.split()[-1] in found or label in found, label + ": " + found
     return len(cases) + 1
 
 
@@ -165,6 +198,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[1])
     parser.add_argument("--applies", help="list records whose applies_to names this mod")
+    parser.add_argument("--external", action="store_true", help="list references to material outside this repository")
     args = parser.parse_args()
     if args.applies:
         needle = args.applies.lower()
@@ -173,15 +207,20 @@ def main():
             if hits:
                 print(note["rel"] + "  [" + ", ".join(hits) + "]  status=" + note["meta"].get("status", "?"))
         return 0
+    if args.external:
+        for reference, files in sorted(external_references(args.root).items()):
+            print(reference + "  [" + str(len(files)) + " reference(s), first in " + files[0] + "]")
+        return 0
     print("self-test: " + str(self_test()) + " cases passed")
     notes, errors, review = validate(args.root)
     if args.root.resolve() == Path(__file__).resolve().parents[1]:
         import make_evidence_bundle as bundle
         bundle.self_test()
+        errors.extend("evidence bundle " + line for line in bundle.verify(bundle.BUNDLE))
         if bundle.sources_present():
             errors.extend("evidence bundle " + line for line in bundle.stale(bundle.render(), bundle.BUNDLE))
         else:
-            review.append("evidence bundle not checked: workspace sources are not here")
+            review.append("evidence bundle originals not compared: they are not on this machine")
     print("records: " + str(len(notes)))
     for line in review:
         print("review: " + line)

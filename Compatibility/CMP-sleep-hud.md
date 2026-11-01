@@ -12,7 +12,7 @@ applies_to:
 ---
 # SleepHud
 
-Source: [SleepHud.cs](../../patches/PoVPlus.Compat/SleepHud.cs).
+Source: [SleepHud.cs](https://github.com/ave-satanas/PoVPlus.Compat/blob/eed8d74b3700a044eb9dbce7053fe0ec2018ca69/SleepHud.cs).
 
 **Problem and cause:** BetterSleepBruh 2.1.2 finds the minimap at a fixed path that SeneaL UI moves. Its client RPCs live on the HUD view, so with no view a client on a dedicated server never learns the boost, and timer and boat protections stay off. `[runtime]` M11.
 

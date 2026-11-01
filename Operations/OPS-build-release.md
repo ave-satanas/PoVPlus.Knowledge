@@ -36,6 +36,7 @@ Raise `version_number` in `package\manifest.json` and `Version` in `Plugin.cs` t
 
 | File | SHA-256 |
 |---|---|
+| Tested source | `eed8d74` of `PoVPlus.Compat`, proven by method bodies, not byte identity, M34 |
 | `patches\dist\PoVPlus.Compat.dll` 1.0.1 | `8b766887e53a9fd285d68df4150fe153c8e3831ba07e57ffab0bf4ca487a75eb` |
 | `patches\dist\PoVPlus_Compat-1.0.1.zip` | `77419c0891888222c794938e2710d172107b5c187a9d91adf4c7b6d2fd2159c1` |
 
@@ -56,7 +57,7 @@ Icon, empty `website_url` and license attribution are placeholders chosen by the
 After any change to a report, release file or version, before committing in `Knowledge`:
 
 1. Update `SOURCES` in `tools/make_evidence_bundle.py` if the results files changed, such as a new acceptance folder.
-2. Run `python Knowledge/tools/make_evidence_bundle.py`.
+2. Run `python Knowledge/tools/make_evidence_bundle.py --check`, review what changed, then regenerate without the flag. Redaction terms are in the untracked `tools\bundle-redactions.local` on the original machine.
 3. Run `python Knowledge/tools/validate.py`. A stale bundle is an error when the workspace is present.
 
 `Knowledge/.git/hooks/pre-commit` runs that validation and blocks the commit. Hooks are not versioned, so a new clone needs it added: `python tools/validate.py` as the hook body. The bundle is a sanitized snapshot, never the release itself.
