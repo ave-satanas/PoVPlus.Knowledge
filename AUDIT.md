@@ -25,7 +25,8 @@ For an independent reviewer. The aim is to let you challenge these conclusions, 
 |---|---|
 | Source → DLL | Proven by IL, not by byte identity. See [README](README.md#what-the-evidence-concerns) |
 | DLL → deployment | Hashes matched on client, server and allow-list. `[checked]` on the original machine |
-| Deployment → runtime evidence | M31 and M32 ran 1.0.1. **Most feature evidence predates it.** See below |
+| Deployment → runtime evidence | M31, M32 and M37 ran 1.0.1. **Most feature evidence predates it.** See below |
+| Pack → reviewer | Every package, version, DLL hash and parity result in `EvidenceBundle/results/pack-inventory.tsv`. See [Gale profile](Operations/OPS-gale-profile.md). The mods themselves are not included |
 | DLL → reviewer | Exact tested bytes in `EvidenceBundle/release/`. Hash it yourself and compare with the README |
 | Configuration → reviewer | Frozen client subset in `EvidenceBundle/config-1.0.1/`, taken after acceptance. Not the complete profile, and not the server copy |
 | Evidence → this repository | Sanitized copies and filtered excerpts; originals are local only |
@@ -39,6 +40,7 @@ Tiers: S static, H server harness, C real client, SV real client on a dedicated 
 | Claim | Version | Evidence and type | Conditions | Establishes | Does not establish |
 |---|---|---|---|---|---|
 | 1.0.1 loads, joins and rejoins cleanly | 1.0.1 | M32; `results/acceptance-1.0.1-final.txt`; SV runtime | No test plugins, disposable world, one client | 0 failed plugins, 0 exceptions, 0 HarmonyX warnings in that run | Function of each module; other worlds; length of play |
+| The corrected Gale profile loads, joins and rejoins cleanly | 1.0.1 | M37; `results/acceptance-gale-final.txt`, `results/pack-inventory.tsv`; SV runtime | No test plugins, disposable world, one client | Same clean result on the Gale-recorded pack; hashes match on client, server and allow-list; GUIDs unique | Function of each module; the three offered upstream updates |
 | ValheimCuisine's rebuild removed 11 conversions | 1.0.0 | M30; `results/fdcheck-1.0.0-*.txt`; SV runtime with probes | Disposable, probes on client and server | Counts fell 12/23/32/46 → 10/20/31/41, caller `ValheimCuisinePlugin.Update` | Exact trigger of Cuisine's reload flag; other mods' stations |
 | `CuisineConversions` keeps them | 1.0.1 | M31; `results/fdcheck-1.0.1-*.txt`; SV runtime | As above | Counts hold across rebuilds and rejoin; rules correct on both sides; iron station allows the raw meats | **A finished cook.** Duplicates appear for about 30 s on rejoin, effect unmeasured |
 | Disputed foods get correct timers and expire | 1.0.1 | M31; same files | `spawn`, then probe `pickall`; expiry by `skiptime` | Rule, timer, persistence through save and rejoin, rot item | Normal-play expiry; existing saves |
@@ -62,7 +64,7 @@ Tiers: S static, H server harness, C real client, SV real client on a dedicated 
 - The original agent wrote the code, tests and reports. Evidence depends on its probes, which are in `EvidenceBundle/harness/`.
 - `ClientProbe` set up scenes and spawned items in many tests. Its `Resolve` calls can trigger a lazy cache build.
 - Timing-dependent input automation failed several times; invalid runs are recorded in EVIDENCE.
-- Memory headroom fell to 597 MB at an incomplete sample. See [memory](Operations/OPS-memory.md).
+- Memory headroom fell to 597 MB at an incomplete sample. A later full timeline held 3.3 GB, and the cause of the difference is unknown. See [memory](Operations/OPS-memory.md).
 
 ## Tests that could falsify these conclusions
 
