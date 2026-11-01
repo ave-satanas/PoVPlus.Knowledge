@@ -31,6 +31,7 @@ This vault is the current entry point for PoVPlus.Compat. Start here, then read 
 | Decisions and constraints | [[DEC-index]] |
 | Tests and evidence | [[OPS-evidence-map]] |
 | What has and has not been examined | [[CMP-coverage]] |
+| Reports away from the workspace, local-only links | `EvidenceBundle/README.md` |
 | How to run a test | [[OPS-test-tools]] |
 | Remaining work | [[OPS-remaining-work]] |
 | Older research, Tome slots, project philosophy | [[HIST-index]] (historical, other environments) |

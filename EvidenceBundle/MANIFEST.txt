@@ -1,0 +1,11 @@
+# sha256(source)  sha256(bundle)  bundle path. Regenerate with make_evidence_bundle.py.
+25df50e8037f2262 a7253d862f10dee5 release/CHANGELOG.md
+f9b1382a1ae94028 4dd3352f7b8a3836 release/SHA256SUMS.txt
+690d7513d1bb4bcb 08ece8fa43ffef50 release/manifest.json
+657c6b4d9e87bda6 657c6b4d9e87bda6 reports/COVERAGE.md
+1dfef2cb0ab80376 41f423e9c8720f04 reports/EVIDENCE.md
+f9dc6a1ed99a17a6 bd0c79f504ff4c8b reports/PROGRESS.md
+877a998e558c575c be7c27c91b9c43c9 reports/REPORT.md
+31add180b40c810e 5c28eb6adf1767fc results/acceptance-1.0.1-final.txt
+0f856fe927fd4672 e07ea3786fcbc7d9 results/fdcheck-1.0.1-steps.txt
+60f5c4bd5b6dba51 9f95d79e6fc94b41 results/wraeclast-location-counts.txt

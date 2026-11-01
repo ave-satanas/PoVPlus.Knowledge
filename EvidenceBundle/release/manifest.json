@@ -1,0 +1,9 @@
+{
+  "name": "PoVPlus_Compat",
+  "description": "One compatibility plugin for PoVPlus-style packs: EpicLoot 0.15 with FeedLikeGrandma, FineDining, UsefulTankards, TrollingFishing and SecondaryAttacks, plus BetterSleepBruh and EpicLoot map filters under SeneaL UI.",
+  "version_number": "1.0.1",
+  "website_url": "",
+  "dependencies": [
+    "denikson-BepInExPack_Valheim-5.4.2360"
+  ]
+}

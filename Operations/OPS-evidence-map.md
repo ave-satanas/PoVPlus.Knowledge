@@ -9,7 +9,7 @@ related: [CMP-coverage, DIAG-warning-ledger, INV-index]
 ---
 # Evidence map
 
-Source records: [EVIDENCE.md](../../EVIDENCE.md), files under `evidence\`. Reports summarize; these are closer to the observation. Evidence ids below are headings or `M` entries there. File counts `[checked]`.
+Source records: [EVIDENCE.md](../../EVIDENCE.md), files under `evidence\`. Reports summarize; these are closer to the observation. A sanitized copy of the reports and release records is in `EvidenceBundle/`; raw evidence stays local. Evidence ids below are headings or `M` entries there. File counts `[checked]`.
 
 | Id | Topic | Files |
 |---|---|---|

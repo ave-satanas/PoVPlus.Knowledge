@@ -1,0 +1,10 @@
+12:48:11 fixture: console spawn near player, auto-pickup
+12:49:02 station check
+12:49:04 observe A
+12:50:10 observe B, 60 s later
+12:50:32 save: server.saved 51 -> 52
+12:50:45 logout True
+12:52:03 rejoin connect=True world=True
+12:52:31 observe C, after rejoin
+12:53:08 observe D, after 75 h skip
+12:53:27 logout2 True
