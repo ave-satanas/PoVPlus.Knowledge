@@ -46,3 +46,13 @@ Superseded 1.0.0 package: `patches\archived\PoVPlus_Compat-1.0.0.zip`, zip `ac0b
 Dependencies in the manifest: only `denikson-BepInExPack_Valheim-5.4.2360`, because each integration is optional. A mod manager install will not pull in the mods listed in [[MOD-inventory]].
 
 Icon, empty `website_url` and license attribution are placeholders chosen by the agent.
+
+## Release maintenance
+
+After any change to a report, release file or version, before committing in `Knowledge`:
+
+1. Update `SOURCES` in `tools/make_evidence_bundle.py` if the results files changed, such as a new acceptance folder.
+2. Run `python Knowledge/tools/make_evidence_bundle.py`.
+3. Run `python Knowledge/tools/validate.py`. A stale bundle is an error when the workspace is present.
+
+This depends on the steps being run. Nothing enforces it at commit time; a git hook could, but none is installed. The bundle is a sanitized snapshot, never the release itself.

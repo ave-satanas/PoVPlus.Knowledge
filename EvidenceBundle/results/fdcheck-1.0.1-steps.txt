@@ -1,3 +1,4 @@
+# Sanitized snapshot, not raw evidence. Generated from evidence/fdcheck/steps.txt.
 12:48:11 fixture: console spawn near player, auto-pickup
 12:49:02 station check
 12:49:04 observe A

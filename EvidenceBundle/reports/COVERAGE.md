@@ -1,3 +1,5 @@
+> **Sanitized snapshot, not raw evidence.** Generated from `COVERAGE.md`. See `README.md` in this bundle.
+
 # Coverage ledger
 
 Partial coverage. This is not proof that the rest of the pack is compatible.

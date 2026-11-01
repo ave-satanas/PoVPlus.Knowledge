@@ -1,3 +1,5 @@
+> **Sanitized snapshot, not raw evidence.** Generated from `EVIDENCE.md`. See `README.md` in this bundle.
+
 # Evidence records
 
 Tiers: **[S]** static, **[H]** server harness, **[C]** real client, **[SV]** real client joined to a dedicated server, **[2P]** two peers (none yet).

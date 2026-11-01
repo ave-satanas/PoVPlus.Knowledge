@@ -1,3 +1,5 @@
+> **Sanitized snapshot, not raw evidence.** Generated from `PROGRESS.md`. See `README.md` in this bundle.
+
 # Progress log
 
 Resume point for interrupted work. Newest at the bottom.

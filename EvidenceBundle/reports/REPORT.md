@@ -1,3 +1,5 @@
+> **Sanitized snapshot, not raw evidence.** Generated from `REPORT.md`. See `README.md` in this bundle.
+
 # PoVPlus compatibility handoff
 
 **State, 2026-11-01:** all compat fixes are consolidated into one plugin, `PoVPlus.Compat` 1.0.1, deployed to client, server and allow-list. PlanBuild is removed. **Game and server are stopped.** Your real worlds and characters have not run on this code. Two-peer behaviour is untested: only one Steam account exists, and that gap is accepted, not a blocker.

@@ -55,7 +55,7 @@ Runtime evidence also carries its tier from `EVIDENCE.md`: **S** static, **H** s
 
 ## Repository
 
-`Knowledge/` is its own private git repository. Commit and push vault changes there. Relative links out of the vault, such as `../../patches/...`, and `evidence\...` paths resolve only in the local workspace, not on GitHub. `EvidenceBundle/README.md` explains the layout. After report or release changes, run `python Knowledge/tools/make_evidence_bundle.py`.
+`Knowledge/` is its own private git repository. Commit and push vault changes there. Relative links out of the vault, such as `../../patches/...`, and `evidence\...` paths resolve only in the local workspace, not on GitHub. `EvidenceBundle/README.md` explains the layout. After report or release changes, follow [[OPS-build-release#Release maintenance]].
 
 ## Maintenance rules
 

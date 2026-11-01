@@ -175,6 +175,13 @@ def main():
         return 0
     print("self-test: " + str(self_test()) + " cases passed")
     notes, errors, review = validate(args.root)
+    if args.root.resolve() == Path(__file__).resolve().parents[1]:
+        import make_evidence_bundle as bundle
+        bundle.self_test()
+        if bundle.sources_present():
+            errors.extend("evidence bundle " + line for line in bundle.stale(bundle.render(), bundle.BUNDLE))
+        else:
+            review.append("evidence bundle not checked: workspace sources are not here")
     print("records: " + str(len(notes)))
     for line in review:
         print("review: " + line)

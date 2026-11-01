@@ -1,3 +1,4 @@
+# Sanitized snapshot, not raw evidence. Generated from evidence/acceptance-1.0.1/final.txt.
 logout1 True, rejoin True, logout2 True
 save: newest world file _main.53.db2 -> _main.54.db2, new file True, age 17s
 [Message:   BepInEx] Chainloader startup complete (86 loaded, 0 skipped, 0 failed)

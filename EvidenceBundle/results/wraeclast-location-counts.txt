@@ -1,3 +1,4 @@
+# Sanitized snapshot, not raw evidence. Generated from evidence/ops/census-locations.txt.
 world=Wraeclast zdos=178156 prefabs=391 unknownPrefabs=2 unknownObjects=12
 UNKNOWN -806391820 x11
 UNKNOWN -1813905327 x1

@@ -1,3 +1,5 @@
+> **Sanitized snapshot, not raw evidence.** Generated from `patches/PoVPlus.Compat/package/CHANGELOG.md`. See `README.md` in this bundle.
+
 # Changelog
 
 ## 1.0.1
