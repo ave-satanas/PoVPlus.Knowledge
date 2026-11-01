@@ -212,7 +212,7 @@ Single-client limits in M13 still apply.
 
 **Not observed:** dropped-snapshot recovery in PortalRules; winter (no seasonal mod); real worlds and characters; the normal-play trigger for a late constructor.
 
-## M15–M33. Consolidation, overnight round, 2026-10-31
+## M15–M34. Consolidation, overnight round, 2026-10-31
 
 Current facts for these topics. Earlier M records naming standalone DLLs, DungeonDB compat or dead map chips are superseded. One real client, simulated sleepers.
 
@@ -254,6 +254,8 @@ Probe code stays in `tools\ClientProbe`. Release compile inputs are unchanged.
 **M32 1.0.1 acceptance [SV], no test plugins.** `evidence\acceptance-1.0.1\`. Client 86, server 90, 0 failed, both joins and Log Outs confirmed, `_main.53`→`.54`, 0 exceptions, 0 HarmonyX, 88/92/88 DLLs, 0 hash differences, 0 test files, test mode and winter off, `Location data = false`. Compile inputs: ten module files plus generated attributes; rebuild reproduces `8B766887…`; 190 strings and method names show no probe or test terms; DLL inside the zip matches. New client line `LiberationSans SDF Font Asset`, also present in run 2 before the fix. Lowest sampled free memory 597 MB, at the last sample: the sampler stopped at 13:00:35 during the first world load, so the rest of the run is unsampled and the true low is unknown. Client working set 10,982 MB, server 6,584 MB; the 13,698 MB remainder is an accounting difference, not process memory. See `Knowledge/Operations/OPS-memory.md`. `evidence\baseline\memory.csv` is invalid; two samplers wrote to it.
 
 **M33 Older-vault comparison.** Raw and CRLF-normalized SHA-256 of all files: main 128, Claude 126, Runtime Integration 126. Main and Claude: 125 common, 107 raw identical, 117 normalized identical, 8 substantive, 3 main-only, 1 Claude-only. Claude and Runtime Integration: 126 common, 1 raw identical, 126 normalized identical. Originals untouched.
+
+**M34 Fresh clone, 2026-11-01.** Clone of `ave-satanas/PoVPlus.Compat` at `eed8d74`, in a temporary folder on this machine. README build: 0 errors, 0 warnings. `pack.py` failed as documented, because the DLL was not in `../dist/`; with it copied, it passed, six files at the zip root. DLL `62F3E78B…`, release `8B766887…`, same size, 482 bytes differ. 124 method bodies hash identically, 37 types, source text identical after line endings. Embedded PDB path and module ID differ. README corrected. Not tested on a machine without the pack installed. The temporary clone was deleted.
 
 ## F1. Feed Barrel and ground merge
 

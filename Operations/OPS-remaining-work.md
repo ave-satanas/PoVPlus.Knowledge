@@ -18,7 +18,6 @@ related: [CURRENT-STATE, DEC-production-session-hold, INV-config-reconciliation,
 | Find the real launch configuration | Reading BakaLoader's store | [[OPS-saves-shutdown#Launch]] |
 | `baka_save` cause | Test on disposable | [[OPS-saves-shutdown]] |
 | Hexium upload | User | [[OPS-build-release]] |
-| Test the build and package steps from a fresh clone | Reading and building only | [[OPS-build-release]] |
 | Populated portal catalog through recovery | World with public portals | [[INV-portal-race]] |
 | What destroys `PT_BlueRunePebble` | Tracer | [[INV-objectdb-null]] |
 

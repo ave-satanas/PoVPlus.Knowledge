@@ -47,6 +47,10 @@ Dependencies in the manifest: only `denikson-BepInExPack_Valheim-5.4.2360`, beca
 
 Icon, empty `website_url` and license attribution are placeholders chosen by the agent.
 
+## Fresh clone
+
+`[runtime]` M34. A clone of `PoVPlus.Compat` at `eed8d74` built with 0 errors on this machine, then packaged once the DLL was copied to `../dist/`, a step the README lacked until the next commit. All 124 method bodies matched the release. The file hash differed, `62F3E78B…` against `8B766887…`, because the build path and module ID differ. So a hash match proves a shipped file, and a mismatch from another path does not prove different code. Building needs the installed pack, so it was not tested on a machine without one.
+
 ## Release maintenance
 
 After any change to a report, release file or version, before committing in `Knowledge`:
@@ -55,4 +59,4 @@ After any change to a report, release file or version, before committing in `Kno
 2. Run `python Knowledge/tools/make_evidence_bundle.py`.
 3. Run `python Knowledge/tools/validate.py`. A stale bundle is an error when the workspace is present.
 
-This depends on the steps being run. Nothing enforces it at commit time; a git hook could, but none is installed. The bundle is a sanitized snapshot, never the release itself.
+`Knowledge/.git/hooks/pre-commit` runs that validation and blocks the commit. Hooks are not versioned, so a new clone needs it added: `python tools/validate.py` as the hook body. The bundle is a sanitized snapshot, never the release itself.
