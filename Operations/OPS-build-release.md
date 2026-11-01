@@ -56,7 +56,7 @@ Icon, empty `website_url` and license attribution are placeholders chosen by the
 
 After any change to a report, release file or version, before committing in `Knowledge`:
 
-1. Update `SOURCES` in `tools/make_evidence_bundle.py` if the results files changed, such as a new acceptance folder.
+1. Update `ENTRIES` in `tools/make_evidence_bundle.py` if the results files changed, such as a new acceptance folder.
 2. Run `python Knowledge/tools/make_evidence_bundle.py --check`, review what changed, then regenerate without the flag. Redaction terms are in the untracked `tools\bundle-redactions.local` on the original machine.
 3. Run `python Knowledge/tools/validate.py`. A stale bundle is an error when the workspace is present.
 

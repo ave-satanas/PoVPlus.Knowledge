@@ -88,6 +88,8 @@ Tiers: S static, H server harness, C real client, SV real client on a dedicated 
 
 ## Reproducibility
 
+**Exercised so far (M35):** fresh clones in a temporary folder, on the original Windows machine, with its Python, .NET SDK, git settings and real Valheim and mod assemblies. Levels 1 and 2 passed there. **No other machine or operating system has been tried**, and Level 3 was not exercised as a reviewer workflow.
+
 | Level | Needs | What you can do |
 |---|---|---|
 | **1. Clean clone** | Python 3 | `python tools/validate.py`, `python tools/make_evidence_bundle.py --verify`, read everything here |

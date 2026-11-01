@@ -1,0 +1,2 @@
+# Bundled files are verified by SHA-256, so git must not change their line endings.
+EvidenceBundle/** -text
