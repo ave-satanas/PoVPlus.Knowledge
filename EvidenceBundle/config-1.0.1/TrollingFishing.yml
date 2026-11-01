@@ -1,0 +1,40 @@
+# TrollingFishing bait map
+# This file was generated from the currently loaded vanilla and modded Fish components.
+# baits is bait prefab -> fish prefab -> Fish.BaitSetting.m_chance.
+#
+# Bite chance flow:
+# 1. A fish first tries to target a nearby fishing float using Fish.m_baseHookChance.
+#    TrollingFishing's Fishing skill bonus modifies this hook chance.
+# 2. If a float is selected, Valheim checks whether the float's bait is accepted by this fish.
+#    The numbers below are Fish.BaitSetting.m_chance values for this second bait check.
+#    1.0 means the fish always accepts this bait, 0.5 means 50%, and 0 means never.
+#
+# Example:
+# If "Fishing Bite Chance Bonus Factor" is 0.3 and your Fishing skill is 100,
+# the hook chance becomes 30%. If Fish1's bait chance for Bait1 is 0.5,
+# the total chance for Fish1 to bite that float is roughly 0.3 * 0.5 = 0.15, or 15%.
+#
+# These values are not item drop chances, fish spawn chances, or the skill-scaled hook chance itself.
+# Fish listed below use only the YAML entries below; unlisted fish keep their loaded defaults.
+baits:
+  FishingBait:
+    Fish1: 1
+    Fish2: 1
+  FishingBaitAshlands:
+    Fish11: 1
+  FishingBaitCave:
+    Fish4_cave: 1
+  FishingBaitDeepNorth:
+    Fish10: 1
+  FishingBaitForest:
+    Fish5: 1
+  FishingBaitMistlands:
+    Fish12: 1
+    Fish9: 1
+  FishingBaitOcean:
+    Fish3: 1
+    Fish8: 1
+  FishingBaitPlains:
+    Fish7: 1
+  FishingBaitSwamp:
+    Fish6: 1

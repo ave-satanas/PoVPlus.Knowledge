@@ -1,0 +1,196 @@
+SecondaryAttacks animation reference dump
+This file is informational only; SecondaryAttacks does not read it as config.
+
+[Vanilla Animations]
+
+[Player Animator Triggers]
+- atgeir_attack0
+- atgeir_attack1
+- atgeir_attack2
+- atgeir_secondary
+- attack_abort
+- axe_secondary
+- battleaxe_attack0
+- battleaxe_attack1
+- battleaxe_attack2
+- battleaxe_secondary
+- bow_fire
+- crossbow_fire
+- death0
+- death1
+- death2
+- dodge
+- dual_knives
+- dual_knives0
+- dual_knives1
+- dual_knives2
+- dual_knives_secondary
+- dualaxes0
+- dualaxes1
+- dualaxes2
+- dualaxes3
+- dualaxes_secondary
+- eat
+- emote_blowkiss
+- emote_bow
+- emote_challenge
+- emote_cheer
+- emote_comehere
+- emote_cower
+- emote_cry
+- emote_dance
+- emote_despair
+- emote_drink
+- emote_flex
+- emote_headbang
+- emote_kneel
+- emote_laugh
+- emote_loveyou
+- emote_nonono
+- emote_point
+- emote_relax
+- emote_rest
+- emote_roar
+- emote_shrug
+- emote_stop
+- emote_thumbsup
+- emote_toast
+- emote_vibe
+- emote_wave
+- equip_head
+- equip_hip
+- fishingrod_throw
+- gpower
+- greatsword
+- greatsword0
+- greatsword1
+- greatsword2
+- greatsword_secondary
+- interact
+- jump
+- knife_secondary
+- knife_stab
+- knife_stab0
+- knife_stab1
+- knife_stab2
+- knockdown
+- mace_secondary
+- place_feast
+- recharge_lightningstaff_done
+- reload_crossbow_done
+- scything
+- shovel0
+- shovel1
+- shovel2
+- shovel_secondary
+- spear_poke
+- spear_throw
+- staff_charge_attack
+- staff_fireball0
+- staff_fireball1
+- staff_frostorb
+- staff_lightningshot
+- staff_rapidfire
+- staff_shield
+- staff_summon
+- staff_thrust
+- staff_thunder
+- staff_trollsummon
+- stagger
+- swing_axe
+- swing_axe0
+- swing_axe1
+- swing_axe2
+- swing_hammer
+- swing_hoe
+- swing_longsword0
+- swing_longsword1
+- swing_longsword2
+- swing_pickaxe
+- swing_sledge
+- sword_secondary
+- throw_bomb
+- unarmed_attack0
+- unarmed_attack1
+- unarmed_kick
+- unequip_hip
+
+[Mod Animations]
+
+[KG_Managers.AnimationReplaceManager]
+Loaded: true
+Assembly: Warfare 1.9.6.0
+
+[Animation Sets]
+Set 0:
+  - OverheadSlashBattleaxe
+Set 1:
+  - ChargedSlashTwoHanded
+Set 2:
+  - SpinAttackNonSpear
+Set 3:
+  - DualBladeMain0
+  - DualBladeMain1
+  - DualBladeMain2
+Set 4:
+  - CultistStaffMain0
+  - CultistStaffMain1
+  - CultistStaffMain2
+Set 5:
+  - SkrymirSecondary_TW
+Set 6:
+  - StaffStormSecondary_TW
+Set 7:
+  - DualAxeMain0
+  - DualAxeMain1
+  - DualAxeMain2
+Set 8:
+  - DualAxeSecondary_TW
+Set 9:
+  - DualSwordsMain0
+  - DualSwordsMain1
+  - DualSwordsMain2
+Set 10:
+  - DualSwordsSecondary_TW
+Set 11:
+  - DualHammerMain0
+  - DualHammerMain1
+  - DualHammerMain2
+Set 12:
+  - DualHammerSecondary_TW
+Set 13:
+  - DualSpearMain0
+  - DualSpearMain1
+  - DualSpearMain2
+Set 14:
+  - DualSpearSecondary_TW
+Set 15:
+  - JumpSecondaryAttack_TW
+Set 16:
+  - WarpikeMain0
+  - WarpikeMain1
+  - WarpikeMain2
+Set 17:
+  - WarpikeSecondary_TW
+Set 18:
+  - FistSlamJumpAnimation_TW
+Set 19:
+  - FistLeftRightComboAnimation_TW
+Set 20:
+  - FistAttackSecondary_TW
+Set 21:
+  - FistDoubleHit_TW
+Set 22:
+  - RightPowerUppercut_TW
+Set 23:
+  - ThrowAttackMain0
+  - ThrowAttackMain1
+  - ThrowAttackMain2
+Set 24:
+  - ThrowAttackSecondary_TW
+Set 25:
+  - YagluthBlade_Secondary_TW
+
+[Pix.Movement.Slide]
+Loaded: false
+

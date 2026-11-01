@@ -1,0 +1,224 @@
+# Custom personal keys awarded within 64m of a configured creature's death.
+# Vanilla/modded defeat global keys are personalized automatically and normally do
+# not need a duplicate defeatKeys rule.
+defeatKeys:
+  - prefabs: [Serpent]
+    key: defeat_serpent
+
+# Item tiers are ordered from lowest to highest. A sequence is an unrestricted
+# resource tier. A mapping adds a required personal key to every listed resource
+# and to items that inherit the tier through a production recipe.
+# Tier names such as Meadows, Ocean, or SerpentItems are arbitrary labels. They
+# never check the player's current biome and have no special OfferingBowl meaning;
+# OfferingBowl restrictions check the offered item's resolved tier instead. An
+# offering is blocked only when its item is listed in a tier's resources or
+# inherits that tier through a production path. The altar's biome or a tier label
+# alone never blocks an offering.
+# Key-required Vanilla doors likewise check the physical key item's resolved tier.
+# The player must possess both that item and its tier's required personal key;
+# ordinary doors without a key item are unaffected.
+Meadows:
+  - Wood
+  - Stone
+  - Resin
+  - Dandelion
+  - Flint
+  - LeatherScraps
+  - BoneFragments
+  - Honey
+  - Raspberry
+  - Blueberries
+  - DeerHide
+  - DeerMeat
+  - Feathers
+  - GreydwarfEye
+  - RawMeat
+BlackForest:
+  requiredKey: defeated_eikthyr
+  resources:
+    - HardAntler
+    - Bronze
+    - BronzeNails
+    - Copper
+    - Tin
+    - Ectoplasm
+    - SurtlingCore
+    - TrollHide
+    - BjornHide
+    - FineWood
+    - AncientSeed
+    - Carrot
+    - BjornMeat
+    - BjornPaw
+    - RoundLog
+    - Thistle
+    - TrophyFrostTroll
+Swamp:
+  requiredKey: defeated_gdking
+  resources:
+    - Iron
+    - Ooze
+    - Entrails
+    - Guck
+    - Bloodbag
+    - Chain
+    - ElderBark
+    - IronNails
+    - Root
+    - Turnip
+    - WitheredBone
+    - CuredSquirrelHamstring
+    - CryptKey
+    - TrophyAbomination
+    - WrithanRoots
+    - TrophyWrithan
+Ocean:
+  requiredKey: defeated_gdking
+  resources:
+    - Chitin
+    - SerpentScale
+    - TrophySerpent
+SerpentItems:
+  requiredKey: defeat_serpent
+  resources:
+    - SerpentMeat
+Mountain:
+  requiredKey: defeated_bonemass
+  resources:
+    - Silver
+    - Crystal
+    - DragonEgg
+    - JuteRed
+    - Obsidian
+    - WolfClaw
+    - WolfFang
+    - WolfHairBundle
+    - WolfMeat
+    - WolfPelt
+    - Wishbone
+    - FreezeGland
+    - Onion
+    - TrophyHatchling
+    - TrophyFenring
+Plains:
+  requiredKey: defeated_dragon
+  resources:
+    - UndeadBjornRibcage
+    - BlackMetal
+    - DragonTear
+    - Barley
+    - BarleyFlour
+    - ChickenEgg
+    - ChickenMeat
+    - Flax
+    - GoblinTotem
+    - LinenThread
+    - LoxMeat
+    - LoxPelt
+    - Needle
+    - Tar
+    - Cloudberry
+    - TrophyBjornUndead
+    - TrophyGoblin
+    - TrophyLox
+Mistlands:
+  requiredKey: defeated_goblinking
+  resources:
+    - Eitr
+    - Bilebag
+    - BlackCore
+    - BlackMarble
+    - BugMeat
+    - Carapace
+    - DvergrKey
+    - DvergrKeyFragment
+    - DvergrNeedle
+    - GiantBloodSack
+    - HareMeat
+    - JuteBlue
+    - Mandible
+    - Sap
+    - ScaleHide
+    - Softtissue
+    - Wisp
+    - YagluthDrop
+    - YggdrasilWood
+    - MushroomMagecap
+    - MushroomJotunPuffs
+    - RoyalJelly
+    - Hook
+AshLands:
+  requiredKey: defeated_queen
+  resources:
+    - FlametalNew
+    - AskBladder
+    - AskHide
+    - AsksvinEgg
+    - AsksvinMeat
+    - Blackwood
+    - BoneMawSerpentMeat
+    - BonemawSerpentTooth
+    - CelestialFeather
+    - CeramicPlate
+    - CharcoalResin
+    - CharredBone
+    - CharredCogwheel
+    - Charredskull
+    - Grausten
+    - MoltenCore
+    - MorgenHeart
+    - MorgenSinew
+    - ProustitePowder
+    - SulfurStone
+    - VoltureEgg
+    - VoltureMeat
+    - MushroomSmokePuff
+    - Vineberry
+    - Fiddleheadfern
+    - TrophySeekerQueen
+    - TrophyCharredMelee
+    - TrophyBlob_Lava
+
+# Northern progression uses the existing production-path inheritance.
+# Gold/Oat/OatFlour, casts and foundry products do not need duplicate entries.
+DeepNorth:
+  requiredKey: defeated_fader
+  resources:
+    - GoldOre
+    - CrownJewel
+    - OozeMork
+    - ElakingHairBundle
+    - FaderDrop
+    - FaderEmber
+    - FrostCore
+    - OrbFrostFire
+    - BarkaBranch
+    - Ice
+    - Leatherstraps
+    - FrozenFuel
+    - MoleClaws
+    - MooseHide
+    - MooseMeat
+    - MooseSinew
+    - NornThread
+    - SealBlubber
+    - SealHide
+    - SpiceDeepNorth
+    - OrbThunderBlood
+    - Frostwood
+    - TrophyBarka
+    - TrophyElaking
+    - TrophyMole
+    - TrophyJotunWitch
+    - TrophyJotunWarrior
+    - TrophyMoose
+    - TrophyBlob_Morkhalla
+    - TrophySeal
+    - FirConeFrost
+    - Kale
+    - KaleSeeds
+    - OatSeeds
+    - Poteitr
+    - PoteitrSeeds
+    - Lingonberry
+    - GlowWorm

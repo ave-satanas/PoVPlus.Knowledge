@@ -1,0 +1,4 @@
+- keys: f3
+  command: ore_support
+- keys: mouse4
+  command: bp.undo

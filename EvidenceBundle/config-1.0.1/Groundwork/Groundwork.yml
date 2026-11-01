@@ -1,0 +1,91 @@
+# Groundwork Hoe/Cultivator terrain tool cost/range overrides.
+# Root keys are tool item prefab names and child keys are exact piece prefab names from that tool's PieceTable.
+# `Pickaxe: terrainDig` is a generic pseudo-entry for pickaxe primary terrain digging.
+# `cost` replaces the base material cost shown in the build menu.
+# `range` lets the configured range modifier hotkey + mouse wheel adjust TerrainOp radii while that piece is selected.
+# Cost scaling formula: multiplier = 1 + max(0, (selectedRange / vanilla representative range)^2 - 1) * factor.
+# Pickaxe terrainDig uses radiusMax/depthMax scale caps and scales extra stamina/durability like radius^2 * depth.
+# When a piece has secondary TerrainOp radii, they keep their vanilla ratio to the representative range.
+# materialCostFactor, staminaCostFactor, and durabilityFactor of 0 keep that cost type at the base cost.
+
+Pickaxe:
+  terrainDig:
+    range:
+      enabled: true
+      radiusMax: 1.5
+      depthMax: 1.5
+      staminaCostFactor: 1
+      durabilityFactor: 1
+
+# Example exact override for a specific pickaxe prefab. Unspecified values fall back to Pickaxe: terrainDig.
+# Add enabled: true/false in this block to override the generic Pickaxe enabled state.
+# PickaxeBlackMetal:
+#   terrainDig:
+#     range:
+#       enabled: true
+#       radiusMax: 2
+#       depthMax: 2
+
+Cultivator:
+  cultivate_v2:
+    cost: {}
+    range:
+      enabled: true
+      min: 1
+      max: 8
+      materialCostFactor: 1
+      staminaCostFactor: 1
+      durabilityFactor: 1
+
+  replant_v2:
+    cost: {}
+    range:
+      enabled: true
+      min: 1
+      max: 8
+      materialCostFactor: 1
+      staminaCostFactor: 1
+      durabilityFactor: 1
+
+Hoe:
+  mud_road_v2:
+    cost: {}
+    range:
+      enabled: true
+      min: 1
+      max: 8
+      materialCostFactor: 1
+      staminaCostFactor: 1
+      durabilityFactor: 1
+
+  raise_v2:
+    cost:
+      Stone: 2
+    range:
+      enabled: true
+      min: 1
+      max: 5
+      materialCostFactor: 1
+      staminaCostFactor: 1
+      durabilityFactor: 1
+
+  path_v2:
+    cost: {}
+    range:
+      enabled: true
+      min: 1
+      max: 8
+      materialCostFactor: 1
+      staminaCostFactor: 1
+      durabilityFactor: 1
+
+  paved_road_v2:
+    cost:
+      Stone: 1
+    range:
+      enabled: true
+      min: 1
+      max: 8
+      materialCostFactor: 1
+      staminaCostFactor: 1
+      durabilityFactor: 1

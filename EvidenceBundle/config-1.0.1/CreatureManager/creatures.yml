@@ -1,0 +1,67 @@
+# CreatureManager creature configuration.
+# Copy entries from creatures.reference.yml, or run cm:full creature to generate creatures.full.yml for exhaustive field examples.
+# Loaded files: creatures.yml, creatures.yaml, creatures_*.yml, creatures_*.yaml.
+# Hot reload updates templates used by later creature instances; already loaded creature GameObjects are not rebuilt.
+# A persistent creature instantiated again after zone unload uses the current template. Changing clonedFrom for an existing clone requires a restart.
+# Omitted fields keep the current creature value. The schema below is commented out and safe to leave in the file.
+#
+# Schema:
+# - prefab: EikthyrClone                 # target creature prefab id; use an existing prefab or a new clone name.
+#   enabled: true                         # false skips this creature entry.
+#   clonedFrom: Eikthyr                   # optional source creature prefab used to create prefab.
+#   ai: eikthyr_like                      # optional AI preset from ai.yml, or an existing creature prefab name.
+#   character:
+#     name: $enemy_eikthyr                  # existing token, localization/<Language>.yml token, or literal display name.
+#     faction: Boss                         # Vanilla Character.Faction or a custom name from factions.yml.
+#     boss: true, false, event_eikthyr      # boss, dontHideBossHud, bossEvent.
+#     defeatSetGlobalKey: defeated_eikthyr  # global key set when defeated.
+#     health: 500, 3600                    # health, regenAllHPTime.
+#     damageModifiers:
+#       blunt: Normal                         # Normal, Resistant, VeryResistant, Weak, VeryWeak, Immune, Ignore, SlightlyResistant.
+#       slash: Normal
+#       pierce: Normal
+#       chop: Ignore
+#       pickaxe: Ignore
+#       fire: Weak
+#       frost: Normal
+#       lightning: Normal
+#       poison: Normal
+#       spirit: Normal
+#     speed: 2, 5, 10, 300, 20, 300, 1     # crouchSpeed, walkSpeed, speed, turnSpeed, runSpeed, runTurnSpeed, acceleration.
+#     jump: 10, 0, 0.7, 0.1, 10            # jumpForce, jumpForceForward, jumpForceTiredFactor, airControl, jumpStaminaUsage.
+#     swim: true, 2, 2, 100, 0.05          # canSwim, swimDepth, swimSpeed, swimTurnSpeed, swimAcceleration.
+#     flight: false, 5, 12, 12             # flying, flySlowSpeed, flyFastSpeed, flyTurnSpeed.
+#   humanoid:
+#     defaultItems:                        # attack prefabs first, then loadout/appearance item prefabs.
+#       - attack_eikthyr_stomp
+#       - attack_bow_alt1
+#       - NPC_SwordIron_Right
+#     randomWeapon: [NPC_SwordIron_Right]  # Humanoid random weapon prefab list.
+#     randomArmor: []                      # Humanoid random armor prefab list.
+#     randomHair: []                       # Visual-only attach/attach_skin hair; does not use the helmet slot or grant item armor/effects.
+#     randomShield: []                     # Humanoid random shield prefab list.
+#     randomItems:                         # prefab[, chance].
+#       - NPC_HelmetIron_Worn0, 0.5
+#     randomSets:                          # setName, itemPrefab...
+#       - warrior, NPC_SwordIron_Right, NPC_ShieldIron_Worn
+#   scale: 1.1                           # Uniform creature scale; equipment visuals and a target-specific death ragdoll follow it.
+#   textures:                            # rendererName:materialIndex:textureName; matching death-ragdoll renderers receive the same override.
+#     - 'Body:0:eikthyr_clone.png'
+#   appearance:                           # Optional mapping; omitted fields inherit the source prefab and specified fields follow its death ragdoll.
+#     hair: NPC_Black_Hair5                # Item prefab name; use '' to clear ordinary hair.
+#     beard: Beard1                        # Item prefab name; use '' to clear ordinary beard.
+#     hairColor: '#2A1B12'                # #RRGGBB; also tints humanoid.randomHair and its ragdoll.
+#     skinColor: '#AD7A55'                # #RRGGBB.
+#     modelIndex: 0                       # Zero-based VisEquipment model index.
+#   availableAttackAnimations: []        # reference-only attackAnimation names generated in full scaffold; ignored in config.
+#
+# Examples:
+# - prefab: EikthyrClone
+#   clonedFrom: Eikthyr                  # Creates a new creature prefab before applying the fields below.
+#   character:
+#     health: 1200, 3600
+#   scale: 1.2
+#
+# - prefab: Troll
+#   enabled: false                       # Keeps this configuration entry loaded in the file but prevents it from applying.
+#

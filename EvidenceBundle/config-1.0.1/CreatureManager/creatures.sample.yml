@@ -1,0 +1,215 @@
+# CreatureManager creature samples.
+# This .sample.yml file is not loaded automatically.
+# Install MonsterLabZ, then rename this file to creatures_sample.yml to activate all samples.
+# Bonebeard, Vincent, and Root Witch require MonsterLabZ; Vitrfell itself uses a vanilla creature source.
+# Vitrfell uses cm_boar2.png, installed by the package in BepInEx/config/CreatureManager/textures.
+
+- prefab: vitrfell
+  clonedFrom: Boar
+  character:
+    name: $vitrfell
+    faction: Boss
+    boss: true, false, ''
+    defeatSetGlobalKey: ''
+    health: 500, 3600
+    damageModifiers:
+      blunt: Normal
+      slash: Normal
+      pierce: Normal
+      chop: Ignore
+      pickaxe: Ignore
+      fire: Normal
+      frost: Normal
+      lightning: Normal
+      poison: Normal
+      spirit: Immune
+    speed: 2, 5, 1.5, 100, 8, 200, 0.8
+    jump: 10, 0, 0.7, 0.1, 10
+    swim: true, 0.81, 2, 100, 0.05
+    flight: false, 5, 12, 12
+  ai: Boar
+  humanoid:
+    defaultItems:
+      - boar_base_attack_boss
+    randomWeapon: []
+    randomArmor: []
+    randomHair: []
+    randomShield: []
+    randomItems: []
+    randomSets: []
+  scale: 2
+  textures: ['Poly Art Boar:0:cm_boar2']
+  availableAttackAnimations: [base_attack]
+
+- prefab: bonebeard
+  clonedFrom: ChaosSkeletonWarrior
+  character:
+    name: $bonebeard
+    faction: Boss
+    boss: true, false, ''
+    defeatSetGlobalKey: ''
+    health: 15000, 3600
+    damageModifiers:
+      blunt: Resistant
+      slash: Resistant
+      pierce: Resistant
+      chop: Ignore
+      pickaxe: Ignore
+      fire: Immune
+      frost: Weak
+      lightning: Weak
+      poison: Immune
+      spirit: Weak
+    speed: 2, 0.5, 1, 300, 5, 100, 0.1
+    jump: 10, 10, 0.7, 0.1, 10
+    swim: false, 0.8, 1.5, 100, 0.05
+    flight: false, 5, 12, 12
+  ai: Goblin
+  humanoid:
+    defaultItems:
+      - HelmetHat6
+      - NPC_ArmorIronChest_Worn
+      - NPC_ArmorIronLegs_Worn
+      - CapeTrollHide
+      - NPC_SwordSilverPoison_Left
+      - NPC_SwordSilverPoison_Right
+      - troll_throw_bonebeard
+      - Fader_Spin_bonebeard
+      - attack_sword_dualcombo_bonebeard
+      - attack_sword_left180_bonebeard
+      - attack_sword_leftlong_bonebeard
+      - attack_sword_right180_bonebeard
+      - attack_sword_slash_bonebeard
+    randomWeapon: []
+    randomArmor: []
+    randomHair: []
+    randomShield: []
+    randomItems: []
+    randomSets: []
+  scale: 1.5
+  textures: ['Skeleton:0:Skeleton_d']
+  availableAttackAnimations: [archer_melee0, atgeir_attack0, atgeir_attack2, atgeir_secondary0, attack, battleaxe_attack0, battleaxe_attack1, battleaxe_attack2, battleaxe_secondary0, block0, bow_fire, cast0, cast1, cast3, cast9, crouch_cast2, crouch_claw1, dual0, dual1, dual2, dual_combo0, dual_combo2, dual_double0, jump_attack1, knife_secondary0, knife_stab0, knife_stab1, knife_stab2, mace_attack0, mace_attack1, mace_attack2, mace_secondary0, rageattack, shield_bash0, sledge_360, spear_poke0, spear_throw0, stomp_left, swing_axe0, swing_longsword0, swing_longsword1, swing_longsword2, swing_pickaxe, swing_sledge, taunt0, taunt4, taunt5, taunt6, throw_bomb, unarmed_kick0, unarmed_kick2, unarmed_punch0, unarmed_punch1]
+
+- prefab: vincent
+  clonedFrom: MLNPC_Male0
+  character:
+    name: $vincent
+    faction: Boss
+    boss: true, false, ''
+    defeatSetGlobalKey: ''
+    health: 55000, 3600
+    damageModifiers:
+      blunt: Normal
+      slash: Normal
+      pierce: Normal
+      chop: Ignore
+      pickaxe: Ignore
+      fire: Normal
+      frost: Normal
+      lightning: Normal
+      poison: Normal
+      spirit: Ignore
+    speed: 2, 1.3, 1, 300, 7, 100, 0.1
+    jump: 8, 2, 0.6, 0.1, 10
+    swim: true, 1.42, 2, 100, 0.05
+    flight: false, 5, 12, 12
+  ai: Goblin
+  humanoid:
+    defaultItems:
+      - NPC_BowHuntsman
+      - HelmetBerserkerUndead
+      - ArmorBerserkerUndeadChest
+      - ArmorBerserkerUndeadLegs
+      - CapeLox
+      - attack_bow_vincent1
+      - attack_bow_vincent2
+      - attack_bow_vincent3
+      - attack_bow_vincent4
+      - attack_bow_vincent5
+      - attack_bow_stab_vincent
+      - attack_kick_bow_vincent
+    randomWeapon: []
+    randomArmor: []
+    randomHair:
+      - NPC_Brown_Hair0
+      - NPC_Brown_Hair1
+      - NPC_Brown_Hair10
+      - NPC_Brown_Hair11
+      - NPC_Brown_Hair12
+      - NPC_Brown_Hair2
+      - NPC_Brown_Hair3
+      - NPC_Brown_Hair4
+      - NPC_Brown_Hair5
+      - NPC_Brown_Hair6
+      - NPC_Brown_Hair7
+      - NPC_Brown_Hair8
+      - NPC_Brown_Hair9
+    randomShield: []
+    randomItems: []
+    randomSets: []
+  scale: 1.5
+
+- prefab: rootwitch
+  clonedFrom: MLNPC_Svartalfar0
+  character:
+    name: $rootwitch
+    faction: Boss
+    boss: true, false, ''
+    defeatSetGlobalKey: ''
+    health: 70000, 3600
+    damageModifiers:
+      blunt: Normal
+      slash: Normal
+      pierce: Normal
+      chop: Ignore
+      pickaxe: Ignore
+      fire: Normal
+      frost: Normal
+      lightning: Normal
+      poison: Normal
+      spirit: Ignore
+    speed: 2, 1.3, 1, 300, 7, 100, 0.1
+    jump: 8, 2, 0.6, 0.1, 10
+    swim: true, 1.42, 2, 100, 0.05
+    flight: false, 5, 12, 12
+  ai: Goblin
+  humanoid:
+    defaultItems:
+      - NPC_TorchMetal_Green_Left
+      - NPC_Staff_Spider
+      - HelmetPointyHat
+      - ArmorMageChest
+      - ArmorMageLegs
+      - CapeFeather
+      - Eikthyr_stomp_rootwitch
+      - attack_cast_enemy_rootwitch
+      - GoblinShaman_attack_fireball_rootwitch
+      - gd_king_shoot_rootwitch
+      - attack_cast_protect_rootwitch
+    randomWeapon: []
+    randomArmor: []
+    randomHair:
+      - NPC_White_Hair0
+      - NPC_White_Hair1
+      - NPC_White_Hair10
+      - NPC_White_Hair11
+      - NPC_White_Hair12
+      - NPC_White_Hair2
+      - NPC_White_Hair3
+      - NPC_White_Hair4
+      - NPC_White_Hair5
+      - NPC_White_Hair6
+      - NPC_White_Hair7
+      - NPC_White_Hair8
+      - NPC_White_Hair9
+    randomShield: []
+    randomItems: []
+    randomSets: []
+  appearance:
+    hair: ''
+    beard: ''
+    hairColor: '#2A1B12'
+    skinColor: '#AD7A55'
+    modelIndex: 0
+  scale: 1.2
+  textures: ['body:0:MLSvar0', 'body:1:NPC_Hair_01']

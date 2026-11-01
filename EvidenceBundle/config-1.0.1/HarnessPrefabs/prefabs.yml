@@ -1,0 +1,19 @@
+# HarnessPrefabs prefab overrides.
+# Top-level list schema. Copy entries from prefabs.reference.yml.
+# Later entries and later prefabs_*.yml files override earlier values for the same prefab.
+#
+# Full override example:
+# - prefab: barrell # Internal prefab name.
+#   enabled: true # true exposes it; false hides/overrides it off.
+#   category: Furniture # Public category, or one of the three admin-only Harness groups.
+#   displayName: Barrel # Optional in-game piece name. Empty uses prefab name.
+#   description: "" # Optional in-game tooltip/body text.
+#   craftingStation: Workbench # None, Workbench, Forge, Stonecutter, BlackForge, etc.
+#   requirements: # Optional build costs. Omit or [] for free placement.
+#     - FineWood: 2 # ItemPrefabName: amount.
+#     - Iron: 1
+#   flags: true, true, false, true # clipEverything, clipGround, allowedInDungeons, canBeRemoved.
+#   components: [Piece, WearNTear] # Reference/sort hint from full scaffold; usually leave copied.
+#
+# Run `harnessprefabs:full` in-game to generate prefabs.full.yml with displayName,
+# description, flags, and components for deeper review.

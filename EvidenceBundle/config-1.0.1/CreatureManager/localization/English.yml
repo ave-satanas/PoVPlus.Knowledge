@@ -1,0 +1,10 @@
+# CreatureManager server-authoritative localization. The file name must be a Valheim language name.
+# English is the fallback; the selected client language overrides matching English tokens.
+# Keys may have one leading '$'; reference them as $token in creatures.yml or other localized fields.
+# Remote clients ignore their local files while connected. Redefining an existing token changes every use of it.
+# Localization is a global live rule; synchronized edits refresh the current language and UI immediately.
+# These default names are used by creatures.sample.yml.
+$rootwitch: Root Witch
+$vincent: Vincent
+$bonebeard: Bonebeard
+$vitrfell: Vitrfell

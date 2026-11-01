@@ -1,0 +1,218 @@
+# Config relationship: [2 - Levels] in sighsorry.CreatureManager.cfg (defaults: Full + Easy).
+# Enable Level System:
+#   Off = no CM automatic level assignment, level stat/distance/scale rules, or modifiers.
+#   ExceptLevel = keep game/other-mod levels; ignore ALL YAML level weights, biome presets, and Karma/Enforcer level bonuses.
+#                 Stat, distance, scale, and modifier rules still apply using the actual level.
+#   Full = also enable CM level assignment from matching weights and Karma/Enforcer level bonuses.
+# Biome Level Preset (Full only): Easy / Normal / Hard / VeryHard supply built-in biome level weights.
+#   None removes ONLY built-in weights; YAML level rules, stat/scale/modifier rules, and level bonuses remain active.
+# Global.level is commented out by default. In Full it is the last fallback for non-boss creatures and Enforcers.
+#   Easy/Normal/Hard/VeryHard supply biome weights before Global.level, which only fills unmatched cases (such as unsupported biomes).
+#   Full + None supplies no built-in weights. Uncomment Global.level to supply fallback weights; more specific YAML level rules still win.
+#   With no matching weights AND no Karma/Enforcer bonus, the assigned level is kept. Weights are base rolls, not final level caps.
+# Bosses Follow Biome Level Preset only enables a regular-boss fallback in Full with a preset other than None.
+#   Explicit Boss/group/prefab level rules still work in Full + None; regular bosses never inherit Global.
+# Karma tracking, Enforcer summons, and loot have separate settings. Setting changes do not reroll completed creatures.
+#
+# Targets: Global, Boss, biome, group, or prefab; omitted fields inherit independently.
+# Priority: non-boss/Enforcer prefab > group > biome > Global; regular boss prefab > group > Boss.
+# Nested biome blocks override their parent target in that biome.
+# modifiers: omit/{} = inherit, [] = clear; tuples start with chance% and may omit only trailing values.
+#
+Global:
+#   level: [80, 20]                       # Optional fallback weights: zero-star, one-star, ...
+#   scalePerLevel: 0.1                    # Optional CM star growth; 0 = none. Omit for prefab sizes in Full/ExceptLevel; CM growth is skipped in dungeons.
+  damage: 1                            # Level-1 damage multiplier.
+  damagePerLevel: 0.25                 # Vanilla: 0.5. Replaces vanilla growth: damage * (1 + (level - 1) * value).
+  health: 1                            # Level-1 max-health multiplier.
+  healthPerLevel: 1                    # Health = base * health * (1 + (level - 1) * value).
+#   distanceScaling: [0.03, 0.08, 1000, 5] # damageStep, healthStep, stepMeters, maxSteps (0 = unlimited).
+#   modifierDistanceScaling: [0.03, 1000, 8] # chanceStep, stepMeters, maxSteps; 20% -> 20.6% at 1000m, 24.8% at 8000m+.
+  modifiers:                           # One per group; totals below 100 allow none, above 100 are weights.
+    # Offense: Enraged to Undodgeable
+    enraged: 5, 0.15                 # chance%, outgoingDamageBonus
+    fire: 5, 0.2                     # chance%, addedFireDamage
+    frost: 5, 0.1                    # chance%, addedFrostDamage
+    lightning: 5, 0.1                # chance%, addedLightningDamage
+    spirit: 5, 0.05                  # chance%, addedSpiritDoT
+    armorPiercing: 5, 0.3            # chance%, ignoredPlayerArmor
+    staggering: 5, 0.6               # chance%, staggerBonus
+    undodgeable: 5, 0.25             # chance%, damageReduction
+    # Defense: Armored to Chameleon
+    armored: 5, 0.3                 # chance%, damageReduction
+    deathward: 5, 0.2, 10, 3         # chance%, restoredHealth, cooldownSeconds, maxActivations
+    regenerating: 5, 0.01, 20      # chance%, maxHealthRatioPerSecond, healthPerSecondCap (0 = unlimited)
+    reflection: 5, 0.1, 0.5         # chance%, actualMeleeDamageReflected, procChance
+    vortex: 5, 0.5                  # chance%, projectileIgnoreProc
+    adaptive: 5, 0.5                # chance%, rememberedTypeDamageReduction
+    unflinching: 5                    # chance%
+    chameleon: 5, 10                  # chance%, immunitySwitchSeconds
+    # Affliction: Exposed to ToxicAura
+    exposed: 5, 0.2, 0.5, 5          # chance%, damageTaken, proc, duration
+    weakened: 5, 0.2, 0.5, 5         # chance%, outgoingDamageReduction, proc, duration
+    withered: 5, 0.5, 0.5, 5         # chance%, healingReduction, proc, duration
+    crippling: 5, 0.5, 0.5, 0.5, 5  # chance%, moveReduction, jumpReduction, proc, duration
+    disruptive: 5, 0.5, 0.5, 0.5, 5  # chance%, staminaRegenReduction, eitrRegenReduction, proc, duration
+    adrenalineDrain: 5, 0.5, 0.5, 0.5, 5 # chance%, currentAdrenalineRemoved, adrenalineGainReduction, procChance, duration
+    corrosive: 5, 0.5, 0.5, 5          # chance%, durabilityLossBonus, procChance, duration
+    toxicAura: 10, 0.1   # chance%, maxHealthPoison per application; every 1s, body radius + 3m
+    # Special: Swift to Blamer
+    swift: 5, 0.4                  # chance%, movementSpeedBonus
+    attackSpeed: 5, 0.3            # chance%, attackSpeedBonus
+    vampiric: 5, 0.3               # chance%, actualDirectDamageHealing
+    reaping: 5, 0.05, 20, 0.1, 2, 0.01, 0.2, 0.05, 0.5 # chance%, heal/base, healMaxActivations, maxHealth/base, maxHealthCap, damagePerKill, damageCap, scalePerKill, scaleCap
+    blink: 5, 6, 16, fx_Adrenaline1  # chance%, cooldown, maxRange, startEffect
+    omen: 5, 0.5                  # chance%, forcedEnforcerChance
+    juggernaut: 5, 150, 5           # chance%, minimumPushForce, cooldownSeconds
+    blamer: 5, 0.5, 45, 0.75           # chance%, karmaPerSecond, maxKarmaGain (0 = unlimited), fleeHealthRatio
+
+Boss:                                  # Regular bosses only; Enforcers use non-boss rules.
+  # level: [100]                       # Boss fallback: level 1; omit to allow the enabled built-in biome preset ([] is invalid).
+  scalePerLevel: 0.1
+  damage: 1
+  damagePerLevel: 0.1
+  health: 1
+  healthPerLevel: 0.5
+  modifiers:                           # One per group; totals below 100 allow none, above 100 are weights.
+    # Offense: Enraged to Undodgeable
+    enraged: 10, 0.15                 # chance%, outgoingDamageBonus
+    fire: 10, 0.2                     # chance%, addedFireDamage
+    frost: 10, 0.1                    # chance%, addedFrostDamage
+    lightning: 10, 0.1                # chance%, addedLightningDamage
+    spirit: 10, 0.05                  # chance%, addedSpiritDoT
+    armorPiercing: 10, 0.3            # chance%, ignoredPlayerArmor
+    staggering: 10, 0.6               # chance%, staggerBonus
+    undodgeable: 10, 0.25             # chance%, damageReduction
+    # Defense: Armored to Chameleon
+    armored: 10, 0.3                 # chance%, damageReduction
+    deathward: 10, 0.2, 10, 3         # chance%, restoredHealth, cooldownSeconds, maxActivations
+    regenerating: 10, 0.002, 20      # chance%, maxHealthRatioPerSecond, healthPerSecondCap (0 = unlimited)
+    reflection: 10, 0.1, 0.5         # chance%, actualMeleeDamageReflected, procChance
+    vortex: 10, 0.5                  # chance%, projectileIgnoreProc
+    adaptive: 10, 0.5                # chance%, rememberedTypeDamageReduction
+    unflinching: 10                    # chance%
+    chameleon: 10, 10                  # chance%, immunitySwitchSeconds
+    # Affliction: Exposed to ToxicAura
+    exposed: 10, 0.2, 0.5, 5          # chance%, damageTaken, proc, duration
+    weakened: 10, 0.2, 0.5, 5         # chance%, outgoingDamageReduction, proc, duration
+    withered: 10, 0.5, 0.5, 5         # chance%, healingReduction, proc, duration
+    crippling: 10, 0.5, 0.5, 0.5, 5  # chance%, moveReduction, jumpReduction, proc, duration
+    disruptive: 10, 0.5, 0.5, 0.5, 5  # chance%, staminaRegenReduction, eitrRegenReduction, proc, duration
+    adrenalineDrain: 10, 0.5, 0.5, 0.5, 5 # chance%, currentAdrenalineRemoved, adrenalineGainReduction, procChance, duration
+    corrosive: 10, 0.5, 0.5, 5          # chance%, durabilityLossBonus, procChance, duration
+    toxicAura: 10, 0.1   # chance%, maxHealthPoison per application; every 1s, body radius + 3m
+    # Special: Swift to Blamer
+    swift: 10, 0.4                  # chance%, movementSpeedBonus
+    attackSpeed: 10, 0.3            # chance%, attackSpeedBonus
+    vampiric: 10, 0.3               # chance%, actualDirectDamageHealing
+    reaping: 10, 0.05, 20, 0.1, 2, 0.01, 0.2, 0.05, 0.5 # chance%, heal/base, healMaxActivations, maxHealth/base, maxHealthCap, damagePerKill, damageCap, scalePerKill, scaleCap
+    blink: 10, 6, 16, fx_Adrenaline1  # chance%, cooldown, maxRange, startEffect
+    omen: 10, 0.5                  # chance%, forcedEnforcerChance
+    juggernaut: 10, 150, 5           # chance%, minimumPushForce, cooldownSeconds
+    blamer: 0, 1, 60, 0.75           # chance%, karmaPerSecond, maxKarmaGain (0 = unlimited), fleeHealthRatio
+
+TentaRoot:
+  modifiers: []                       # Clears inherited modifiers for this prefab.
+
+# Optional examples; uncomment only what you need.
+# groups:
+#   ForestBrutes:
+#     - Troll
+#     - Greydwarf_Elite
+#
+# Meadows:
+#   level: [100]
+#
+# ForestBrutes:
+#   health: 1.1
+#
+# Troll:
+#   BlackForest:
+#     damage: 1.2
+#
+# Built-in distributions for Biome Level Preset (reference only; level weights apply in Full mode).
+# Copy or uncomment only the biome blocks you want to override. Edit existing biome blocks instead of adding duplicate keys.
+# Other biomes keep the selected preset's defaults; explicit YAML rules retain their normal priority.
+# Weights are ordered from level 1 (zero stars), level 2 (one star), and so on, before Karma/Enforcer bonuses; they are not final star caps.
+# None preset: no built-in distribution. Explicit YAML level rules (including Global.level) and Karma/Enforcer bonuses still apply in Full.
+# Copied biome rules do not affect regular bosses; use Boss/group/prefab level rules for them.
+#
+# Easy preset:
+# Meadows:
+#   level: [100]
+# BlackForest:
+#   level: [85, 15]
+# Swamp:
+#   level: [70, 25, 5]
+# Mountain:
+#   level: [55, 30, 12, 3]
+# Plains:
+#   level: [45, 30, 18, 6, 1]
+# Mistlands:
+#   level: [35, 30, 22, 10, 3]
+# AshLands:
+#   level: [25, 30, 25, 14, 5, 1]
+# Ocean:
+#   level: [70, 25, 5]
+# DeepNorth:
+#   level: [25, 30, 25, 14, 5, 1]
+#
+# Normal preset:
+# Meadows:
+#   level: [95, 5]
+# BlackForest:
+#   level: [75, 20, 5]
+# Swamp:
+#   level: [55, 30, 12, 3]
+# Mountain:
+#   level: [45, 30, 18, 6, 1]
+# Plains:
+#   level: [35, 30, 22, 10, 3]
+# Mistlands:
+#   level: [25, 30, 25, 14, 5, 1]
+# AshLands:
+#   level: [15, 25, 25, 20, 10, 5]
+# Ocean:
+#   level: [55, 30, 12, 3]
+# DeepNorth:
+#   level: [15, 25, 25, 20, 10, 5]
+#
+# Hard preset:
+# Meadows:
+#   level: [90, 10]
+# BlackForest:
+#   level: [68, 25, 7]
+# Swamp:
+#   level: [48, 34, 14, 4]
+# Mountain:
+#   level: [38, 32, 20, 8, 2]
+# Plains:
+#   level: [30, 30, 23, 12, 4, 1]
+# Mistlands:
+#   level: [22, 28, 26, 16, 6, 2]
+# AshLands:
+#   level: [12, 22, 25, 21, 13, 7]
+# Ocean:
+#   level: [48, 34, 14, 4]
+# DeepNorth:
+#   level: [12, 22, 25, 21, 13, 7]
+#
+# VeryHard preset:
+# Meadows:
+#   level: [85, 15]
+# BlackForest:
+#   level: [60, 30, 10]
+# Swamp:
+#   level: [40, 35, 18, 7]
+# Mountain:
+#   level: [30, 35, 22, 10, 3]
+# Plains:
+#   level: [25, 30, 25, 14, 5, 1]
+# Mistlands:
+#   level: [18, 27, 27, 18, 8, 2]
+# AshLands:
+#   level: [10, 20, 25, 22, 15, 8]
+# Ocean:
+#   level: [40, 35, 18, 7]
+# DeepNorth:
+#   level: [10, 20, 25, 22, 15, 8]

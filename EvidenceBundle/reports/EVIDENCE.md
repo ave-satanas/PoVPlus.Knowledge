@@ -212,7 +212,7 @@ Single-client limits in M13 still apply.
 
 **Not observed:** dropped-snapshot recovery in PortalRules; winter (no seasonal mod); real worlds and characters; the normal-play trigger for a late constructor.
 
-## M15–M35. Consolidation, overnight round, 2026-10-31
+## M15–M36. Consolidation, overnight round, 2026-10-31
 
 Current facts for these topics. Earlier M records naming standalone DLLs, DungeonDB compat or dead map chips are superseded. One real client, simulated sleepers.
 
@@ -258,6 +258,8 @@ Probe code stays in `tools\ClientProbe`. Release compile inputs are unchanged.
 **M34 Fresh clone, 2026-11-01.** Clone of `ave-satanas/PoVPlus.Compat` at `eed8d74`, in a temporary folder on this machine. README build: 0 errors, 0 warnings. `pack.py` failed as documented, because the DLL was not in `../dist/`; with it copied, it passed, six files at the zip root. DLL `62F3E78B…`, release `8B766887…`, same size, 482 bytes differ. 124 method bodies hash identically, 37 types, source text identical after line endings. Embedded PDB path and module ID differ. README corrected. Not tested on a machine without the pack installed. The temporary clone was deleted.
 
 **M35 Reviewer workflow, 2026-11-01.** Fresh clones of both repositories in a temporary folder on the original Windows machine, documented steps only. First pass at Knowledge `6870888`: every bundled file failed `--verify`, because `core.autocrlf=true` rewrote line endings on checkout; `.gitattributes` now keeps `EvidenceBundle/` byte-exact. Other results at that pass: all pinned cross-repository URLs resolved in the clones, `--applies` and `--external` ran, source build 0 errors with explicit `-p:GameManaged` and `-p:Profile`, package passed, IL digest of that build equalled the tested release, `1DC63390…DF1D`, 124 bodies, 37 types. Second pass at `01ba857`, new clone: validation and `--verify` passed; a tampered file and an unlisted file were each detected. No other machine, operating system or clean toolchain was tried. The game was not launched and nothing was installed.
+
+**M36 Review package, 2026-11-01.** `PoVPlus.Knowledge` history contains private terms in earlier copies of the bundle script, so reviewers get a separate private repository with one commit. Exact tested DLL and zip added after checking: no embedded resources, own namespace only, references without bundling, MIT. Client config frozen once: 274 files, 8.7 MB, 6 redacted, 295 excluded, no included file changed after acceptance. Excluded player identity files map player IDs to Steam IDs. The leak guard stopped the first attempt on a false positive in the password rule; the rule was corrected, not the guard.
 
 ## F1. Feed Barrel and ground merge
 

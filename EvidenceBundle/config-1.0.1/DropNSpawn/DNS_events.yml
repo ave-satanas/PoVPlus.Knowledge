@@ -1,0 +1,75 @@
+# DropNSpawn event overrides.
+#
+# Full schema example. The value before the first # is the fallback/default for a new event.
+# When overriding an existing event, omitted fields keep that event's baseline value.
+# The first inline comment value is an example override.
+#
+# - event: ''                          # custom_greydwarf_raid # Event id/name. Required.
+#   settings: [true, true, 60, 96, true] # [false, true, 120, 128, false] # enabled, random, duration, eventRange, pauseIfNoPlayerInArea; use '' to omit a middle value.
+#   standalone: [0, 100]               # [600, 20] # standaloneInterval seconds, standaloneChance percent.
+#   spawnerDelay: 0                    # 10 # Delay before event spawners can start spawning.
+#   conditions:
+#     biomes: []                       # [Meadows, BlackForest] # Biomes where this event can start. [] means any biome.
+#     playerBase: [near, away]         # [near] # Allowed player-base states. [] or omitted keeps the baseline value.
+#     requiredEnvironments: []         # [ThunderStorm] # Event-level required environment names.
+#     players: [0~, 100]               # [1~4, 100] # Player count range, distance.
+#     requiredGlobalKeys: []           # [defeated_eikthyr] # Required global keys.
+#     forbiddenGlobalKeys: []          # [defeated_gdking] # Blocking global keys.
+#     requiredKnownItems: []           # [CryptKey] # Known item prefabs required for PlayerEvents gating.
+#     forbiddenKnownItems: []          # [Wishbone] # Known item prefabs that block PlayerEvents gating.
+#     requiredPlayerKeysAny: []        # [KilledTroll] # Any one player key can satisfy PlayerEvents gating.
+#     requiredPlayerKeysAll: []        # [KilledTroll, defeated_eikthyr] # All listed player keys are required.
+#     forbiddenPlayerKeys: []          # [defeated_dragon] # Player keys that block PlayerEvents gating.
+#   messages: ['', '']                 # ['$event_gdkingarmy_start', '$event_gdkingarmy_end'] # startMessage, endMessage.
+#   forceEnvironment: ''               # GDKing # Force an environment while the event is active.
+#   forceMusic: ''                     # boss_gdking # Force music while the event is active.
+#   startCommands: []                  # ['say Event started'] # ExpandWorldData commands run when the event starts.
+#   endCommands: []                    # ['say Event ended'] # ExpandWorldData commands run when the event ends.
+#   spawns: []                         # See spawn entry schema below. [] means no spawns for a new event.
+#
+# Advanced standalone/command example. These fields are valid in overrides but are omitted from generated reference files.
+# - event: custom_greydwarf_raid
+#   standalone: [600, 20]
+#   spawnerDelay: 10
+#   startCommands: ['say Event started']
+#   endCommands: ['say Event ended']
+#
+# Spawn entry schema. Values before # are SpawnSystem.SpawnData defaults for one entry.
+# All per-spawn fields are flat under spawnSystem; nested conditions and modifiers blocks are not supported.
+# - event: custom_greydwarf_raid
+#   spawns:
+#     - prefab: ''                     # Greydwarf # Creature prefab to spawn. Required for a spawn entry.
+#       enabled: true                  # false # Enables this spawn entry.
+#       spawnSystem:
+#         name: ''                     # Greydwarf raid scout # Optional display/debug name.
+#         huntPlayer: false            # true # Force spawned creatures to hunt players.
+#         level: 1                     # 1~2 # Min~max creature level.
+#         overrideLevelUpChance: -1    # 25 # Override level-up chance percent. -1 uses vanilla/default.
+#         levelUpMinCenterDistance: 0  # 2000 # Min distance from world center for level-up.
+#         groundOffset: 0.5            # 0 # Vertical spawn offset.
+#         groundOffsetRandom: 0        # 1 # Random additional vertical offset.
+#         spawnInterval: 4             # 10 # Seconds between spawn checks.
+#         spawnChance: 100             # 50 # Chance percent per interval.
+#         spawnRadius: 40~80           # 20~60 # Min~max spawn radius. Native effective default; 0 on min/max uses the native 40/80 fallback.
+#         groupSize: 1                 # 1~3 # Min~max group size.
+#         groupRadius: 3               # 6 # Radius around the group center.
+#         noSpawnRadius: 10            # 20 # Minimum distance to another instance of this prefab.
+#         maxSpawned: 1                # 6 # Max active event creatures from this entry.
+#         tilt: 0~35                   # 0~25 # Terrain tilt range.
+#         altitude: -1000~1000         # 1~1000 # Altitude range.
+#         oceanDepth: 0~0              # 1~30 # Ocean depth range.
+#         distanceFromCenter: 0~0      # 500~ # Distance from world center.
+#         biomes: []                   # [Meadows] # Spawn-entry biome filter. [] means no extra entry filter.
+#         biomeAreas: [Everything]     # [Median] # Biome area filter.
+#         timeOfDay: [day, night]      # [night] # Time of day filter.
+#         requiredEnvironments: []     # [Rain] # Spawn-entry required environments.
+#         requiredGlobalKey: ''        # defeated_eikthyr # Required global key for this spawn entry.
+#         requiredPersistentEvent: ''  # Internal name of the persistent event required at the spawn center.
+#         inLava:                      # true # true = only lava, false = outside lava, empty = vanilla both-state default.
+#         inForest:                    # true # true = only forest, false = outside forest, empty = vanilla both-state default.
+#         insidePlayerBase: false      # true # Spawn inside player base.
+#         canSpawnCloseToPlayer: false # true # Allow spawn close to players.
+#         fields: {}                   # { m_character.m_faction: ForestMonsters } # Raw field overrides.
+#         objects: []                  # [Wood,0,0,0,1] # ExpandWorldData object entries.
+#         data: ''                     # my_spawn_data # ExpandWorldData data entry name.
+#         faction: ''                  # ForestMonsters # ExpandWorldData faction override.

@@ -1,0 +1,120 @@
+# DataForge effect overrides.
+# Copy entries from effects.reference.yml, or run `dataforge:full effect` to generate effects.full.yml for exhaustive field examples.
+# You can also create additional override files like effects_asdf.yml; DataForge loads effects.yml and effects_*.yml together.
+# Omitted fields keep the current status effect value. Inline comments show example values and their effect.
+#
+# Schema:
+# - effect: Rested                       # e.g. Rested => override the Rested status effect.
+#   override: true                       # default true; false skips this entire status effect entry.
+#   cloneFrom: Rested                     # MyRested, cloneFrom: Rested => create a new effect from Rested.
+#   displayName: $se_rested_name          # $se_custom_name => use this localization token or literal text.
+#   tooltip: $se_rested_tooltip           # $se_custom_tooltip => use this tooltip token or literal text.
+#   icon: MyEffectIcon                    # MyEffectIcon => load DataForge/icon/MyEffectIcon.png; item:MeadHealthMinor => reuse that item icon; 256x256 PNG recommended.
+#   startEffects: vfx_A, sfx_A            # vfx_A, sfx_A => replace start EffectList with these prefabs; None => clear.
+#   stopEffects: vfx_B, sfx_B             # vfx_B, sfx_B => replace stop EffectList with these prefabs; None => clear.
+#   category:                             # food => group/category string shown by game logic.
+#   time: 0, 0                            # 600, 30 => lasts 600s, then cannot reapply for 30s.
+#   iconFlags: false, false               # true, false => show cooldown-style icon, do not flash the icon.
+#   repeatInterval: 0                     # 5 => repeat message/tick every 5 seconds.
+#   startMessage:                         # You feel strong => shown when the effect starts.
+#   stopMessage:                          # Strength fades => shown when the effect ends.
+#   repeatMessage:                        # Still strong => shown each repeatInterval.
+#   startMessageType: TopLeft             # Center => show startMessage in the center.
+#   stopMessageType: TopLeft              # TopLeft => show stopMessage in the top-left feed.
+#   repeatMessageType: TopLeft            # TopLeft => show repeatMessage in the top-left feed.
+#   attributes: None                      # ColdResistance => grant that StatusAttribute flag.
+#   stats:
+#     maxStats: 0, 0, 0                  # 25, 50, 75 => max health +25, stamina +50, eitr +75 while active; multiple effects stack.
+#                                         # On a MagicPlugin effect, this replaces that effect's native max Eitr bonus instead of stacking.
+#     upFront: 0, 0, 0, 0                 # 50, 40, 25, 20 => instantly give 50 health, 40 stamina, 25 eitr, 20 adrenaline on start.
+#     healthPerTick: 0, 0, Undefined      # -5, 0.1, Poison => deal 5 Poison damage each existing effect tick, stopping below 10% health; hitType is mostly meaningful for damage, not healing.
+#     healthOverTime: 0, 0, 5             # 100, 20, 5 => heal 100 total health over 20s, every 5s.
+#     staminaOverTime: 0, 0, false        # 60, 10, false => restore 60 stamina over 10s; 0.5, 10, true => restore 50% max stamina over 10s.
+#     eitrOverTime: 0, 0                  # 60, 6 => restore 60 eitr over 6s.
+#     regenMultiplier: 1, 1, 1            # 1.5, 0.5, 0 => health regen +50%, stamina regen x0.5, eitr regen disabled.
+#                                         # MagicPlugin's custom Eitr regen effects use the third value too: 1.2 means +20%.
+#     staminaDrainPerSec: 0               # 2 => drain 2 stamina per second.
+#     adrenalineModifier: 0               # 0.25 => adrenaline gain/use value +25%.
+#     speedModifier: 0                    # 0.2 => movement speed +20%.
+#     swimSpeedModifier: 0                # 0.3 => swim speed +30%.
+#     jumpModifier: 0, 0, 0               # 0, 0.25, 0 => jump height +25%; 0.2, 0, 0.2 => jump distance +20%.
+#     windRun: 0, 0                       # 0.2, -0.25 => tailwind movement speed up to +20%, run stamina drain up to -25%.
+#     sneak: 0, 0                         # 0.25, -0.5 => stealth +25%, generated noise -50%; not sneak stamina cost.
+#     fall: 0, 0                          # -0.5, 8 => fall damage -50%, cap downward fall speed to 8 m/s.
+#     armor: 0, 0                         # 10, 0.25 => (armor + 10) * 1.25.
+#     block: 0, 0                         # 0.5, -5 => timed block/parry bonus +50%, block stamina cost -5 flat.
+#     staggerModifier: 0                  # -0.25 => stagger taken -25%.
+#     addMaxCarryWeight: 0                # 100 => carry weight +100.
+#     Skill values for attackDamage/raiseSkill/skillLevel/skillLevel2: None, Swords, Knives, Clubs, Polearms, Spears, Blocking, Axes, Bows, ElementalMagic, BloodMagic, Unarmed, Pickaxes, WoodCutting, Crossbows, Jump, Sneak, Run, Swim, Fishing, Cooking, Farming, Crafting, Dodge, Ride, All.
+#     attackDamage: None, 1               # Swords, 1.25 => Swords attacks deal x1.25 (*125%) total damage; tooltip uses $df_se_tooltip_attack_damage.
+#     raiseSkill: None, 0                 # Swords, 1.0 => Swords skill XP gain +100%; tooltip uses $df_se_tooltip_raise_skill.
+#     skillLevel: None, 0                 # Swords, 15 => treat Swords as +15 levels while active.
+#     skillLevel2: None, 0                # Blocking, 10 => treat Blocking as +10 levels while active.
+#   staminaDrainModifier:
+#     run: 0                              # -0.25 => running stamina drain -25%.
+#     attack: 0                           # -0.2 => attack stamina cost -20%.
+#     block: 0                            # -0.2 => block stamina cost -20%.
+#     dodge: 0                            # -0.2 => dodge stamina cost -20%.
+#     jump: 0                             # -0.2 => jump stamina cost -20%.
+#     sneak: 0                            # -0.2 => sneak stamina cost -20%.
+#     swim: 0                             # -0.2 => swim stamina cost -20%.
+#     homeItem: 0                         # -0.2 => hammer/build stamina cost -20%.
+#   damageTakenModifiers:
+#     blunt: Normal                       # Resistant => take 50% blunt damage; Normal => remove this effect's blunt modifier.
+#     slash: Normal                       # Weak => take 150% slash damage.
+#     pierce: Normal                      # VeryResistant => take 25% pierce damage.
+#     chop: Normal                        # SlightlyWeak => take 125% chop damage.
+#     pickaxe: Normal                     # Immune => take 0 pickaxe damage.
+#     fire: Normal                        # Resistant => take 50% fire damage.
+#     frost: Normal                       # VeryResistant => take 25% frost damage.
+#     lightning: Normal                   # SlightlyResistant => take 75% lightning damage.
+#     poison: Normal                      # Weak => take 150% poison damage.
+#     spirit: Normal                      # Immune => take 0 spirit damage.
+#   percentageDamageModifiers:
+#     blunt: 0                            # 0.25 => blunt damage modifier +25%.
+#     slash: 0                            # 0.25 => slash damage modifier +25%.
+#     pierce: 0                           # 0.25 => pierce damage modifier +25%.
+#     chop: 0                             # 0.25 => chop damage modifier +25%.
+#     pickaxe: 0                          # 0.25 => pickaxe damage modifier +25%.
+#     fire: 0                             # 0.25 => fire damage modifier +25%.
+#     frost: 0                            # 0.25 => frost damage modifier +25%.
+#     lightning: 0                        # 0.25 => lightning damage modifier +25%.
+#     poison: 0                           # 0.25 => poison damage modifier +25%.
+#     spirit: 0                           # 0.25 => spirit damage modifier +25%.
+#   poison:
+#     baseTtl: 0                          # 10 => poison lasts at least 10 seconds.
+#     damageInterval: 0                   # 1 => poison ticks every second.
+#     damagePerHit: 0                     # 5 => poison deals 5 damage per tick/hit.
+#     ttlPerDamage: 0                     # 0.2 => poison duration scales by damage against non-players.
+#     ttlPerDamagePlayer: 0               # 0.1 => poison duration scales by damage against players.
+#     ttlPower: 0                         # 0.5 => apply duration power curve.
+#   shield:
+#     absorbDamage: 0                     # 200 => shield absorbs 200 damage.
+#     absorbDamagePerSkillLevel: 0        # 2 => absorb +2 per relevant skill level.
+#     absorbDamageWorldLevel: 0           # 50 => absorb +50 per world level.
+#     ttlPerItemLevel: 0                  # 5 => duration +5 seconds per item level.
+#     levelUpSkillFactor: 0               # 0.5 => shield use grants skill XP at 50% factor.
+#     levelUpSkillOnBreak: None           # BloodMagic => raise BloodMagic when shield breaks.
+#   frost:
+#     freezeTimeEnemy: 0                  # 5 => enemies freeze for 5 seconds.
+#     freezeTimePlayer: 0                 # 2 => players freeze for 2 seconds.
+#     minSpeedFactor: 0                   # 0.2 => slowed target keeps at least 20% speed.
+#   rested:
+#     baseTtl: 0                          # 480 => rested starts at 8 minutes.
+#     ttlPerComfortLevel: 0               # 60 => each comfort level adds 60 seconds.
+#
+# Clone example:
+# - effect: MyRested
+#   override: true
+#   cloneFrom: Rested
+#   icon: item:MeadHealthMinor
+#
+# Override example:
+# - effect: Rested
+#   time: 600, 0
+#   stats:
+#     regenMultiplier: 1, 1.5, 1
+#     raiseSkill: Swords, 1.0
+#     attackDamage: Swords, 1.25
+#   staminaDrainModifier:
+#     run: -0.25

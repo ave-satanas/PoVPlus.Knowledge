@@ -1,0 +1,165 @@
+# Slot labels and custom equipment slot definitions. The six vanilla equipment
+# slot ids are fixed.
+# Built-in compatibility slot ids are fixed as well; keep the id values unchanged.
+# Compatibility slots are created when the matching mod/API is loaded. Some
+# compatibility slots also support a non-empty items list as a custom fallback.
+# Other ids create custom equipment slots in the listed order.
+# applyArmor controls InventorySlots' additional armor from utility, trinket,
+# and custom equipment slots. Omitted means false for every slot. Set true to
+# add an equipped item's positive armor value, including quality bonuses.
+# Native helmet/chest/legs/cape armor and other equipped effects are unchanged.
+# Existing YAML is not rewritten; add applyArmor: true to retain a custom
+# slot's armor contribution. New files explicitly enable it only for Circlet.
+Slots:
+  - id: helmet
+    name: Helmet
+  - id: chest
+    name: Chest
+  - id: legs
+    name: Legs
+  - id: cape
+    name: Cape
+  - id: utility
+    name: Utility
+    applyArmor: false
+  - id: trinket
+    name: Trinket
+    applyArmor: false
+  - id: circlet
+    name: Circlet
+    applyArmor: true
+    items:
+      - HelmetDverger
+  - id: hiplantern.lantern
+    name: Hip Lantern
+    applyArmor: false
+    items:
+      - HipLantern
+  - id: wishbone
+    name: Wishbone
+    applyArmor: false
+    items:
+      - Wishbone
+  - id: demister
+    name: Demister
+    applyArmor: false
+    items:
+      - Demister
+  - id: jewelcrafting.necklace
+    name: Necklace
+    applyArmor: false
+    items: []
+  - id: jewelcrafting.ring
+    name: Ring
+    applyArmor: false
+    items: []
+  - id: smoothbrainbackpacks.backpack
+    name: Backpack
+    applyArmor: false
+    items: []
+  - id: adventurebackpacks.backpack
+    name: Backpack
+    applyArmor: false
+    items: []
+  - id: rustybags.bag
+    name: Bag
+    applyArmor: false
+    items: []
+  - id: rustybags.quiver
+    name: Quiver
+    applyArmor: false
+    items: []
+  - id: magicsupremacy.belt
+    name: MagicBelt
+    applyArmor: false
+    items: []
+
+# Item groups control subgroup order for crafting, inventory, and container
+# sorting. Melee/Ranged/Magic/Equipment/Food/Consumable/Meadbase/Misc are
+# fixed top-level sections. Other keys define custom prefab groups, which can be
+# inserted into those sections or referenced by KeepOnDeath and QuickSlots.
+Groups:
+  Melee:
+    - sword
+    - axe
+    - club
+    - knife
+    - spear
+    - polearm
+    - fists
+    - shield
+    - pickaxe
+    - tool
+    - tankards
+  Ranged:
+    - bow
+    - arrow
+    - crossbow
+    - bolt
+    - ammo
+    - bomb
+  Magic:
+    - elementalmagic
+    - bloodmagic
+  Equipment:
+    - helmet
+    - chest
+    - legs
+    - cape
+    - utility
+    - trinket
+#    - customgroup
+  Food:
+    - healthfood
+    - staminafood
+    - eitrfood
+    - feast
+#    - randomrandom
+  Consumable:
+    - mead
+    - potion
+  Meadbase: []
+  Misc:
+    - trophy
+    - valuable
+#  customgroup:
+#    - customprefab
+#    - prefabwhat
+#  randomrandom:
+#    - randomprefab
+#    - prefabprefab
+  tankards:
+    - Tankard
+    - Tankard_dvergr
+    - TankardAnniversary
+
+# Maximum total item units the player can carry across regular rows, hotbar,
+# quick slots, and equipment slots. Keys can be exact prefab/internal names,
+# built-in groups, or custom groups above. A limit of 0 blocks new additions.
+# Existing excess items are preserved when loading or lowering a limit.
+InventoryLimits:
+  FishingRod: 1
+  tankards: 3
+  FLG_TamingOrb: 3
+
+# Items matching these built-in groups, custom groups, or exact prefab/internal
+# names stay in the player inventory instead of moving to the tombstone.
+KeepOnDeath:
+  - Melee
+  - Ranged
+  - Magic
+  - Equipment
+
+# Items matching these top-level groups, subgroups, custom groups, or exact
+# prefab/internal names can be placed in quick slots. When a new stack is
+# automatically added, matching items prefer the hotbar before regular rows;
+# non-matching items keep the regular-rows-before-hotbar order.
+QuickSlots:
+  - Melee
+  - Ranged
+  - Magic
+  - healthfood
+  - staminafood
+  - eitrfood
+  - mead
+  - potion

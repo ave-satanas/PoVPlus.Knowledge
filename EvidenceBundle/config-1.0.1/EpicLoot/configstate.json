@@ -1,0 +1,116 @@
+{
+  "Files": {
+    "loottables": {
+      "Version": "0.15.4",
+      "SourceHash": "5beb715074ff946439356be6ec27971bb841ed7604801ca77269d4291d87db51",
+      "WrittenHash": "0cfcdb5d55c60dfc33e67d1683a746ab6d6bf0e7f915f4c1479474fcfe3e09d8",
+      "Variant": "",
+      "DeclinedSourceHash": "",
+      "DeclinedVersion": ""
+    },
+    "magiceffects": {
+      "Version": "0.15.4",
+      "SourceHash": "0d26228078ece44ef31357e14d99da1f49dff166aa72ed01248af72bc9d20b11",
+      "WrittenHash": "0d26228078ece44ef31357e14d99da1f49dff166aa72ed01248af72bc9d20b11",
+      "Variant": "balanced",
+      "DeclinedSourceHash": "",
+      "DeclinedVersion": ""
+    },
+    "iteminfo": {
+      "Version": "0.15.4",
+      "SourceHash": "1792e25340c0461f15abfa4639a479a6c61e22b558dba56b80bfb83d3a42dcc3",
+      "WrittenHash": "8be4fd0a57b749d738fdd6dd5a9a9779238d4d7739765665fb079cf847397153",
+      "Variant": "",
+      "DeclinedSourceHash": "",
+      "DeclinedVersion": ""
+    },
+    "enchantcosts": {
+      "Version": "0.15.4",
+      "SourceHash": "55cb8cd7aca15d0d17056df82c41eb6015249bd322063c707c614446075845f3",
+      "WrittenHash": "e988442790a61d5a800c3ead1c693ea21d97aedb408d54478b3307bf695824d6",
+      "Variant": "",
+      "DeclinedSourceHash": "",
+      "DeclinedVersion": ""
+    },
+    "itemnames": {
+      "Version": "0.15.4",
+      "SourceHash": "30f8f64214090d29739031231595e6509efe842e9bef4fcdec8f77e51dadb673",
+      "WrittenHash": "30f8f64214090d29739031231595e6509efe842e9bef4fcdec8f77e51dadb673",
+      "Variant": "",
+      "DeclinedSourceHash": "",
+      "DeclinedVersion": ""
+    },
+    "itemsorter": {
+      "Version": "0.15.4",
+      "SourceHash": "e292b8ce1675f91b16d02a8592603af665b88ddf2f730b7577812a3eecef4695",
+      "WrittenHash": "e292b8ce1675f91b16d02a8592603af665b88ddf2f730b7577812a3eecef4695",
+      "Variant": "",
+      "DeclinedSourceHash": "",
+      "DeclinedVersion": ""
+    },
+    "biomedata": {
+      "Version": "0.15.4",
+      "SourceHash": "d3cd9477753145f30859676ac6d5ada5d75a4d1831e1bac2968e0a6126c8a222",
+      "WrittenHash": "d3cd9477753145f30859676ac6d5ada5d75a4d1831e1bac2968e0a6126c8a222",
+      "Variant": "",
+      "DeclinedSourceHash": "",
+      "DeclinedVersion": ""
+    },
+    "adventuredata": {
+      "Version": "0.15.4",
+      "SourceHash": "8db1cb2815d1d8fa3777ca23ed3181a6bbd0bbc25eae62299b3682666026527e",
+      "WrittenHash": "e7b499c3c25d37cd2f2f05dd77a7bb073681240573536886aa2568d1445c08ce",
+      "Variant": "",
+      "DeclinedSourceHash": "",
+      "DeclinedVersion": ""
+    },
+    "legendaries": {
+      "Version": "0.15.4",
+      "SourceHash": "3930abd1bf9efa53f91b7c2e962b9fa42a4a54effecf76d52b884964f8b7c8a0",
+      "WrittenHash": "3930abd1bf9efa53f91b7c2e962b9fa42a4a54effecf76d52b884964f8b7c8a0",
+      "Variant": "",
+      "DeclinedSourceHash": "",
+      "DeclinedVersion": ""
+    },
+    "abilities": {
+      "Version": "0.15.4",
+      "SourceHash": "acaabaf4f04a0f74755647db1837294c74c3230f810849add68e0fce423a5c80",
+      "WrittenHash": "acaabaf4f04a0f74755647db1837294c74c3230f810849add68e0fce423a5c80",
+      "Variant": "",
+      "DeclinedSourceHash": "",
+      "DeclinedVersion": ""
+    },
+    "materialconversions": {
+      "Version": "0.15.4",
+      "SourceHash": "eafc2c284ee1499266a1993ee47e263b4830177448a052657f359ceac25fb780",
+      "WrittenHash": "eafc2c284ee1499266a1993ee47e263b4830177448a052657f359ceac25fb780",
+      "Variant": "",
+      "DeclinedSourceHash": "",
+      "DeclinedVersion": ""
+    },
+    "enchantingupgrades": {
+      "Version": "0.15.4",
+      "SourceHash": "519cbb2c2ed1c8ef6aecf21c649a767b32ea9875199404f9ba24f4e47b48f951",
+      "WrittenHash": "519cbb2c2ed1c8ef6aecf21c649a767b32ea9875199404f9ba24f4e47b48f951",
+      "Variant": "",
+      "DeclinedSourceHash": "",
+      "DeclinedVersion": ""
+    },
+    "shardstones": {
+      "Version": "0.15.4",
+      "SourceHash": "fe3812b4b7764043375568d6a3f67425e2d29ab7b01a5d5be97b8b6f7b6e0f09",
+      "WrittenHash": "fe3812b4b7764043375568d6a3f67425e2d29ab7b01a5d5be97b8b6f7b6e0f09",
+      "Variant": "",
+      "DeclinedSourceHash": "",
+      "DeclinedVersion": ""
+    },
+    "shardstoneconversions": {
+      "Version": "0.15.4",
+      "SourceHash": "58313adc3f9f9fb0f6eab41b9ebe120b6e68201784a31632a1f1d24d780687e1",
+      "WrittenHash": "58313adc3f9f9fb0f6eab41b9ebe120b6e68201784a31632a1f1d24d780687e1",
+      "Variant": "",
+      "DeclinedSourceHash": "",
+      "DeclinedVersion": ""
+    }
+  }
+}

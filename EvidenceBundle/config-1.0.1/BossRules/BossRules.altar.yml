@@ -1,0 +1,46 @@
+# BossRules altar overrides
+#
+# This file owns boss altar OfferingBowl and boss ItemStand edits.
+# It is intentionally inert by default.
+# Copy rows from BossRules.altar.reference.yml and uncomment only the fields you want to override.
+# Unless noted otherwise, null/empty/omitted override fields keep the current prefab value.
+#
+# offeringBowl
+#
+# - prefab: Bonemass
+#   enabled: true # Default true when omitted.
+#   offeringBowl:
+#     path: null # Omit for a single bowl. Use a generated path to select one when the location has multiple bowls.
+#     bossItem: null # ex) WitheredBone. Required direct offering item prefab.
+#     bossItems: null # ex) 10. Number of bossItem items required; clamped to at least 1 when set.
+#     bossPrefab: null # ex) Bonemass. Boss character prefab spawned after a valid offering.
+#     itemPrefab: null # ex) Wishbone. Optional item reward prefab instead of spawning a boss.
+#     setGlobalKey: null # ex) defeated_bonemass. Optional global key set after a valid offering.
+#     renderSpawnAreaGizmos: null # ex) false. True draws the boss spawn search area while selected.
+#     alertOnSpawn: null # ex) false. True calls BaseAI.Alert() on the spawned boss.
+#     spawnBossDelay: null # ex) 5. Seconds to wait before spawning; clamped to at least 0.
+#     spawnBossDistance: null # ex) 0~40 or {min: 0, max: 40}. Each side can be overridden separately.
+#     spawnBossMaxYDistance: null # ex) 9999. Vertical spawn search distance; clamped to at least 0.
+#     getSolidHeightMargin: null # ex) 1000. Terrain raycast margin; clamped to at least 0.
+#     enableSolidHeightCheck: null # ex) true. True requires valid ground height.
+#     spawnPointClearingRadius: null # ex) 0. Clearing radius before boss spawn; clamped to at least 0.
+#     spawnYOffset: null # ex) 1. Vertical offset added to the chosen spawn position.
+#     useItemStands: null # ex) true. True uses nearby ItemStands instead of direct UseItem offerings.
+#     itemStandPrefix: null # ex) Boss. Object-name prefix used to select nearby ItemStands.
+#     itemStandMaxRange: null # ex) 20. Max scan distance for nearby ItemStands; clamped to at least 0.
+#     respawnMinutes: null # Null/omitted becomes 0, disabling BossRules altar cooldown. Set >0 for cooldown minutes.
+#
+# itemStands
+#
+# - prefab: StartTemple
+#   enabled: true # Default true when omitted.
+#   itemStands:
+#   - path: null # Null/empty/omitted targets all relevant stands. ex) BossStone_Eikthyr[0]/itemstand[0] targets one reference path.
+#     canBeRemoved: null # ex) true. True allows players to remove the attached item.
+#     autoAttach: null # ex) false. True automatically attaches compatible dropped items.
+#     orientationType: null # ex) Vertical. ItemStand.Orientation name.
+#     supportedTypes: [] # ex) [OneHandedWeapon, TwoHandedWeapon]. ItemDrop.ItemType names.
+#     supportedItems: [] # ex) [TrophyDeer]. Explicitly allowed item prefabs.
+#     unsupportedItems: [] # ex) [TrophyDeer]. Explicitly blocked item prefabs.
+#     powerActivationDelay: null # ex) 2. Seconds before guardianPower activates; clamped to at least 0.
+#     guardianPower: null # ex) GP_Eikthyr. StatusEffect prefab granted when used.

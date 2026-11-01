@@ -1,0 +1,100 @@
+# DataForge item overrides.
+# Copy entries from items.reference.yml, or run `dataforge:full item` to generate items.full.yml for exhaustive field examples.
+# You can also create additional override files like items_asdf.yml; DataForge loads items.yml and items_*.yml together.
+# Omitted fields keep the current item value. Values below are common defaults or examples.
+#
+# Schema:
+# - item: SwordIron, 1                    # required item prefab id; optional second value multiplies world loot/gather/drop amount.
+#   override: true                        # default true; false skips this entire item entry.
+#   cloneFrom: SwordBronze                 # optional; source item prefab used to clone a new item.
+#   name: $item_sword_iron                 # display name token or literal text.
+#   description: $item_sword_iron_desc     # tooltip description token or literal text.
+#   subtitle:                              # optional secondary text.
+#   itemType: OneHandedWeapon              # ItemDrop.ItemData.ItemType enum name.
+#   weight: 1                              # item weight.
+#   value: 0                               # item value shown to game systems.
+#   maxStackSize: 1                        # maximum stack size.
+#   maxQuality: 1                          # maximum item quality level.
+#   teleportable: true                     # false prevents portal travel.
+#   floating: true                         # false removes the Floating component so dropped items sink in water.
+#   toolTier: 0                            # hit tool tier; targets requiring a higher tier reject the hit.
+#   durability: 100, 50, true, 1, true, false, 0 # maxDurability, durabilityPerLevel, useDurability, useDurabilityDrain, canBeRepaired, destroyBroken, durabilityDrain.
+#   equipment:
+#     skillType: Swords                    # shown only for sword/axe/club/knife/spear/polearm/fists/shield/pickaxe/bow/crossbow/elemental magic/blood magic items.
+#     equipDuration: 0                     # seconds to equip.
+#     movementModifier: 0                  # movement modifier while equipped.
+#     eitrRegenModifier: 0                 # equipped eitr regen modifier.
+#     heatResistanceModifier: 0            # heat resistance modifier.
+#     homeItemsStaminaModifier: 0          # build/home item stamina use modifier.
+#     attackStaminaModifier: 0             # attack stamina use modifier.
+#     blockStaminaModifier: 0              # block stamina use modifier.
+#     dodgeStaminaModifier: 0              # dodge stamina use modifier.
+#     jumpStaminaModifier: 0               # jump stamina use modifier.
+#     runStaminaModifier: 0                # run stamina use modifier.
+#     sneakStaminaModifier: 0              # sneak stamina use modifier.
+#     swimStaminaModifier: 0               # swim stamina use modifier.
+#     armor: 12, 2                         # shown only for Helmet/Chest/Legs/Shoulder/Utility; base armor, armor gained per quality level.
+#     maxAdrenaline: 0                     # max adrenaline bonus.
+#   damageTakenModifiers:
+#     fire: Resistant                      # item damage taken modifier; values include Normal, Resistant, VeryResistant, Weak, VeryWeak, Immune, Ignore, SlightlyResistant.
+#     frost: Weak                          # set Normal to remove an existing modifier for that damage type.
+#   food: 45, 15, 0, 2, 1800             # health, stamina, eitr, regen, burnTime.
+#   shield:
+#     shown in reference/full scaffold only for sword/axe/club/knife/spear/polearm/fists/shield/pickaxe/bow/crossbow/elemental magic/blood magic items.
+#     blockPower: 40, 5                    # base block power, block power gained per quality level.
+#     deflectionForce: 30, 5               # base deflection force, deflection gained per quality level.
+#     timedBlockBonus: 1.5                 # parry/timed block multiplier.
+#   damage:
+#     blunt: 0, 0                          # blunt base damage, damage gained per quality level.
+#     slash: 0, 0                          # slash base damage, damage gained per quality level.
+#     pierce: 0, 0                         # pierce base damage, damage gained per quality level.
+#     chop: 0, 0                           # chop/tree base damage, damage gained per quality level.
+#     pickaxe: 0, 0                        # pickaxe base damage, damage gained per quality level.
+#     fire: 0, 0                           # fire base damage, damage gained per quality level.
+#     frost: 0, 0                          # frost base damage, damage gained per quality level.
+#     lightning: 0, 0                      # lightning base damage, damage gained per quality level.
+#     poison: 0, 0                         # poison base damage, damage gained per quality level.
+#     spirit: 0, 0                         # spirit base damage, damage gained per quality level.
+#     backstabBonus: 1                     # backstab damage multiplier.
+#     attackForce: 0                       # knockback force.
+#   primaryAttack:
+#     # shown in reference/full scaffold only for InventorySlots-style sword/axe/club/knife/spear/polearm/fists/shield/pickaxe/tool/bow/crossbow/elemental magic/blood magic items.
+#     cost: 0, 0, 0, 0                     # stamina, eitr, flat health, health percent costs; 40 means 40%.
+#     missingHealth: 0, 0, 0               # damage multiplier per missing HP, damage multiplier by total missing health percent, stamina returned per missing HP.
+#     spawnOnHit: None, 0                  # prefab spawned on hit, chance from 0 to 1; ChainLightning, 0.2 => 20% chance.
+#     draw: 0, 0, 0                        # full draw time at skill 0, stamina drain/s while drawing, eitr drain/s while drawing.
+#     reload: false, 0, 0, 0               # requires reload, reload time seconds, stamina drain while reloading, eitr drain while reloading.
+#     damageMultiplier: 1                  # attack damage multiplier.
+#     forceMultiplier: 1                   # attack force multiplier.
+#     staggerMultiplier: 1                 # stagger multiplier.
+#     lastChainDamageMultiplier: 1         # final combo hit damage multiplier; scaffold shows it when chainLevels > 1; reference omits vanilla default 2.
+#     raiseSkillAmount: 1                  # skill experience raised by a successful attack.
+#   secondaryAttack:                       # same fields as primaryAttack, except lastChainDamageMultiplier.
+#     # shown in reference/full scaffold only when primaryAttack is eligible and secondary attack animation is not empty.
+#     cost: 0, 0, 0, 0                     # stamina, eitr, flat health, health percent costs; 40 means 40%.
+#     missingHealth: 0, 0, 0               # same missing-health tuple for secondary attack.
+#     spawnOnHit: None, 0                  # same spawn-on-hit tuple for secondary attack.
+#   effects:
+#     equipStatusEffect: Rested            # status effect applied while equipped.
+#     set: WolfArmor, 4, SetEffectName     # setName, setSize, setStatusEffect applied when enough matching set items are equipped.
+#     consumeStatusEffect: MeadHealthMedium # status effect applied when consumed.
+#     attackStatusEffect: Burning, 0.25    # statusEffect, chance; 0.25 means 25% chance to apply on attack.
+#     perfectBlockStatusEffect:            # status effect applied on perfect block.
+#     fullAdrenalineStatusEffect:          # status effect applied at full adrenaline.
+#   visual:
+#     icon: auto                           # auto snapshots visually changed items; use MyIcon to load DataForge/icon/MyIcon.png; 256x256 PNG recommended.
+#     iconRotation: 23, 51, 25.8           # x, y, z Euler rotation used only by icon: auto.
+#     scale: 1                             # visual model scale for item attach/drop meshes; auto icon ignores this scale.
+#     material: wood                       # material name from z_materials.reference.txt; replaces all item renderer material slots.
+#
+# Example:
+# - item: SwordIronHeavy
+#   cloneFrom: SwordIron
+#   weight: 0.8
+#   visual:
+#     icon: auto
+#     iconRotation: 23, 51, 25.8
+#     scale: 0.75
+#     material: blackmetal
+#   damage:
+#     slash: 55, 0

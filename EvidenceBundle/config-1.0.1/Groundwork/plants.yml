@@ -1,0 +1,19 @@
+# Groundwork Plant grow-time and biome overrides.
+# Copy exact prefab names and observed values from plants.reference.yml.
+# This root document is a YAML sequence. Legacy mapping fields are not supported.
+#
+# Full schema:
+# - prefab: <prefab>[, <growSecondsMin>~<growSecondsMax>] # optional positive seconds; omit the range to keep live grow time.
+#   biomes: [<biome>, ...] # optional non-empty name list; applies to cultivator placement and Plant growth health.
+#                              # omit biomes to keep live biome restrictions; None, All, and numeric masks are not accepted.
+#                              # heat/cold, cultivated-ground, roof, and spacing checks remain unchanged.
+#
+# Replace [] with entries that override grow time, biomes, or both.
+[]
+# Examples:
+# - prefab: Beech_Sapling, 3000~5000 # time only; keep live biome restrictions.
+# - prefab: sapling_jotunpuffs # biome only; keep live grow time.
+#   biomes: [Mistlands] # For an EWD custom biome with nature: Mistlands, list the vanilla nature name Mistlands rather than the custom biome name.
+#                         # This allows vanilla Mistlands and every EWD custom biome in that nature group; individual members cannot be selected separately.
+# - prefab: MyMod_Sapling # independent EWD custom-biome example.
+#   biomes: [MyIndependentBiome] # Use the EWD `biome:` name only for an independent custom biome with no valid nature or terrain alias.

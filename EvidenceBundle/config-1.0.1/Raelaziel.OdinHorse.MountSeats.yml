@@ -1,0 +1,66 @@
+# Odin Horse mount seats v3
+# Rideable tames with mounted combat. Add a block to add a tame, delete one to remove it.
+#
+#   LegsOut      degrees, legs spread out
+#   ThighsDown   degrees, thighs swing down
+#   KneeBend     degrees, knees bend more
+#   FeetOut      degrees, lower legs swing out
+#   SeatHeight   meters, sit higher
+#   SeatForward  meters, sit further forward
+#   SeatTilt     degrees, whole rider tips forward
+#   LeanForward  degrees, upper body leans forward
+#   MeleeReach   meters, extra melee reach
+#   PickupReach  meters, extra pickup reach
+#   KeepRidingAnimation  true = keep the tame's own riding animation (attacks still work; only the reach values are used)
+#
+# Example (OdinBear): remove the '#' to use it.
+#MidgardBear:
+#  LegsOut: 14
+#  ThighsDown: 0
+#  KneeBend: 0
+#  FeetOut: 0
+#  SeatHeight: 0
+#  SeatForward: 0.16
+#  SeatTilt: 0
+#  LeanForward: 0
+#  MeleeReach: 0.25
+#  PickupReach: 0.25
+
+Lox:
+  LegsOut: 11
+  ThighsDown: -41.4
+  KneeBend: 0
+  FeetOut: 0
+  SeatHeight: 0
+  SeatForward: 0.1
+  SeatTilt: 0
+  LeanForward: 0
+  MeleeReach: 1
+  PickupReach: 1
+  KeepRidingAnimation: false
+
+Moose:
+  LegsOut: 27
+  ThighsDown: -1.8
+  KneeBend: 0
+  FeetOut: 0
+  SeatHeight: 0.06
+  SeatForward: 0.47
+  SeatTilt: 0
+  LeanForward: 11.9
+  MeleeReach: 0.75
+  PickupReach: 0.75
+  KeepRidingAnimation: false
+
+Asksvin:
+  LegsOut: 14
+  ThighsDown: 0
+  KneeBend: 0
+  FeetOut: 0
+  SeatHeight: 0.06
+  SeatForward: 0.49
+  SeatTilt: 0
+  LeanForward: 0
+  MeleeReach: 0
+  PickupReach: 0
+  KeepRidingAnimation: false

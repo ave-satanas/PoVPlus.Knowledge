@@ -1,0 +1,549 @@
+# FeedLikeGrandma / PoVPlus species-specific nutrition matrix.
+# Final, structurally validated configuration based on the uploaded modpack.
+# For installation, back up BepInEx/config/FeedLikeGrandma/feed.yml then replace with this file.
+# Local consumeItems values range from 1 to 6; species nutrition and relative progression determine value.
+# No taming/growth/breeding parameters are overridden; original Asksvin level-up rule preserved.
+# The reference file and other plugin settings are NOT modified.
+defaults:                            # Global defaults used when a prefab omits feed.
+  feed: [20, 15, 30, 25, 120]         # levelupconstant, tamingconstant, growthconstant, healconstant, fedconstant.
+  # effect = foodNumber * constant. levelup/taming/growth/fed are progress or seconds; heal is max-health percent.
+  # levelUpItems override level-up food for that level; otherwise consumeItems can also add level progress.
+  # level-up-only food still applies healconstant and fedconstant.
+
+foodNumbers:                         # Global numbers used by bare consumeItems; omitted values default to 1.
+  - Mushroom
+  - Raspberry
+  - Honey, 2
+  - NeckTail, 1.5
+  - NeckTailGrilled, 2
+  - RawMeat, 1.5
+  - CookedMeat, 2
+  - DeerMeat, 2
+  - CookedDeerMeat, 2.5
+  - Blueberries, 2
+  - Carrot, 2
+  - BjornMeat, 3
+  - CookedBjornMeat, 4
+  - Turnip, 2
+  - Sausages, 4
+  - FishRaw, 3
+  - FishCooked, 4
+  - SerpentMeat, 4
+  - SerpentMeatCooked, 5
+  - Onion, 3
+  - WolfMeat, 2
+  - CookedWolfMeat, 3
+  - ChickenMeat, 4
+  - CookedChickenMeat, 5
+  - MushroomJotunPuffs, 2
+  - Barley, 2
+  - Cloudberry, 2
+  - Flax, 2
+  - LoxMeat, 3
+  - CookedLoxMeat, 4
+  - HareMeat, 4
+  - CookedHareMeat, 6
+  - MushroomMagecap, 2
+  - AsksvinMeat, 3
+  - CookedAsksvinMeat, 5
+  - VoltureMeat, 3
+  - CookedVoltureMeat, 5
+  - BoneMawSerpentMeat, 5
+  - CookedBoneMawSerpentMeat, 8
+  - Fiddleheadfern, 3
+  - MushroomSmokePuff, 3
+  - Vineberry, 2
+
+# Ashlands: native feed 3; earlier barley 1. Keeps the original Fish11 levelUpItems rule.
+Asksvin:
+  levelUpItems:                       # level-up-only foods keyed by current Character level.
+    2:                                  # Character level 2 -> 3. Stars: 1 -> 2.
+      - Fish11, 300
+
+  consumeItems:
+    - Fiddleheadfern, 3
+    - MushroomSmokePuff, 3
+    - Vineberry, 3
+    - Carrot, 1
+    - Barley, 1
+    - Vegetable_Pumpkin_RtD, 1
+    - Kale, 3
+Asksvin_hatchling:
+  consumeItems:
+    - Fiddleheadfern, 3
+    - MushroomSmokePuff, 3
+    - Vineberry, 3
+    - Carrot, 1
+    - Barley, 1
+    - Vegetable_Pumpkin_RtD, 1
+    - Kale, 3
+# Black Forest: early wild forage; Plains premium large-prey protein.
+Bjorn:
+  consumeItems:
+    - Raspberry, 1
+    - Blueberries, 1
+    - Mushroom, 2
+    - Honey, 2
+    - FishRaw, 2
+    - DeerMeat, 3
+    - Entrails, 3
+    - LoxMeat, 4
+    - VC_SmokedDeer, 4
+    - VC_SmokedFish, 3
+    - VC_SmokedLox, 5
+Boar:
+  consumeItems:
+    - Raspberry, 1
+    - Blueberries, 1
+    - Mushroom, 2
+    - Acorn, 2
+    - Dandelion, 2
+    - Carrot, 3
+    - Turnip, 3
+    - RawMeat, 1
+    - Vegetable_Pumpkin_RtD, 2
+    - Kale, 4
+Boar_piggy:
+  consumeItems:
+    - Raspberry, 1
+    - Blueberries, 1
+    - Mushroom, 2
+    - Acorn, 2
+    - Dandelion, 2
+    - Carrot, 3
+    - Turnip, 3
+    - RawMeat, 1
+    - Vegetable_Pumpkin_RtD, 2
+    - Kale, 4
+Chicken:
+  consumeItems:
+    - BeechSeeds, 2
+    - BirchSeeds, 2
+    - Dandelion, 2
+    - CarrotSeeds, 3
+    - TurnipSeeds, 3
+    - Barley, 3
+    - Vegetable_Corn_RtD, 3
+    - BugMeat, 2
+Deer:
+  consumeItems:
+    - Dandelion, 2
+    - Raspberry, 1
+    - Blueberries, 1
+    - Carrot, 3
+    - Turnip, 2
+    - Vegetable_Cabbage_RtD, 3
+    - Lingonberry, 3
+    - Kale, 4
+Deer_White:
+  consumeItems:
+    - Dandelion, 2
+    - Raspberry, 1
+    - Blueberries, 1
+    - Carrot, 3
+    - Turnip, 2
+    - Vegetable_Cabbage_RtD, 3
+    - Lingonberry, 3
+    - Kale, 4
+# No credible animal diet; reference food list was template placeholders; explicitly empty
+# Goblin_Gem:
+#   consumeItems: []
+Hare:
+  consumeItems:
+    - Dandelion, 2
+    - Carrot, 2
+    - Blueberries, 1
+    - Raspberry, 1
+    - Vegetable_Cabbage_RtD, 2
+    - Kale, 3
+    - Lingonberry, 2
+Hen:
+  consumeItems:
+    - BeechSeeds, 2
+    - BirchSeeds, 2
+    - CarrotSeeds, 3
+    - TurnipSeeds, 3
+    - Dandelion, 2
+    - Barley, 3
+    - Vegetable_Corn_RtD, 3
+    - BugMeat, 2
+Lox:
+  consumeItems:
+    - Cloudberry, 2
+    - Barley, 2
+    - Flax, 1
+    - Carrot, 2
+    - Turnip, 2
+    - Vegetable_Cabbage_RtD, 2
+    - Kale, 4
+Lox_Calf:
+  consumeItems:
+    - Cloudberry, 2
+    - Barley, 2
+    - Flax, 1
+    - Carrot, 2
+    - Turnip, 2
+    - Vegetable_Cabbage_RtD, 2
+    - Kale, 4
+# Deep North: original Lingonberry restored; leafy Kale provides late forage.
+Moose:
+  consumeItems:
+    - Lingonberry, 3
+    - Kale, 4
+    - Dandelion, 1
+    - Raspberry, 1
+    - Blueberries, 1
+    - Carrot, 1
+    - Turnip, 1
+    - Vegetable_Cabbage_RtD, 2
+Moose_calf:
+  consumeItems:
+    - Lingonberry, 3
+    - Kale, 4
+    - Dandelion, 1
+    - Raspberry, 1
+    - Blueberries, 1
+    - Carrot, 1
+    - Turnip, 1
+    - Vegetable_Cabbage_RtD, 2
+Neck:
+  consumeItems:
+    - FishRaw, 2
+    - BugMeat, 2
+    - Item_Shrimp_RtD, 3
+    - Meat_Crab_RtD, 3
+    - VC_SmokedFish, 3
+    - VC_Stockfish, 3
+    - VC_CookedBarnacles, 4
+Seal:
+  consumeItems:
+    - FishRaw, 2
+    - Meat_Cod_RtD, 3
+    - Meat_Tuna_RtD, 3
+    - Meat_Squid_RtD, 3
+    - Item_Shrimp_RtD, 2
+    - Meat_Crab_RtD, 2
+    - VC_SmokedFish, 3
+    - VC_Stockfish, 3
+    - Meat_Marlin_RtD, 3
+Seal_Pup:
+  consumeItems:
+    - FishRaw, 2
+    - Meat_Cod_RtD, 3
+    - Meat_Tuna_RtD, 3
+    - Meat_Squid_RtD, 3
+    - Item_Shrimp_RtD, 2
+    - Meat_Crab_RtD, 2
+    - VC_SmokedFish, 3
+    - VC_Stockfish, 3
+    - Meat_Marlin_RtD, 3
+Unbjorn:
+  consumeItems:
+    - Raspberry, 1
+    - Blueberries, 1
+    - Honey, 2
+    - Mushroom, 1
+    - FishRaw, 2
+    - DeerMeat, 2
+    - Entrails, 2
+    - LoxMeat, 2
+    - VC_SmokedDeer, 3
+    - VC_SmokedFish, 3
+    - VC_SmokedLox, 4
+    - VC_SmokedMoose, 6
+Wolf:
+  consumeItems:
+    - NeckTail, 1
+    - RawMeat, 2
+    - DeerMeat, 2
+    - FishRaw, 1
+    - Entrails, 3
+    - HareMeat, 3
+    - LoxMeat, 4
+    - VC_DrakeHeart, 3
+    - VC_SmokedDeer, 4
+    - VC_SmokedHare, 4
+    - VC_SmokedLox, 5
+    - VC_SmokedDrakeHeart, 5
+    - VC_SmokedMoose, 6
+Wolf_cub:
+  consumeItems:
+    - NeckTail, 1
+    - RawMeat, 2
+    - DeerMeat, 2
+    - FishRaw, 1
+    - Entrails, 3
+    - HareMeat, 3
+    - LoxMeat, 4
+    - VC_DrakeHeart, 3
+    - VC_SmokedDeer, 4
+    - VC_SmokedHare, 4
+    - VC_SmokedLox, 5
+    - VC_SmokedDrakeHeart, 5
+    - VC_SmokedMoose, 6
+# Black Forest encounter; deliberately weak early prey and Plains-efficient taming; tame override not modified.
+RDB_crocodile:
+  consumeItems:
+    - NeckTail, 1
+    - RawMeat, 1
+    - FishRaw, 1
+    - DeerMeat, 2
+    - BugMeat, 2
+    - FoxMeat_TW, 2
+    - WolfMeat, 3
+    - HareMeat, 3
+    - BearSteak_TW, 3
+    - LoxMeat, 4
+    - VC_SmokedFish, 3
+    - VC_SmokedLox, 5
+# Treasure object, not biological eater
+#RDB_Goblin_Treasure:
+#   consumeItems: []
+# RDB_Goblin_Treasure_blue:
+#   consumeItems: []
+# RDB_Goblin_Treasure_red:
+#   consumeItems: []
+RDB_rabbit:
+  consumeItems:
+    - Dandelion, 2
+    - Raspberry, 1
+    - Blueberries, 1
+    - Carrot, 2
+    - Vegetable_Cabbage_RtD, 2
+    - Kale, 3
+RDB_turtle:
+  consumeItems:
+    - SeaWeed_RtD, 3
+    - Item_Shrimp_RtD, 2
+    - Meat_Crab_RtD, 3
+    - FishRaw, 1
+    - VC_CookedBarnacles, 4
+# Whale dietary guild unresolved (baleen vs toothed); preserve no-food native reference
+# RDB_Whale:
+#   consumeItems: []
+FoxCub_TW:
+  consumeItems:
+    - NeckTail, 2
+    - RawMeat, 2
+    - DeerMeat, 3
+    - FishRaw, 2
+    - BugMeat, 2
+    - HareMeat, 4
+    - Raspberry, 1
+    - Blueberries, 1
+    - Entrails, 3
+    - VC_SmokedDeer, 4
+    - VC_SmokedHare, 5
+    - VC_SmokedBird, 4
+Fox_TW:
+  consumeItems:
+    - NeckTail, 2
+    - RawMeat, 2
+    - DeerMeat, 3
+    - FishRaw, 2
+    - BugMeat, 2
+    - HareMeat, 4
+    - Raspberry, 1
+    - Blueberries, 1
+    - Entrails, 3
+    - VC_SmokedDeer, 4
+    - VC_SmokedHare, 5
+    - VC_SmokedBird, 4
+GrizzlyBearCub_TW:
+  consumeItems:
+    - Raspberry, 1
+    - Blueberries, 1
+    - Honey, 2
+    - Mushroom, 1
+    - FishRaw, 3
+    - DeerMeat, 2
+    - WolfMeat, 2
+    - Entrails, 3
+    - LoxMeat, 4
+    - VC_SmokedDeer, 3
+    - VC_SmokedFish, 4
+    - VC_SmokedLox, 5
+    - VC_SmokedMoose, 6
+GrizzlyBear_TW:
+  consumeItems:
+    - Raspberry, 1
+    - Blueberries, 1
+    - Honey, 2
+    - Mushroom, 1
+    - FishRaw, 3
+    - DeerMeat, 2
+    - WolfMeat, 2
+    - Entrails, 3
+    - LoxMeat, 4
+    - VC_SmokedDeer, 3
+    - VC_SmokedFish, 4
+    - VC_SmokedLox, 5
+    - VC_SmokedMoose, 6
+ProwlerCub_TW:
+  consumeItems:
+    - RawMeat, 1
+    - DeerMeat, 1
+    - WolfMeat, 2
+    - HareMeat, 3
+    - BearSteak_TW, 3
+    - LoxMeat, 2
+    - FishRaw, 1
+    - Entrails, 2
+    - VC_SmokedDeer, 3
+    - VC_SmokedLox, 4
+    - VC_SmokedHare, 4
+    - VC_LoxJerky, 3
+    - VC_SmokedAsksvin, 5
+    - VC_SmokedMoose, 6
+Prowler_TW:
+  consumeItems:
+    - RawMeat, 1
+    - DeerMeat, 1
+    - WolfMeat, 2
+    - HareMeat, 3
+    - BearSteak_TW, 3
+    - LoxMeat, 2
+    - FishRaw, 1
+    - Entrails, 2
+    - VC_SmokedDeer, 3
+    - VC_SmokedLox, 4
+    - VC_SmokedHare, 4
+    - VC_LoxJerky, 3
+    - VC_SmokedAsksvin, 5
+    - VC_SmokedMoose, 6
+RazorbackPiggy_TW:
+  consumeItems:
+    - Raspberry, 1
+    - Blueberries, 1
+    - Mushroom, 2
+    - Acorn, 2
+    - Dandelion, 2
+    - Carrot, 2
+    - Turnip, 2
+    - RawMeat, 1
+    - Vegetable_Pumpkin_RtD, 2
+    - Barley, 3
+    - Kale, 4
+Razorback_TW:
+  consumeItems:
+    - Raspberry, 1
+    - Blueberries, 1
+    - Mushroom, 2
+    - Acorn, 2
+    - Dandelion, 2
+    - Carrot, 2
+    - Turnip, 2
+    - RawMeat, 1
+    - Vegetable_Pumpkin_RtD, 2
+    - Barley, 3
+    - Kale, 4
+# Meadows encounter, Black Forest taming; preserves tested Blueberries 1 / Barley 4.
+rae_OdinHorse:
+  consumeItems:
+    - Blueberries, 1
+    - Carrot, 2
+    - Cloudberry, 2
+    - Barley, 4
+    - Kale, 3
+rae_Offspring_Normal:
+  consumeItems:
+    - Blueberries, 1
+    - Carrot, 2
+    - Cloudberry, 2
+    - Barley, 4
+    - Kale, 3
+Animal_Dolphin_RtD:
+  consumeItems:
+    - Item_Shrimp_RtD, 2
+    - Meat_Cod_RtD, 3
+    - Meat_Squid_RtD, 3
+    - Meat_Tuna_RtD, 3
+    - Meat_Marlin_RtD, 3
+    - VC_SmokedFish, 2
+Mirmaid_RtD:
+  consumeItems:
+    - Meat_Cod_RtD, 2
+    - Meat_Squid_RtD, 2
+    - Meat_Tuna_RtD, 2
+    - Meat_Manta_RtD, 2
+    - Meat_Marlin_RtD, 2
+Monster_Orca_RtD:
+  consumeItems:
+    - Meat_Cod_RtD, 2
+    - Meat_Squid_RtD, 3
+    - Meat_Tuna_RtD, 3
+    - Meat_Manta_RtD, 4
+    - Meat_Marlin_RtD, 4
+    - FishRaw, 1
+    - VC_SmokedFish, 2
+    - VC_SmokedBonemaw, 5
+Lamb_TW:
+  consumeItems:
+    - Dandelion, 2
+    - Carrot, 2
+    - Turnip, 2
+    - Raspberry, 1
+    - Blueberries, 1
+    - Barley, 3
+    - Vegetable_Cabbage_RtD, 2
+    - Kale, 4
+Sheep_TW:
+  consumeItems:
+    - Dandelion, 2
+    - Carrot, 2
+    - Turnip, 2
+    - Raspberry, 1
+    - Blueberries, 1
+    - Barley, 3
+    - Vegetable_Cabbage_RtD, 2
+    - Kale, 4
+# PT_BlightHare:
+#   consumeItems:
+#     - Dandelion, 2
+#     - Carrot, 2
+#     - Blueberries, 1
+#     - Raspberry, 1
+#     - Vegetable_Cabbage_RtD, 2
+#     - Kale, 3
+# PT_Runic_Boar:
+#   consumeItems:
+#     - Raspberry, 1
+#     - Blueberries, 1
+#     - Mushroom, 2
+#     - Acorn, 2
+#     - Dandelion, 2
+#     - Carrot, 3
+#     - Turnip, 3
+#     - RawMeat, 1
+#     - Vegetable_Pumpkin_RtD, 2
+#     - Kale, 4
+# PT_Runic_Neck:
+#   consumeItems:
+#     - FishRaw, 2
+#     - BugMeat, 2
+#     - Item_Shrimp_RtD, 3
+#     - Meat_Crab_RtD, 3
+#     - VC_SmokedFish, 3
+#     - VC_Stockfish, 3
+#     - VC_CookedBarnacles, 4
+# PT_Runic_Wolf:
+#   consumeItems:
+#     - NeckTail, 1
+#     - RawMeat, 2
+#     - DeerMeat, 2
+#     - FishRaw, 1
+#     - Entrails, 3
+#     - HareMeat, 3
+#     - LoxMeat, 4
+#     - VC_DrakeHeart, 3
+#     - VC_SmokedDeer, 4
+#     - VC_SmokedHare, 4
+#     - VC_SmokedLox, 5
+#     - VC_SmokedDrakeHeart, 5
+#     - VC_SmokedMoose, 6
+
+# Original commented example (inactive; retained for reference):
+#DModer_Ygg4_Elder:
+#  levelUpItems:
+#    1:
+#      - Fish4_cave@2, 300

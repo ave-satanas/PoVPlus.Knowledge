@@ -1,0 +1,15 @@
+# PortalRules per-Steam-account portal limit overrides.
+# Keys must be bare 17-digit SteamID64 values.
+# Each value is: portal_limit OR portal_limit, invite_limit
+# portal_limit: -1 = unlimited, 0 = block new counted portals, 1..10000 = custom limit.
+# invite_limit: -1 = unlimited, 0 = disable Invite and return existing eligible Invite portals to the Builder's Personal access, 1..10000 = custom limit.
+# If invite_limit is omitted, the current server config value is used dynamically.
+# A trailing comma is invalid; omit the comma and second value together.
+# Schema examples:
+# format_version: 2
+# overrides:
+#   "<steamid>": 10    ## portal_limit; invite_limit uses server config
+#   "<steamid>": 10, 1 ## portal_limit, invite_limit
+# format_version 1 remains unsupported; no legacy migration is performed.
+format_version: 2
+overrides: {}

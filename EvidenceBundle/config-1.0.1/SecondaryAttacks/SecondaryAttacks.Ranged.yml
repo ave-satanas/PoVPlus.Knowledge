@@ -1,0 +1,344 @@
+# Root key = `Global` preset defaults or a ranged item prefab name from ObjectDB.
+# Config options choose which Global preset auto-applies to each group: Fireball Staff, Rapidfire Staff, Reload Staff, Bow, Crossbow, and Bomb.
+# Select `Off` in the matching config option to disable automatic assignment for that group.
+# Bomb Auto uses overchargedBomb for throw_bomb items whose projectile has AOE or spawns an Aoe prefab on hit, and stickyDetonator otherwise.
+# Offensive two-handed BloodMagic Projectile staves also use the matching Fireball/Rapidfire/Reload staff group, preserving native secondary attacks unless explicitly overridden here.
+# Explicit prefab entries inherit the matching Global preset.
+# Set a prefab entry to `enabled: false` to ignore that override and use automatic fallback.
+# Set `preset: none` on a prefab entry to opt out and keep the original secondary.
+# Magic Supremacy and Wizardry weapons with a native secondary are excluded from automatic fallback.
+# Vikings Magic's reviewed staves also preserve native secondaries; its own cooldown still applies to explicit overrides.
+# Add an enabled prefab entry only when you intentionally want to replace that native secondary.
+# One-Handed Elemental Weapon Preset (config, default Barrage) covers one-handed ElementalMagic
+# weapons firing a Projectile with no native secondary. Explicit YAML overrides still take priority.
+# You may keep multiple disabled examples for the same prefab. Only one enabled or omitted-enabled entry may exist per prefab.
+#
+# Common fields:
+# enabled: false is only for prefab entries; it ignores that override and uses automatic fallback.
+# preset: selects the prefab override preset.
+# animation: secondary attack animation trigger. See SecondaryAttacks_AnimationReferences.txt for possible trigger names.
+# detonateAnimation: stickyDetonator manual detonation animation trigger. Bomb launch animation cannot be overridden.
+# cooldown: base seconds after the secondary actually fires. cooldownReductionFactor applies `cooldown * (1 - skillLevel / 100 * cooldownReductionFactor)`.
+# durabilityFactor: weapon useDurabilityDrain multiplier.
+# resourceMultiplier: copied raw attack cost multiplier; reload weapons multiply vanilla reload cost.
+# ammoConsumption: ammo/item count consumed. Burst applies it per repeated shot; `-1` uses the preset/runtime default (1 per Burst shot).
+# count: projectile/shot count, depending on the preset. Burst is limited to 32 total shots.
+# interval: 0 fires immediately; values above 0 schedule one preset shot/projectile per interval.
+# projectileSpeedFactor: source projectile speed multiplier where the preset exposes it.
+# projectileScaleFactor: spawned projectile object and Projectile.m_rayRadius multiplier.
+# damageFactor: projectile damage multiplier after skill/draw factors.
+# Skill/adrenaline rewards are automatic: piercing uses 1x, bombs use 0x, and other count-based presets use 1/count per projectile hit.
+
+Global:
+  barrage:
+    animation: ""
+    cooldown: 8.0
+    cooldownReductionFactor: 0.5
+    durabilityFactor: 2
+    resourceMultiplier: 2
+    ammoConsumption: 3
+    count: 5 # Projectiles in the barrage.
+    interval: 0.0
+    damageFactor: 0.4
+    spreadAngle: 25 # Total spread cone angle.
+    barrageSpacing: 0.0 # Lateral spacing between projectile spawn points.
+
+  volley:
+    animation: ""
+    cooldown: 8.0
+    cooldownReductionFactor: 0.5
+    durabilityFactor: 2
+    resourceMultiplier: 2
+    ammoConsumption: 4
+    count: 10 # Projectiles in the aimed volley.
+    interval: 0.0
+    projectileSpeedFactor: 1.0
+    damageFactor: 0.5
+    volleyRadius: 4 # Impact distribution radius around the aimed point.
+    volleyArcAngleMin: 35 # Arc angle near max range.
+    volleyArcAngleMax: 65 # Arc angle at close range.
+    volleyMaxRange: 64 # Max aimed center range; also open-air fallback distance.
+
+  piercing: # Uses the weapon's full primary projectile pattern; count is ignored.
+    animation: ""
+    cooldown: 8.0
+    cooldownReductionFactor: 0.5
+    durabilityFactor: 2
+    resourceMultiplier: 2
+    ammoConsumption: 2
+    projectileSpeedFactor: 0.5
+    projectileScaleFactor: 1.0
+    damageFactor: 1.0
+    pierceDamageDecay: 0.2 # Damage reduction after each character hit by the same projectile.
+
+  scatter:
+    animation: ""
+    cooldown: 8.0
+    cooldownReductionFactor: 0.5
+    durabilityFactor: 2
+    resourceMultiplier: 2
+    ammoConsumption: 3
+    count: 6 # Split projectiles spawned after the first non-character hit.
+    damageFactor: 0.5
+    splitAngle: 45 # Total split cone angle.
+    ricochetBounces: 1 # Bounces allowed for each split projectile.
+    ricochetDecay: 0.2 # Speed and damage lost after each ricochet/bounce.
+    ricochetRoughness: 0.1 # Randomness added to reflected directions.
+
+  spiral:
+    animation: ""
+    cooldown: 8.0
+    cooldownReductionFactor: 0.5
+    durabilityFactor: 2
+    resourceMultiplier: 2
+    ammoConsumption: 3
+    count: 12 # Projectiles in the spiral.
+    interval: 0.1
+    damageFactor: 0.3
+    spiralRadius: 0.05 # Spiral offset radius around the aim direction.
+    spiralTurns: 3 # Spiral rotations across the burst.
+
+  sentinel:
+    animation: ""
+    cooldown: 8.0
+    cooldownReductionFactor: 0.5
+    durabilityFactor: 2
+    resourceMultiplier: 2.0
+    ammoConsumption: 3
+    count: 6 # Sentinels spawned.
+    interval: 0.2 # Delay between each sentinel becoming ready to fire.
+    damageFactor: 0.5
+    detectionRange: 24 # Target search range.
+    hoverDistance: 2.0 # Forward hover distance from owner.
+    hoverHeight: 4 # Vertical hover offset.
+    hoverElevationAngle: 0 # 0 keeps the hover axis horizontal; 90 moves it overhead and makes the orbit plane horizontal.
+    orbitRadius: 2 # Orbit radius around the hover point.
+    orbitSpeed: 90 # Orbit degrees per second.
+    attackDelay: 2 # Delay before a sentinel can fire.
+    lifetime: 12 # Sentinel lifetime seconds.
+
+  meteor:
+    animation: ""
+    cooldown: 8.0
+    cooldownReductionFactor: 0.5
+    durabilityFactor: 2
+    resourceMultiplier: 2
+    ammoConsumption: 3
+    count: 6
+    interval: 0.5
+    projectileSpeedFactor: 0.5
+    projectileScaleFactor: 3.0
+    damageFactor: 0.5
+    meteorRadius: 6 # Random impact radius around the aimed point.
+    aoeRadiusFactor: 1.2 # Impact AOE and effect scale multiplier.
+    meteorSpawnHeight: 16 # Spawn height above the aimed point.
+
+  burst: # Each repeated shot uses the weapon's full primary projectile pattern; count controls repeat shots.
+    animation: ""
+    cooldown: 8.0
+    cooldownReductionFactor: 0.5
+    durabilityFactor: 2
+    resourceMultiplier: 2
+    ammoConsumption: 1
+    count: 3 # Repeated firing animations (maximum 32).
+    interval: 0.45 # Delay between repeated firing animations.
+    damageFactor: 0.7
+
+  stickyDetonator:
+    detonateAnimation: emote_blowkiss # Optional animation trigger played when manually detonating active charges.
+    maxCharges: 5 # Max active charges before oldest charges are removed.
+    lifetime: 30 # Charge lifetime seconds.
+
+  overchargedBomb:
+    ammoConsumption: 3
+    damageFactor: 2.0
+    aoeRadiusFactor: 1.5 # Impact AOE and effect scale multiplier.
+
+# Disabled prefab override examples. Set `enabled: true` or remove `enabled` to use one.
+
+# barrage
+BowHuntsman:
+  enabled: false
+  preset: barrage
+  animation: bow_fire
+  count: 7
+  spreadAngle: 30
+  barrageSpacing: 0.0
+  ammoConsumption: 4
+
+BowAshlandsStorm:
+  enabled: false
+  preset: barrage
+  animation: bow_fire
+  count: 8
+  interval: 0.08
+  spreadAngle: 0
+  barrageSpacing: 0.8
+  damageFactor: 0.8
+
+# volley
+CrossbowArbalest:
+  enabled: false
+  preset: volley
+  animation: crossbow_fire
+  count: 8
+  volleyRadius: 3
+  volleyArcAngleMin: 30
+  volleyArcAngleMax: 60
+  projectileSpeedFactor: 1.1
+
+BowDraugrFang:
+  enabled: false
+  preset: volley
+  animation: bow_fire
+  count: 12
+  interval: 0.05
+  volleyRadius: 5
+  volleyMaxRange: 72
+  damageFactor: 0.45
+
+# piercing
+StaffLightning:
+  enabled: false
+  preset: piercing
+  animation: staff_lightningshot
+  projectileSpeedFactor: 0.5
+  projectileScaleFactor: 1.0
+  pierceDamageDecay: 0.2
+  ammoConsumption: 2
+
+CrossbowRipper:
+  enabled: false
+  preset: piercing
+  animation: crossbow_fire
+  projectileSpeedFactor: 0.85
+  projectileScaleFactor: 1.4
+  pierceDamageDecay: 0.1
+  damageFactor: 1.2
+
+# scatter
+StaffClusterbomb:
+  enabled: false
+  preset: scatter
+  animation: staff_fireball0
+  count: 6
+  splitAngle: 45
+  ricochetBounces: 1
+  ricochetDecay: 0.2
+  ricochetRoughness: 0.1
+
+BowSpineSnap:
+  enabled: false
+  preset: scatter
+  animation: bow_fire
+  count: 8
+  splitAngle: 70
+  ricochetBounces: 2
+  ricochetDecay: 0.25
+  ricochetRoughness: 0.2
+
+# spiral
+StaffIceShards:
+  enabled: false
+  preset: spiral
+  animation: staff_rapidfire
+  count: 12
+  interval: 0.08
+  spiralRadius: 0.05
+  spiralTurns: 3
+  damageFactor: 0.3
+
+BowFineWood:
+  enabled: false
+  preset: spiral
+  animation: bow_fire
+  count: 9
+  interval: 0.04
+  spiralRadius: 0.25
+  spiralTurns: 1.5
+
+# sentinel
+StaffFireball:
+  enabled: false
+  preset: sentinel
+  animation: staff_fireball0
+  count: 4
+  interval: 0.35
+  hoverElevationAngle: 80
+  hoverHeight: 3
+  orbitRadius: 1.25
+  lifetime: 10
+
+BowAshlands:
+  enabled: false
+  preset: sentinel
+  animation: bow_fire
+  count: 6
+  interval: 0.2
+  hoverElevationAngle: 0
+  orbitRadius: 2
+  attackDelay: 2
+
+# meteor
+Arbalest:
+  enabled: false
+  preset: meteor
+  animation: crossbow_fire
+  count: 6
+  interval: 0.5
+  meteorRadius: 6
+  meteorSpawnHeight: 16
+  aoeRadiusFactor: 1.2
+
+BowAshlandsRoot:
+  enabled: false
+  preset: meteor
+  animation: bow_fire
+  count: 3
+  interval: 0.25
+  meteorRadius: 2
+  projectileScaleFactor: 2.0
+  projectileSpeedFactor: 0.75
+
+# burst
+CrossbowRipperBlood:
+  enabled: false
+  preset: burst
+  animation: crossbow_fire
+  count: 3
+  interval: 0.45
+  damageFactor: 0.7
+  ammoConsumption: 1
+
+Bow:
+  enabled: false
+  preset: burst
+  animation: bow_fire
+  count: 4
+  interval: 0.25
+  damageFactor: 0.55
+
+# stickyDetonator
+BombOoze:
+  enabled: false
+  preset: stickyDetonator
+  detonateAnimation: throw_bomb
+  maxCharges: 5
+  lifetime: 30
+
+# overchargedBomb
+BombBile:
+  enabled: false
+  preset: overchargedBomb
+  ammoConsumption: 4
+  damageFactor: 2.5
+  aoeRadiusFactor: 1.75
+
+# opt out example. Keep commented unless you really want to disable automatic fallback for that prefab.
+# CrossbowRipperLightning:
+#   preset: none
+
+# This special Draugr Fang variant points directly at the ArrowIron item prefab
+# instead of a Projectile payload, so projectile presets cannot safely use it.
+SP_BowDraugrFang:
+  preset: none

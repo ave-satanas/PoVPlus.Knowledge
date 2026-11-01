@@ -1,0 +1,95 @@
+# CreatureManager faction configuration.
+# Vanilla faction relationships are listed below as comments, then repeated as active YAML.
+# Edit these entries or append custom factions. Custom ids should normally start at 100.
+# friendly/aggravatedFriendly/alertedFriendly accept faction names or [All].
+# Faction relationships are global live rules and immediately affect loaded creatures.
+# Give custom factions explicit stable ids; do not change an id while persisted creatures use it.
+#
+# - faction: Players
+#   id: 0
+#   friendly: [Players, Dverger]
+# - faction: AnimalsVeg
+#   id: 1
+#   friendly: [AnimalsVeg]
+# - faction: ForestMonsters
+#   id: 2
+#   friendly: [ForestMonsters, AnimalsVeg, Boss]
+# - faction: Undead
+#   id: 3
+#   friendly: [Undead, Demon, Boss]
+# - faction: Demon
+#   id: 4
+#   friendly: [Demon, Undead, Boss]
+# - faction: MountainMonsters
+#   id: 5
+#   friendly: [MountainMonsters, Boss]
+# - faction: SeaMonsters
+#   id: 6
+#   friendly: [SeaMonsters, Boss]
+# - faction: PlainsMonsters
+#   id: 7
+#   friendly: [PlainsMonsters, Boss]
+# - faction: Boss
+#   id: 8
+#   friendly: [AnimalsVeg, ForestMonsters, Undead, Demon, MountainMonsters, SeaMonsters, PlainsMonsters, Boss, MistlandsMonsters, Dverger, TrainingDummy]
+# - faction: MistlandsMonsters
+#   id: 9
+#   friendly: [MistlandsMonsters, AnimalsVeg, Boss]
+# - faction: Dverger
+#   id: 10
+#   friendly: [Dverger, AnimalsVeg, Boss, Players]
+#   aggravatedFriendly: [Dverger, AnimalsVeg, Boss]
+# - faction: PlayerSpawned
+#   id: 11
+#   friendly: [PlayerSpawned]
+# - faction: TrainingDummy
+#   id: 12
+#   friendly: [AnimalsVeg, ForestMonsters, Undead, Demon, MountainMonsters, SeaMonsters, PlainsMonsters, Boss, MistlandsMonsters, Dverger, PlayerSpawned, TrainingDummy]
+
+- faction: Players
+  id: 0
+  friendly: [Players, Dverger]
+- faction: AnimalsVeg
+  id: 1
+  friendly: [AnimalsVeg]
+- faction: ForestMonsters
+  id: 2
+  friendly: [ForestMonsters, AnimalsVeg, Boss]
+- faction: Undead
+  id: 3
+  friendly: [Undead, Demon, Boss]
+- faction: Demon
+  id: 4
+  friendly: [Demon, Undead, Boss]
+- faction: MountainMonsters
+  id: 5
+  friendly: [MountainMonsters, Boss]
+- faction: SeaMonsters
+  id: 6
+  friendly: [SeaMonsters, Boss]
+- faction: PlainsMonsters
+  id: 7
+  friendly: [PlainsMonsters, Boss]
+- faction: Boss
+  id: 8
+  friendly: [AnimalsVeg, ForestMonsters, Undead, Demon, MountainMonsters, SeaMonsters, PlainsMonsters, Boss, MistlandsMonsters, Dverger, TrainingDummy]
+- faction: MistlandsMonsters
+  id: 9
+  friendly: [MistlandsMonsters, AnimalsVeg, Boss]
+- faction: Dverger
+  id: 10
+  friendly: [Dverger, AnimalsVeg, Boss, Players]
+  aggravatedFriendly: [Dverger, AnimalsVeg, Boss]
+- faction: PlayerSpawned
+  id: 11
+  friendly: [PlayerSpawned]
+- faction: TrainingDummy
+  id: 12
+  friendly: [AnimalsVeg, ForestMonsters, Undead, Demon, MountainMonsters, SeaMonsters, PlainsMonsters, Boss, MistlandsMonsters, Dverger, PlayerSpawned, TrainingDummy]
+
+# Custom example:
+# - faction: MyRaiders
+#   id: 100
+#   friendly: [MyRaiders, PlainsMonsters]
+#   aggravatedFriendly: [MyRaiders]
+#   alertedFriendly: [MyRaiders]

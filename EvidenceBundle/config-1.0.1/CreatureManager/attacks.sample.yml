@@ -1,0 +1,146 @@
+# CreatureManager attack samples.
+# This .sample.yml file is not loaded automatically.
+# Install MonsterLabZ, then rename this file to attacks_sample.yml to activate all samples.
+# The Bonebeard, Vincent, and Root Witch sample sets require MonsterLabZ.
+
+## Vitrfell
+
+- prefab: boar_base_attack_boss
+  clonedFrom: boar_base_attack
+  damage: { blunt: 15, attackForce: 100 }
+  attack: [Horizontal, base_attack]
+  ai: [4, 0, 2, 5]
+
+## Bonebeard
+
+- prefab: troll_throw_bonebeard
+  clonedFrom: troll_throw
+  damage: { blunt: 50, chop: 60, pickaxe: 40, attackForce: 60 }
+  attack: [Projectile, spear_throw0]
+  projectile: [troll_throw_projectile, 15, 10, 1]
+  ai: [10, 8, 20, 5]
+
+- prefab: Fader_Spin_bonebeard
+  clonedFrom: Fader_Spin
+  damage: { pierce: 70, poison: 150, chop: 300, pickaxe: 300, attackForce: 130, toolTier: 3 }
+  attack: [Area, cast5]
+  ai: [20, 0, 8, 360]
+
+- prefab: attack_sword_dualcombo_bonebeard
+  clonedFrom: attack_sword_dualcombo
+  damage: { slash: 40, poison: 40, attackForce: 10 }
+  attack: [Horizontal, dual_combo2]
+  ai: [4, 0, 2, 25]
+
+- prefab: attack_sword_left180_bonebeard
+  clonedFrom: attack_sword_left180
+  damage: { slash: 20, poison: 20, attackForce: 10 }
+  attack: [Horizontal, dual0]
+  ai: [4, 0, 2, 360]
+
+- prefab: attack_sword_leftlong_bonebeard
+  clonedFrom: attack_sword_leftlong
+  damage: { slash: 20, poison: 20, attackForce: 10 }
+  attack: [Vertical, dual2]
+  ai: [4, 1.5, 2, 25]
+
+- prefab: attack_sword_right180_bonebeard
+  clonedFrom: attack_sword_right180
+  damage: { slash: 20, poison: 20, attackForce: 10 }
+  attack: [Horizontal, swing_longsword1]
+  ai: [4, 0, 2, 360]
+
+- prefab: attack_sword_slash_bonebeard
+  clonedFrom: attack_sword_slash
+  damage: { slash: 20, poison: 20, attackForce: 10 }
+  attack: [Horizontal, swing_longsword2]
+  ai: [4, 1.5, 2, 25]
+
+## Vincent
+
+- prefab: attack_bow_vincent1
+  clonedFrom: attack_bow
+  damage: { pierce: 50, poison: 100, attackForce: 15 }
+  attack: [Projectile, bow_fire]
+  projectile: [draugr_bow_projectile, 30, 2, 1]
+  ai: [6, 2, 20, 25]
+  statusEffect: [Puke, 0.1]
+
+- prefab: attack_bow_vincent2
+  clonedFrom: attack_bow
+  damage: { pierce: 50, attackForce: 15 }
+  attack: [Projectile, bow_fire]
+  projectile: [smokebomb_projectile, 30, 2, 1]
+  ai: [3, 2, 20, 25]
+
+- prefab: attack_bow_vincent3
+  clonedFrom: attack_bow
+  damage: { pierce: 50, attackForce: 15 }
+  attack: [Projectile, bow_fire]
+  projectile: [bilebomb_projectile, 30, 2, 1]
+  ai: [3, 2, 20, 25]
+
+- prefab: attack_bow_vincent4
+  clonedFrom: attack_bow
+  damage: { pierce: 25, frost: 25, attackForce: 15 }
+  attack: [Projectile, bow_fire]
+  projectile: [draugr_bow_projectile, 30, 2, 1]
+  ai: [3, 2, 20, 25]
+  statusEffect: [Harpooned, 1]
+
+- prefab: attack_bow_vincent5
+  clonedFrom: attack_bow
+  damage: { pierce: 25, frost: 25, attackForce: 15 }
+  attack: [Projectile, bow_fire]
+  projectile: [BombBlob_Tar_projectile, 30, 2, 1]
+  ai: [10, 2, 20, 25]
+
+- prefab: attack_bow_stab_vincent
+  clonedFrom: attack_bow_stab
+  damage: { pierce: 22, attackForce: 10 }
+  attack: [Projectile, archer_melee0]
+  projectile: [draugr_bow_projectile, 30, 2, 1]
+  ai: [3, 0, 1.5, 25]
+  statusEffect: [Immobilized, 1]
+
+- prefab: attack_kick_bow_vincent
+  clonedFrom: attack_kick_bow
+  damage: { blunt: 20, attackForce: 300 }
+  attack: [Vertical, unarmed_kick2]
+  ai: [5, 0, 1.5, 10]
+
+## RootWitch
+
+- prefab: Eikthyr_stomp_rootwitch
+  clonedFrom: Eikthyr_stomp
+  damage: { lightning: 45, attackForce: 200 }
+  attack: [Area, cast4]
+  ai: [8, 0, 6, 60]
+
+- prefab: attack_cast_enemy_rootwitch
+  clonedFrom: attack_cast_enemy
+  damage: { blunt: 10, fire: 100, lightning: 100, attackForce: 30 }
+  attack: [Projectile, crouch_cast2]
+  projectile: [Imp_fireball_projectile, 11, 2, 1]
+  ai: [5, 0, 10, 25]
+
+- prefab: GoblinShaman_attack_fireball_rootwitch
+  clonedFrom: GoblinShaman_attack_fireball
+  damage: { blunt: 20, fire: 100, attackForce: 80 }
+  attack: [Projectile, cast2]
+  projectile: [GoblinShaman_projectile_fireball, 15, 4, 1]
+  ai: [3, 0, 20, 10]
+
+- prefab: gd_king_shoot_rootwitch
+  clonedFrom: gd_king_shoot
+  damage: { pierce: 35, frost: 25, chop: 20, pickaxe: 20 }
+  attack: [Projectile, cast1]
+  projectile: [gdking_root_projectile, 30, 10, 1]
+  ai: [6, 5, 50, 5]
+
+- prefab: attack_cast_protect_rootwitch
+  clonedFrom: attack_cast_protect
+  attack: [Projectile, cast3]
+  statusEffect: [GoblinShaman_shield, 1]
+  projectile: [GoblinShaman_protect_aoe, 10, 10, 1]
+  ai: [30, 0, 60, 90]

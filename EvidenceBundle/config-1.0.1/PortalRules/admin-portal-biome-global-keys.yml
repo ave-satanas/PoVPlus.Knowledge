@@ -1,0 +1,24 @@
+# PortalRules default GlobalKey requirements for newly initialized Admin portals.
+# This file is generated once from the server's registered biome names and is
+# never automatically edited. Delete it before the next server session to rebuild it.
+# Biome names are case-insensitive. Expand World Data custom biomes use the stable
+# `biome:` name from its biome YAML, not a translated name or numeric biome value.
+# The biome is resolved from each portal's actual world position.
+# A RequiredGlobalKey already stored in the portal ZDO wins over this default.
+# This includes InfinityHammer blueprint data and EWD objectData/locationObjectData.
+# An explicitly stored empty RequiredGlobalKey suppresses the biome default.
+# With YouAreNotWorthy, the selected key is checked per character; otherwise it
+# is checked against the world's shared GlobalKeys.
+# An empty value means that biome has no default required GlobalKey.
+# Reloads affect only Admin portals whose initial authority is resolved afterwards.
+format_version: 1
+biomes:
+  Meadows:
+  BlackForest: defeated_eikthyr
+  Swamp: defeated_gdking
+  Ocean: defeated_bonemass
+  Mountain: defeated_bonemass
+  Plains: defeated_dragon
+  Mistlands: defeated_goblinking
+  AshLands: defeated_queen
+  DeepNorth: defeated_fader

@@ -26,6 +26,8 @@ For an independent reviewer. The aim is to let you challenge these conclusions, 
 | Source → DLL | Proven by IL, not by byte identity. See [README](README.md#what-the-evidence-concerns) |
 | DLL → deployment | Hashes matched on client, server and allow-list. `[checked]` on the original machine |
 | Deployment → runtime evidence | M31 and M32 ran 1.0.1. **Most feature evidence predates it.** See below |
+| DLL → reviewer | Exact tested bytes in `EvidenceBundle/release/`. Hash it yourself and compare with the README |
+| Configuration → reviewer | Frozen client subset in `EvidenceBundle/config-1.0.1/`, taken after acceptance. Not the complete profile, and not the server copy |
 | Evidence → this repository | Sanitized copies and filtered excerpts; originals are local only |
 
 **Which build each result used:** M16 and M17, the consolidated feature matrix, ran on builds before 1.0.1. 1.0.1 added `CuisineConversions.cs` and one line in `Plugin.cs`, leaving the other modules' source unchanged. Rerun on 1.0.1 itself: startup, join, rejoin, save, shutdown, FineDining rules and timers. **Not rerun on 1.0.1:** regen, feeding, rod, tankard, burst, map chips, sleep and wave checks.
@@ -99,4 +101,4 @@ Tiers: S static, H server harness, C real client, SV real client on a dedicated 
 
 Level 2's digest should match only with the same referenced assemblies and a similar compiler: SDK 10.0.100 was used. A mismatch needs investigating, but does not prove different source.
 
-The pack itself is not distributed here. Rebuilding it needs the versions in the inventory from their own sources, and config values are only partly recorded in this repository. A reviewer without the original profile can test individual interactions, but cannot exactly reproduce the original environment.
+The pack itself is not distributed here. Rebuilding it needs the versions in the inventory from their own sources, plus `EvidenceBundle/config-1.0.1/`. That snapshot omits files listed in the bundle README, so a rebuilt pack is an approximation of the tested environment. Differences between client and server configs are in the [reconciliation record](Investigations/INV-config-reconciliation.md).

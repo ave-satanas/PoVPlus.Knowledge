@@ -1,0 +1,97 @@
+# Edit on the server (single-player: edit locally).
+# Costs are per planted instance; new plantings start empty and must regenerate.
+# Uprooting gives no materials or harvest.
+# Respawn times and Farming settings: pickables.yml.
+# Use [] to disable all recipes; existing plantings and fixed visuals remain.
+
+- prefab: RaspberryBush
+  plantable: true # Optional when resources exist. Set false to hide only this planting recipe.
+  resources:
+    - Raspberry, 30 # Item prefab, consumed amount.
+    - Resin, 15
+  cultivatedGroundOnly: true # Default true when omitted; require cultivated terrain at placement time.
+  spacing: 2 # Default 1 when omitted; centre-to-centre metres, also used by grid and mass planting.
+  # biomes: [Meadows, BlackForest, Plains] # Optional allowed planting locations; existing defaults stay unrestricted.
+  # biomes: [Mistlands] # EWD nature group: allows vanilla Mistlands and custom biomes with nature: Mistlands.
+  #                    # List the vanilla nature name, not a custom alias, when selecting that whole nature group.
+  # biomes: [MyIndependentBiome] # Use a custom name only for an independent EWD biome without a nature/terrain alias.
+
+- prefab: BlueberryBush
+  plantable: true
+  resources:
+    - Blueberries, 30
+    - Pukeberries, 5
+  cultivatedGroundOnly: true
+  spacing: 2
+
+- prefab: CloudberryBush
+  plantable: true
+  resources:
+    - Cloudberry, 30
+    - RottenMeat, 15
+  cultivatedGroundOnly: true
+  spacing: 2
+
+- prefab: LingonberryBush
+  plantable: true
+  resources:
+    - Lingonberry, 30
+    - RottenMeat, 15
+  cultivatedGroundOnly: false
+  spacing: 2
+  biomes: [DeepNorth]
+
+- prefab: Pickable_Dandelion
+  plantable: true
+  resources:
+    - Dandelion, 30
+    - Resin, 15
+  cultivatedGroundOnly: true
+  spacing: 1
+
+- prefab: Pickable_Mushroom
+  plantable: true
+  resources:
+    - Mushroom, 30
+    - Resin, 15
+  cultivatedGroundOnly: true
+  spacing: 1
+
+- prefab: Pickable_Mushroom_yellow
+  plantable: true
+  resources:
+    - MushroomYellow, 20
+    - Pukeberries, 5
+  cultivatedGroundOnly: true
+  spacing: 1
+
+- prefab: Pickable_Thistle
+  plantable: true
+  resources:
+    - Thistle, 20
+    - Pukeberries, 5
+  cultivatedGroundOnly: true
+  spacing: 1
+
+- prefab: Pickable_SmokePuff
+  plantable: true
+  resources:
+    - MushroomSmokePuff, 20
+    - RottenMeat, 10
+  cultivatedGroundOnly: true
+  spacing: 1
+
+- prefab: Pickable_Fiddlehead
+  plantable: true
+  resources:
+    - Fiddleheadfern, 20
+    - RottenMeat, 10
+  cultivatedGroundOnly: true
+  spacing: 1
+
+# Optional blue mushroom (not normally available as a vanilla resource; no generated cut remnant):
+# - prefab: Pickable_Mushroom_blue
+#   plantable: true
+#   resources: ["MushroomBlue, 5"]
+#   cultivatedGroundOnly: true
+#   spacing: 1

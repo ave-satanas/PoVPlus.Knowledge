@@ -1,0 +1,1639 @@
+- name: Clear
+  isDefault: true
+  isColdAtNight: true
+  windMin: 0.1
+  windMax: 0.6
+  colorAmbientDay: 0.463, 0.574, 0.706
+  colorAmbientNight: 0.357, 0.368, 0.485
+  colorSunMorning: 1, 0.671, 0.42
+  colorSunDay: 1, 0.772, 0.484
+  colorSunEvening: 1, 0.234, 0
+  colorSunNight: 0.364, 0.384, 0.486
+  colorFogMorning: 0.246, 0.255, 0.272
+  colorFogDay: 0.302, 0.581, 0.747
+  colorFogEvening: 0.272, 0.268, 0.331
+  colorFogNight: 0.145, 0.15, 0.169
+  colorFogSunMorning: 0.581, 0.368, 0.252
+  colorFogSunDay: 0.801, 0.687, 0.43
+  colorFogSunEvening: 0.507, 0.239, 0.239
+  colorFogSunNight: 0.191, 0.202, 0.279
+  fogDensityDay: 0.003
+  lightIntensityDay: 1.7
+  lightIntensityNight: 1
+  sunAngle: 45
+  auroraColors:
+  - 0, 1, 1, 1
+  - 1, 1, 1, 1
+- name: Misty
+  isColdAtNight: true
+  windMin: 0.1
+  windMax: 0.3
+  rainCloudAlpha: 1.5
+  colorAmbientDay: 0.513, 0.621, 0.75
+  colorAmbientNight: 0.357, 0.361, 0.404
+  colorSunMorning: 1, 0.766, 0.588
+  colorSunDay: 0.971, 0.84, 0.607
+  colorSunEvening: 1, 0.69, 0.596
+  colorSunNight: 0.364, 0.384, 0.486
+  colorFogMorning: 0.338, 0.338, 0.338
+  colorFogDay: 0.647, 0.701, 0.772
+  colorFogEvening: 0.308, 0.306, 0.338
+  colorFogNight: 0.155, 0.16, 0.184
+  colorFogSunMorning: 0.603, 0.491, 0.39
+  colorFogSunDay: 0.684, 0.549, 0.372
+  colorFogSunEvening: 0.507, 0.325, 0.325
+  colorFogSunNight: 0.236, 0.241, 0.272
+  fogDensityMorning: 0.1
+  fogDensityDay: 0.02
+  fogDensityEvening: 0.1
+  fogDensityNight: 0.15
+  lightIntensityDay: 1
+  lightIntensityNight: 1
+  sunAngle: 45
+  auroraColors:
+  - 0, 1, 1, 1
+  - 1, 1, 1, 1
+  psystemsOutsideOnly: true
+- name: Darklands_dark
+  isCold: true
+  isColdAtNight: true
+  alwaysDark: true
+  windMin: 0.1
+  windMax: 0.6
+  rainCloudAlpha: 4.49
+  colorAmbientDay: 0.27, 0.327, 0.36
+  colorAmbientNight: 0.191, 0.269, 0.36
+  colorSunMorning: 0.337, 0.729, 0.714
+  colorSunDay: 0.312, 0.375, 0.372
+  colorSunEvening: 0.337, 0.729, 0.714
+  colorSunNight: 0.337, 0.729, 0.714
+  colorFogMorning: 0.047, 0.165, 0.196
+  colorFogDay: 0.134, 0.185, 0.199
+  colorFogEvening: 0.047, 0.165, 0.196
+  colorFogNight: 0.047, 0.165, 0.196
+  colorFogSunMorning: 0.063, 0.239, 0.286
+  colorFogSunDay: 0.154, 0.259, 0.287
+  colorFogSunEvening: 0.063, 0.239, 0.286
+  colorFogSunNight: 0.061, 0.24, 0.287
+  fogDensityMorning: 0.03
+  fogDensityDay: 0.03
+  fogDensityEvening: 0.03
+  fogDensityNight: 0.03
+  lightIntensityDay: 1
+  sunAngle: 45
+  auroraColors:
+  - 0, 1, 1, 1
+  - 1, 1, 1, 1
+- name: Heath clear
+  isColdAtNight: true
+  windMin: 0.4
+  windMax: 0.8
+  colorAmbientDay: 0.684, 0.684, 0.684
+  colorAmbientNight: 0.357, 0.368, 0.485
+  colorSunMorning: 1, 0.623, 0.42
+  colorSunDay: 1, 0.63, 0.39
+  colorSunEvening: 1, 0.234, 0
+  colorSunNight: 0.364, 0.384, 0.486
+  colorFogMorning: 0.246, 0.255, 0.272
+  colorFogDay: 0.458, 0.501, 0.779
+  colorFogEvening: 0.272, 0.268, 0.331
+  colorFogNight: 0.128, 0.13, 0.14
+  colorFogSunMorning: 0.551, 0.375, 0.28
+  colorFogSunDay: 0.757, 0.45, 0.284
+  colorFogSunEvening: 0.507, 0.239, 0.239
+  colorFogSunNight: 0.18, 0.188, 0.243
+  fogDensityMorning: 0.03
+  fogDensityDay: 0.006
+  fogDensityNight: 0.02
+  lightIntensityDay: 1.5
+  lightIntensityNight: 1
+  sunAngle: 45
+  auroraColors:
+  - 0, 1, 1, 1
+  - 1, 1, 1, 1
+- name: DeepForest Mist
+  isColdAtNight: true
+  windMin: 0.1
+  windMax: 0.6
+  colorAmbientDay: 0.307, 0.546, 0.684
+  colorAmbientNight: 0.198, 0.363, 0.456
+  colorSunMorning: 1, 0.72, 0.507
+  colorSunDay: 1, 0.871, 0.64
+  colorSunEvening: 1, 0.245, 0.015
+  colorSunNight: 0.408, 0.488, 0.676
+  colorFogMorning: 0.239, 0.494, 0.639
+  colorFogDay: 0.239, 0.494, 0.639
+  colorFogEvening: 0.239, 0.494, 0.639
+  colorFogNight: 0.112, 0.18, 0.221
+  colorFogSunMorning: 0.544, 0.419, 0.26
+  colorFogSunDay: 0.838, 0.472, 0.191
+  colorFogSunEvening: 0.493, 0.309, 0.243
+  colorFogSunNight: 0.163, 0.27, 0.331
+  fogDensityMorning: 0.02
+  fogDensityEvening: 0.02
+  fogDensityNight: 0.02
+  lightIntensityDay: 1.5
+  lightIntensityNight: 1.2
+  sunAngle: 45
+  auroraColors:
+  - 0, 1, 1, 1
+  - 1, 1, 1, 1
+- name: GDKing
+  isColdAtNight: true
+  windMin: 0.1
+  windMax: 0.3
+  colorAmbientDay: 0.453, 0.306, 0.64
+  colorAmbientNight: 0.33, 0.221, 0.471
+  colorSunMorning: 1, 0.72, 0.507
+  colorSunDay: 1, 0.613, 0.316
+  colorSunEvening: 1, 0.438, 0.267
+  colorSunNight: 0.506, 0.714, 1
+  colorFogMorning: 0.639, 0.412, 0.239
+  colorFogDay: 0.639, 0.413, 0.239
+  colorFogEvening: 0.639, 0.412, 0.239
+  colorFogNight: 0.581, 0.377, 0.222
+  colorFogSunMorning: 0.839, 0.741, 0.192
+  colorFogSunDay: 0.838, 0.74, 0.191
+  colorFogSunEvening: 0.839, 0.741, 0.192
+  colorFogSunNight: 0.53, 0.699, 0.211
+  fogDensityMorning: 0.02
+  fogDensityEvening: 0.02
+  fogDensityNight: 0.02
+  lightIntensityDay: 1.5
+  lightIntensityNight: 1.4
+  sunAngle: 45
+  auroraColors:
+  - 0, 1, 1, 1
+  - 1, 1, 1, 1
+- name: Rain
+  isWet: true
+  isColdAtNight: true
+  alwaysDark: true
+  windMin: 0.5
+  rainCloudAlpha: 2
+  colorAmbientDay: 0.588, 0.588, 0.588
+  colorAmbientNight: 0.382, 0.382, 0.382
+  colorSunMorning: 1, 0.945, 0.773
+  colorSunDay: 0.926, 0.926, 0.926
+  colorSunEvening: 1, 0.947, 0.772
+  colorSunNight: 0.292, 0.304, 0.368
+  colorFogMorning: 0.271, 0.271, 0.279
+  colorFogDay: 0.331, 0.331, 0.331
+  colorFogEvening: 0.235, 0.235, 0.235
+  colorFogNight: 0.176, 0.182, 0.208
+  colorFogSunMorning: 0.353, 0.315, 0.257
+  colorFogSunDay: 0.39, 0.358, 0.312
+  colorFogSunEvening: 0.338, 0.303, 0.251
+  colorFogSunNight: 0.213, 0.235, 0.287
+  fogDensityMorning: 0.03
+  fogDensityDay: 0.03
+  fogDensityEvening: 0.03
+  fogDensityNight: 0.03
+  lightIntensityDay: 0.5
+  lightIntensityNight: 0.77
+  sunAngle: 45
+  auroraColors:
+  - 0, 1, 1, 1
+  - 1, 1, 1, 1
+- name: LightRain
+  isWet: true
+  isColdAtNight: true
+  alwaysDark: true
+  windMin: 0.1
+  windMax: 0.6
+  rainCloudAlpha: 0.3
+  ambientVol: 0.7
+  colorAmbientDay: 0.62, 0.641, 0.691
+  colorAmbientNight: 0.382, 0.382, 0.382
+  colorSunMorning: 1, 0.879, 0.773
+  colorSunDay: 1, 0.952, 0.75
+  colorSunEvening: 1, 0.843, 0.772
+  colorSunNight: 0.292, 0.304, 0.368
+  colorFogMorning: 0.271, 0.271, 0.279
+  colorFogDay: 0.336, 0.357, 0.375
+  colorFogEvening: 0.235, 0.235, 0.235
+  colorFogNight: 0.176, 0.182, 0.208
+  colorFogSunMorning: 0.353, 0.315, 0.257
+  colorFogSunDay: 0.39, 0.358, 0.312
+  colorFogSunEvening: 0.36, 0.272, 0.215
+  colorFogSunNight: 0.213, 0.235, 0.287
+  fogDensityMorning: 0.03
+  fogDensityDay: 0.03
+  fogDensityEvening: 0.03
+  fogDensityNight: 0.03
+  lightIntensityDay: 0.8
+  lightIntensityNight: 0.9
+  sunAngle: 45
+  auroraColors:
+  - 0, 1, 1, 1
+  - 1, 1, 1, 1
+- name: ThunderStorm
+  isWet: true
+  isColdAtNight: true
+  alwaysDark: true
+  windMin: 0.8
+  rainCloudAlpha: 2
+  ambientVol: 0.8
+  colorAmbientDay: 0.588, 0.588, 0.588
+  colorAmbientNight: 0.382, 0.382, 0.382
+  colorSunMorning: 1, 0.945, 0.773
+  colorSunDay: 0.926, 0.926, 0.926
+  colorSunEvening: 1, 0.947, 0.772
+  colorSunNight: 0.292, 0.304, 0.368
+  colorFogMorning: 0.271, 0.271, 0.279
+  colorFogDay: 0.331, 0.331, 0.331
+  colorFogEvening: 0.235, 0.235, 0.235
+  colorFogNight: 0.176, 0.182, 0.208
+  colorFogSunMorning: 0.353, 0.315, 0.257
+  colorFogSunDay: 0.39, 0.358, 0.312
+  colorFogSunEvening: 0.338, 0.303, 0.251
+  colorFogSunNight: 0.228, 0.239, 0.279
+  fogDensityMorning: 0.03
+  fogDensityDay: 0.03
+  fogDensityEvening: 0.03
+  fogDensityNight: 0.03
+  lightIntensityDay: 0.5
+  lightIntensityNight: 0.77
+  sunAngle: 45
+  auroraColors:
+  - 0, 1, 1, 1
+  - 1, 1, 1, 1
+- name: Eikthyr
+  isColdAtNight: true
+  alwaysDark: true
+  windMin: 0.9
+  rainCloudAlpha: 2
+  colorAmbientDay: 0.662, 0.345, 0.345
+  colorAmbientNight: 0.662, 0.345, 0.345
+  colorSunMorning: 1, 0.945, 0.773
+  colorSunDay: 0.926, 0.926, 0.926
+  colorSunEvening: 1, 0.947, 0.772
+  colorSunNight: 0.292, 0.304, 0.368
+  colorFogMorning: 0.368, 0.243, 0.243
+  colorFogDay: 0.368, 0.243, 0.243
+  colorFogEvening: 0.368, 0.243, 0.243
+  colorFogNight: 0.368, 0.243, 0.243
+  colorFogSunMorning: 0.353, 0.315, 0.257
+  colorFogSunDay: 0.39, 0.358, 0.312
+  colorFogSunEvening: 0.338, 0.303, 0.251
+  colorFogSunNight: 0.228, 0.239, 0.279
+  fogDensityMorning: 0.05
+  fogDensityDay: 0.05
+  fogDensityEvening: 0.05
+  fogDensityNight: 0.05
+  lightIntensityDay: 0.5
+  lightIntensityNight: 0.77
+  sunAngle: 45
+  auroraColors:
+  - 0, 1, 1, 1
+  - 1, 1, 1, 1
+- name: Eikthyr_no_lightning
+  isColdAtNight: true
+  alwaysDark: true
+  windMin: 0.9
+  rainCloudAlpha: 2
+  colorAmbientDay: 0.662, 0.345, 0.345
+  colorAmbientNight: 0.662, 0.345, 0.345
+  colorSunMorning: 1, 0.945, 0.773
+  colorSunDay: 0.926, 0.926, 0.926
+  colorSunEvening: 1, 0.947, 0.772
+  colorSunNight: 0.292, 0.304, 0.368
+  colorFogMorning: 0.368, 0.243, 0.243
+  colorFogDay: 0.368, 0.243, 0.243
+  colorFogEvening: 0.368, 0.243, 0.243
+  colorFogNight: 0.368, 0.243, 0.243
+  colorFogSunMorning: 0.353, 0.315, 0.257
+  colorFogSunDay: 0.39, 0.358, 0.312
+  colorFogSunEvening: 0.338, 0.303, 0.251
+  colorFogSunNight: 0.228, 0.239, 0.279
+  fogDensityMorning: 0.05
+  fogDensityDay: 0.05
+  fogDensityEvening: 0.05
+  fogDensityNight: 0.05
+  lightIntensityDay: 0.5
+  lightIntensityNight: 0.77
+  sunAngle: 45
+  auroraColors:
+  - 0, 1, 1, 1
+  - 1, 1, 1, 1
+- name: GoblinKing
+  alwaysDark: true
+  windMin: 0.5
+  windMax: 0.7
+  rainCloudAlpha: 2
+  colorAmbientDay: 0.592, 0.345, 0.662
+  colorAmbientNight: 0.662, 0.345, 0.509
+  colorSunMorning: 1, 0.945, 0.773
+  colorSunDay: 0.926, 0.926, 0.926
+  colorSunEvening: 1, 0.947, 0.772
+  colorSunNight: 0.292, 0.304, 0.368
+  colorFogMorning: 0.361, 0.243, 0.368
+  colorFogDay: 0.361, 0.243, 0.368
+  colorFogEvening: 0.361, 0.243, 0.368
+  colorFogNight: 0.361, 0.243, 0.368
+  colorFogSunMorning: 0.337, 0.251, 0.553
+  colorFogSunDay: 0.336, 0.251, 0.551
+  colorFogSunEvening: 0.337, 0.251, 0.553
+  colorFogSunNight: 0.228, 0.239, 0.279
+  fogDensityMorning: 0.05
+  fogDensityDay: 0.05
+  fogDensityEvening: 0.05
+  fogDensityNight: 0.05
+  lightIntensityDay: 0.6
+  lightIntensityNight: 1
+  sunAngle: 45
+  auroraColors:
+  - 0, 1, 1, 1
+  - 1, 1, 1, 1
+- name: nofogts
+  isWet: true
+  isColdAtNight: true
+  alwaysDark: true
+  windMin: 1
+  rainCloudAlpha: 2
+  colorAmbientDay: 0.588, 0.588, 0.588
+  colorAmbientNight: 0.382, 0.382, 0.382
+  colorSunMorning: 1, 0.945, 0.773
+  colorSunDay: 0.926, 0.926, 0.926
+  colorSunEvening: 1, 0.947, 0.772
+  colorSunNight: 0.292, 0.304, 0.368
+  colorFogMorning: 0.271, 0.271, 0.279
+  colorFogDay: 0.331, 0.331, 0.331
+  colorFogEvening: 0.235, 0.235, 0.235
+  colorFogNight: 0.176, 0.182, 0.208
+  colorFogSunMorning: 0.353, 0.315, 0.257
+  colorFogSunDay: 0.39, 0.358, 0.312
+  colorFogSunEvening: 0.338, 0.303, 0.251
+  colorFogSunNight: 0.228, 0.239, 0.279
+  fogDensityMorning: 0.005
+  fogDensityDay: 0.005
+  fogDensityEvening: 0.005
+  fogDensityNight: 0.005
+  lightIntensityDay: 0.5
+  lightIntensityNight: 0.77
+  sunAngle: 45
+  auroraColors:
+  - 0, 1, 1, 1
+  - 1, 1, 1, 1
+- name: SwampRain
+  isWet: true
+  isColdAtNight: true
+  alwaysDark: true
+  windMin: 0.1
+  windMax: 0.3
+  rainCloudAlpha: 2
+  ambientVol: 0.2
+  colorAmbientDay: 0.309, 0.338, 0.281
+  colorAmbientNight: 0.295, 0.316, 0.272
+  colorSunMorning: 0.937, 1, 0.765
+  colorSunDay: 0.938, 1, 0.765
+  colorSunEvening: 1, 0.93, 0.64
+  colorSunNight: 0.739, 0.859, 0.89
+  colorFogMorning: 0.208, 0.219, 0.192
+  colorFogDay: 0.331, 0.331, 0.331
+  colorFogEvening: 0.208, 0.221, 0.193
+  colorFogNight: 0.089, 0.213, 0.143
+  colorFogSunMorning: 0.419, 0.315, 0.203
+  colorFogSunDay: 0.397, 0.396, 0.394
+  colorFogSunEvening: 0.331, 0.267, 0.2
+  colorFogSunNight: 0.098, 0.243, 0.215
+  fogDensityMorning: 0.02
+  fogDensityDay: 0.02
+  fogDensityEvening: 0.02
+  fogDensityNight: 0.02
+  lightIntensityDay: 0.6
+  lightIntensityNight: 0.5
+  sunAngle: 45
+  auroraColors:
+  - 0, 1, 1, 1
+  - 1, 1, 1, 1
+- name: Bonemass
+  isWet: true
+  isColdAtNight: true
+  windMin: 0.1
+  windMax: 0.3
+  rainCloudAlpha: 1
+  ambientVol: 0.5
+  colorAmbientDay: 0.511, 0.515, 0.235
+  colorAmbientNight: 0.51, 0.514, 0.235
+  colorSunMorning: 0.996, 1, 0.765
+  colorSunDay: 0.997, 1, 0.765
+  colorSunEvening: 1, 0.93, 0.64
+  colorSunNight: 0.343, 0.534, 0.647
+  colorFogMorning: 0.427, 0.388, 0.169
+  colorFogDay: 0.426, 0.387, 0.169
+  colorFogEvening: 0.427, 0.388, 0.169
+  colorFogNight: 0.427, 0.388, 0.169
+  colorFogSunMorning: 0.372, 0.264, 0.149
+  colorFogSunDay: 0.427, 0.388, 0.169
+  colorFogSunEvening: 0.427, 0.335, 0.169
+  colorFogSunNight: 0.272, 0.229, 0.09
+  fogDensityMorning: 0.02
+  fogDensityDay: 0.02
+  fogDensityEvening: 0.02
+  fogDensityNight: 0.02
+  lightIntensityDay: 0.6
+  lightIntensityNight: 0.4
+  sunAngle: 45
+  auroraColors:
+  - 0, 1, 1, 1
+  - 1, 1, 1, 1
+- name: Snow
+  isFreezing: true
+  windMin: 0.1
+  windMax: 0.6
+  rainCloudAlpha: 0.1
+  ambientVol: 2
+  colorAmbientDay: 0.463, 0.573, 0.706
+  colorAmbientNight: 0.35, 0.362, 0.485
+  colorSunMorning: 1, 0.671, 0.42
+  colorSunDay: 0.949, 0.804, 0.545
+  colorSunEvening: 1, 0.439, 0.267
+  colorSunNight: 0.393, 0.411, 0.5
+  colorFogMorning: 0.247, 0.255, 0.271
+  colorFogDay: 0.481, 0.552, 0.647
+  colorFogEvening: 0.271, 0.267, 0.329
+  colorFogNight: 0.154, 0.154, 0.154
+  colorFogSunMorning: 0.537, 0.371, 0.26
+  colorFogSunDay: 0.679, 0.518, 0.31
+  colorFogSunEvening: 0.506, 0.239, 0.239
+  colorFogSunNight: 0.153, 0.153, 0.153
+  fogDensityMorning: 0.004
+  fogDensityDay: 0.004
+  fogDensityEvening: 0.004
+  fogDensityNight: 0.004
+  lightIntensityNight: 0.4
+  sunAngle: 45
+  auroraColors:
+  - 0, 1, 1, 1
+  - 1, 1, 1, 1
+- name: SnowStorm
+  isFreezing: true
+  isColdAtNight: true
+  windMin: 1.3
+  windMax: 2
+  rainCloudAlpha: 2
+  ambientVol: 0.6
+  colorAmbientDay: 0.86, 0.86, 0.86
+  colorAmbientNight: 0.39, 0.381, 0.381
+  colorSunMorning: 0.985, 0.874, 0.79
+  colorSunDay: 1, 1, 1
+  colorSunEvening: 1, 0.82, 0.765
+  colorSunNight: 0.367, 0.377, 0.426
+  colorFogMorning: 0, 0, 0
+  colorFogDay: 0.728, 0.728, 0.728
+  colorFogEvening: 0.419, 0.419, 0.419
+  colorFogNight: 0.184, 0.184, 0.184
+  colorFogSunMorning: 0.412, 0.325, 0.266
+  colorFogSunDay: 0.551, 0.541, 0.535
+  colorFogSunEvening: 0.522, 0.334, 0.334
+  colorFogSunNight: 0.153, 0.153, 0.153
+  fogDensityMorning: 0.05
+  fogDensityDay: 0.05
+  fogDensityEvening: 0.05
+  fogDensityNight: 0.05
+  lightIntensityDay: 0.7
+  lightIntensityNight: 0.2
+  sunAngle: 45
+  auroraColors:
+  - 0, 1, 1, 1
+  - 1, 1, 1, 1
+- name: Moder
+  isFreezing: true
+  isColdAtNight: true
+  windMin: 1
+  rainCloudAlpha: 2
+  ambientVol: 0.6
+  colorAmbientDay: 0.479, 0.338, 0.516
+  colorAmbientNight: 0.28, 0.197, 0.303
+  colorSunMorning: 0.165, 0.255, 0.302
+  colorSunDay: 0.164, 0.256, 0.301
+  colorSunEvening: 0.165, 0.255, 0.302
+  colorSunNight: 0.145, 0.223, 0.263
+  colorFogMorning: 0.588, 0.125, 0.125
+  colorFogDay: 0.934, 0, 0
+  colorFogEvening: 0.265, 0.049, 0.049
+  colorFogNight: 0.449, 0, 0
+  colorFogSunMorning: 0.184, 0.357, 0.443
+  colorFogSunDay: 0, 0.385, 0.574
+  colorFogSunEvening: 0, 0.178, 0.265
+  colorFogSunNight: 0.048, 0.212, 0.294
+  fogDensityMorning: 0.003
+  fogDensityDay: 0.003
+  fogDensityEvening: 0.003
+  fogDensityNight: 0.003
+  lightIntensityDay: 0.7
+  lightIntensityNight: 0.5
+  sunAngle: 45
+  auroraColors:
+  - 0, 1, 1, 1
+  - 1, 1, 1, 1
+- name: Crypt
+  alwaysDark: true
+  windMax: 0
+  ambientVol: 0.5
+  ambientList: Crypt
+  musicMorning: '-'
+  musicEvening: '-'
+  musicDay: forestcrypt
+  musicNight: forestcrypt
+  colorAmbientDay: 0.314, 0.314, 0.314
+  colorAmbientNight: 0.314, 0.314, 0.314
+  colorSunMorning: 0.941, 0.882, 0.727
+  colorSunDay: 0.949, 0.949, 0.949
+  colorSunEvening: 1, 0.743, 0.743
+  colorSunNight: 0.42, 0.441, 0.544
+  colorFogMorning: 0.176, 0.18, 0.215
+  colorFogDay: 0.176, 0.18, 0.215
+  colorFogEvening: 0.176, 0.18, 0.215
+  colorFogNight: 0.176, 0.182, 0.216
+  colorFogSunMorning: 0.176, 0.18, 0.215
+  colorFogSunDay: 0.176, 0.18, 0.215
+  colorFogSunEvening: 0.176, 0.18, 0.215
+  colorFogSunNight: 0.176, 0.18, 0.215
+  fogDensityMorning: 0.1
+  fogDensityDay: 0.1
+  fogDensityEvening: 0.1
+  fogDensityNight: 0.1
+  lightIntensityDay: 0
+  auroraColors:
+  - 0, 1, 1, 1
+  - 1, 1, 1, 1
+- name: SunkenCrypt
+  alwaysDark: true
+  windMax: 0
+  ambientVol: 1
+  ambientList: SunkenCrypt
+  musicMorning: '-'
+  musicEvening: '-'
+  musicDay: '-'
+  musicNight: '-'
+  colorAmbientDay: 0.102, 0.235, 0.243
+  colorAmbientNight: 0.102, 0.235, 0.243
+  colorSunMorning: 0.941, 0.882, 0.727
+  colorSunDay: 0.949, 0.949, 0.949
+  colorSunEvening: 1, 0.743, 0.743
+  colorSunNight: 0.42, 0.441, 0.544
+  colorFogMorning: 0.102, 0.235, 0.243
+  colorFogDay: 0.102, 0.235, 0.243
+  colorFogEvening: 0.102, 0.235, 0.243
+  colorFogNight: 0.102, 0.235, 0.243
+  colorFogSunMorning: 0.102, 0.235, 0.243
+  colorFogSunDay: 0.102, 0.235, 0.243
+  colorFogSunEvening: 0.102, 0.235, 0.243
+  colorFogSunNight: 0.102, 0.235, 0.243
+  fogDensityMorning: 0.2
+  fogDensityDay: 0.2
+  fogDensityEvening: 0.2
+  fogDensityNight: 0.2
+  lightIntensityDay: 0
+  auroraColors:
+  - 0, 1, 1, 1
+  - 1, 1, 1, 1
+- name: Ghosts
+  isCold: true
+  isColdAtNight: true
+  alwaysDark: true
+  windMax: 0
+  ambientVol: 0.5
+  ambientList: Crypt
+  musicMorning: '-'
+  musicEvening: '-'
+  musicDay: forestcrypt
+  musicNight: forestcrypt
+  colorAmbientDay: 0.314, 0.314, 0.314
+  colorAmbientNight: 0.314, 0.314, 0.314
+  colorSunMorning: 0.941, 0.882, 0.727
+  colorSunDay: 0.949, 0.949, 0.949
+  colorSunEvening: 1, 0.743, 0.743
+  colorSunNight: 0.42, 0.441, 0.544
+  colorFogMorning: 0.176, 0.18, 0.215
+  colorFogDay: 0.176, 0.18, 0.215
+  colorFogEvening: 0.176, 0.18, 0.215
+  colorFogNight: 0.176, 0.182, 0.216
+  colorFogSunMorning: 0.176, 0.18, 0.215
+  colorFogSunDay: 0.176, 0.18, 0.215
+  colorFogSunEvening: 0.176, 0.18, 0.215
+  colorFogSunNight: 0.176, 0.18, 0.215
+  fogDensityMorning: 0.1
+  fogDensityDay: 0.1
+  fogDensityEvening: 0.1
+  fogDensityNight: 0.1
+  lightIntensityDay: 0.7
+  lightIntensityNight: 0.6
+  sunAngle: 45
+  auroraColors:
+  - 0, 1, 1, 1
+  - 1, 1, 1, 1
+- name: Caves
+  isFreezing: true
+  isCold: true
+  alwaysDark: true
+  windMax: 0
+  ambientVol: 0.85
+  ambientList: FrostCaves
+  musicMorning: '-'
+  musicEvening: '-'
+  musicDay: '-'
+  musicNight: '-'
+  colorAmbientDay: 0.145, 0.197, 0.25
+  colorAmbientNight: 0.145, 0.195, 0.25
+  colorSunMorning: 1, 1, 1, 0
+  colorSunDay: 1, 1, 1, 0
+  colorSunEvening: 1, 1, 1, 0
+  colorSunNight: 1, 1, 1, 0
+  colorFogMorning: 0.425, 0.425, 0.425, 0
+  colorFogDay: 0.453, 0.453, 0.453, 0
+  colorFogEvening: 0.443, 0.443, 0.443, 0
+  colorFogNight: 0.425, 0.425, 0.425, 0
+  colorFogSunMorning: 0.491, 0.491, 0.491, 0
+  colorFogSunDay: 0.5, 0.5, 0.5, 0
+  colorFogSunEvening: 0.509, 0.509, 0.509, 0
+  colorFogSunNight: 0.481, 0.481, 0.481, 0
+  lightIntensityDay: 0.1
+  lightIntensityNight: 0.1
+  sunAngle: 90
+  auroraColors:
+  - 0, 1, 1, 1
+  - 1, 1, 1, 1
+  aoIntensityNight: 0.8
+  aoIntensityMorning: 0.8
+  aoIntensityEvening: 0.8
+  colorAmbientOcclusion: 0.004, 0, 0.227
+- name: CavesHildir
+  isFreezing: true
+  isCold: true
+  alwaysDark: true
+  windMax: 0
+  ambientVol: 0.85
+  ambientList: FrostCaves
+  musicMorning: frostcaveshildir
+  musicEvening: frostcaveshildir
+  musicDay: frostcaveshildir
+  musicNight: frostcaveshildir
+  colorAmbientDay: 0.106, 0.188, 0.275
+  colorAmbientNight: 0.107, 0.187, 0.274
+  colorSunMorning: 1, 1, 1, 0
+  colorSunDay: 1, 1, 1, 0
+  colorSunEvening: 1, 1, 1, 0
+  colorSunNight: 1, 1, 1, 0
+  colorFogMorning: 0.169, 0.224, 0.282, 0
+  colorFogDay: 0.169, 0.224, 0.282, 0
+  colorFogEvening: 0.169, 0.224, 0.282, 0
+  colorFogNight: 0.167, 0.224, 0.283, 0
+  colorFogSunMorning: 0.491, 0.491, 0.491, 0
+  colorFogSunDay: 0.5, 0.5, 0.5, 0
+  colorFogSunEvening: 0.509, 0.509, 0.509, 0
+  colorFogSunNight: 0.481, 0.481, 0.481, 0
+  fogDensityMorning: 0.1
+  fogDensityDay: 0.1
+  fogDensityEvening: 0.1
+  fogDensityNight: 0.1
+  lightIntensityDay: 0.1
+  lightIntensityNight: 0.1
+  sunAngle: 90
+  auroraColors:
+  - 0, 1, 1, 1
+  - 1, 1, 1, 1
+  aoIntensityNight: 0.8
+  aoIntensityMorning: 0.8
+  aoIntensityEvening: 0.8
+  colorAmbientOcclusion: 0.004, 0, 0.227
+- name: Mistlands_clear
+  isColdAtNight: true
+  windMin: 0.05
+  windMax: 0.2
+  rainCloudAlpha: 2
+  ambientVol: 0
+  colorAmbientDay: 0.333, 0.38, 0.416
+  colorAmbientNight: 0.333, 0.38, 0.416
+  colorSunMorning: 0.491, 0.255, 0.255, 0
+  colorSunDay: 1, 0.762, 0.579, 0
+  colorSunEvening: 0.566, 0.286, 0.295, 0
+  colorSunNight: 0.222, 0.338, 0.443, 0
+  colorFogMorning: 0.188, 0.317, 0.415
+  colorFogDay: 0.215, 0.264, 0.3
+  colorFogEvening: 0.188, 0.317, 0.415
+  colorFogNight: 0.188, 0.317, 0.415
+  colorFogSunMorning: 0.39, 0, 0, 0
+  colorFogSunDay: 0.723, 0.511, 0.288, 0
+  colorFogSunEvening: 0.509, 0, 0.044, 0
+  colorFogSunNight: 0.453, 0.331, 0.575, 0
+  fogDensityMorning: 0.05
+  fogDensityDay: 0.02
+  fogDensityEvening: 0.04
+  fogDensityNight: 0.04
+  lightIntensityNight: 0.5
+  auroraColors:
+  - 0, 1, 1, 1
+  - 1, 1, 1, 1
+  aoIntensityNight: 0.8
+  aoIntensityMorning: 0.8
+  aoIntensityEvening: 0.8
+  colorAmbientOcclusion: 0.004, 0, 0.227
+- name: Mistlands_rain
+  isWet: true
+  isColdAtNight: true
+  alwaysDark: true
+  windMin: 0.05
+  windMax: 0.5
+  rainCloudAlpha: 2
+  colorAmbientDay: 0.575, 0.575, 0.575
+  colorAmbientNight: 0.377, 0.377, 0.377
+  colorSunMorning: 0.811, 0.691, 0.532, 0
+  colorSunDay: 0.745, 0.712, 0.686, 0
+  colorSunEvening: 0.764, 0.626, 0.494, 0
+  colorSunNight: 0.242, 0.296, 0.349, 0
+  colorFogMorning: 0.362, 0.393, 0.416
+  colorFogDay: 0.415, 0.415, 0.415
+  colorFogEvening: 0.311, 0.311, 0.311
+  colorFogNight: 0.239, 0.269, 0.292
+  colorFogSunMorning: 0.33, 0.273, 0.273, 0
+  colorFogSunDay: 0.377, 0.322, 0.265, 0
+  colorFogSunEvening: 0.33, 0.291, 0.276, 0
+  colorFogSunNight: 0.228, 0.29, 0.358, 0
+  fogDensityMorning: 0.05
+  fogDensityDay: 0.03
+  fogDensityEvening: 0.04
+  fogDensityNight: 0.04
+  lightIntensityDay: 0.5
+  lightIntensityNight: 0.7
+  auroraColors:
+  - 0, 1, 1, 1
+  - 1, 1, 1, 1
+  aoIntensityNight: 0.8
+  aoIntensityMorning: 0.8
+  aoIntensityEvening: 0.8
+  colorAmbientOcclusion: 0.004, 0, 0.227
+- name: Mistlands_thunder
+  isWet: true
+  isColdAtNight: true
+  alwaysDark: true
+  windMin: 0.5
+  rainCloudAlpha: 2
+  colorAmbientDay: 0.502, 0.488, 0.501
+  colorAmbientNight: 0.343, 0.324, 0.349
+  colorSunMorning: 0.811, 0.691, 0.532, 0
+  colorSunDay: 0.839, 0.839, 0.839, 0
+  colorSunEvening: 0.764, 0.626, 0.494, 0
+  colorSunNight: 0.34, 0.258, 0.319, 0
+  colorFogMorning: 0.403, 0.361, 0.416
+  colorFogDay: 0.332, 0.302, 0.355
+  colorFogEvening: 0.302, 0.22, 0.31
+  colorFogNight: 0.296, 0.247, 0.321
+  colorFogSunMorning: 0.33, 0.273, 0.273, 0
+  colorFogSunDay: 0.377, 0.322, 0.265, 0
+  colorFogSunEvening: 0.33, 0.291, 0.276, 0
+  colorFogSunNight: 0.348, 0.269, 0.368, 0
+  fogDensityMorning: 0.05
+  fogDensityDay: 0.03
+  fogDensityEvening: 0.04
+  fogDensityNight: 0.04
+  lightIntensityDay: 0.5
+  lightIntensityNight: 0.8
+  auroraColors:
+  - 0, 1, 1, 1
+  - 1, 1, 1, 1
+  aoIntensityNight: 0.8
+  aoIntensityMorning: 0.8
+  aoIntensityEvening: 0.8
+  colorAmbientOcclusion: 0.004, 0, 0.227
+- name: InfectedMine
+  alwaysDark: true
+  windMax: 0
+  ambientVol: 1
+  ambientList: InfectedMine
+  musicMorning: '-'
+  musicEvening: '-'
+  musicDay: '-'
+  musicNight: '-'
+  colorAmbientDay: 0.314, 0.314, 0.314
+  colorAmbientNight: 0.314, 0.314, 0.314
+  colorSunMorning: 0.811, 0.691, 0.532, 0
+  colorSunDay: 0.839, 0.839, 0.839, 0
+  colorSunEvening: 0.764, 0.626, 0.494, 0
+  colorSunNight: 0.34, 0.258, 0.319, 0
+  colorFogMorning: 0.387, 0.295, 0.144
+  colorFogDay: 0.387, 0.295, 0.144
+  colorFogEvening: 0.387, 0.295, 0.144
+  colorFogNight: 0.387, 0.295, 0.144
+  colorFogSunMorning: 0.387, 0.295, 0.144
+  colorFogSunDay: 0.387, 0.295, 0.144
+  colorFogSunEvening: 0.387, 0.295, 0.144
+  colorFogSunNight: 0.387, 0.295, 0.144
+  fogDensityMorning: 0.1
+  fogDensityDay: 0.1
+  fogDensityEvening: 0.1
+  fogDensityNight: 0.1
+  lightIntensityDay: 0
+  auroraColors:
+  - 0, 1, 1, 1
+  - 1, 1, 1, 1
+  aoIntensityNight: 0.8
+  aoIntensityMorning: 0.8
+  aoIntensityEvening: 0.8
+  colorAmbientOcclusion: 0.004, 0, 0.227
+- name: Queen
+  alwaysDark: true
+  windMax: 0
+  rainCloudAlpha: 2
+  ambientVol: 0.5
+  musicMorning: boss_queen_ambience
+  musicEvening: boss_queen_ambience
+  musicDay: boss_queen_ambience
+  musicNight: boss_queen_ambience
+  colorAmbientDay: 0.263, 0.282, 0.133
+  colorAmbientNight: 0.263, 0.282, 0.133
+  colorSunMorning: 1, 0.788, 0
+  colorSunDay: 1, 0.788, 0
+  colorSunEvening: 1, 0.788, 0
+  colorSunNight: 1, 0.788, 0
+  colorFogMorning: 0.368, 0.243, 0.243
+  colorFogDay: 0.368, 0.243, 0.243
+  colorFogEvening: 0.368, 0.243, 0.243
+  colorFogNight: 0.368, 0.243, 0.243
+  colorFogSunMorning: 0.353, 0.315, 0.257
+  colorFogSunDay: 0.39, 0.358, 0.312
+  colorFogSunEvening: 0.338, 0.303, 0.251
+  colorFogSunNight: 0.228, 0.239, 0.279
+  fogDensityMorning: 0.05
+  fogDensityDay: 0.05
+  fogDensityEvening: 0.05
+  fogDensityNight: 0.05
+  lightIntensityDay: 0.6
+  lightIntensityNight: 0.6
+  sunAngle: 90
+  auroraColors:
+  - 0, 1, 1, 1
+  - 1, 1, 1, 1
+  aoIntensityNight: 0.8
+  aoIntensityMorning: 0.8
+  aoIntensityEvening: 0.8
+  colorAmbientOcclusion: 0.004, 0, 0.227
+- name: CryptHildir
+  alwaysDark: true
+  windMax: 0
+  ambientVol: 0.5
+  ambientList: Crypt
+  musicMorning: forestcrypthildir
+  musicEvening: forestcrypthildir
+  musicDay: forestcrypthildir
+  musicNight: forestcrypthildir
+  colorAmbientDay: 0.264, 0.234, 0.151
+  colorAmbientNight: 0.263, 0.235, 0.149
+  colorSunMorning: 0.941, 0.882, 0.727
+  colorSunDay: 0.949, 0.949, 0.949
+  colorSunEvening: 1, 0.743, 0.743
+  colorSunNight: 0.42, 0.441, 0.544
+  colorFogMorning: 0.255, 0.224, 0.11
+  colorFogDay: 0.255, 0.222, 0.112
+  colorFogEvening: 0.255, 0.224, 0.11
+  colorFogNight: 0.255, 0.224, 0.11
+  colorFogSunMorning: 0.341, 0.294, 0.173
+  colorFogSunDay: 0.341, 0.294, 0.173
+  colorFogSunEvening: 0.341, 0.294, 0.173
+  colorFogSunNight: 0.34, 0.295, 0.171
+  fogDensityMorning: 0.15
+  fogDensityDay: 0.15
+  fogDensityEvening: 0.15
+  fogDensityNight: 0.15
+  lightIntensityDay: 0
+  auroraColors:
+  - 0, 1, 1, 1
+  - 1, 1, 1, 1
+  aoIntensityNight: 0.8
+  aoIntensityMorning: 0.8
+  aoIntensityEvening: 0.8
+  colorAmbientOcclusion: 0.004, 0, 0.227
+- name: Ashlands_ashrain
+  windMin: 0.1
+  windMax: 0.5
+  rainCloudAlpha: 1.5
+  ambientVol: 0.8
+  colorAmbientDay: 0.671, 0.455, 0.427
+  colorAmbientNight: 0.204, 0.333, 0.341
+  colorSunMorning: 0.69, 0.494, 0.282
+  colorSunDay: 0.518, 0.384, 0.306
+  colorSunEvening: 0.408, 0.302, 0.753
+  colorSunNight: 0.169, 0.373, 0.631
+  colorFogMorning: 0.612, 0.384, 0.192
+  colorFogDay: 0.502, 0.184, 0.129
+  colorFogEvening: 0.451, 0.263, 0.263
+  colorFogNight: 0.173, 0.255, 0.275
+  colorFogSunMorning: 0.584, 0.49, 0.416
+  colorFogSunDay: 0.706, 0.4, 0.208
+  colorFogSunEvening: 0.557, 0.188, 0.282
+  colorFogSunNight: 0.204, 0.235, 0.263
+  fogDensityMorning: 0.05
+  fogDensityDay: 0.02
+  fogDensityNight: 0.03
+  lightIntensityDay: 2.2
+  lightIntensityNight: 0.4
+  sunAngle: 35
+  auroraColors:
+  - 0, 1, 1, 1
+  - 1, 1, 1, 1
+  aoIntensityNight: 0.8
+  aoIntensityMorning: 0.8
+  aoIntensityEvening: 0.8
+  colorAmbientOcclusion: 0.004, 0, 0.227
+- name: Ashlands_ashrain_clear
+  windMin: 0.1
+  windMax: 0.5
+  rainCloudAlpha: 1.5
+  ambientVol: 0.8
+  colorAmbientDay: 0.671, 0.455, 0.427
+  colorAmbientNight: 0.204, 0.333, 0.341
+  colorSunMorning: 0.69, 0.494, 0.282
+  colorSunDay: 0.518, 0.384, 0.306
+  colorSunEvening: 0.408, 0.302, 0.753
+  colorSunNight: 0.169, 0.373, 0.631
+  colorFogMorning: 0.612, 0.384, 0.192
+  colorFogDay: 0.502, 0.184, 0.129
+  colorFogEvening: 0.451, 0.263, 0.263
+  colorFogNight: 0.173, 0.255, 0.275
+  colorFogSunMorning: 0.584, 0.49, 0.416
+  colorFogSunDay: 0.706, 0.4, 0.208
+  colorFogSunEvening: 0.557, 0.188, 0.282
+  colorFogSunNight: 0.204, 0.235, 0.263
+  fogDensityMorning: 0.05
+  fogDensityDay: 0.02
+  fogDensityNight: 0.03
+  lightIntensityDay: 2.2
+  lightIntensityNight: 0.4
+  sunAngle: 35
+  auroraColors:
+  - 0, 1, 1, 1
+  - 1, 1, 1, 1
+  aoIntensityNight: 0.8
+  aoIntensityMorning: 0.8
+  aoIntensityEvening: 0.8
+  colorAmbientOcclusion: 0.004, 0, 0.227
+- name: Ashlands_storm
+  windMin: 2.5
+  windMax: 3
+  rainCloudAlpha: 1.5
+  ambientVol: 0.8
+  colorAmbientDay: 0.406, 0.444, 0.481
+  colorAmbientNight: 0.358, 0.268, 0.245
+  colorSunMorning: 0.526, 0.356, 0.604
+  colorSunDay: 0.49, 0.196, 0.176
+  colorSunEvening: 0.408, 0.302, 0.753
+  colorSunNight: 0.423, 0.445, 0.557
+  colorFogMorning: 0.415, 0.157, 0.092
+  colorFogDay: 0.415, 0.139, 0.159
+  colorFogEvening: 0.434, 0.227, 0.227
+  colorFogNight: 0.255, 0.095, 0.107
+  colorFogSunMorning: 0.435, 0.333, 0.208
+  colorFogSunDay: 0.267, 0.22, 0.275
+  colorFogSunEvening: 0.557, 0.188, 0.282
+  colorFogSunNight: 0.192, 0.161, 0.2
+  fogDensityMorning: 0.02
+  fogDensityDay: 0.02
+  fogDensityEvening: 0.02
+  fogDensityNight: 0.02
+  lightIntensityDay: 1.5
+  lightIntensityNight: 1.5
+  sunAngle: 45
+  auroraColors:
+  - 0, 1, 1, 1
+  - 1, 1, 1, 1
+  aoIntensityNight: 0.8
+  aoIntensityMorning: 0.8
+  aoIntensityEvening: 0.8
+  colorAmbientOcclusion: 0.004, 0, 0.227
+- name: Ashlands_meteorshower
+  windMin: 0.1
+  windMax: 0.5
+  rainCloudAlpha: 1.5
+  ambientVol: 0.6
+  colorAmbientDay: 0.387, 0.17, 0.203
+  colorAmbientNight: 0.415, 0.198, 0.269
+  colorSunMorning: 1, 0.671, 0.42
+  colorSunDay: 0.949, 0.655, 0.545
+  colorSunEvening: 1, 0.439, 0.267
+  colorSunNight: 0.494, 0.502, 0.545
+  colorFogMorning: 0.565, 0.467, 0.302
+  colorFogDay: 0.5, 0.373, 0.328
+  colorFogEvening: 0.514, 0.271, 0.271
+  colorFogNight: 0.486, 0.161, 0.183
+  colorFogSunMorning: 0.434, 0.335, 0.207
+  colorFogSunDay: 0.461, 0.415, 0.286
+  colorFogSunEvening: 0.471, 0.364, 0.225
+  colorFogSunNight: 0.268, 0.218, 0.274
+  fogDensityMorning: 0.03
+  fogDensityDay: 0.03
+  fogDensityEvening: 0.03
+  fogDensityNight: 0.03
+  lightIntensityNight: 1
+  sunAngle: 45
+  auroraColors:
+  - 0, 1, 1, 1
+  - 1, 1, 1, 1
+  aoIntensityNight: 0.8
+  aoIntensityMorning: 0.8
+  aoIntensityEvening: 0.8
+  colorAmbientOcclusion: 0.004, 0, 0.227
+- name: Ashlands_misty
+  windMin: 0.1
+  windMax: 0.5
+  rainCloudAlpha: 1.5
+  ambientVol: 0.8
+  colorAmbientDay: 0.498, 0.541, 0.584
+  colorAmbientNight: 0.196, 0.329, 0.325
+  colorSunMorning: 0.608, 0.412, 0.698
+  colorSunDay: 0.518, 0.435, 0.341
+  colorSunEvening: 0.408, 0.302, 0.753
+  colorSunNight: 0.494, 0.522, 0.659
+  colorFogMorning: 0.443, 0.325, 0.208
+  colorFogDay: 0.376, 0.416, 0.451
+  colorFogEvening: 0.514, 0.392, 0.271
+  colorFogNight: 0.043, 0.235, 0.22
+  colorFogSunMorning: 0.435, 0.333, 0.208
+  colorFogSunDay: 0.271, 0.243, 0.275
+  colorFogSunEvening: 0.557, 0.427, 0.188
+  colorFogSunNight: 0.161, 0.2, 0.18
+  fogDensityMorning: 0.03
+  fogDensityDay: 0.03
+  fogDensityEvening: 0.03
+  fogDensityNight: 0.04
+  lightIntensityDay: 1
+  lightIntensityNight: 0.6
+  sunAngle: 20
+  auroraColors:
+  - 0, 1, 1, 1
+  - 1, 1, 1, 1
+  aoIntensityNight: 0.8
+  aoIntensityMorning: 0.8
+  aoIntensityEvening: 0.8
+- name: Ashlands_CinderRain
+  windMin: 0.75
+  windMax: 0.7
+  rainCloudAlpha: 1.5
+  ambientVol: 0.8
+  colorAmbientDay: 0.406, 0.444, 0.481
+  colorAmbientNight: 0.358, 0.268, 0.245
+  colorSunMorning: 0.526, 0.356, 0.604
+  colorSunDay: 0.49, 0.196, 0.176
+  colorSunEvening: 0.408, 0.302, 0.753
+  colorSunNight: 0.423, 0.445, 0.557
+  colorFogMorning: 0.415, 0.157, 0.092
+  colorFogDay: 0.415, 0.139, 0.159
+  colorFogEvening: 0.434, 0.227, 0.227
+  colorFogNight: 0.255, 0.095, 0.107
+  colorFogSunMorning: 0.435, 0.333, 0.208
+  colorFogSunDay: 0.267, 0.22, 0.275
+  colorFogSunEvening: 0.557, 0.188, 0.282
+  colorFogSunNight: 0.192, 0.161, 0.2
+  fogDensityNight: 0.02
+  lightIntensityDay: 1.6
+  lightIntensityNight: 0.5
+  sunAngle: 45
+  auroraColors:
+  - 0, 1, 1, 1
+  - 1, 1, 1, 1
+  aoIntensityNight: 0.8
+  aoIntensityMorning: 0.8
+  aoIntensityEvening: 0.8
+  colorAmbientOcclusion: 0.004, 0, 0.227
+- name: Ashlands_SeaStorm
+  alwaysDark: true
+  windMin: 0.8
+  rainCloudAlpha: 2
+  ambientVol: 0.8
+  musicDay: sailing_ashlands
+  musicNight: sailing_ashlands
+  colorAmbientDay: 0.671, 0.455, 0.427
+  colorAmbientNight: 0.204, 0.333, 0.341
+  colorSunMorning: 0.69, 0.494, 0.282
+  colorSunDay: 0.518, 0.384, 0.306
+  colorSunEvening: 0.408, 0.302, 0.753
+  colorSunNight: 0.169, 0.373, 0.631
+  colorFogMorning: 0.612, 0.384, 0.192
+  colorFogDay: 0.502, 0.184, 0.129
+  colorFogEvening: 0.451, 0.263, 0.263
+  colorFogNight: 0.173, 0.255, 0.275
+  colorFogSunMorning: 0.584, 0.49, 0.416
+  colorFogSunDay: 0.706, 0.4, 0.208
+  colorFogSunEvening: 0.557, 0.188, 0.282
+  colorFogSunNight: 0.204, 0.235, 0.263
+  fogDensityMorning: 0.03
+  fogDensityDay: 0.03
+  fogDensityEvening: 0.03
+  fogDensityNight: 0.03
+  lightIntensityDay: 0.5
+  lightIntensityNight: 0.77
+  sunAngle: 45
+  auroraColors:
+  - 0, 1, 1, 1
+  - 1, 1, 1, 1
+  aoIntensityNight: 0.8
+  aoIntensityMorning: 0.8
+  aoIntensityEvening: 0.8
+  colorAmbientOcclusion: 0.004, 0, 0.227
+- name: Fader
+  windMin: 0.1
+  windMax: 0.5
+  rainCloudAlpha: 1.5
+  ambientVol: 0.8
+  colorAmbientDay: 0.498, 0.541, 0.584
+  colorAmbientNight: 0.196, 0.329, 0.325
+  colorSunMorning: 0.664, 0.589, 0.698
+  colorSunDay: 0.532, 0.538, 0.439
+  colorSunEvening: 0.614, 0.571, 0.753
+  colorSunNight: 0.648, 0.65, 0.659
+  colorFogMorning: 0.296, 0.34, 0.325
+  colorFogDay: 0.255, 0.292, 0.263
+  colorFogEvening: 0.295, 0.349, 0.301
+  colorFogNight: 0.292, 0.258, 0.265
+  colorFogSunMorning: 0.169, 0.274, 0.21
+  colorFogSunDay: 0.293, 0.406, 0.336
+  colorFogSunEvening: 0.099, 0.179, 0.13
+  colorFogSunNight: 0.051, 0.16, 0.092
+  fogDensityMorning: 0.03
+  fogDensityDay: 0.03
+  fogDensityEvening: 0.03
+  fogDensityNight: 0.04
+  lightIntensityDay: 1
+  lightIntensityNight: 0.6
+  sunAngle: 20
+  auroraColors:
+  - 0, 1, 1, 1
+  - 1, 1, 1, 1
+  aoIntensityNight: 0.8
+  aoIntensityMorning: 0.8
+  aoIntensityEvening: 0.8
+  colorAmbientOcclusion: 0.004, 0, 0.227
+- name: Twilight_Snow
+  isFreezing: true
+  isFreezingAtNight: true
+  isCold: true
+  isColdAtNight: true
+  snowBuildup: 0.25
+  windMin: 0.3
+  windMax: 0.6
+  rainCloudAlpha: 0.4
+  ambientVol: 2
+  colorAmbientDay: 0.44, 0.489, 0.55
+  colorAmbientNight: 0.311, 0.321, 0.419
+  colorSunMorning: 1, 0.671, 0.42
+  colorSunDay: 0.949, 0.804, 0.545
+  colorSunEvening: 1, 0.439, 0.267
+  colorSunNight: 0.42, 0.441, 0.544
+  colorFogMorning: 0.247, 0.255, 0.271
+  colorFogDay: 0.325, 0.372, 0.434
+  colorFogEvening: 0.271, 0.267, 0.329
+  colorFogNight: 0.078, 0.078, 0.078
+  colorFogSunMorning: 0.537, 0.371, 0.26
+  colorFogSunDay: 0.679, 0.442, 0.31
+  colorFogSunEvening: 0.506, 0.239, 0.239
+  colorFogSunNight: 0.175, 0.209, 0.243
+  fogDensityMorning: 0.03
+  lightIntensityDay: 0.5
+  lightIntensityNight: 0.3
+  sunAngle: 20
+  auroraIntensityNight: 0.4
+  auroraIntensityMorning: 0.25
+  auroraIntensityDay: 0.05
+  auroraIntensityEvening: 0.25
+  auroraColors:
+  - 0, 0.09, 1, 0.19
+  - 0.4, 1, 0.748, 0.542
+  - 0.806, 1, 0.09, 0.892
+  aoIntensityNight: 0.8
+  aoIntensityMorning: 0.8
+  aoIntensityEvening: 0.8
+  colorAmbientOcclusion: 0.004, 0, 0.227
+- name: Twilight_Clear
+  isFreezing: true
+  isFreezingAtNight: true
+  isCold: true
+  isColdAtNight: true
+  windMin: 0.2
+  windMax: 0.6
+  ambientVol: 2
+  colorAmbientDay: 0.361, 0.381, 0.5
+  colorAmbientNight: 0.205, 0.196, 0.228
+  colorSunMorning: 0.973, 0.427, 0.365
+  colorSunDay: 0.651, 0.784, 0.855
+  colorSunEvening: 1, 0.094, 0.094
+  colorSunNight: 0.737, 0.929, 1
+  colorFogMorning: 0.247, 0.255, 0.271
+  colorFogDay: 0.435, 0.569, 0.698
+  colorFogEvening: 0.235, 0.341, 0.404
+  colorFogNight: 0.129, 0.231, 0.275
+  colorFogSunMorning: 0.553, 0.376, 0.278
+  colorFogSunDay: 0.835, 0.4, 0.224
+  colorFogSunEvening: 1, 0.325, 0
+  colorFogSunNight: 0.224, 0.427, 0.451
+  fogDensityMorning: 0.03
+  fogDensityEvening: 0.07
+  fogDensityNight: 0.02
+  lightIntensityDay: 0.9
+  lightIntensityNight: 0.3
+  sunAngle: 45
+  auroraIntensityNight: 0.6
+  auroraIntensityMorning: 0.121
+  auroraIntensityEvening: 0.285
+  auroraColors:
+  - 0, 0.09, 1, 0.597
+  - 0.4, 0.541, 0.923, 1
+  - 0.806, 0.455, 0.09, 1
+  cloudOpacityNight: 0
+  cloudOpacityMorning: 0
+  cloudOpacityDay: 0
+  cloudOpacityEvening: 0
+  aoIntensityNight: 0.8
+  aoIntensityMorning: 0.8
+  aoIntensityEvening: 0.8
+  colorAmbientOcclusion: 0.004, 0, 0.227
+- name: Twilight_SnowStorm
+  isFreezing: true
+  isFreezingAtNight: true
+  isCold: true
+  isColdAtNight: true
+  snowBuildup: 0.4
+  windMin: 1.5
+  windMax: 2
+  rainCloudAlpha: 1
+  ambientVol: 1
+  colorAmbientDay: 0.36, 0.402, 0.45
+  colorAmbientNight: 0.209, 0.212, 0.243
+  colorSunMorning: 1, 0.783, 0.618
+  colorSunDay: 1, 0.881, 0.669
+  colorSunEvening: 0.985, 0.631, 0.522
+  colorSunNight: 0.42, 0.441, 0.544
+  colorFogMorning: 0.221, 0.221, 0.221
+  colorFogDay: 0.313, 0.336, 0.396
+  colorFogEvening: 0.419, 0.419, 0.419
+  colorFogNight: 0.11, 0.113, 0.113
+  colorFogSunMorning: 0.544, 0.434, 0.36
+  colorFogSunDay: 0.507, 0.436, 0.343
+  colorFogSunEvening: 0.522, 0.334, 0.334
+  colorFogSunNight: 0.226, 0.246, 0.279
+  fogDensityMorning: 0.06
+  fogDensityDay: 0.06
+  fogDensityEvening: 0.06
+  fogDensityNight: 0.06
+  lightIntensityDay: 0.4
+  lightIntensityNight: 0.4
+  sunAngle: 18
+  auroraIntensityNight: 0.75
+  auroraIntensityMorning: 0.33
+  auroraIntensityDay: 0.25
+  auroraIntensityEvening: 0.33
+  auroraColors:
+  - 0, 0.09, 1, 0.19
+  - 0.4, 1, 0.748, 0.542
+  - 0.806, 1, 0.09, 0.892
+  aoIntensityNight: 0.8
+  aoIntensityMorning: 0.8
+  aoIntensityEvening: 0.8
+  colorAmbientOcclusion: 0.004, 0, 0.227
+- name: JotunInvasion_swamp
+  isFreezing: true
+  windMin: 0.1
+  windMax: 0.6
+  rainCloudAlpha: 0.25
+  ambientVol: 2
+  musicDay: JotunInvasion
+  musicNight: JotunInvasion
+  colorAmbientDay: 0.276, 0.471, 0.547
+  colorAmbientNight: 0.295, 0.313, 0.443
+  colorSunMorning: 1, 0.671, 0.42
+  colorSunDay: 0.949, 0.804, 0.545
+  colorSunEvening: 1, 0.366, 0.267
+  colorSunNight: 0.393, 0.411, 0.5
+  colorFogMorning: 0.559, 0.67, 0.559
+  colorFogDay: 0.481, 0.552, 0.647
+  colorFogEvening: 0.338, 0.396, 0.338
+  colorFogNight: 0.241, 0.368, 0.327
+  colorFogSunMorning: 0.106, 0.443, 0.371
+  colorFogSunDay: 0.547, 0.573, 0.811
+  colorFogSunEvening: 0.906, 0.137, 0.038
+  colorFogSunNight: 0.107, 0.374, 0.443
+  fogDensityMorning: 0.03
+  fogDensityDay: 0.05
+  fogDensityEvening: 0.02
+  fogDensityNight: 0.015
+  lightIntensityDay: 0.9
+  lightIntensityNight: 0.5
+  sunAngle: 45
+  auroraIntensityNight: 0.3
+  auroraIntensityEvening: 0.1
+  auroraColors:
+  - 0, 0.09, 1, 0.19
+  - 0.4, 1, 0.748, 0.542
+  - 0.806, 1, 0.09, 0.892
+  aoIntensityNight: 0.8
+  aoIntensityMorning: 0.8
+  aoIntensityEvening: 0.8
+  colorAmbientOcclusion: 0.004, 0, 0.227
+- name: JotunInvasion_meadows
+  isFreezing: true
+  windMin: 0.1
+  windMax: 0.6
+  rainCloudAlpha: 0.15
+  ambientVol: 2
+  musicDay: JotunInvasion
+  musicNight: JotunInvasion
+  colorAmbientDay: 0.544, 0.729, 0.953
+  colorAmbientNight: 0.349, 0.421, 0.486
+  colorSunMorning: 1, 0.671, 0.42
+  colorSunDay: 1, 0.744, 0.288
+  colorSunEvening: 1, 0.439, 0.267
+  colorSunNight: 0.482, 0.549, 0.858
+  colorFogMorning: 0.504, 0.578, 0.726
+  colorFogDay: 0.458, 0.557, 0.689
+  colorFogEvening: 0.445, 0.432, 0.632
+  colorFogNight: 0.034, 0.222, 0.311
+  colorFogSunMorning: 0.811, 0.368, 0.364
+  colorFogSunDay: 1, 0.857, 0.467
+  colorFogSunEvening: 0.811, 0.287, 0.463
+  colorFogSunNight: 0.193, 0.309, 0.406
+  fogDensityMorning: 0.012
+  fogDensityDay: 0.015
+  fogDensityEvening: 0.013
+  lightIntensityDay: 1.3
+  lightIntensityNight: 0.76
+  auroraIntensityNight: 0.703
+  auroraIntensityMorning: 0.049
+  auroraIntensityEvening: 0.057
+  auroraColors:
+  - 0, 0.09, 1, 0.19
+  - 0.4, 1, 0.748, 0.542
+  - 0.806, 1, 0.09, 0.892
+  cloudOpacityNight: 25
+  cloudOpacityMorning: 25
+  cloudOpacityDay: 25
+  cloudOpacityEvening: 25
+  aoIntensityNight: 0.8
+  aoIntensityMorning: 0.8
+  aoIntensityEvening: 0.8
+  colorAmbientOcclusion: 0.004, 0, 0.227
+- name: JotunInvasion_mountain
+  isFreezing: true
+  windMin: 0.1
+  windMax: 0.6
+  rainCloudAlpha: 0.1
+  ambientVol: 2
+  musicDay: JotunInvasion
+  musicNight: JotunInvasion
+  colorAmbientDay: 0.463, 0.573, 0.706
+  colorAmbientNight: 0.35, 0.362, 0.485
+  colorSunMorning: 1, 0.671, 0.42
+  colorSunDay: 0.949, 0.804, 0.545
+  colorSunEvening: 1, 0.439, 0.267
+  colorSunNight: 0.393, 0.411, 0.5
+  colorFogMorning: 0.247, 0.255, 0.271
+  colorFogDay: 0.481, 0.552, 0.647
+  colorFogEvening: 0.271, 0.267, 0.329
+  colorFogNight: 0.154, 0.154, 0.154
+  colorFogSunMorning: 0.537, 0.371, 0.26
+  colorFogSunDay: 0.679, 0.518, 0.31
+  colorFogSunEvening: 0.506, 0.239, 0.239
+  colorFogSunNight: 0.153, 0.153, 0.153
+  fogDensityMorning: 0.004
+  fogDensityDay: 0.004
+  fogDensityEvening: 0.004
+  fogDensityNight: 0.004
+  lightIntensityNight: 0.4
+  sunAngle: 45
+  auroraIntensityNight: 0.8
+  auroraIntensityMorning: 0.4
+  auroraIntensityDay: 0.1
+  auroraIntensityEvening: 0.4
+  auroraColors:
+  - 0, 0.09, 1, 0.19
+  - 0.4, 1, 0.748, 0.542
+  - 0.806, 1, 0.09, 0.892
+  cloudOpacityNight: 0
+  cloudOpacityMorning: 2
+  cloudOpacityDay: 4
+  cloudOpacityEvening: 2
+  aoIntensityNight: 0.8
+  aoIntensityMorning: 0.8
+  aoIntensityEvening: 0.8
+  colorAmbientOcclusion: 0.004, 0, 0.227
+- name: JotunInvasion_blackforest
+  isColdAtNight: true
+  windMin: 0.1
+  windMax: 0.6
+  ambientVol: 2
+  musicDay: JotunInvasion
+  musicNight: JotunInvasion
+  colorAmbientDay: 0.307, 0.546, 0.684
+  colorAmbientNight: 0.157, 0.256, 0.311
+  colorSunMorning: 1, 0.25, 0.316
+  colorSunDay: 1, 0.871, 0.64
+  colorSunEvening: 1, 0.26, 0.033
+  colorSunNight: 0.538, 0.596, 0.736
+  colorFogMorning: 0.29, 0.34, 0.368
+  colorFogDay: 0.335, 0.608, 0.764
+  colorFogEvening: 0.323, 0.382, 0.415
+  colorFogNight: 0.163, 0.405, 0.547
+  colorFogSunMorning: 0.745, 0.362, 0.628
+  colorFogSunDay: 0.972, 0.743, 0.463
+  colorFogSunEvening: 1, 0.241, 0.803
+  colorFogSunNight: 0.33, 0.33, 0.33
+  fogDensityMorning: 0.02
+  fogDensityEvening: 0.02
+  fogDensityNight: 0.04
+  lightIntensityDay: 1.5
+  lightIntensityNight: 1.1
+  sunAngle: 45
+  auroraColors:
+  - 0, 1, 1, 1
+  - 1, 1, 1, 1
+  aoIntensityNight: 0.8
+  aoIntensityMorning: 0.8
+  aoIntensityEvening: 0.8
+  colorAmbientOcclusion: 0.004, 0, 0.227
+- name: JotunInvasion_plains
+  isFreezing: true
+  windMin: 0.1
+  windMax: 0.6
+  rainCloudAlpha: 0.15
+  ambientVol: 2
+  musicDay: JotunInvasion
+  musicNight: JotunInvasion
+  colorAmbientDay: 0.357, 0.515, 0.708
+  colorAmbientNight: 0.194, 0.377, 0.299
+  colorSunMorning: 0.961, 0.541, 0.251
+  colorSunDay: 0.949, 0.804, 0.545
+  colorSunEvening: 1, 0.439, 0.267
+  colorSunNight: 0.381, 0.468, 0.887
+  colorFogMorning: 0.279, 0.346, 0.481
+  colorFogDay: 0.481, 0.552, 0.647
+  colorFogEvening: 0.271, 0.267, 0.329
+  colorFogNight: 0.366, 0.481, 0.575
+  colorFogSunMorning: 0.962, 0.543, 0.25
+  colorFogSunDay: 0.526, 0.596, 0.66
+  colorFogSunEvening: 0.755, 0.367, 0.478
+  colorFogSunNight: 0.216, 0.353, 0.453
+  fogDensityMorning: 0.015
+  fogDensityDay: 0.015
+  fogDensityEvening: 0.015
+  lightIntensityDay: 0.8
+  lightIntensityNight: 0.4
+  auroraIntensityNight: 0.098
+  auroraIntensityMorning: 0.098
+  auroraIntensityEvening: 0.045
+  auroraColors:
+  - 0, 0.09, 1, 0.19
+  - 0.4, 1, 0.748, 0.542
+  - 0.806, 1, 0.09, 0.892
+  cloudOpacityNight: 8
+  cloudOpacityMorning: 10
+  cloudOpacityDay: 13
+  cloudOpacityEvening: 10
+  aoIntensityNight: 0.8
+  aoIntensityMorning: 0.8
+  aoIntensityEvening: 0.8
+  colorAmbientOcclusion: 0.004, 0, 0.227
+- name: JotunInvasion_mistlands
+  isFreezing: true
+  windMin: 0.05
+  windMax: 0.2
+  rainCloudAlpha: 2
+  ambientVol: 2
+  musicDay: JotunInvasion
+  musicNight: JotunInvasion
+  colorAmbientDay: 0.39, 0.512, 0.604
+  colorAmbientNight: 0.552, 0.411, 0.585
+  colorSunMorning: 0.49, 0.255, 0.255
+  colorSunDay: 0.962, 0.857, 0.704
+  colorSunEvening: 0.565, 0.286, 0.294
+  colorSunNight: 0.419, 0.562, 0.689
+  colorFogMorning: 0.43, 0.576, 0.604
+  colorFogDay: 0.427, 0.548, 0.651
+  colorFogEvening: 0.431, 0.576, 0.604
+  colorFogNight: 0.069, 0.266, 0.415
+  colorFogSunMorning: 0.388, 0, 0
+  colorFogSunDay: 0.893, 0.904, 0.906
+  colorFogSunEvening: 0.51, 0, 0.043
+  colorFogSunNight: 0.64, 0.545, 0.66
+  fogDensityMorning: 0.08
+  fogDensityDay: 0.08
+  fogDensityEvening: 0.08
+  fogDensityNight: 0.06
+  lightIntensityNight: 0.4
+  auroraIntensityNight: 0.445
+  auroraColors:
+  - 0, 0.09, 1, 0.19
+  - 0.4, 1, 0.748, 0.542
+  - 0.806, 1, 0.09, 0.892
+  aoIntensityNight: 0.8
+  aoIntensityMorning: 0.8
+  aoIntensityEvening: 0.8
+  colorAmbientOcclusion: 0.004, 0, 0.227
+- name: Morkhalla
+  isCold: true
+  alwaysDark: true
+  windMin: 0.05
+  windMax: 0.1
+  ambientVol: 0.75
+  ambientList: Morkhalla
+  musicMorning: '-'
+  musicEvening: '-'
+  musicDay: deepnorth_morkhalla
+  musicNight: deepnorth_morkhalla
+  colorAmbientDay: 0.42, 0.439, 0.545
+  colorAmbientNight: 0.42, 0.439, 0.545
+  colorSunMorning: 0.941, 0.882, 0.727
+  colorSunDay: 0.949, 0.949, 0.949
+  colorSunEvening: 1, 0.743, 0.743
+  colorSunNight: 0.42, 0.441, 0.544
+  colorFogMorning: 0.196, 0.196, 0.275
+  colorFogDay: 0.196, 0.196, 0.275
+  colorFogEvening: 0.196, 0.196, 0.275
+  colorFogNight: 0.196, 0.196, 0.275
+  colorFogSunMorning: 0.196, 0.196, 0.275
+  colorFogSunDay: 0.196, 0.196, 0.275
+  colorFogSunEvening: 0.196, 0.196, 0.275
+  colorFogSunNight: 0.196, 0.196, 0.275
+  fogDensityMorning: 0.1
+  fogDensityDay: 0.1
+  fogDensityEvening: 0.1
+  fogDensityNight: 0.1
+  lightIntensityDay: 0
+  auroraColors:
+  - 0, 1, 1, 1
+  - 1, 1, 1, 1
+  aoIntensityNight: 0.8
+  aoIntensityMorning: 0.8
+  aoIntensityEvening: 0.8
+  colorAmbientOcclusion: 0.004, 0, 0.227
+- name: TheHollow
+  alwaysDark: true
+  windMax: 0
+  ambientVol: 0.65
+  ambientList: TheHollow
+  musicMorning: '-'
+  musicEvening: '-'
+  musicDay: deepnorth_windingtunnels
+  musicNight: deepnorth_windingtunnels
+  colorAmbientDay: 0.283, 0.245, 0.223
+  colorAmbientNight: 0.282, 0.247, 0.224
+  colorSunMorning: 0.941, 0.882, 0.727
+  colorSunDay: 0.949, 0.949, 0.949
+  colorSunEvening: 1, 0.743, 0.743
+  colorSunNight: 0.42, 0.441, 0.544
+  colorFogMorning: 0.208, 0.169, 0.145
+  colorFogDay: 0.208, 0.17, 0.144
+  colorFogEvening: 0.208, 0.169, 0.145
+  colorFogNight: 0.208, 0.169, 0.145
+  colorFogSunMorning: 0.176, 0.18, 0.215
+  colorFogSunDay: 0.176, 0.18, 0.215
+  colorFogSunEvening: 0.176, 0.18, 0.215
+  colorFogSunNight: 0.176, 0.18, 0.215
+  fogDensityMorning: 0.1
+  fogDensityDay: 0.1
+  fogDensityEvening: 0.1
+  fogDensityNight: 0.1
+  lightIntensityDay: 0
+  auroraColors:
+  - 0, 1, 1, 1
+  - 1, 1, 1, 1
+  aoIntensityNight: 0.8
+  aoIntensityMorning: 0.8
+  aoIntensityEvening: 0.8
+  colorAmbientOcclusion: 0.004, 0, 0.227
+- name: DN_Bossroom
+  isFreezing: true
+  isFreezingAtNight: true
+  isCold: true
+  isColdAtNight: true
+  alwaysDark: true
+  windMax: 0
+  ambientVol: 0.65
+  colorAmbientDay: 0.427, 0.427, 0.427
+  colorAmbientNight: 0.427, 0.427, 0.427
+  colorSunMorning: 1, 0.867, 0.718
+  colorSunDay: 1, 0.867, 0.718
+  colorSunEvening: 1, 0.867, 0.718
+  colorSunNight: 1, 0.867, 0.718
+  colorFogMorning: 0, 0.149, 0.216
+  colorFogDay: 0, 0.149, 0.216
+  colorFogEvening: 0, 0.149, 0.216
+  colorFogNight: 0, 0.149, 0.216
+  colorFogSunMorning: 0, 0.2, 0.231
+  colorFogSunDay: 0, 0.2, 0.231
+  colorFogSunEvening: 0, 0.2, 0.231
+  colorFogSunNight: 0, 0.2, 0.231
+  fogDensityMorning: 0.2
+  fogDensityDay: 0.2
+  fogDensityEvening: 0.2
+  fogDensityNight: 0.2
+  lightIntensityDay: 0
+  auroraIntensityNight: 0.6
+  auroraIntensityMorning: 0.121
+  auroraIntensityEvening: 0.285
+  auroraColors:
+  - 0, 0.09, 1, 0.19
+  - 0.4, 1, 0.748, 0.542
+  - 0.806, 1, 0.09, 0.892
+  aoIntensityNight: 0.8
+  aoIntensityMorning: 0.8
+  aoIntensityEvening: 0.8
+  colorAmbientOcclusion: 0, 0, 0

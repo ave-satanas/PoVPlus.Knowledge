@@ -1,0 +1,30 @@
+# BossRules runtime rules
+#
+despawn:
+  defaults: 64, 90 # default despawnRange, despawnDelaySeconds.
+  rules:
+  # - prefab, despawnRange, despawnDelay, refunds
+  #   Empty or omitted despawnRange/despawnDelay uses despawn.defaults.
+  #   despawnRange: 0 disables despawn for that prefab.
+  #   refunds omitted or empty: true. Use false to disable altar offering refunds.
+  - Fader, 64, 90, true # Boss prefabs are auto-detected, but non-boss Character prefabs can also be listed here for despawn rules.
+
+# Character phases only. A persistent Ragdoll bridge is detected automatically.
+# Missing bossPhases uses these defaults; bossPhases: [] disables phase inheritance.
+# A supplied list replaces the defaults. Uninstalled prefabs stay inactive.
+bossPhases:
+  - [FrozenKing, FrozenKing_p2, FrozenKing_p3]
+  - [ML_AshHuldraQueen1, ML_AshHuldraQueen2, ML_AshHuldraQueen3]
+
+bossTamedPressure:
+  bossPrefabs: [Eikthyr] # Extra source boss prefabs added to the auto-detected boss set
+  excludedBossPrefabs: [] # Boss prefabs to ignore from auto-detected and bossPrefabs sources
+  targets:
+    range: 32 # Clamp: 0~128. Horizontal XZ range around each boss
+    maxPerBoss: 4 # Clamp: 1~128. Maximum pressured targets per boss per scan
+    excludedTamedPrefabs: [] # Tamed MonsterAI prefabs excluded from the default pressured target set
+    extraPressuredPrefabs: [] # Character prefabs pressured even when not tamed
+  pressure:
+    damagePercentPerSecond: 0.01 # Clamp: 0~1. 0.01 = 1% of max health per second
+    incomingDamageMultiplier: 1.25 # Clamp: 0~10. Multiplies damage received while affected
+    outgoingDamageMultiplier: 0.75 # Clamp: 0~10. Multiplies damage dealt while affected

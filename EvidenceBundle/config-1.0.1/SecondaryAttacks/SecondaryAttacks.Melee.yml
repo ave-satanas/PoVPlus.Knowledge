@@ -1,0 +1,327 @@
+# Root key = `Global` fallback defaults or a melee weapon prefab name from ObjectDB.
+# Listed prefabs inherit matching `Global` preset blocks; omitted fields keep inherited or built-in defaults.
+# Set `Global.<preset>.enabled: false` to disable that automatic preset.
+# Set a prefab entry to `enabled: false` to ignore that override and use automatic fallback.
+# Set `preset: none` on a prefab entry to opt out and keep the original secondary.
+# You may keep multiple disabled examples for the same prefab. Only one enabled or omitted-enabled entry may exist per prefab.
+# A mode block's `enabled: false` disables that inherited special after other prefab settings are kept.
+# One melee special preset is active per weapon: sneakAmbush, cleavingThrust, spearRain, impactBurst, boomerang, spinningSweep, launchSlam, knockbackChain, aftershock, riftTrail, or fractureLine.
+# `harvestSweep` is the Scythe utility preset.
+# Auto-applied Global presets are type-gated: knives=sneakAmbush, 2H swords=cleavingThrust, 1H swords=riftTrail, clubs=launchSlam, fists=knockbackChain, sledges=aftershock.
+# More auto-applied Global presets: battleaxe_secondary 2H axes=impactBurst, atgeir_secondary polearms=spinningSweep, spears with a valid secondary=spearRain, 1H axes=boomerang, pickaxes=fractureLine, scythes=harvestSweep.
+#
+# Common fields:
+# animation: secondary attack animation trigger. See SecondaryAttacks_AnimationReferences.txt for possible trigger names.
+# enabled: false disables a Global preset; on a prefab entry, it ignores that override and uses automatic fallback.
+# cooldown: base seconds. cooldownReductionFactor applies `cooldown * (1 - skillLevel / 100 * cooldownReductionFactor)`.
+# durabilityFactor: weapon useDurabilityDrain multiplier.
+# resourceMultiplier: attack resource cost multiplier based on the weapon primary attack cost.
+# copyFrom only selects the source Attack shape, projectile, animation defaults, and effects; it does not use the source prefab's raw resource cost.
+# Ordinary copied secondaries use this YAML entry's root prefab primary attack cost * root resourceMultiplier.
+# Melee special presets use this YAML entry's root prefab primary attack cost * that preset block's resourceMultiplier.
+# damageFactor: multiplier for the HitData produced by the active secondary attack, not the root primary cost.
+# If the weapon has a real secondary attack, damageFactor multiplies that secondary-derived damage.
+# If the weapon has no usable secondary, a preset may copy a valid primary attack into the secondary slot; then damageFactor multiplies that primary-derived generated secondary damage.
+# Vanilla Club has no secondary attack, so automatic launchSlam borrows MaceIron's one-handed club secondary attack.
+# Projectile-based melee specials such as boomerang, impactBurst, and spearRain multiply the source projectile's original secondary HitData.
+# pushFactor: multiplier for the same active secondary/generated secondary HitData push force.
+
+Global:
+  sneakAmbush: # knives
+    enabled: true
+    cooldown: 24.0
+    cooldownReductionFactor: 0.5
+    durabilityFactor: 2
+    resourceMultiplier: 2
+    chargeMaxSeconds: 8.0 # Max pre-sneak charge seconds stored before the hit.
+    chargeSkillFactor: 2.0 # Charge speed multiplier at Sneak 100.
+    aggroResetRangePerChargeSecond: 1.0 # Aggro reset radius gained per consumed charge second.
+    senseBlockDurationPerChargeSecond: 0.25 # Sense-block seconds gained per consumed charge second.
+    backstabResetSecondsPerChargeSecond: 35.0 # Backstab wait-time reduction per consumed charge second.
+  riftTrail: # 1H swords
+    enabled: true
+    cooldown: 16.0
+    cooldownReductionFactor: 0.5
+    durabilityFactor: 2
+    resourceMultiplier: 2
+    damageFactor: 0.25
+    pushFactor: 0.0
+    duration: 2.0 # Active damage duration before the fixed visual fade.
+    tickInterval: 0.5 # Seconds between damage ticks.
+  cleavingThrust: # 2H swords
+    enabled: true
+    cooldown: 12.0
+    cooldownReductionFactor: 0.5
+    durabilityFactor: 2
+    resourceMultiplier: 2
+    damageFactor: 1.0
+    pushFactor: 6.0
+    rangeFactor: 3.0 # Multiplies the copied thrust attack range and trail length.
+  launchSlam: # 1H clubs
+    enabled: true
+    cooldown: 10.0
+    cooldownReductionFactor: 0.5
+    durabilityFactor: 2
+    resourceMultiplier: 2
+    damageFactor: 0.5
+    launchHeight: 4.0 # Target launch height before landing AOE damage.
+  aftershock: # sledges
+    enabled: true
+    cooldown: 16.0
+    cooldownReductionFactor: 0.5
+    durabilityFactor: 2
+    resourceMultiplier: 2
+    waves: 3 # Number of extra waves after the original area attack.
+    interval: 0.5 # Seconds between extra waves.
+    waveDecay: 0.2 # Extra wave damage multiplier is multiplied by this each step.
+    forwardStep: 3.0 # Forward distance between consecutive wave origins.
+  knockbackChain: # fists with kick motion
+    enabled: true
+    cooldown: 10.0
+    cooldownReductionFactor: 0.5
+    pushFactor: 8.0
+    durabilityFactor: 2
+    resourceMultiplier: 2
+    chainDecay: 0.75 # Remaining knockback strength multiplier after each collision.
+  boomerang: # 1H axes
+    enabled: true
+    cooldown: 12.0
+    cooldownReductionFactor: 0.5
+    durabilityFactor: 2
+    resourceMultiplier: 2
+    damageFactor: 1.0
+    pushFactor: 1.0
+    animation: swing_axe2 # Throw carrier animation.
+    projectileSpinAxis: vertical # Visual spin axis for the thrown weapon copy.
+    projectileVisualRotationOffset: 0, 0, 0 # Visual Euler offset for the thrown weapon copy.
+    maxDistance: 12.0 # Max aimed travel distance.
+    curveFactor: 0.5 # Return curve width relative to travel distance.
+    hitDamageDecay: 0.20 # Damage multiplier reduction after each valid hit.
+  impactBurst: # battleaxe_secondary 2H axes
+    enabled: true
+    cooldown: 12.0
+    cooldownReductionFactor: 0.5
+    durabilityFactor: 2
+    resourceMultiplier: 2
+    damageFactor: 0.75
+    pushFactor: 4.0
+    animation: battleaxe_attack1 # Throw carrier animation.
+    projectileSpinAxis: vertical # Visual spin axis for the thrown weapon copy.
+    projectileVisualRotationOffset: 0, 0, 0 # Visual Euler offset for the thrown weapon copy.
+    radius: 4.0 # Impact AOE radius.
+  spearRain: # spears
+    enabled: true
+    cooldown: 12
+    cooldownReductionFactor: 0.5
+    durabilityFactor: 2
+    resourceMultiplier: 2
+    damageFactor: 0.2
+    count: 6 # Number of falling spear projectiles.
+    spawnHeight: 10.0 # Spawn height above the marked target.
+    spawnRadius: 10.0 # Random spawn radius around the marked target.
+    flightTime: 1 # Guidance time from spawn to target.
+  spinningSweep: # atgeir_secondary polearms
+    enabled: true
+    cooldown: 20.0
+    cooldownReductionFactor: 0.5
+    durabilityFactor: 1.5
+    resourceMultiplier: 1.5
+    damageFactor: 0.75 # Damage multiplier applied to each loop attack.
+    pushFactor: 0.5 # Push/knockback multiplier applied to each loop attack.
+    skillRaiseFactor: 0.25 # Skill gain multiplier per loop hit.
+    animation: atgeir_secondary # Looping spin animation trigger.
+    loopStart: 0.4 # Normalized animation time rewound to after each loop.
+    loopEnd: 0.6 # Normalized animation time that triggers the loop rewind.
+    animationSpeed: 1.0 # Animator speed multiplier while active.
+    moveSpeedFactor: 0.75 # Movement speed multiplier while active.
+  fractureLine: # pickaxes
+    enabled: true
+    cooldown: 6.0
+    cooldownReductionFactor: 0.5
+    durabilityFactor: 2
+    resourceMultiplier: 2
+    damageFactor: 0.35
+    range: 5.0 # Crack length.
+    hitSpacing: 0.75 # Damage sample spacing along the crack.
+    duration: 1.5 # Active damage duration before the fixed visual fade.
+    tickInterval: 0.3 # Seconds between damage ticks.
+  harvestSweep: # scythes
+    enabled: true
+    cooldown: 16.0
+    cooldownReductionFactor: 0.5
+    durabilityFactor: 1.5
+    resourceMultiplier: 1.5
+    skillRaiseFactor: 0.25 # Farming skill gain multiplier per loop harvest.
+    animation: atgeir_secondary # Looping spin animation trigger.
+    loopStart: 0.4 # Normalized animation time rewound to after each loop.
+    loopEnd: 0.6 # Normalized animation time that triggers the loop rewind.
+    animationSpeed: 1.0 # Animator speed multiplier while active.
+    moveSpeedFactor: 0.75 # Movement speed multiplier while active.
+
+# Disabled prefab override examples. Set `enabled: true` or remove `enabled` to use one.
+
+# sneakAmbush
+KnifeBlackMetal:
+  enabled: false
+  preset: sneakAmbush
+  sneakAmbush:
+    chargeMaxSeconds: 6.0
+
+MaceSilver:
+  enabled: false
+  copyFrom: KnifeBlackMetal
+  preset: sneakAmbush
+  sneakAmbush:
+    resourceMultiplier: 2
+
+# cleavingThrust
+# CopyFrom is not recommended; the active attack should stay a greatsword-style secondary.
+THSwordKrom:
+  enabled: false
+  preset: cleavingThrust
+  cleavingThrust:
+    rangeFactor: 3.0
+
+THSwordSlayer:
+  enabled: false
+  preset: cleavingThrust
+  cleavingThrust:
+    rangeFactor: 2.2
+
+# spearRain
+SpearBronze:
+  enabled: false
+  preset: spearRain
+  spearRain:
+    count: 6
+
+MaceEldner:
+  enabled: false
+  copyFrom: SpearFlint
+  preset: spearRain
+  animation: spear_throw
+  spearRain:
+    count: 6
+
+# impactBurst
+# CopyFrom is ignored here; this preset uses a fixed internal throw carrier.
+BattleaxeWood:
+  enabled: false
+  preset: impactBurst
+  impactBurst:
+    radius: 4.5
+
+BattleaxeCrystal:
+  enabled: false
+  preset: impactBurst
+  impactBurst:
+    radius: 5.0
+
+# boomerang
+# CopyFrom is ignored here; this preset uses a fixed internal throw carrier.
+AxeBronze:
+  enabled: false
+  preset: boomerang
+  boomerang:
+    maxDistance: 14.0
+
+AxeIron:
+  enabled: false
+  preset: boomerang
+  boomerang:
+    maxDistance: 16.0
+    hitDamageDecay: 0.15
+
+# spinningSweep
+# CopyFrom is not used; this preset expects an atgeir_secondary-style loop.
+AtgeirIron:
+  enabled: false
+  preset: spinningSweep
+  spinningSweep:
+    damageFactor: 0.85
+    moveSpeedFactor: 0.85
+
+AtgeirBlackmetal:
+  enabled: false
+  preset: spinningSweep
+  spinningSweep:
+    animationSpeed: 1.1
+    pushFactor: 0.65
+
+# launchSlam
+MaceIron:
+  enabled: false
+  preset: launchSlam
+  launchSlam:
+    launchHeight: 4.5
+
+SwordIron:
+  enabled: false
+  copyFrom: MaceIron
+  preset: launchSlam
+  animation: mace_secondary
+  launchSlam:
+    damageFactor: 0.5
+
+# knockbackChain
+# CopyFrom is not recommended; the active attack should stay an unarmed_kick-style secondary.
+FistFenrirClaw:
+  enabled: false
+  preset: knockbackChain
+  knockbackChain:
+    pushFactor: 10.0
+
+FistBjornClaw:
+  enabled: false
+  preset: knockbackChain
+  knockbackChain:
+    chainDecay: 0.7
+
+# aftershock
+SledgeDemolisher:
+  enabled: false
+  preset: aftershock
+  aftershock:
+    waves: 4
+
+MaceBronze:
+  enabled: false
+  copyFrom: SledgeIron
+  preset: aftershock
+  aftershock:
+    waves: 3
+
+# riftTrail
+# CopyFrom is not recommended; the active attack should stay a sword_secondary-style attack with a melee trail.
+SwordSilver:
+  enabled: false
+  preset: riftTrail
+  riftTrail:
+    duration: 2.5
+
+SwordBlackmetal:
+  enabled: false
+  preset: riftTrail
+  riftTrail:
+    tickInterval: 0.4
+
+# fractureLine
+PickaxeIron:
+  enabled: false
+  preset: fractureLine
+  fractureLine:
+    range: 6.0
+
+MaceNeedle:
+  enabled: false
+  copyFrom: PickaxeIron
+  preset: fractureLine
+  fractureLine:
+    range: 5.0
+
+# harvestSweep
+# This is a Scythe utility preset, not a melee special preset; omit copyFrom.
+Scythe:
+  enabled: false
+  harvestSweep:
+    moveSpeedFactor: 0.85

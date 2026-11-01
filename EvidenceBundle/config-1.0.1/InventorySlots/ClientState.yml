@@ -1,0 +1,11 @@
+inventory:
+  lastExpandableRows: 4
+  equipmentSlotsPanelPosition:
+    x: -20.28125
+    y: -26.5625
+  quickSlotsPanelPosition:
+    x: -644.5
+    y: -304.5313
+  quickSlotsHudPosition: 
+  quickSlotsHudElementSpace: 70
+players: {}

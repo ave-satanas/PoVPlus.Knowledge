@@ -1,0 +1,227 @@
+# Warfare-native weapon effects. Warfare or WarfareFireAndIce must be installed for these entries to have runtime effect.
+# Add vanilla or other mod weapon prefab names under `prefabs:` to assign that native effect to those weapons too.
+# Each block documents what the scalar after a prefab name means. Use `{}` when a block says prefab entries only assign the effect.
+
+# Adrenaline: 5 hits on the same target within 6s restore stamina.
+# Restore formula: playerMaxStamina * prefabPercent * 0.01.
+# Prefab number is prefabPercent.
+adrenaline:
+  prefabs:
+    KnifeViper_TW: 2.857
+    FistBlackmetal_TW: 4.0
+    FistDvergr_TW: 4.571
+    DualHammerRageHatred_TW: 5.714
+    DualKnifeNjord_TW: 5.714
+    DualKnifeSurtr_TW: 5.714
+    KnifeNjord_TW: 5.714
+    KnifeSurtr_TW: 5.714
+
+# Haste: 6 hits on the same target within 6s grant a 6s speed buff.
+# Buff formula: movementSpeed *= prefabMultiplier.
+# Prefab number is prefabMultiplier.
+haste:
+  prefabs:
+    KnifeViper_TW: 1.4
+    FistBlackmetal_TW: 1.4
+
+# Vampirism: 5 hits on the same target within 6s restore health.
+# Heal formula: playerMaxHealth * value * 0.01.
+# Prefab number is native value.
+vampirism:
+  prefabs:
+    ScytheVampiric_TW: 6
+
+# Bleeding: 4 hits on the same target within stackWindow/default 4s apply a pierce DoT.
+# DoT formula: triggering actual health damage * prefabMultiplier total pierce damage over 10s.
+# Prefab number is prefabMultiplier; native max-health DoT scaling is suppressed for configured entries.
+bleeding:
+  prefabs:
+    FistSilver_TW: 1.0
+
+# Bleeding Secondary: secondary-attack hits apply a pierce DoT.
+# DoT formula: triggering actual health damage * prefabMultiplier total pierce damage over 10s.
+# Prefab number is prefabMultiplier; native max-health DoT scaling is suppressed for configured entries.
+bleedingSecondary:
+  prefabs:
+    FistQueen_TW: 1.0
+    FistChitin_TW: 1.0
+    DualSwordSkadi_TW: 1.0
+    DualSpearSvigaFrekk_TW: 1.0
+
+# Burning Secondary: WarfareFireAndIce secondary-attack hits apply a fire DoT.
+# DoT formula: triggering actual health damage * prefabMultiplier total fire damage over 10s.
+# Prefab number is prefabMultiplier; native max-health/fixed DoT scaling is suppressed for configured entries.
+burningSecondary:
+  prefabs:
+    FistSurtr_TW: 1.0
+
+# Impale: secondary-attack hits apply a pierce DoT.
+# DoT formula: triggering actual health damage * prefabMultiplier total pierce damage over 10s.
+# Prefab number is prefabMultiplier; native max-health DoT scaling is suppressed for configured entries.
+impale:
+  prefabs:
+    LanceBlackmetal_TW: 1.0
+    LanceDvergr_TW: 1.0
+    LanceNjord_TW: 1.0
+    LanceSurtr_TW: 1.0
+    ClaymoreJotunn_TW: 1.0
+
+# Bash: non-secondary hits roll a native stagger proc.
+# Proc formula: Random.Range(0, 100) <= value, then target.Stagger(Vector3.zero). Treat value as approximate percent chance.
+# Prefab number is native value, used as proc chance percent.
+bash:
+  prefabs:
+    SledgeBonemass_TW: 3
+    SledgeSilver_TW: 2
+    SledgeBlackmetal_TW: 3
+    SledgeDemolisher_TW: 4
+    SledgeFlametal_TW: 5
+    SledgeNjord_TW: 6
+    SledgeSurtr_TW: 6
+
+# Executioner: hits against targets at or below 25% health multiply the whole hit.
+# Damage formula: hit.ApplyModifier(1 + value / 100).
+# Prefab number is native value, used as bonus damage percent.
+executioner:
+  prefabs:
+    ClaymoreDvergr_TW: 15
+    ClaymoreNjord_TW: 20
+    ClaymoreSurtr_TW: 20
+    BattleaxeDragon_TW: 25
+    VolcanicBlade_TW: 25
+    GlacierBlade_TW: 25
+    LightningBlade_TW: 25
+
+# Decapitator 4: every 4 hits on the same target within 6s makes slash damage weak for the triggering damage calculation.
+# Prefab entries only assign the fixed resistance effect; native value is not used by the fixed effect.
+decapitator4:
+  prefabs:
+    BastardDvergr_TW: {}
+    BastardFlametal_TW: {}
+    BattleaxeDvergr_TW: {}
+    BattleaxeFlametal_TW: {}
+    DualSwordScimitar_TW: {}
+    BastardSurtr_TW: {}
+    BastardNjord_TW: {}
+    BattleaxeSurtr_TW: {}
+    BattleaxeNjord_TW: {}
+    DualSwordSkadi_TW: {}
+
+# Decapitator 5: every 5 hits on the same target within 6s makes slash damage weak for the triggering damage calculation.
+# Prefab entries only assign the fixed resistance effect; native value is not used by the fixed effect.
+decapitator5:
+  prefabs:
+    FistFlametal_TW: {}
+    ThrowAxeDvergr_TW: {}
+    ThrowAxeSurtr_TW: {}
+    ThrowAxeNjord_TW: {}
+    DualAxeKrom_TW: {}
+
+# Hack and Slash: every 6 hits on the same target within 2.5s makes slash damage weak for the triggering damage calculation.
+# Prefab entries only assign the fixed resistance effect; native value is not used by the fixed effect.
+hackAndSlash:
+  prefabs:
+    FistQueen_TW: {}
+
+# Smasher: every 6 hits on the same target within 6s makes blunt damage weak for the triggering damage calculation.
+# Prefab entries only assign the fixed resistance effect; native value is not used by the fixed effect.
+smasher:
+  prefabs:
+    BattlehammerDvergr_TW: {}
+    BattlehammerElder_TW: {}
+    BattlehammerNjord_TW: {}
+    BattlehammerSurtr_TW: {}
+
+# Smash and Bash: WarfareFireAndIce effect. Every 6 hits on the same target within 1s makes blunt damage weak.
+# Prefab entries only assign the fixed resistance effect; native value is not used by the fixed effect.
+smashAndBash:
+  prefabs:
+    FistNjord_TW: {}
+
+# Bludgeoner: WarfareFireAndIce effect. Every 6 hits on the same target within 3s makes blunt damage weak.
+# Prefab entries only assign the fixed resistance effect; native value is not used by the fixed effect.
+bludgeoner:
+  prefabs:
+    DualHammerRageHatred_TW: {}
+
+# Juggernaut: Warfare's internal effect used by warpikes and displayed in-game as Piercer.
+# Every 4 hits on the same target within 6s makes pierce damage weak for the triggering damage calculation.
+# Prefab entries only assign the fixed resistance effect; native value is not used by the fixed effect.
+juggernaut:
+  prefabs:
+    WarpikeBone_TW: {}
+    WarpikeElder_TW: {}
+    WarpikeChitin_TW: {}
+    WarpikeObsidian_TW: {}
+    WarpikeBlackmetal_TW: {}
+    WarpikeDvergr_TW: {}
+    WarpikeFlametal_TW: {}
+    WarpikeNjord_TW: {}
+    WarpikeSurtr_TW: {}
+    DualSpearSvigaFrekk_TW: {}
+
+# Piercing Greatbow Mistlands: every 4 hits on the same target within 10s deal fixed extra pierce damage.
+# Damage formula: prefabDamage pierce damage.
+# Prefab number is prefabDamage.
+piercingGreatbowMistlands:
+  prefabs:
+    GreatbowDvergr_TW: 60
+
+# Piercing Greatbow Moder: every 4 hits on the same target within 10s deal fixed extra frost damage.
+# Damage formula: prefabDamage frost damage.
+# Prefab number is prefabDamage.
+piercingGreatbowModer:
+  prefabs:
+    GreatbowModer_TW: 40
+
+# Piercing Greatbow Plains: every 4 hits on the same target within 10s deal fixed extra pierce damage.
+# Damage formula: prefabDamage pierce damage.
+# Prefab number is prefabDamage.
+piercingGreatbowPlains:
+  prefabs:
+    GreatbowBlackmetal_TW: 40
+
+# Pierce Greatbow FireAndIce: every 4 hits on the same target within 10s deal fixed extra pierce damage.
+# Damage formula: prefabDamage pierce damage.
+# Prefab number is prefabDamage.
+pierceGreatbowFireAndIce:
+  prefabs:
+    GreatbowNjord_TW: 100
+    GreatbowSurtr_TW: 100
+
+# Pinning: hits apply the native Pinned status.
+# Formula: status ttl = value seconds; ModifySpeed sets target speed to 0 while active.
+# Prefab number is native value, used as duration seconds.
+pinning:
+  prefabs:
+    GreatbowModer_TW: 4
+
+# Lightning Burst: WarfareFireAndIce effect. Every 5 hits on the same target within 3s deal fixed extra lightning damage.
+# Damage formula: prefabDamage lightning damage.
+# Prefab number is prefabDamage.
+lightningBurst:
+  prefabs:
+    DualHammerStormstrike_TW: 55
+    FistFenrir_TW: 55
+
+# Chain Lightning: attaches the named Warfare ChainLightning AOE prefab to weapon hits.
+# AOE formula: on proc, Attack.m_spawnOnHit spawns this AOE; lightningDamage sets Aoe.m_damage.m_lightning,
+# radius sets Aoe.m_radius, ttl sets Aoe.m_ttl, hitInterval sets Aoe.m_hitInterval.
+# Prefab number is procChance percent per hit.
+ChainLightningMistlands_TW:
+  lightningDamage: 32.0
+  radius: 8.0
+  ttl: 3.0
+  hitInterval: 0.0
+  prefabs:
+    GreatbowDvergr_TW: 35
+    BastardDvergr_TW: 20
+    AxeDvergr_TW: 20
+    BattleaxeDvergr_TW: 20
+    BattlehammerDvergr_TW: 20
+    ClaymoreDvergr_TW: 20
+    FistDvergr_TW: 20
+    LanceDvergr_TW: 20
+    MaceDvergr_TW: 20
+    ThrowAxeDvergr_TW: 20
+    WarpikeDvergr_TW: 20

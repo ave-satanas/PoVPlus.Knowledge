@@ -1,0 +1,68 @@
+# DataForge piece overrides.
+# Copy entries from pieces.reference.yml, or run `dataforge:full piece` to generate pieces.full.yml for exhaustive field examples.
+# You can also create additional override files like pieces_asdf.yml; DataForge loads pieces.yml and pieces_*.yml together.
+# Omitted fields keep the current piece value. Values below are common defaults or examples.
+#
+# Schema:
+# - piece: wood_wall                    # required; piece prefab id.
+#   override: true                      # default true; false skips this entire piece entry, including remove.
+#   remove: false                       # default false; true hides this piece from build tables without deleting placed pieces.
+#   name: $piece_woodwall               # Piece.m_name localization token or text.
+#   description: $piece_woodwall_desc   # Piece.m_description localization token or text.
+#   pieceTable: Hammer                  # build tool/table to show this piece in. Hammer is the reference default and is omitted there.
+#   category: Building                  # exact case-sensitive tab name; an unknown name creates a new tab. Feasts, Food, and Meads are ignored by DataForge.
+#                                        # configure tab order and display labels in pieceCategory.yml.
+#                                        # Homestead is owner-managed and cannot be assigned through this field while that mod is installed.
+#   sortOrder: 100                      # lower appears earlier in the same build tab; omitted keeps original order.
+#   needStation: None                   # station prefab/name needed to build; None clears the station requirement.
+#   canBeRemoved: true                  # false prevents removing the placed piece with a hammer.
+#   health: 100                         # max structural health when the prefab is damageable.
+#   comfort: 0, None                    # comfort amount, comfort group: None, Fire, Bed, Banner, Chair, Table, Carpet.
+#   visual:
+#     scale: 1                          # uniform prefab scale for newly placed pieces; larger values also affect collider/support behavior.
+#     material: wood                    # material name from z_materials.reference.txt; replaces piece renderer material slots.
+#     icon: auto                        # auto snapshots the piece icon after visual changes; or use a 256*256 png name from DataForge/icon.
+#     iconRotation: 23, 51, 25.8        # x, y, z rotation used by icon: auto.
+#   resources:
+#   - Wood: 2                           # item: amount; add ', false' to disable build resource recovery.
+#   sapCollector: Sap, 60, 10           # produced item, seconds per unit, max stored units.
+#   beehive: 1200, 4                    # seconds per produced honey, max stored honey.
+#   fermenter:
+#     duration: 2400                    # fermentation duration in seconds.
+#     requiresRoof: true                # false ignores the vanilla roof requirement.
+#     requiresCover: true               # false ignores the vanilla 70% cover requirement.
+#     conversions:
+#     - MeadBaseHealthMedium: MeadHealthMedium, 6 # from item: to item, produced amount.
+#   cookingStation:
+#     fuel: Wood, true, 10, 60          # fuel item prefab, require external fire, maxFuel, seconds per fuel. None clears fuel.
+#     conversions:
+#     - BreadDough: Bread, 50           # from item: to item, cook time seconds.
+#   smelter:
+#     input: Coal, 20, 10               # fuel item prefab; None clears it, maxFuel, maxOre.
+#     output: 2, 30                     # fuelPerProduct, seconds per product.
+#     requiresRoof: true                # true requires roof cover.
+#     conversions:
+#     - CopperOre: Copper               # from item: to item.
+#   container: 10, 4                    # width, height.
+#   stationExtension: forge, 5           # target station prefab/name, max distance. Use None to remove/disable StationExtension.
+#   craftingStation:                    # edits an existing CraftingStation, or adds one if missing; omit later to remove DataForge-added station.
+#     name: $piece_forge                # CraftingStation.m_name localization token or text.
+#     discoveryRange: 4                 # station discovery range.
+#     buildRange: 20, 0                 # base build range, extra range per extension level.
+#     craftRequiresRoof: false          # true requires roof to use the station.
+#     craftRequiresFire: false          # true requires fire to use the station.
+#     showBasicRecipes: true            # CraftingStation.m_showBasicRecipies.
+#     useDistance: 2                    # interaction distance.
+#     useAnimation: 2                   # player crafting animation id.
+#     craftingSkill: Crafting           # Skills.SkillType used for craft speed/bonus/raise.
+#
+# Example:
+# - piece: wood_wall
+#   health: 250
+#   visual:
+#     scale: 2
+#     material: amber
+#     icon: auto
+#   stationExtension: None
+#   resources:
+#   - Wood: 4

@@ -1,0 +1,78 @@
+# Any file named DNS_spawner_*.yml or DNS_spawner_*.yaml is also loaded.
+# Use DNS_spawner.reference.yml to look up real spawner object names and DNS_spawner.locations.reference.yml to look up valid location names
+# Run `dns:full spawner` to regenerate DNS_spawner.full.yml for exhaustive field examples
+# Only the most specific passing entry is applied # Less specific entries act as fallback # If multiple passing entries share the same specificity, the later loaded one wins
+#
+# spawnArea
+#
+# - prefab: BonePileSpawner
+#   enabled: true
+#   locations: [Grave1] # ex) locations[] from DNS_spawner.locations.reference.yml # Optional
+#   conditions: # If these conditions fail, this custom entry is ignored and the original spawner behavior is used
+#     altitude: null # ex) -1000~1000 # Range in world-height meters
+#     distanceFromCenter: null # ex) 0~10000 # Range in meters from the world center
+#     biomes: [] # ex) [BlackForest, Mistlands] # Allowed biomes # EWD custom biome names also work when EWD is installed
+#     timeOfDay: null # ex) [night] # [day, night]
+#     requiredEnvironments: [] # ex) [Rain] # Allowed environment names
+#     requiredGlobalKeys: [] # ex) [defeated_gdking] # Required global keys
+#     forbiddenGlobalKeys: [] # ex) [nomap] # Forbidden global keys
+#     inForest: null # ex) true = forest only # false = outside forest only # null or no field allows both
+#     inDungeon: null # ex) true = dungeon only # false = overworld only # null or no field allows both
+#     insidePlayerBase: null # ex) true = near player base only # false = away from player base only # null or no field allows both # Valid for spawnArea-only entry gating
+#   spawnArea:
+#     levelUpChance: 15 # Percent chance for each extra level roll when creature level is a range
+#     spawnInterval: 30 # Seconds between spawn attempts after the timer passes
+#     triggerDistance: 256 # Meters from the spawner within which players must be present for spawning to tick
+#     setPatrolSpawnPoint: true # True gives spawned AI this spawner as its patrol or home point
+#     spawnRadius: 2 # Meters around the SpawnArea center used for spawn placement
+#     nearRadius: 10 # Meters used by the native near-count cap
+#     farRadius: 1000 # Meters used by the native total-count cap
+#     maxNear: 3 # Native cap on living creatures inside nearRadius
+#     maxTotal: 20 # Native cap on living creatures inside farRadius
+#     maxTotalSpawns: null # Optional total successful-spawn limit for this SpawnArea # null uses General / Default SpawnArea Max Total Spawns # 0 disables # 1~1000 destroys after that many successful spawns
+#     onGroundOnly: false # True restricts spawn placement to grounded points only
+#     creatures:
+#     - creature: null # ex) Draugr # Required creature prefab name
+#       weight: 1 # Relative weight versus other entries in the same SpawnArea list
+#       level: 1~1 # ex) 1~2 # Range of spawned creature levels
+#       data: null # Optional Expand World Data entry applied to the spawned creature
+#       fields: {} # ex) { Character.m_name: $enemy_draugr, health: 200 } # Expand World Data field overrides layered on top of data
+#       objects: [] # ex) [Wood,0,0,0,1] # Expand World Data object entries spawned at the final spawn point
+#       faction: null # ex) Boss # Values: Players, AnimalsVeg, ForestMonsters, Undead, Demon, MountainMonsters, SeaMonsters, PlainsMonsters, Boss, MistlandsMonsters, Dverger, PlayerSpawned, TrainingDummy, DeepNorth
+#
+# creatureSpawner
+#
+# - prefab: Spawner_Boar
+#   enabled: true
+#   locations: [Runestone_Boars] # ex) locations[] from DNS_spawner.locations.reference.yml # Optional
+#   conditions:
+#     altitude: null
+#     distanceFromCenter: null
+#     biomes: []
+#     requiredEnvironments: []
+#     inForest: null
+#     inDungeon: null
+#   creatureSpawner:
+#     creature: null # ex) Skeleton # Required creature prefab name
+#     timeOfDay: [day, night] # Runtime gate for this spawner
+#     requiredGlobalKey: '' # ex) defeated_gdking # Use '' to clear the native requirement # Omit the key to keep the current value
+#     blockingGlobalKey: '' # ex) nomap # Use '' to clear the native block key # Omit the key to keep the current value
+#     level: 1~1 # ex) 1~2 # Range of spawned creature levels
+#     levelUpChance: 10 # Percent chance for each extra level roll when level is a range
+#     respawnTimeMinutes: 20 # 0 disables respawn after the first successful spawn # Minutes before this spawner can respawn after the previous creature is gone
+#     maxTotalSpawns: null # null uses General / Default CreatureSpawner Max Total Spawns # 0 adds no limit # 1~1000 stops this spawner after that many successful spawns counted while limited; does not enable respawn or destroy the spawner
+#     spawnCheckInterval: 5 # Seconds between UpdateSpawner checks for this spawner
+#     spawnGroupId: 0 # Use spawnGroupRadius: 0 to avoid grouping # Nearby spawners with the same id can share native group blocking
+#     spawnGroupRadius: 0 # Meters used to link nearby same-id spawners into one native group
+#     spawnerWeight: 1 # Relative weight when a native spawn group chooses one spawner to fire
+#     maxGroupSpawned: 1 # Max living creatures allowed across the native spawn group
+#     triggerDistance: 60 # Meters from this spawner within which players must be present for UpdateSpawner to pass
+#     triggerNoise: 0 # 0 ignores noise # Meters-equivalent native noise threshold required inside triggerDistance
+#     allowInsidePlayerBase: false # True allows spawning inside player-base suppression areas
+#     wakeUpAnimation: false # True plays the wake-up animation when the creature appears
+#     setPatrolSpawnPoint: false # True makes spawned AI patrol around this spawner
+#     faction: null
+#     data: null
+#     fields: {}
+#     objects: []
+#

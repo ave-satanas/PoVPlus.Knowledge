@@ -1,0 +1,26 @@
+{
+  "TargetFile": "enchantcosts",
+  "Author": "Valheim Korean Translations - optional OdinHorse recipe",
+  "Patches": [
+    {
+      "Path": "DisenchantProducts",
+      "Action": "Append",
+      "Require": true,
+      "Value": {
+        "ItemTypes": [
+          "Trophy"
+        ],
+        "ItemNames": [
+          "$trophy_horse",
+          "$trophy_sheep_TW"
+        ],
+        "Products": [
+          {
+            "Item": "ShardMagic",
+            "Amount": 1
+          }
+        ]
+      }
+    }
+  ]
+}

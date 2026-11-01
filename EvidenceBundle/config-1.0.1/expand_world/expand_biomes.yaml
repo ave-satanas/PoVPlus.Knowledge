@@ -1,0 +1,110 @@
+- biome: Meadows
+  environments:
+  - environment: Clear
+    weight: 5
+  - environment: Rain
+    weight: 0.2
+  - environment: Misty
+    weight: 0.2
+  - environment: ThunderStorm
+    weight: 0.2
+  - environment: LightRain
+    weight: 0.2
+  colorMap: 0.573, 0.655, 0.361
+  colorTerrain: 0, 0, 0, 0
+  musicDay: meadows
+- biome: Swamp
+  environments:
+  - environment: SwampRain
+  colorMap: 0.639, 0.447, 0.345
+  colorTerrain: 1, 0, 0, 0
+  musicDay: swamp
+  musicNight: swamp
+- biome: Mountain
+  environments:
+  - environment: SnowStorm
+  - environment: Snow
+    weight: 5
+  colorMap: 1, 1, 1
+  colorTerrain: 0, 1, 0, 0
+  musicDay: mountain
+  musicNight: mountain
+- biome: BlackForest
+  environments:
+  - environment: DeepForest Mist
+    weight: 2
+  - environment: Rain
+    weight: 0.1
+  - environment: Misty
+    weight: 0.1
+  - environment: ThunderStorm
+    weight: 0.1
+  colorMap: 0.42, 0.455, 0.247
+  colorTerrain: 0, 0, 1, 0
+  musicDay: blackforest
+  musicNight: blackforest
+- biome: Plains
+  environments:
+  - environment: Heath clear
+    weight: 2
+  - environment: Misty
+    weight: 0.4
+  - environment: LightRain
+    weight: 0.4
+  colorMap: 0.906, 0.671, 0.47
+  colorTerrain: 0, 0, 0
+  musicDay: plains
+  musicNight: plains
+- biome: AshLands
+  environments:
+  - environment: Ashlands_ashrain
+    weight: 1.5
+  - environment: Ashlands_misty
+    weight: 0.1
+  - environment: Ashlands_CinderRain
+    weight: 0.2
+  - environment: Ashlands_storm
+    weight: 0.05
+  colorMap: 0.481, 0.125, 0.125
+  colorTerrain: 1, 0, 0
+  musicDay: ashlands
+  musicNight: ashlands
+  lava: true
+- biome: DeepNorth
+  environments:
+  - environment: Twilight_SnowStorm
+    weight: 0.5
+  - environment: Twilight_Snow
+  - environment: Twilight_Clear
+  colorMap: 1, 1, 1
+  colorTerrain: 0, 1, 0, 0
+  musicDay: deepnorth
+  musicNight: deepnorth
+- biome: Ocean
+  environments:
+  - environment: Rain
+    weight: 0.1
+  - environment: LightRain
+    weight: 0.1
+  - environment: Misty
+    weight: 0.1
+  - environment: Clear
+  - environment: ThunderStorm
+    weight: 0.1
+  - environment: Ashlands_SeaStorm
+    weight: 0.05
+    ashlandsOverride: true
+  colorMap: 1, 1, 1
+  colorTerrain: 0, 0, 0, 0
+- biome: Mistlands
+  environments:
+  - environment: Mistlands_clear
+    weight: 1.5
+  - environment: Mistlands_rain
+    weight: 0.1
+  - environment: Mistlands_thunder
+    weight: 0.1
+  colorMap: 0.2, 0.2, 0.2
+  colorTerrain: 0, 0, 1
+  musicDay: mistlands
+  musicNight: mistlands

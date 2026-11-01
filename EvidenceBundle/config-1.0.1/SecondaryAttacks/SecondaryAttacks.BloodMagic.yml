@@ -1,0 +1,92 @@
+# Blood magic global presets.
+# Explicit prefab entries inherit the matching Global preset.
+# Set `Global.<preset>.enabled: false` to disable that automatic preset.
+# Set a prefab entry to `enabled: false` to ignore that override and use automatic fallback.
+# Set `preset: none` on a prefab entry to opt out and keep the original secondary.
+# You may keep multiple disabled examples for the same prefab. Only one enabled or omitted-enabled entry may exist per prefab.
+# animation: secondary attack animation trigger. See SecondaryAttacks_AnimationReferences.txt for possible trigger names.
+
+Global:
+  summonEmpower: # Auto-applies to Blood Magic staves whose primary projectile has a SpawnAbility payload.
+    enabled: true
+    animation: ""
+    cooldown: 30
+    cooldownReductionFactor: 0.5
+    resourceMultiplier: 1.0
+    durabilityFactor: 1.0
+    radius: 10
+    duration: 15
+    moveSpeedFactor: 1.5 # Multiplies non-crouching movement, matching acceleration, and turn speeds.
+    attackSpeedFactor: 2 # Multiplies attack animation speed and divides both the weapon attack interval and AI minimum attack interval.
+
+  shieldConvert: # Auto-applies to StaffShield.
+    enabled: true
+    animation: ""
+    cooldown: 30
+    cooldownReductionFactor: 0.5
+    resourceMultiplier: 1.0
+    durabilityFactor: 1.0
+    radius: 7
+    healFactor: 0.5
+
+# Disabled prefab override examples. Set `enabled: true` or remove `enabled` to use one.
+# Add a `summon` block under the item prefab whose primary/secondary summon projectile should be modified.
+# The config option "Magic Summon Quality Preset" globally applies levelByQuality by default;
+# entries below override that global preset for individual item prefabs.
+# Quality scaling uses actual staff quality, including Idol upgrades, capped at 10.
+# This does not change the item's normal crafting upgrade limit.
+# Optional `lifetimeSeconds` must be a positive integer. It overrides the positive global Blood Magic
+# summon lifetime for this staff; omitted values use the global config before Blood Magic skill scaling.
+# A global lifetime of 0 disables lifetime assignment and ignores every staff-specific override.
+
+StaffRedTroll:
+  enabled: false
+  summon:
+    qualityPreset: countByQuality # Keeps up to 10 active summons by staff quality, all at level 1.
+    lifetimeSeconds: 900 # Optional staff-specific base lifetime before Blood Magic skill scaling.
+
+StaffSkeleton:
+  enabled: false
+  summon:
+    spawnChoices:
+      - sourcePrefab: Charred_Melee
+        clonePrefab: CharryMelee
+        weight: 2 # Spawn chance is 2 / (2 + 1).
+      - sourcePrefab: Charred_Archer
+        clonePrefab: CharryArchy
+        weight: 1
+
+StaffShield:
+  enabled: false
+  preset: shieldConvert
+  animation: staff_shield
+  cooldown: 30
+  cooldownReductionFactor: 0.5
+  radius: 7
+  healFactor: 0.5
+
+# Full summonEmpower adjustment example.
+StaffRedTroll:
+  enabled: false
+  preset: summonEmpower
+  animation: staff_summon
+  resourceMultiplier: 2
+  durabilityFactor: 2
+  cooldown: 60
+  cooldownReductionFactor: 0.5
+  radius: 15
+  duration: 20
+  moveSpeedFactor: 2
+  attackSpeedFactor: 4
+  summon:
+    spawnChoices:
+      - sourcePrefab: Draugr
+        clonePrefab: Draugr_test
+        displayName: "Draugr Test (Summon)" # Optional; omitted uses the localized source name + " (Summon)".
+        health: 250 # Optional; omitted keeps sourcePrefab health.
+
+# Additional qualityPreset form.
+StaffSkeleton:
+  enabled: false
+  summon:
+    qualityPreset: levelByQuality # Keeps one summon at the staff's quality level, capped at level 10.

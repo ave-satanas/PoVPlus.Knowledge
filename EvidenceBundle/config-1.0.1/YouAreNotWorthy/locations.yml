@@ -1,0 +1,8 @@
+# Map each exact ZoneSystem location prefab name to its required personal key.
+# Use the location prefab, not a localized label or a minimap display-icon token.
+# Expand World Data may keep a custom iconAlways/iconPlaced token in its own YAML;
+# YNW resolves the originating prefab while preserving that icon's appearance.
+# Unresolved and non-location pins remain unrestricted. Use {} for no restrictions.
+Vendor_BlackForest: defeated_eikthyr
+Hildir_camp: defeated_eikthyr
+BogWitch_Camp: defeated_gdking

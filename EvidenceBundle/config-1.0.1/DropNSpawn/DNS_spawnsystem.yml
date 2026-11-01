@@ -1,0 +1,1751 @@
+# This file is auto-loaded from DNS_spawnsystem.yml or DNS_spawnsystem.yaml, plus any DNS_spawnsystem_*.yml/.yaml files.
+# Loaded files are concatenated in filename order after the primary file.
+# This auto-created override is seeded from the current live SpawnSystem snapshot only and does not merge external CreatureManager/Jotunn reference projections.
+# Use dns:reference spawnsystem when you want to export DNS_spawnsystem.reference.yml for a compact reference snapshot, or DNS_spawnsystem.full.yml for exhaustive field examples.
+# Applying this file still strictly replaces the live SpawnSystem table with the rows defined here.
+# requiredGlobalKey also supports 'key 10' to require at least that numeric value and consume it after each successful spawn.
+# - prefab: Boar
+#   spawnSystem: # Flat SpawnSystem row # Controls spawn timing, placement, limits, native conditions, and custom data
+#     name: null # ex) Boar # Optional row name # Omit to default to the prefab name in this compressed format
+#     huntPlayer: false # True marks the spawned AI as hunting the player
+#     level: 1~1 # ex) 1~3 # Range of spawned creature levels
+#     overrideLevelUpChance: -1 # Use -1 to keep native behavior # Percent per extra level roll
+#     levelUpMinCenterDistance: 0 # Meters from the world center before native level-up rolls start
+#     groundOffset: 0.5 # Meters of vertical placement offset
+#     groundOffsetRandom: 0 # Range in meters of random vertical placement offset
+#     spawnInterval: 4 # ex) 100 # Seconds between spawn checks
+#     spawnChance: 100 # Percent chance per successful check
+#     spawnRadius: 40~80 # ex) 20~60 # Range in meters from one player to the chosen spawn center # Native effective default; 0 on min/max uses the native 40/80 fallback
+#     groupSize: 1~1 # ex) 1~3 # Range of creatures spawned by one successful attempt
+#     groupRadius: 3 # Meters from the chosen spawn center to each spawned creature
+#     noSpawnRadius: 10 # Meters from the chosen spawn center used to block the attempt if the same prefab is already nearby
+#     maxSpawned: 1 # Active prefab count cap in the wider area loaded around players
+#     tilt: 0~35 # Range in degrees of allowed ground tilt
+#     altitude: -1000~1000 # Range in world-height meters
+#     oceanDepth: 0~0 # ex) 0~10 # Range in meters of water depth at the spawn point # 0~0 leaves the native depth check effectively unconstrained
+#     distanceFromCenter: 0~0 # ex) 0~10000 # Range in meters from the world center # 0~0 leaves the native distance check effectively unconstrained
+#     biomes: [Meadows] # Allowed spawn biomes # Expand World Data custom biome names and numeric biome masks also work when EWD is installed
+#     biomeAreas: [Everything] # Allowed values: Edge, Median, Everything # Edge = biome border band # Median = biome interior # Everything = both
+#     timeOfDay: null # ex) [day, night]
+#     requiredEnvironments: [] # ex) [Rain, Clear] # Allowed environment names
+#     requiredGlobalKey: '' # ex) defeated_gdking # Native default is '' # Supports 'key 10' numeric syntax too
+#     requiredPersistentEvent: '' # Internal name of the persistent event required at the spawn center # Empty = no requirement
+#     inLava: false # True = lava only # False = outside lava only
+#     inForest: null # ex) true = forest only # false = outside forest only # null or no field allows both
+#     insidePlayerBase: false # False = outside player-base influence only
+#     canSpawnCloseToPlayer: false # True allows close-to-player spawns
+#     fields: {} # ex) { Character.m_name: $enemy_boar, health: 200, damage: 2 } # Expand World Data field overrides
+#     objects: [] # ex) [Wood,0,0,0,1] # Expand World Data object entries
+#     data: null # Expand World Data data entry name from your EWD config
+#     faction: null # ex) ForestMonsters # Values: Players, AnimalsVeg, ForestMonsters, Undead, Demon, MountainMonsters, SeaMonsters, PlainsMonsters, Boss, MistlandsMonsters, Dverger, PlayerSpawned, TrainingDummy, DeepNorth
+#
+# Optional file header: '- spawnIntervalMultiplier: 2.0' must be the first list item and scales only this file's SpawnSystem intervals.
+# The multiplier must be greater than zero. 0.5 halves intervals (more frequent checks); 2.0 doubles intervals (less frequent checks).
+# - spawnIntervalMultiplier: 1.0
+
+- prefab: Boar
+  spawnSystem:
+    level: 1~3
+    spawnInterval: 90
+    spawnChance: 50
+    groupRadius: 6
+    noSpawnRadius: 32
+    maxSpawned: 2
+    altitude: 0~1000
+    biomes: [Meadows]
+
+- prefab: Deer
+  spawnSystem:
+    level: 1~3
+    spawnInterval: 30
+    spawnChance: 60
+    groupSize: 1~2
+    groupRadius: 5
+    noSpawnRadius: 40
+    maxSpawned: 2
+    altitude: 0~1000
+    biomes: [Meadows]
+    inForest: true
+
+- prefab: Greyling
+  spawnSystem:
+    spawnInterval: 300
+    spawnChance: 50
+    noSpawnRadius: 30
+    maxSpawned: 2
+    altitude: 0~1000
+    biomes: [Meadows]
+    inForest: true
+
+- prefab: Neck
+  spawnSystem:
+    name: Neck IN RAIN
+    level: 1~3
+    spawnInterval: 31
+    groupSize: 1~3
+    groupRadius: 5
+    noSpawnRadius: 32
+    maxSpawned: 8
+    altitude: 0~10
+    biomes: [Meadows]
+    requiredEnvironments: [Rain, ThunderStorm, LightRain]
+
+- prefab: Neck
+  spawnSystem:
+    name: Neck lakes
+    level: 1~3
+    spawnInterval: 100
+    spawnChance: 50
+    groupSize: 1~3
+    groupRadius: 5
+    noSpawnRadius: 5
+    maxSpawned: 6
+    altitude: -1.5~0.5
+    oceanDepth: 0~1
+    biomes: [Meadows]
+
+- prefab: Fish1
+  spawnSystem:
+    level: 1~5
+    overrideLevelUpChance: 20
+    groundOffset: 0.1
+    spawnInterval: 120
+    spawnChance: 50
+    groupSize: 2~6
+    groupRadius: 2
+    noSpawnRadius: 20
+    maxSpawned: 5
+    tilt: 0~99
+    altitude: -1000~-3
+    distanceFromCenter: 0~10000
+    biomes: [Meadows, BlackForest]
+
+- prefab: Fish2
+  spawnSystem:
+    level: 1~5
+    overrideLevelUpChance: 20
+    groundOffset: 0.1
+    spawnInterval: 120
+    spawnChance: 50
+    groupSize: 2~4
+    groupRadius: 2
+    noSpawnRadius: 20
+    maxSpawned: 4
+    tilt: 0~99
+    altitude: -1000~-3
+    distanceFromCenter: 0~10000
+    biomes: [Meadows, BlackForest]
+
+- prefab: Bjorn
+  spawnSystem:
+    spawnInterval: 1200
+    spawnChance: 24
+    noSpawnRadius: 16
+    altitude: 5~1000
+    biomes: [BlackForest]
+    biomeAreas: [Median]
+
+- prefab: Deer
+  spawnSystem:
+    level: 1~3
+    spawnInterval: 60
+    spawnChance: 30
+    groupSize: 1~3
+    groupRadius: 5
+    noSpawnRadius: 64
+    maxSpawned: 2
+    altitude: 0~1000
+    biomes: [BlackForest]
+    inForest: true
+
+- prefab: FireFlies
+  spawnSystem:
+    spawnInterval: 20
+    maxSpawned: 4
+    altitude: 0~1000
+    biomes: [BlackForest]
+    timeOfDay: [night]
+
+- prefab: Fish5
+  spawnSystem:
+    level: 1~5
+    overrideLevelUpChance: 20
+    groundOffset: 0.1
+    spawnInterval: 80
+    spawnChance: 50
+    groupSize: 3~7
+    groupRadius: 2
+    noSpawnRadius: 12
+    maxSpawned: 10
+    tilt: 0~99
+    altitude: -1000~-3
+    distanceFromCenter: 0~10000
+    biomes: [BlackForest]
+
+- prefab: Greydwarf
+  spawnSystem:
+    name: greydwarf DAY
+    level: 1~3
+    spawnInterval: 30
+    spawnChance: 64
+    groupSize: 1~2
+    noSpawnRadius: 16
+    maxSpawned: 2
+    altitude: 0~1000
+    biomes: [BlackForest]
+    timeOfDay: [day]
+
+- prefab: Greydwarf
+  spawnSystem:
+    name: greydwarf Night
+    level: 1~3
+    spawnInterval: 30
+    groupSize: 1~3
+    groupRadius: 16
+    maxSpawned: 2
+    altitude: 0~1000
+    biomes: [BlackForest]
+    timeOfDay: [night]
+
+- prefab: Greydwarf_Elite
+  spawnSystem:
+    name: greydwarf ELITE
+    level: 1~3
+    spawnInterval: 120
+    spawnChance: 64
+    groupRadius: 1
+    noSpawnRadius: 16
+    altitude: 0~1000
+    biomes: [BlackForest]
+    biomeAreas: [Median]
+
+- prefab: Greydwarf_Shaman
+  spawnSystem:
+    level: 1~3
+    spawnInterval: 30
+    spawnChance: 64
+    noSpawnRadius: 16
+    altitude: 0~1000
+    biomes: [BlackForest]
+    biomeAreas: [Median]
+
+- prefab: Troll
+  spawnSystem:
+    level: 1~3
+    spawnInterval: 1500
+    spawnChance: 25
+    noSpawnRadius: 32
+    altitude: 0~1000
+    biomes: [BlackForest]
+    biomeAreas: [Median]
+
+- prefab: Abomination
+  spawnSystem:
+    spawnInterval: 1800
+    spawnChance: 48
+    noSpawnRadius: 32
+    altitude: -2~5
+    biomes: [Swamp]
+    biomeAreas: [Median]
+
+- prefab: Blob
+  spawnSystem:
+    spawnInterval: 30
+    spawnChance: 20
+    groupSize: 1~2
+    groupRadius: 24
+    noSpawnRadius: 20
+    maxSpawned: 2
+    altitude: -1~1000
+    biomes: [Swamp]
+
+- prefab: BlobElite
+  spawnSystem:
+    spawnInterval: 60
+    spawnChance: 25
+    groupRadius: 1
+    noSpawnRadius: 20
+    altitude: -1~1000
+    biomes: [Swamp]
+    timeOfDay: [night]
+
+- prefab: Draugr
+  spawnSystem:
+    name: Marsh draugr
+    level: 1~3
+    spawnInterval: 20
+    spawnChance: 90
+    groupSize: 1~2
+    groupRadius: 24
+    maxSpawned: 2
+    altitude: -1.5~10
+    biomes: [Swamp]
+
+- prefab: Draugr_Elite
+  spawnSystem:
+    name: Draugr Elite
+    spawnInterval: 300
+    spawnChance: 50
+    groupRadius: 1
+    noSpawnRadius: 15
+    altitude: -1.5~10
+    biomes: [Swamp]
+    biomeAreas: [Median]
+    timeOfDay: [night]
+
+- prefab: Draugr_Ranged
+  spawnSystem:
+    name: Marsh draugr
+    level: 1~3
+    spawnInterval: 40
+    spawnChance: 40
+    groupSize: 1~2
+    groupRadius: 24
+    maxSpawned: 2
+    altitude: -1.5~10
+    biomes: [Swamp]
+
+- prefab: Fish6
+  spawnSystem:
+    level: 1~5
+    overrideLevelUpChance: 20
+    groundOffset: 0.1
+    spawnInterval: 80
+    spawnChance: 60
+    groupSize: 3~7
+    groupRadius: 2
+    maxSpawned: 10
+    tilt: 0~99
+    altitude: -1000~-3
+    distanceFromCenter: 0~10000
+    biomes: [Swamp]
+
+- prefab: Leech
+  spawnSystem:
+    level: 1~3
+    spawnInterval: 15
+    spawnChance: 75
+    groupRadius: 2
+    noSpawnRadius: 5
+    maxSpawned: 2
+    altitude: -3~-0.1
+    biomes: [Swamp]
+
+- prefab: Skeleton
+  spawnSystem:
+    level: 1~3
+    spawnInterval: 20
+    spawnChance: 50
+    groupSize: 2~4
+    groupRadius: 24
+    noSpawnRadius: 15
+    altitude: -1~10
+    biomes: [Swamp]
+
+- prefab: Skeleton_Swamps
+  spawnSystem:
+    name: Skeleton
+    level: 1~3
+    spawnInterval: 400
+    spawnChance: 25
+    groupSize: 2~4
+    groupRadius: 4
+    noSpawnRadius: 15
+    maxSpawned: 4
+    altitude: -1~10
+    biomes: [Swamp]
+
+- prefab: Surtling
+  spawnSystem:
+    name: Marsh surtling
+    spawnInterval: 30
+    spawnChance: 60
+    groupSize: 1~2
+    noSpawnRadius: 16
+    altitude: 0~1000
+    biomes: [Swamp]
+
+- prefab: Wraith
+  spawnSystem:
+    groundOffset: 50
+    spawnInterval: 200
+    spawnChance: 30
+    groupRadius: 1
+    noSpawnRadius: 20
+    maxSpawned: 2
+    altitude: -2~1000
+    biomes: [Swamp]
+    timeOfDay: [night]
+
+- prefab: Writhan
+  spawnSystem:
+    level: 1~3
+    groundOffset: 0
+    spawnInterval: 4000
+    spawnChance: 10
+    groupRadius: 1
+    noSpawnRadius: 30
+    altitude: -2~10
+    distanceFromCenter: 2000~8000
+    biomes: [Swamp]
+    biomeAreas: [Median]
+
+- prefab: Fish3
+  spawnSystem:
+    level: 1~5
+    overrideLevelUpChance: 20
+    groundOffset: 0.1
+    spawnInterval: 120
+    spawnChance: 50
+    groupSize: 1~2
+    groupRadius: 2
+    noSpawnRadius: 20
+    maxSpawned: 3
+    tilt: 0~99
+    altitude: -1000~-3
+    distanceFromCenter: 0~10000
+    biomes: [Ocean]
+
+- prefab: Fish8
+  spawnSystem:
+    level: 1~5
+    overrideLevelUpChance: 20
+    groundOffset: 0.1
+    spawnInterval: 80
+    spawnChance: 50
+    groupSize: 2~7
+    groupRadius: 2
+    noSpawnRadius: 12
+    maxSpawned: 10
+    tilt: 0~99
+    altitude: -100~-5
+    distanceFromCenter: 0~10000
+    biomes: [Ocean]
+
+- prefab: Serpent
+  spawnSystem:
+    spawnInterval: 900
+    spawnChance: 15
+    noSpawnRadius: 50
+    altitude: -1000~-5
+    biomes: [Ocean]
+    biomeAreas: [Median]
+    timeOfDay: [night]
+
+- prefab: Serpent
+  spawnSystem:
+    spawnInterval: 900
+    spawnChance: 30
+    noSpawnRadius: 50
+    altitude: -1000~-5
+    biomes: [Ocean]
+    biomeAreas: [Median]
+    requiredEnvironments: [ThunderStorm, Rain]
+
+- prefab: Fenring
+  spawnSystem:
+    spawnInterval: 30
+    spawnChance: 60
+    groupRadius: 24
+    noSpawnRadius: 24
+    altitude: 0~1000
+    biomes: [Mountain]
+    biomeAreas: [Median]
+    timeOfDay: [night]
+
+- prefab: Hatchling
+  spawnSystem:
+    groundOffset: 10
+    spawnInterval: 60
+    spawnChance: 60
+    groupRadius: 32
+    maxSpawned: 2
+    tilt: 0~66
+    altitude: 100~1000
+    biomes: [Mountain]
+    biomeAreas: [Median]
+
+- prefab: StoneGolem
+  spawnSystem:
+    spawnInterval: 1500
+    spawnChance: 25
+    noSpawnRadius: 32
+    altitude: 100~1000
+    biomes: [Mountain]
+    biomeAreas: [Median]
+
+- prefab: Wolf
+  spawnSystem:
+    spawnInterval: 40
+    spawnChance: 60
+    groupSize: 2~4
+    groupRadius: 5
+    noSpawnRadius: 30
+    maxSpawned: 2
+    tilt: 0~45
+    altitude: 60~1000
+    biomes: [Mountain]
+    biomeAreas: [Median]
+    timeOfDay: [night]
+
+- prefab: Wolf
+  spawnSystem:
+    spawnInterval: 60
+    spawnChance: 30
+    groupSize: 1~2
+    groupRadius: 5
+    noSpawnRadius: 30
+    maxSpawned: 2
+    tilt: 0~45
+    altitude: 60~1000
+    biomes: [Mountain]
+    biomeAreas: [Median]
+    timeOfDay: [day]
+
+- prefab: Seagal
+  spawnSystem:
+    name: Seagull
+    spawnInterval: 15
+    spawnChance: 50
+    groupSize: 1~2
+    groupRadius: 2
+    noSpawnRadius: 51
+    maxSpawned: 2
+    altitude: -4~0.2
+    biomes: [Meadows, BlackForest, Plains, Ocean]
+
+- prefab: Deathsquito
+  spawnSystem:
+    level: 2~3
+    groundOffset: 1
+    spawnInterval: 30
+    spawnChance: 60
+    groupSize: 1~2
+    groupRadius: 10
+    noSpawnRadius: 30
+    maxSpawned: 3
+    tilt: 0~99
+    altitude: -15~1000
+    biomes: [Plains]
+    biomeAreas: [Median]
+    insidePlayerBase: true
+
+- prefab: Fish7
+  spawnSystem:
+    level: 1~5
+    overrideLevelUpChance: 20
+    groundOffset: 0.1
+    spawnInterval: 80
+    spawnChance: 60
+    groupSize: 3~6
+    groupRadius: 2
+    noSpawnRadius: 20
+    maxSpawned: 7
+    tilt: 0~99
+    altitude: -1000~-3
+    distanceFromCenter: 0~10000
+    biomes: [Plains]
+
+- prefab: Goblin
+  spawnSystem:
+    level: 1~3
+    spawnInterval: 36
+    spawnChance: 60
+    groupSize: 3~5
+    noSpawnRadius: 30
+    maxSpawned: 2
+    altitude: 0~1000
+    biomes: [Plains]
+    timeOfDay: [night]
+
+- prefab: Goblin
+  spawnSystem:
+    level: 1~3
+    spawnInterval: 90
+    spawnChance: 60
+    groupSize: 1~2
+    noSpawnRadius: 30
+    altitude: 0~1000
+    biomes: [Plains]
+    timeOfDay: [day]
+
+- prefab: GoblinBrute
+  spawnSystem:
+    level: 1~3
+    spawnInterval: 600
+    spawnChance: 50
+    groupRadius: 32
+    noSpawnRadius: 100
+    altitude: 0~1000
+    biomes: [Plains]
+
+- prefab: GoblinShaman
+  spawnSystem:
+    level: 1~3
+    spawnInterval: 90
+    spawnChance: 50
+    groupSize: 1~2
+    noSpawnRadius: 100
+    altitude: 0~1000
+    biomes: [Plains]
+    timeOfDay: []
+
+- prefab: Lox
+  spawnSystem:
+    spawnInterval: 600
+    spawnChance: 30
+    groupSize: 1~3
+    groupRadius: 24
+    noSpawnRadius: 100
+    altitude: 1~1000
+    biomes: [Plains]
+
+- prefab: Unbjorn
+  spawnSystem:
+    spawnInterval: 900
+    spawnChance: 36
+    noSpawnRadius: 16
+    altitude: 5~1000
+    biomes: [Plains]
+    biomeAreas: [Median]
+    timeOfDay: [night]
+
+- prefab: Fish12
+  spawnSystem:
+    level: 1~5
+    overrideLevelUpChance: 20
+    groundOffset: 0.1
+    spawnInterval: 80
+    spawnChance: 40
+    groupSize: 2~5
+    groupRadius: 2
+    noSpawnRadius: 12
+    maxSpawned: 8
+    tilt: 0~99
+    altitude: -1000~-3
+    distanceFromCenter: 0~10000
+    biomes: [Ocean, Mistlands]
+
+- prefab: Dverger
+  spawnSystem:
+    level: 1~3
+    spawnInterval: 300
+    spawnChance: 60
+    groupSize: 1~2
+    noSpawnRadius: 30
+    maxSpawned: 2
+    altitude: 0~1000
+    biomes: [Mistlands]
+    biomeAreas: [Median]
+    timeOfDay: [day]
+
+- prefab: DvergerMage
+  spawnSystem:
+    name: Dverger
+    level: 1~3
+    spawnInterval: 300
+    spawnChance: 30
+    noSpawnRadius: 30
+    altitude: 0~1000
+    biomes: [Mistlands]
+    biomeAreas: [Median]
+    timeOfDay: [day]
+
+- prefab: DvergerMageIce
+  spawnSystem:
+    name: Dverger
+    level: 1~3
+    spawnInterval: 300
+    spawnChance: 30
+    noSpawnRadius: 30
+    altitude: 0~1000
+    biomes: [Mistlands]
+    biomeAreas: [Median]
+    timeOfDay: [day]
+
+- prefab: DvergerMageSupport
+  spawnSystem:
+    name: Dverger
+    level: 1~3
+    spawnInterval: 300
+    spawnChance: 30
+    noSpawnRadius: 30
+    altitude: 0~1000
+    biomes: [Mistlands]
+    biomeAreas: [Median]
+    timeOfDay: [day]
+
+- prefab: Fish9
+  spawnSystem:
+    level: 1~5
+    overrideLevelUpChance: 20
+    groundOffset: 0.1
+    spawnInterval: 60
+    spawnChance: 50
+    groupSize: 2~7
+    groupRadius: 2
+    noSpawnRadius: 12
+    maxSpawned: 5
+    tilt: 0~99
+    altitude: -1000~-3
+    distanceFromCenter: 0~10000
+    biomes: [Mistlands]
+
+- prefab: Gjall
+  spawnSystem:
+    huntPlayer: true
+    groundOffset: 6
+    spawnInterval: 1200
+    spawnChance: 30
+    noSpawnRadius: 32
+    tilt: 0~90
+    altitude: 0~1000
+    biomes: [Mistlands]
+    biomeAreas: [Median]
+    timeOfDay: [day]
+
+- prefab: Gjall
+  spawnSystem:
+    huntPlayer: true
+    level: 1~3
+    groundOffset: 6
+    spawnInterval: 1200
+    spawnChance: 50
+    noSpawnRadius: 32
+    tilt: 0~90
+    altitude: 0~1000
+    biomes: [Mistlands]
+    biomeAreas: [Median]
+    timeOfDay: [night]
+
+- prefab: Hare
+  spawnSystem:
+    level: 1~3
+    spawnInterval: 30
+    spawnChance: 60
+    groupSize: 1~3
+    groupRadius: 6
+    noSpawnRadius: 8
+    maxSpawned: 3
+    altitude: 0~1000
+    biomes: [Mistlands]
+    biomeAreas: [Median]
+
+- prefab: Seeker
+  spawnSystem:
+    huntPlayer: true
+    level: 1~2
+    spawnInterval: 90
+    spawnChance: 70
+    groupSize: 2~4
+    groupRadius: 8
+    noSpawnRadius: 30
+    maxSpawned: 2
+    tilt: 0~90
+    altitude: 0~1000
+    biomes: [Mistlands]
+    biomeAreas: [Median]
+    timeOfDay: [day]
+
+- prefab: Seeker
+  spawnSystem:
+    huntPlayer: true
+    level: 1~3
+    spawnInterval: 90
+    groupSize: 2~5
+    groupRadius: 8
+    noSpawnRadius: 16
+    maxSpawned: 3
+    tilt: 0~90
+    altitude: 0~1000
+    biomes: [Mistlands]
+    biomeAreas: [Median]
+    timeOfDay: [night]
+
+- prefab: SeekerBrute
+  spawnSystem:
+    level: 1~3
+    spawnInterval: 600
+    spawnChance: 50
+    noSpawnRadius: 24
+    tilt: 0~50
+    altitude: 0~1000
+    biomes: [Mistlands]
+    biomeAreas: [Median]
+
+- prefab: Tick
+  spawnSystem:
+    huntPlayer: true
+    level: 1~3
+    spawnInterval: 90
+    spawnChance: 60
+    groupSize: 2~4
+    noSpawnRadius: 16
+    maxSpawned: 4
+    tilt: 0~90
+    altitude: 0~1000
+    biomes: [Mistlands]
+
+- prefab: Asksvin
+  spawnSystem:
+    name: Asksvin [DAY]
+    level: 1~2
+    spawnInterval: 90
+    spawnChance: 24
+    spawnRadius: 50~100
+    groupSize: 1~2
+    groupRadius: 10
+    noSpawnRadius: 25
+    tilt: 0~45
+    altitude: 9~1000
+    biomes: [AshLands]
+    biomeAreas: [Median]
+    timeOfDay: [day]
+
+- prefab: Asksvin
+  spawnSystem:
+    name: Asksvin [NIGHT]
+    level: 1~3
+    spawnInterval: 90
+    spawnChance: 36
+    groupSize: 1~2
+    groupRadius: 10
+    noSpawnRadius: 20
+    tilt: 0~45
+    altitude: 9~1000
+    biomes: [AshLands]
+    biomeAreas: [Median]
+    timeOfDay: [night]
+
+- prefab: BlobLava
+  spawnSystem:
+    name: Lava Blob
+    spawnInterval: 120
+    spawnChance: 30
+    spawnRadius: 50~100
+    groupSize: 1~2
+    groupRadius: 10
+    altitude: 2~1000
+    biomes: [AshLands]
+
+- prefab: BonemawSerpent
+  spawnSystem:
+    name: Bonemaw Serpent
+    spawnInterval: 600
+    spawnChance: 25
+    noSpawnRadius: 50
+    altitude: -1000~-5
+    biomes: [AshLands]
+
+- prefab: Charred_Archer
+  spawnSystem:
+    name: Charred Archer
+    level: 1~2
+    spawnInterval: 75
+    spawnChance: 40
+    spawnRadius: 50~100
+    groupSize: 1~2
+    groupRadius: 15
+    altitude: 1~1000
+    biomes: [AshLands]
+
+- prefab: Charred_Melee
+  spawnSystem:
+    name: Charred Melee
+    level: 1~3
+    spawnInterval: 75
+    spawnChance: 50
+    spawnRadius: 50~100
+    groupSize: 1~2
+    groupRadius: 15
+    altitude: 1~1000
+    biomes: [AshLands]
+    biomeAreas: [Median]
+
+- prefab: Charred_Twitcher
+  spawnSystem:
+    name: Charred Twitcher [DAY]
+    level: 1~2
+    spawnInterval: 90
+    spawnChance: 40
+    spawnRadius: 50~100
+    groupSize: 2~4
+    groupRadius: 15
+    maxSpawned: 2
+    altitude: 1~1000
+    biomes: [AshLands]
+    timeOfDay: [day]
+
+- prefab: Charred_Twitcher
+  spawnSystem:
+    name: Charred Twitcher [NIGHT]
+    level: 1~3
+    spawnInterval: 60
+    spawnChance: 60
+    groupSize: 3~6
+    groupRadius: 15
+    maxSpawned: 2
+    altitude: 2~1000
+    biomes: [AshLands]
+    timeOfDay: [night]
+
+- prefab: CinderSky
+  spawnSystem:
+    name: CinderSky Ashrain
+    groundOffset: 100
+    groundOffsetRandom: 40
+    spawnInterval: 20
+    spawnChance: 40
+    spawnRadius: 1~40
+    groupSize: 1~3
+    groupRadius: 15
+    tilt: 0~90
+    biomes: [AshLands]
+    biomeAreas: [Median]
+    requiredEnvironments: [Ashlands_ashrain]
+    insidePlayerBase: true
+    canSpawnCloseToPlayer: true
+
+- prefab: CinderSky
+  spawnSystem:
+    name: CinderSky CinderRain
+    groundOffset: 100
+    groundOffsetRandom: 40
+    spawnInterval: 6
+    spawnChance: 70
+    spawnRadius: 1~60
+    groupSize: 1~14
+    groupRadius: 100
+    tilt: 0~90
+    biomes: [AshLands]
+    biomeAreas: [Median]
+    requiredEnvironments: [Ashlands_CinderRain]
+    insidePlayerBase: true
+    canSpawnCloseToPlayer: true
+
+- prefab: CinderStorm
+  spawnSystem:
+    name: CinderSky Storm
+    groundOffset: 50
+    groundOffsetRandom: 40
+    spawnInterval: 1
+    spawnChance: 60
+    spawnRadius: 1~40
+    groupSize: 1~3
+    groupRadius: 15
+    tilt: 0~90
+    biomes: [AshLands]
+    biomeAreas: [Median]
+    requiredEnvironments: [Ashlands_storm]
+    insidePlayerBase: true
+    canSpawnCloseToPlayer: true
+
+- prefab: DvergerAshlands
+  spawnSystem:
+    name: Dverger
+    level: 1~3
+    spawnInterval: 150
+    spawnChance: 15
+    spawnRadius: 50~100
+    groupSize: 1~2
+    noSpawnRadius: 30
+    altitude: 0~1000
+    biomes: [AshLands]
+    biomeAreas: [Median]
+    timeOfDay: [day]
+
+- prefab: FallenValkyrie
+  spawnSystem:
+    groundOffset: 20
+    spawnInterval: 900
+    spawnChance: 15
+    spawnRadius: 50~100
+    noSpawnRadius: 36
+    altitude: 10~1000
+    biomes: [AshLands]
+
+- prefab: Fish11
+  spawnSystem:
+    level: 1~5
+    overrideLevelUpChance: 15
+    groundOffset: 0.1
+    spawnInterval: 80
+    spawnChance: 60
+    groupSize: 3~7
+    groupRadius: 2
+    noSpawnRadius: 8
+    maxSpawned: 10
+    tilt: 0~99
+    altitude: -1000~-3
+    distanceFromCenter: 0~10000
+    biomes: [AshLands]
+
+- prefab: LavaRock
+  spawnSystem:
+    name: Lava Rock
+    spawnChance: 80
+    spawnRadius: 0~0.1
+    groupSize: 1~2
+    groupRadius: 12
+    noSpawnRadius: 0
+    maxSpawned: 0
+    tilt: 0~60
+    altitude: 2~1000
+    biomes: [AshLands]
+    inLava: true
+    canSpawnCloseToPlayer: true
+
+- prefab: Morgen_NonSleeping
+  spawnSystem:
+    name: Morgen [Non-sleeper]
+    spawnInterval: 900
+    spawnChance: 20
+    spawnRadius: 50~100
+    noSpawnRadius: 32
+    altitude: 0~1000
+    biomes: [AshLands]
+
+- prefab: projectile_ashlandmeteor
+  enabled: false
+  spawnSystem:
+    name: Meteor
+    groundOffset: 150
+    groundOffsetRandom: 100
+    spawnInterval: 5
+    spawnChance: 5
+    spawnRadius: 3~20
+    groupSize: 1~3
+    groupRadius: 30
+    noSpawnRadius: 0
+    maxSpawned: 0
+    biomes: [AshLands]
+    biomeAreas: [Median]
+
+- prefab: Volture
+  spawnSystem:
+    groundOffset: 20
+    spawnInterval: 90
+    spawnChance: 50
+    spawnRadius: 50~100
+    groupSize: 1~2
+    maxSpawned: 2
+    altitude: -20~-1
+    biomes: [AshLands]
+
+- prefab: Elaking
+  spawnSystem:
+    name: Fimbulvinter - Elakingar
+    spawnInterval: 1000
+    groupSize: 1~3
+    maxSpawned: 6
+    biomes: [All]
+    requiredPersistentEvent: jotun_invasion
+
+- prefab: JotunWarrior
+  spawnSystem:
+    name: Fimbulvinter - Jotun Warriors
+    spawnInterval: 500
+    groupSize: 1~2
+    maxSpawned: 4
+    biomes: [All]
+    requiredPersistentEvent: jotun_invasion
+
+- prefab: JotunWitch
+  spawnSystem:
+    name: Fimbulvinter - Jotun Witches
+    spawnInterval: 500
+    maxSpawned: 2
+    biomes: [All]
+    requiredPersistentEvent: jotun_invasion
+
+- prefab: projectile_FimbulvinterMeteor
+  spawnSystem:
+    name: Fimbulvinter - Meteors
+    groundOffset: 150
+    spawnInterval: 5
+    groupSize: 1~3
+    groupRadius: 30
+    noSpawnRadius: 0
+    maxSpawned: 0
+    biomes: [All]
+    requiredPersistentEvent: jotun_invasion
+
+- prefab: Barka
+  spawnSystem:
+    levelUpMinCenterDistance: 2000
+    spawnInterval: 450
+    spawnChance: 20
+    altitude: 0~1000
+    biomes: [DeepNorth]
+
+- prefab: Elaking
+  spawnSystem:
+    name: Elakingar NIGHT
+    level: 1~2
+    spawnInterval: 120
+    spawnChance: 30
+    groupSize: 2~3
+    maxSpawned: 2
+    altitude: 0~1000
+    biomes: [DeepNorth]
+    timeOfDay: [night]
+
+- prefab: ElakingLantern
+  spawnSystem:
+    name: Elakingar Lantern NIGHT
+    level: 1~2
+    spawnInterval: 120
+    spawnChance: 20
+    groupSize: 1~2
+    altitude: 0~1000
+    biomes: [DeepNorth]
+    timeOfDay: [night]
+
+- prefab: Fish10
+  spawnSystem:
+    level: 1~5
+    overrideLevelUpChance: 15
+    groundOffset: 0.1
+    spawnInterval: 70
+    spawnChance: 60
+    groupSize: 3~10
+    noSpawnRadius: 12
+    maxSpawned: 10
+    tilt: 0~99
+    altitude: -1000~-3
+    distanceFromCenter: 0~10000
+    biomes: [DeepNorth]
+
+- prefab: Greydwarf_Frozen
+  spawnSystem:
+    name: Frozen GD
+    level: 1~3
+    spawnInterval: 600
+    spawnChance: 20
+    groupSize: 2~4
+    groupRadius: 6
+    maxSpawned: 5
+    altitude: 10~1000
+    biomes: [DeepNorth]
+
+- prefab: Greydwarf_Shaman_Frozen
+  spawnSystem:
+    name: Frozen GD shaman
+    level: 1~3
+    spawnInterval: 600
+    spawnChance: 20
+    groupSize: 2~4
+    groupRadius: 6
+    altitude: 10~1000
+    biomes: [DeepNorth]
+
+- prefab: JotunWarrior
+  spawnSystem:
+    name: Jotun Melee Patrol
+    huntPlayer: true
+    spawnInterval: 1500
+    spawnChance: 10
+    groupSize: 1~2
+    noSpawnRadius: 40
+    maxSpawned: 2
+    altitude: 0~1000
+    biomes: [DeepNorth]
+    timeOfDay: [day]
+    requiredGlobalKey: jotun_killed
+
+- prefab: JotunWitch
+  spawnSystem:
+    name: Jotun Witch Patrol
+    huntPlayer: true
+    spawnInterval: 1500
+    spawnChance: 10
+    noSpawnRadius: 40
+    maxSpawned: 2
+    altitude: 0~1000
+    biomes: [DeepNorth]
+    timeOfDay: [day]
+    requiredGlobalKey: jotun_killed
+
+- prefab: Moose
+  spawnSystem:
+    name: Älg
+    level: 1~3
+    spawnInterval: 900
+    spawnChance: 20
+    noSpawnRadius: 70
+    maxSpawned: 3
+    altitude: 3~1000
+    biomes: [DeepNorth]
+
+- prefab: Seal
+  spawnSystem:
+    level: 1~3
+    spawnInterval: 60
+    spawnChance: 50
+    groupSize: 1~2
+    groupRadius: 6
+    noSpawnRadius: 64
+    maxSpawned: 5
+    altitude: -2~5
+    biomes: [DeepNorth]
+
+- prefab: Seal_Pup
+  spawnSystem:
+    name: Seal pup
+    spawnInterval: 100
+    spawnChance: 50
+    groupSize: 1~3
+    groupRadius: 6
+    noSpawnRadius: 64
+    maxSpawned: 3
+    altitude: -2~5
+    biomes: [DeepNorth]
+
+- prefab: ShadowPerson
+  spawnSystem:
+    name: Shadow People
+    level: 1~3
+    spawnInterval: 300
+    spawnChance: 20
+    groupSize: 2~4
+    groupRadius: 6
+    maxSpawned: 5
+    altitude: 10~1000
+    biomes: [DeepNorth]
+    timeOfDay: [night]
+    inForest: true
+
+- prefab: Skeleton_DeepNorth
+  spawnSystem:
+    name: Frozen Skeleton
+    level: 1~3
+    spawnInterval: 600
+    spawnChance: 20
+    groupSize: 2~4
+    groupRadius: 6
+    maxSpawned: 5
+    altitude: 10~1000
+    biomes: [DeepNorth]
+
+- prefab: Spawner_TrollFrost
+  spawnSystem:
+    name: Giant Troll
+    levelUpMinCenterDistance: 2000
+    spawnInterval: 750
+    spawnChance: 30
+    noSpawnRadius: 30
+    altitude: 10~1000
+    biomes: [DeepNorth]
+
+- prefab: Charred_Archer
+  enabled: false
+  spawnSystem:
+    name: Charred Archer [Other biomes when Fader is defeated]
+    huntPlayer: true
+    spawnInterval: 3000
+    spawnChance: 5
+    groupSize: 1~3
+    maxSpawned: 3
+    altitude: 0~1000
+    timeOfDay: [night]
+    requiredGlobalKey: defeated_fader
+
+- prefab: Charred_Melee
+  enabled: false
+  spawnSystem:
+    name: Charred Melee [Other biomes when Fader is defeated]
+    huntPlayer: true
+    spawnInterval: 3000
+    spawnChance: 5
+    groupSize: 1~3
+    maxSpawned: 3
+    altitude: 0~1000
+    timeOfDay: [night]
+    requiredGlobalKey: defeated_fader
+
+- prefab: Draugr
+  enabled: false
+  spawnSystem:
+    spawnInterval: 300
+    spawnChance: 5
+    groupRadius: 1
+    altitude: 0~1000
+    timeOfDay: [night]
+    requiredEnvironments: [Misty]
+    requiredGlobalKey: defeated_gdking
+
+- prefab: Goblin
+  enabled: false
+  spawnSystem:
+    huntPlayer: true
+    spawnInterval: 3000
+    spawnChance: 5
+    groupSize: 3
+    maxSpawned: 3
+    altitude: 0~1000
+    timeOfDay: [night]
+    requiredGlobalKey: defeated_goblinking
+
+- prefab: Greydwarf_Elite
+  enabled: false
+  spawnSystem:
+    name: Greydwarf Elite
+    spawnInterval: 120
+    spawnChance: 50.6
+    groupRadius: 1
+    altitude: 0~1000
+    timeOfDay: [night]
+    requiredGlobalKey: defeated_gdking
+
+- prefab: Greydwarf_Shaman
+  enabled: false
+  spawnSystem:
+    name: Greydwarf Shaman
+    spawnInterval: 120
+    spawnChance: 50.6
+    groupRadius: 1
+    altitude: 0~1000
+    timeOfDay: [night]
+    requiredGlobalKey: defeated_gdking
+
+- prefab: Seeker
+  enabled: false
+  spawnSystem:
+    name: Seeker defeated queen other biomes
+    huntPlayer: true
+    spawnInterval: 3000
+    spawnChance: 5
+    groupSize: 3
+    maxSpawned: 2
+    altitude: 0~1000
+    biomeAreas: [Median]
+    timeOfDay: [night]
+    requiredGlobalKey: defeated_queen
+
+- prefab: SeekerBrood
+  enabled: false
+  spawnSystem:
+    name: SeekerBrood  defeated queen other biomes
+    huntPlayer: true
+    spawnInterval: 3000
+    spawnChance: 5
+    groupSize: 3
+    maxSpawned: 5
+    altitude: 0~1000
+    biomeAreas: [Median]
+    timeOfDay: [night]
+    requiredGlobalKey: defeated_queen
+
+
+- prefab: RDB_Bee
+  spawnSystem:
+    level: 1~3
+    spawnInterval: 3200
+    spawnChance: 10
+    altitude: 1~1000
+    oceanDepth: -1~0
+    biomes: [Meadows]
+
+- prefab: RDB_fox
+  spawnSystem:
+    level: 1~3
+    spawnInterval: 1900
+    spawnChance: 35
+    groupSize: 1~2
+    maxSpawned: 2
+    altitude: 1~1000
+    oceanDepth: -1~0
+    biomes: [Meadows]
+
+- prefab: RDB_rabbit
+  spawnSystem:
+    level: 1~3
+    spawnInterval: 900
+    spawnChance: 35
+    groupSize: 1~3
+    maxSpawned: 3
+    altitude: 1~1000
+    oceanDepth: -1~0
+    biomes: [Meadows]
+
+- prefab: RDB_crocodile
+  spawnSystem:
+    level: 1~3
+    spawnInterval: 1800
+    spawnChance: 45
+    groupSize: 1~2
+    maxSpawned: 2
+    altitude: -1~1
+    oceanDepth: -1~1
+    biomes: [BlackForest]
+    biomeAreas: [Edge]
+    requiredGlobalKey: defeated_eikthyr
+
+- prefab: RDB_Ent
+  spawnSystem:
+    spawnInterval: 1200
+    spawnChance: 50
+    altitude: 1~1000
+    biomes: [BlackForest]
+    biomeAreas: [Median]
+    timeOfDay: [day]
+
+- prefab: RDB_Genganger
+  spawnSystem:
+    level: 1~3
+    spawnInterval: 1800
+    spawnChance: 45
+    groupSize: 1~2
+    maxSpawned: 2
+    altitude: 1~1000
+    oceanDepth: -1~0
+    biomes: [BlackForest]
+    timeOfDay: [night]
+    requiredGlobalKey: defeated_eikthyr
+
+- prefab: RDB_minotaur
+  spawnSystem:
+    level: 1~3
+    spawnInterval: 1800
+    spawnChance: 60
+    groupSize: 1~2
+    maxSpawned: 2
+    altitude: 1~1000
+    oceanDepth: -1~0
+    biomes: [BlackForest]
+    requiredGlobalKey: defeated_eikthyr
+
+- prefab: RDB_giant_rat
+  spawnSystem:
+    level: 1~3
+    spawnInterval: 1900
+    spawnChance: 50
+    groupSize: 3~5
+    maxSpawned: 5
+    altitude: -2~1000
+    oceanDepth: -1~1
+    biomes: [Swamp]
+    requiredGlobalKey: defeated_gdking
+
+- prefab: RDB_lizardwarrior
+  spawnSystem:
+    level: 1~3
+    spawnInterval: 1200
+    spawnChance: 35
+    groupSize: 1~3
+    maxSpawned: 3
+    altitude: -2~1000
+    oceanDepth: -1~1
+    biomes: [Swamp]
+    timeOfDay: [day]
+    requiredGlobalKey: defeated_gdking
+
+- prefab: RDB_Wendigo
+  spawnSystem:
+    level: 1~3
+    spawnInterval: 1900
+    spawnChance: 45
+    altitude: -2~1000
+    oceanDepth: -1~1
+    biomes: [Swamp]
+    timeOfDay: [night]
+    requiredGlobalKey: defeated_gdking
+
+- prefab: RDB_turtle
+  spawnSystem:
+    level: 1~3
+    spawnInterval: 1600
+    spawnChance: 50
+    groupSize: 1~2
+    maxSpawned: 2
+    altitude: -1000~-0.5
+    oceanDepth: 10~200
+    biomes: [Ocean]
+    requiredGlobalKey: defeated_gdking
+
+- prefab: RDB_Whale
+  spawnSystem:
+    level: 1~3
+    spawnInterval: 7200
+    spawnChance: 50
+    groupSize: 1~3
+    maxSpawned: 3
+    altitude: -1000~-0.5
+    oceanDepth: 10~200
+    biomes: [Ocean]
+    requiredGlobalKey: defeated_gdking
+
+- prefab: RDB_white_shark
+  spawnSystem:
+    level: 1~3
+    spawnInterval: 1800
+    spawnChance: 35
+    groupSize: 1~2
+    maxSpawned: 2
+    altitude: -1000~-0.5
+    oceanDepth: 10~200
+    biomes: [Ocean]
+    requiredGlobalKey: defeated_gdking
+
+- prefab: RDB_Weregoat
+  spawnSystem:
+    level: 1~3
+    spawnInterval: 2400
+    spawnChance: 55
+    groupSize: 2~3
+    maxSpawned: 3
+    altitude: 1~1000
+    oceanDepth: -1~0
+    biomes: [Mountain]
+    requiredGlobalKey: defeated_bonemass
+
+- prefab: RDB_Werewolf
+  spawnSystem:
+    level: 1~3
+    spawnInterval: 1800
+    spawnChance: 45
+    altitude: 1~1000
+    oceanDepth: -1~0
+    biomes: [Mountain]
+    timeOfDay: [night]
+    requiredGlobalKey: defeated_bonemass
+
+- prefab: RDB_graywolf
+  spawnSystem:
+    level: 1~3
+    spawnInterval: 1600
+    spawnChance: 35
+    groupSize: 1~2
+    maxSpawned: 2
+    altitude: 1~1000
+    oceanDepth: -1~0
+    biomes: [Plains]
+    timeOfDay: [night]
+    requiredGlobalKey: defeated_dragon
+
+- prefab: RDB_lion
+  spawnSystem:
+    level: 1~3
+    spawnInterval: 1900
+    spawnChance: 35
+    groupSize: 1~2
+    maxSpawned: 2
+    altitude: 1~1000
+    oceanDepth: -1~0
+    biomes: [Plains]
+    timeOfDay: [day]
+    requiredGlobalKey: defeated_dragon
+
+- prefab: RDB_Smadrek
+  spawnSystem:
+    level: 1~3
+    spawnInterval: 3600
+    spawnChance: 20
+    altitude: 1~1000
+    oceanDepth: -1~0
+    biomes: [Mistlands]
+    requiredGlobalKey: defeated_goblinking
+
+- prefab: RDB_Goblin_Treasure
+  spawnSystem:
+    spawnInterval: 7200
+    spawnChance: 2
+    altitude: 1~1000
+    oceanDepth: -1~0
+    biomes: [All]
+    requiredGlobalKey: defeated_eikthyr
+
+- prefab: RDB_Goblin_Treasure_blue
+  spawnSystem:
+    spawnInterval: 7200
+    spawnChance: 2
+    altitude: 1~1000
+    oceanDepth: -1~0
+    biomes: [All]
+    requiredGlobalKey: defeated_bonemass
+
+- prefab: RDB_Goblin_Treasure_red
+  spawnSystem:
+    spawnInterval: 7200
+    spawnChance: 2
+    altitude: 1~1000
+    oceanDepth: -1~0
+    biomes: [All]
+    requiredGlobalKey: defeated_goblinking
+
+
+- prefab: Fox_TW
+  spawnSystem:
+    level: 1~3
+    spawnInterval: 300
+    spawnChance: 50
+    groupRadius: 5
+    noSpawnRadius: 32
+    altitude: 0~1000
+    biomes: [Meadows]
+
+- prefab: GDAncientShaman_TW
+  spawnSystem:
+    level: 1~3
+    spawnInterval: 1500
+    spawnChance: 50
+    noSpawnRadius: 32
+    altitude: 5~1000
+    biomes: [BlackForest]
+    biomeAreas: [Median]
+    timeOfDay: [night]
+
+- prefab: Razorback_TW
+  spawnSystem:
+    spawnInterval: 600
+    spawnChance: 30
+    groupSize: 1~2
+    maxSpawned: 2
+    altitude: 0~1000
+    biomes: [BlackForest]
+
+- prefab: Crawler_TW
+  spawnSystem:
+    spawnInterval: 480
+    spawnChance: 36
+    altitude: -1000~1
+    biomes: [Swamp]
+    timeOfDay: [day]
+
+- prefab: HelWraith_TW
+  spawnSystem:
+    level: 1~3
+    spawnInterval: 600
+    spawnChance: 25
+    noSpawnRadius: 32
+    altitude: -1000~1
+    biomes: [Swamp]
+    timeOfDay: [night]
+
+- prefab: RottingElk_TW
+  spawnSystem:
+    level: 1~3
+    spawnInterval: 300
+    spawnChance: 50
+    altitude: -1000~5
+    biomes: [Swamp]
+
+- prefab: Shark_TW
+  spawnSystem:
+    level: 1~3
+    spawnInterval: 600
+    spawnChance: 25
+    groupRadius: 32
+    noSpawnRadius: 24
+    altitude: -500~-5
+    distanceFromCenter: 0~10500
+    biomes: [Ocean]
+
+- prefab: GrizzlyBear_TW
+  spawnSystem:
+    spawnInterval: 600
+    spawnChance: 25
+    altitude: 75~1000
+    biomes: [Mountain]
+    biomeAreas: [Median]
+
+- prefab: ObsidianGolem_TW
+  spawnSystem:
+    level: 1~3
+    spawnInterval: 900
+    spawnChance: 15
+    noSpawnRadius: 32
+    altitude: 100~1000
+    biomes: [Mountain]
+    biomeAreas: [Median]
+
+- prefab: Prowler_TW
+  spawnSystem:
+    spawnInterval: 600
+    spawnChance: 30
+    altitude: 5~1000
+    biomes: [Plains]
+
+
+- prefab: rae_OdinHorse
+  spawnSystem:
+    level: 1~3
+    spawnInterval: 120
+    spawnChance: 50
+    groupSize: 1~2
+    noSpawnRadius: 32
+    altitude: 5~1000
+    distanceFromCenter: 200~10000
+    biomes: [Meadows]
+    biomeAreas: [Median]
+    timeOfDay: [day]
+    requiredEnvironments: [Clear]
+
+
+- prefab: VC_Vaettr
+  spawnSystem:
+    spawnInterval: 600
+    spawnChance: 30
+    groupSize: 1~2
+    altitude: 0~1000
+    biomes: [BlackForest]
+    timeOfDay: [night]
+    requiredEnvironments: [DeepForest Mist]
+    inForest: true
+
+
+- prefab: Sheep_TW
+  spawnSystem:
+    spawnInterval: 120
+    spawnChance: 20
+    groupSize: 1~2
+    maxSpawned: 2
+    altitude: 0~100
+    biomes: [Meadows]
+
+- prefab: GreydwarfMage_TW
+  spawnSystem:
+    spawnInterval: 1500
+    spawnChance: 32
+    noSpawnRadius: 32
+    altitude: 0~100
+    biomes: [BlackForest]
+    biomeAreas: [Median]
+    timeOfDay: [day]
+
+- prefab: SkeletonMage_TW
+  spawnSystem:
+    spawnInterval: 600
+    spawnChance: 48
+    altitude: 0~100
+    biomes: [Swamp]
+
+- prefab: FenringMage_TW
+  spawnSystem:
+    spawnInterval: 720
+    spawnChance: 32
+    altitude: 5~1000
+    biomes: [Mountain]
+    biomeAreas: [Median]
+    timeOfDay: [day]
+
+- prefab: GoblinMage_TW
+  spawnSystem:
+    spawnInterval: 720
+    spawnChance: 25
+    altitude: 0~100
+    biomes: [Plains]
+
+- prefab: CorruptedDvergerMage_TW
+  spawnSystem:
+    level: 1~3
+    spawnInterval: 240
+    spawnChance: 60
+    groupSize: 1~2
+    noSpawnRadius: 30
+    maxSpawned: 2
+    altitude: 0~1000
+    biomes: [Mistlands]
+    biomeAreas: [Median]
+    timeOfDay: [night]
+

@@ -1,0 +1,56 @@
+# Any file named DNS_character_*.yml or DNS_character_*.yaml is also loaded # ex) DNS_character_rand1.yml, DNS_character_rand2.yaml
+# Use DNS_character.reference.yml to look up real prefab names and reference values, and run dns:full character for exhaustive field examples
+#
+# characterDrop
+#
+# - prefab: Greydwarf
+#   enabled: true
+#   conditions: # If these conditions fail, this custom entry is ignored and the original drops are used
+#     level: null # ex) 1~3
+#     altitude: null # ex) -1000~1000 # Range in world-height meters
+#     distanceFromCenter: null # ex) 0~10000 # Range in meters from the world center
+#     biomes: [] # ex) [BlackForest, Mistlands]
+#     locations: [] # ex) [Hildir_camp]
+#     timeOfDay: null # ex) [day, night]
+#     requiredEnvironments: [] # ex) [Clear, Rain]
+#     requiredGlobalKeys: [] # ex) [defeated_eikthyr, defeated_gdking]
+#     forbiddenGlobalKeys: [] # ex) [nomap, defeated_bonemass]
+#     states: [] # ex) [Default, Tamed, Event]
+#     factions: [] # ex) [ForestMonsters, Demon]
+#     inForest: null # true = forest only # false = outside forest only # null or no field allows both
+#     inDungeon: null # true = dungeon only # false = overworld only # null or no field allows both
+#     insidePlayerBase: null # true = near player base only # false = away from player base only # null or no field allows both
+#   characterDrop:
+#     drops: # Set drops: [] to disable character drops for an entry
+#     - item: null # ex) Resin # Drop prefab; CharacterDrop can also spawn non-item prefabs such as monsters
+#       amount: 1~1 # ex) 1~3 # Range of item amount
+#       chance: 1 # Chance from 0 to 1 for this item on each roll
+#       dontScale: false # True skips the game's built-in drop scaling for the base amount roll
+#       levelMultiplier: true # Omitted default: true for ItemDrop prefabs, false for non-item prefabs # Explicit false also opts trophies out of global trophy amount scaling
+#       levelMultiplierNotAmount: false # With levelMultiplier: true, stars affect chance only via the global chance-only drop chance scaling setting; same-prefab rows skip DNS amount scaling
+#       onePerPlayer: false # True uses nearby player count as the final amount # Configure check range in config
+#       amountLimit: null # ex) 2 # Integer cap on the final amount
+#       dropInStack: null # Omitted/null inherits global drop in stack; true stacks, false keeps singles; blacklist always wins
+#
+# - prefab: Eikthyr
+#   characterDrop:
+#     drops:
+#     - item: TrophyEikthyr
+#       dontScale: true
+#       levelMultiplier: false
+#     - item: HardAntler
+#       amount: 3
+#       dontScale: true
+#       levelMultiplier: false
+#
+
+# Magic_Supremacy registers PageArcane_DO on the misspelled Seeker_Brood, so this restores that one intended drop and keeps the existing RoyalJelly row.
+- prefab: SeekerBrood
+  characterDrop:
+    drops:
+    - item: RoyalJelly
+      chance: 0.5
+      levelMultiplier: false
+    - item: PageArcane_DO
+      amount: 1~2
+      chance: 0.005

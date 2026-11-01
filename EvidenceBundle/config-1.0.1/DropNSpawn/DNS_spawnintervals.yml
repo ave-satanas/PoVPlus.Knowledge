@@ -1,0 +1,10 @@
+# Normal DNS SpawnSystem intervals only; server-owned and live-reloaded.
+# One biome name per key, including EWD custom biome names after registration.
+# Omitted biomes use 1.0. Values must be finite and greater than zero.
+# 0.5 halves intervals; 2.0 doubles them. Decimal seconds are preserved (minimum 0.01).
+# Different multipliers split multi-biome rules internally; equal multipliers stay grouped.
+# No event/dungeon/spawner/AltBiome-list effects. Keep only ONE spawnintervals file.
+# Meadows: 0.5
+# BlackForest: 2.0
+# MyCustomBiome: 0.75
+{}

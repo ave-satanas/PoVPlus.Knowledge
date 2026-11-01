@@ -1,0 +1,17 @@
+# HarnessPrefabs server-synced localization.
+#
+# Put language files in this folder using Valheim language names:
+# English.yml, Korean.yml, Turkish.yml, German.yml, etc.
+#
+# English.yml is the fallback file. Other languages apply English first,
+# then the selected language file.
+#
+# Use tokens in prefabs.yml displayName or description fields:
+# - prefab: barrell
+#   enabled: true
+#   displayName: $ph_piece_barrell
+#   description: $ph_piece_barrell_desc
+#
+# Example localization entries:
+# $ph_piece_barrell: "Barrel"
+# $ph_piece_barrell_desc: "A decorative barrel."

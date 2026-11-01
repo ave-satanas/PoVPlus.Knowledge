@@ -1,0 +1,95 @@
+# Expand World Data custom biomes can use their custom biome name or numeric biome value.
+# defaults and playerBasePrefabs are reserved. Every other top-level key is treated as a biome rule.
+
+defaults:
+  interval: 60 # Seconds between spawn rolls for one 32m terrain unit. 0 disables that biome.
+  playerSearchRadius: 32 # Players within this horizontal radius of a changed terrain unit activate its rolls.
+  spawnChance: 0.25 # Base chance used when the unit interval is ready and at least one player is nearby.
+  maxDeformationSpawnChanceBonus: 0.25 # Added to spawnChance when the largest height deformation in the 32m terrain unit reaches the 8m cap. Scales linearly from 0m to 8m.
+  maxSpawn: 3 # Maximum active TerrainMistiles with targets within 32m of the target. 0 disables that biome.
+  perPlayerSpawn: true # If true, one successful roll can spawn up to one TerrainMistile per nearby player, capped by maxSpawn and available targets.
+  playerBaseValue: 1 # playerBaseValue N skips spawn checks when at least N unique listed player-placed base prefab types are within baseCheckRadius meters horizontally of the changed terrain. 0 disables the PlayerBase check.
+  baseCheckRadius: 24 # Horizontal radius used by playerBaseValue to count listed player-placed base prefab types.
+  spawnRadius: 16~32 # Horizontal spawn distance from the selected nearby player. Use 24 for fixed distance or 16~32 for a random range.
+  spawnAltitude: 8 # Height above solid ground where TerrainMistile spawns.
+  resetRadius: 8 # Radius of terrain height and paint reset when TerrainMistile detonates.
+  health: 1 # Maximum and current health applied when TerrainMistile spawns. Biome rules can override it.
+  visualColor: "#45FF5A" # HTML hex color used for TerrainMistile flames, sparks, and light. Biome rules can override it.
+Meadows:
+  interval: 120
+  spawnChance: 0.1
+  resetRadius: 4
+  visualColor: "#7CFF6B"
+BlackForest:
+  interval: 120
+  resetRadius: 6
+  visualColor: "#2ED36F"
+Swamp:
+  playerBaseValue: 2
+  visualColor: "#8FBF3F"
+Mountain:
+  interval: 120
+  playerBaseValue: 2
+  resetRadius: 6
+  visualColor: "#8FE8FF"
+Plains:
+  interval: 120
+  playerBaseValue: 3
+  resetRadius: 6
+  visualColor: "#FFD15C"
+Mistlands:
+  interval: 120
+  playerBaseValue: 3
+  resetRadius: 6
+  visualColor: "#B58CFF"
+AshLands:
+  playerBaseValue: 4
+  visualColor: "#FF5A2E"
+DeepNorth:
+  playerBaseValue: 4
+  visualColor: "#BFEFFF"
+Ocean:
+  visualColor: "#3EA7FF"
+
+# TerrainMistile base prefabs used by playerBaseValue. Only instances with ZDO longs.creator != 0 are counted.
+playerBasePrefabs:
+  - ashwood_bed
+  - bed
+  - blackforge
+  - blastfurnace
+  - BogWitch_Fire_Pit
+  - bonfire
+  - charcoal_kiln
+  - charred_shieldgenerator
+  - dverger_guardstone
+  - eitrrefinery
+  - fermenter
+  - fire_pit
+  - fire_pit_haldor
+  - fire_pit_hildir
+  - fire_pit_iron
+  - forge
+  - guard_stone
+  - hearth
+  - piece_artisanstation
+  - piece_bed02
+  - piece_brazierceiling01
+  - piece_brazierfloor01
+  - piece_brazierfloor02
+  - piece_groundtorch
+  - piece_groundtorch_blue
+  - piece_groundtorch_green
+  - piece_groundtorch_mist
+  - piece_groundtorch_wood
+  - piece_magetable
+  - piece_oven
+  - piece_shieldgenerator
+  - piece_spinningwheel
+  - piece_stonecutter
+  - piece_walltorch
+  - piece_workbench
+  - portal
+  - portal_stone
+  - portal_wood
+  - smelter
+  - windmill

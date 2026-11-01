@@ -1,0 +1,27 @@
+# ZoneSavior zone rules
+# Rules are evaluated from top to bottom.
+# The first matching rule wins.
+# If a zone does not match any rule, it is unlimited.
+# blocked_pieces uses exact, case-sensitive prefab names; omitted or [] means no bans.
+# Only the first matching rule applies, including its blocked_pieces list.
+# Piece bans apply to new player placement independently of the count-limit toggle.
+archive_protection:
+  steam_ids: []
+  player_ids: []
+  player_names: []
+  # steam_ids: ["<steamid>"]
+  # player_ids: [123456789]
+  # player_names: ["GreatViking"]
+defaults:
+  count_creatorless: false
+rules:
+  - name: center_keep
+    x: [-1, 1]
+    z: [-1, 1]
+    limit: 40
+    count_creatorless: true
+    blocked_pieces: [] # Example: [portal_wood, piece_workbench]
+  - name: outer_ring
+    x: [-3, 3]
+    z: [-3, 3]
+    limit: 80

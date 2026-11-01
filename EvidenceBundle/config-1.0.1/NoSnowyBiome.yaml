@@ -1,0 +1,5 @@
+# NoSnowyBiome rules. This file is separate from EWD's expand_biomes.yaml.
+# Mistlands snow suppression is enabled by default. Use [] to clear all rules.
+- biome: Mistlands
+  noSnow: true
+  noSnowMinAltitude: 50

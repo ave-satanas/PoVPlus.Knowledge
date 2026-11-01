@@ -11,7 +11,7 @@ This repository holds records, not the plugin. It does not show that the whole p
 | Item | Value | How it is known |
 |---|---|---|
 | Release | PoVPlus.Compat 1.0.1 | Tested and deployed. Not uploaded anywhere |
-| Tested DLL SHA-256 | `8b766887e53a9fd285d68df4150fe153c8e3831ba07e57ffab0bf4ca487a75eb` | Hashed from deployed files. **The DLL is not in either repository** |
+| Tested DLL SHA-256 | `8b766887e53a9fd285d68df4150fe153c8e3831ba07e57ffab0bf4ca487a75eb` | Hashed from deployed files. Exact bytes in [`EvidenceBundle/release/`](EvidenceBundle/release/PoVPlus.Compat.dll) |
 | Release zip SHA-256 | `77419c0891888222c794938e2710d172107b5c187a9d91adf4c7b6d2fd2159c1` | [`EvidenceBundle/release/SHA256SUMS.txt`](EvidenceBundle/release/SHA256SUMS.txt) |
 | Source commit | [`eed8d74`](https://github.com/ave-satanas/PoVPlus.Compat/tree/eed8d74b3700a044eb9dbce7053fe0ec2018ca69) | See below |
 | IL digest of tested DLL | `1DC63390417AF3FA3B0626A8DBE6BFDA221EE0CB70BB65AAC29195374B20DF1D`, 124 method bodies, 37 types | From `tools/il-digest.ps1` in the source repository |
@@ -53,7 +53,8 @@ Records tag claims beside the claim. Full rules: [SCHEMA.md](SCHEMA.md).
 ## Sanitized or unavailable
 
 - [`EvidenceBundle/`](EvidenceBundle/README.md) is a **sanitized snapshot, not raw evidence**.
-- Not available in either repository: raw logs, saves, screenshots, the tested DLL, the zip, game files and third-party mods.
+- Tested client configuration: a frozen, redacted subset in `EvidenceBundle/config-1.0.1/`. See its [README](EvidenceBundle/README.md).
+- Not available: raw logs, saves, screenshots, game files and third-party mods.
 - `evidence\`, `backups\` and drive-letter paths in notes are provenance from the original machine, and are not links. List them with `python tools/validate.py --external`.
 
 ## Checks

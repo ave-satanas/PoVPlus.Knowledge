@@ -1,0 +1,41 @@
+# CreatureManager projectile configuration.
+# Copy entries from projectile.reference.yml and use only the fields that should change.
+# Loaded files: projectile.yml, projectile.yaml, projectile_*.yml, projectile_*.yaml.
+# Already flying projectiles keep their values. Any projectile instantiated after a hot reload uses the current template, even when fired by an existing creature.
+# Omitted fields inherit the source prefab. Clones retain every unexposed component and field unchanged.
+# usedByAttacks is generated reference metadata. It is accepted in this file but never changes runtime behavior.
+# There is no type field; projectile and spawnAbility blocks already identify the supported component.
+# projectile.randomSpawnOnHit uses Prefab[:weight]. Omit it to inherit, or use [] to clear the inherited list.
+# projectile.randomSpawnOnHitCount is the number of independent selections per hit. Omit it to inherit; 0 disables random spawning.
+# spawnAbility.spawnPrefabs uses Prefab[:weight]. Weight defaults to 1, is limited to 1000, and expanded lists are limited to 4096 slots.
+#
+# Schema:
+# - prefab: CM_BombBlob_Tar_projectile # existing target prefab id or a new clone name.
+#   enabled: true
+#   clonedFrom: BombBlob_Tar_projectile # optional source used to clone the entire prefab.
+#   usedByAttacks: [BombBlob_Tar]       # informational only; ignored when applying this entry.
+#   projectile:
+#     spawnOnHit: BlobTar                 # replace with a prefab name, or use null to clear it explicitly.
+#     randomSpawnOnHit: [Skeleton:2, Blob] # whole-list replacement; repeated slots are random selection weights, and [] clears.
+#     randomSpawnOnHitCount: 1            # selections per hit; omit to inherit, or use 0 to disable this path.
+#   spawnAbility:
+#     spawnPrefabs: [Mistile]             # whole-list replacement using Prefab[:weight]; omitted weight is 1.
+#
+# Examples:
+# - prefab: CM_DvergerMistile_spawn
+#   clonedFrom: DvergerMistile_spawn
+#   spawnAbility:
+#     spawnPrefabs: [Mistile]
+#
+# - prefab: CM_bonemass_spawn
+#   clonedFrom: bonemass_spawn
+#   spawnAbility:
+#     spawnPrefabs: [Skeleton:10, Blob]   # 10:1 selection weight; each spawn is rolled independently.
+#
+# - prefab: CM_BombBlob_Tar_projectile
+#   clonedFrom: BombBlob_Tar_projectile
+#   projectile:
+#     spawnOnHit: null                    # explicit clear; omitting projectile keeps the inherited value.
+#     randomSpawnOnHit: [Fairy1_RtD, Fairy2_RtD]
+#     randomSpawnOnHitCount: 1
+#

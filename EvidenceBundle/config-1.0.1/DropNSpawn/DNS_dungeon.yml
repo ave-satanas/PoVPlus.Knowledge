@@ -1,0 +1,33 @@
+# DropNSpawn periodic dungeon encounters.
+# Active filenames: DNS_dungeon.yml/.yaml or DNS_dungeon_<name>.yml/.yaml.
+# Rules are read on the server/local host. Install the updated DNS on every client too.
+# locations contains exact location prefab names, not individual dungeon room names.
+# Each interval rolls spawnChance independently for each living player in that dungeon.
+# maxAlive is shared by this rule ID and dungeon instance, across all listed prefabs.
+# It counts this rule's living creatures (including unloaded ones) and pending spawns.
+# Vanilla, EWP, Enforcers and other rule IDs do not count toward this rule's limit.
+# Keep id stable to retain saved creature attribution across reloads and restarts.
+# weight is a relative choice weight after a successful roll, not a percentage.
+# A 100% chance still requires a safe floor, clearance, reachability and a free cap slot.
+# CreatureManager, when installed, must support the spawn API; its boss/Enforcer blocks apply.
+#
+# The active list starts empty: installing this file does not enable any encounters.
+# To enable the example, remove [] at the bottom and remove the leading '# ' from
+# the example lines below. Or copy the rule into a DNS_dungeon_<name>.yml file.
+# Existing configuration and sample files are not overwritten.
+#
+# Example (commented out):
+# - id: sunkencrypt_ambush
+#   enabled: true
+#   locations: [SunkenCrypt4]
+#   spawnInterval: 60      # seconds; first check after one interval
+#   spawnChance: 10        # 0..100 percent per player, independent of the creature weights
+#   maxAlive: 3            # this rule's living creatures + reservations, shared per dungeon
+#   spawnRadius: 6~12      # horizontal distance from the selected player, meters
+#   creatures:
+#     - prefab: BlobElite
+#       weight: 2
+#     - prefab: DamnedOne_TW  # requires the supplying mod on server and clients
+#       weight: 1
+
+[]

@@ -1,0 +1,883 @@
+- name: Mushroom
+  enabled: true
+  biome: Meadows, BlackForest
+  minDistanceFromCenter: 500
+  minAmountSpawned: 1
+  maxAmountSpawned: 3
+  chance: 0.2
+  minEdgeSize: 66
+  maxEdgeSize: 199
+  minAvgHeight: 30
+  maxAvgHeight: 10000
+- name: Lantern
+  enabled: true
+  biome: Meadows, Swamp, Mountain, BlackForest, Plains, DeepNorth, Mistlands
+  minDistanceFromCenter: 500
+  minAmountSpawned: 3
+  maxAmountSpawned: 5
+  chance: 0.2
+  minEdgeSize: 66
+  maxEdgeSize: 199
+  minAvgHeight: 30
+  maxAvgHeight: 10000
+- name: Bones
+  enabled: true
+  biome: Swamp, Plains, Mistlands
+  spawn:
+  - prefab: Skeleton_Poison
+    enabled: true
+    name: Skeleton_poison
+    biome: Meadows, Swamp, BlackForest, Plains, Mistlands
+    spawnChance: 25
+    maxSpawned: 3
+    spawnInterval: 400
+    maxLevel: 3
+    minAltitude: 0
+    maxAltitude: 1000
+    spawnDistance: 15
+    groupSizeMax: 3
+    groupRadius: 5
+  minDistanceFromCenter: 2000
+  minAmountSpawned: 1
+  maxAmountSpawned: 3
+  chance: 0.2
+  minEdgeSize: 66
+  maxEdgeSize: 199
+  minAvgHeight: 30
+  maxAvgHeight: 10000
+- name: Menhir
+  enabled: true
+  biome: Meadows, Plains
+  spawn:
+  - prefab: Skeleton
+    enabled: true
+    name: Skeleton_meadows
+    biome: Meadows
+    spawnChance: 25
+    maxSpawned: 3
+    spawnInterval: 300
+    minAltitude: 0
+    maxAltitude: 1000
+    spawnAtDay: false
+    requiredGlobalKey: defeated_bonemass
+    spawnDistance: 10
+    groupSizeMax: 3
+    groupRadius: 3
+  - prefab: Skeleton_Mountains
+    enabled: true
+    name: Skeleton_plains
+    biome: Plains
+    spawnChance: 25
+    maxSpawned: 3
+    spawnInterval: 300
+    minAltitude: 0
+    maxAltitude: 1000
+    spawnAtDay: false
+    requiredGlobalKey: defeated_bonemass
+    spawnDistance: 10
+    groupSizeMax: 3
+    groupRadius: 3
+  minDistanceFromCenter: 750
+  minAmountSpawned: 1
+  maxAmountSpawned: 3
+  chance: 0.2
+  incompatibleAltBiomes:
+  - Birch Meadows
+  minEdgeSize: 33
+  maxEdgeSize: 199
+  minAvgHeight: 30
+  maxAvgHeight: 10000
+- name: Dark Meadows
+  enabled: true
+  biome: Meadows
+  levelUpChanceMultiplier: 2
+  blockEnvironments:
+  - Clear
+  - LightRain
+  - DeepForest Mist
+  spawn:
+  - prefab: Draugr
+    enabled: true
+    name: Draugr
+    biome: Meadows
+    spawnChance: 50
+    maxSpawned: 2
+    spawnInterval: 120
+    maxLevel: 3
+    minAltitude: -1.5
+    maxAltitude: 1000
+    spawnDistance: 10
+    groupSizeMax: 2
+    groupRadius: 3
+  - prefab: Draugr_Elite
+    enabled: true
+    name: Draugr Elite
+    biome: Swamp
+    biomeArea: median
+    spawnChance: 5
+    maxSpawned: 1
+    spawnInterval: 300
+    minAltitude: -1.5
+    maxAltitude: 1000
+    spawnAtDay: false
+    spawnDistance: 15
+    groupRadius: 1
+  blockLocationNames:
+  - WoodFarm1
+  minDistanceFromCenter: 1900
+  minAmountSpawned: 2
+  maxAmountSpawned: 5
+  chance: 0.5
+  minEdgeSize: 66
+  maxEdgeSize: 299
+  minAvgHeight: 30
+  maxAvgHeight: 10000
+- name: Peaceful Meadows
+  enabled: true
+  biome: Meadows
+  spawn:
+  - prefab: Boar
+    enabled: true
+    name: boar2
+    biome: Meadows
+    spawnChance: 50
+    maxSpawned: 15
+    spawnInterval: 150
+    maxLevel: 3
+    minAltitude: 0
+    maxAltitude: 1000
+    spawnDistance: 15
+    groupSizeMin: 4
+    groupSizeMax: 7
+    groupRadius: 10
+    levelUpMinCenterDistance: 800
+  - prefab: Deer
+    enabled: true
+    name: deer2
+    biome: Meadows
+    spawnChance: 50
+    maxSpawned: 10
+    spawnInterval: 100
+    maxLevel: 3
+    minAltitude: 0
+    maxAltitude: 1000
+    spawnDistance: 64
+    groupSizeMin: 2
+    groupSizeMax: 4
+    groupRadius: 5
+  - prefab: Deer_White
+    enabled: false
+    name: deerwhite
+    biome: Meadows
+    spawnChance: 10
+    maxSpawned: 1
+    spawnInterval: 300
+    maxLevel: 3
+    minLevel: 2
+    minAltitude: 0
+    maxAltitude: 1000
+    spawnAtNight: false
+    spawnDistance: 64
+    groupRadius: 5
+  blockSpawnNames:
+  - Greyling
+  - Greydwarf
+  - Skeleton
+  - Skeleton_Poison
+  - Draugr
+  - Draugr_Elite
+  - Greydwarf_Shaman
+  - Greydwarf_Elite
+  - Neck
+  - Troll
+  - Bjorn
+  minDistanceFromCenter: 1000
+  minAmountSpawned: 1
+  maxAmountSpawned: 2
+  chance: 0.2
+  incompatibleAltBiomes:
+  - Bones
+  - Dark Meadows
+  minEdgeSize: 99
+  maxEdgeSize: 299
+  minAvgHeight: 30
+  maxAvgHeight: 10000
+- name: Dandelion Meadows
+  enabled: true
+  biome: Meadows
+  minDistanceFromCenter: 500
+  minAmountSpawned: 1
+  maxAmountSpawned: 3
+  chance: 0.2
+  minEdgeSize: 66
+  maxEdgeSize: 199
+  minAvgHeight: 30
+  maxAvgHeight: 10000
+- name: Raspberry Meadows
+  enabled: true
+  biome: Meadows
+  minDistanceFromCenter: 500
+  minAmountSpawned: 1
+  maxAmountSpawned: 3
+  chance: 0.2
+  minEdgeSize: 66
+  maxEdgeSize: 199
+  minAvgHeight: 30
+  maxAvgHeight: 10000
+- name: Smalltree Meadows
+  enabled: true
+  biome: Meadows
+  spawn:
+  - prefab: Neck
+    enabled: true
+    name: Neck lakes
+    biome: Meadows
+    spawnChance: 50
+    maxSpawned: 6
+    spawnInterval: 100
+    maxLevel: 3
+    minAltitude: -1.5
+    maxAltitude: 0.5
+    spawnDistance: 5
+    groupSizeMin: 2
+    groupSizeMax: 4
+    groupRadius: 5
+    maxOceanDepth: 1
+    levelUpMinCenterDistance: 800
+  - prefab: Neck
+    enabled: true
+    name: Neck IN RAIN
+    biome: Meadows
+    maxSpawned: 8
+    spawnInterval: 30
+    maxLevel: 3
+    minAltitude: 0
+    maxAltitude: 10
+    requiredEnvironments: Rain, ThunderStorm, LightRain
+    spawnDistance: 32
+    groupSizeMin: 2
+    groupSizeMax: 4
+    groupRadius: 5
+    levelUpMinCenterDistance: 800
+  blockVegetationNames:
+  - beech1_meadows
+  - birch1_meadows
+  - birch2_meadows
+  minDistanceFromCenter: 500
+  minAmountSpawned: 1
+  maxAmountSpawned: 3
+  chance: 0.2
+  minEdgeSize: 33
+  maxEdgeSize: 199
+  minAvgHeight: 30
+  maxAvgHeight: 10000
+- name: Birch Meadows
+  enabled: true
+  biome: Meadows
+  spawn:
+  - prefab: Deer
+    enabled: true
+    name: deer
+    biome: Meadows
+    spawnChance: 50
+    maxSpawned: 5
+    spawnInterval: 100
+    maxLevel: 3
+    minAltitude: 0
+    maxAltitude: 1000
+    spawnDistance: 64
+    groupSizeMax: 3
+    groupRadius: 5
+    outsideForest: false
+  blockVegetationNames:
+  - beech1_meadows
+  minDistanceFromCenter: 500
+  minAmountSpawned: 1
+  maxAmountSpawned: 3
+  chance: 0.2
+  minEdgeSize: 66
+  maxEdgeSize: 199
+  minAvgHeight: 30
+  maxAvgHeight: 10000
+- name: Troll Black Forest
+  enabled: true
+  biome: BlackForest
+  spawn:
+  - prefab: Troll
+    enabled: true
+    name: Troll
+    biome: BlackForest
+    spawnChance: 10
+    maxSpawned: 2
+    spawnInterval: 4000
+    maxLevel: 3
+    minAltitude: 0
+    maxAltitude: 1000
+    spawnDistance: 10
+    groupRadius: 3
+    levelUpMinCenterDistance: 2000
+  minDistanceFromCenter: 750
+  minAmountSpawned: 1
+  maxAmountSpawned: 3
+  chance: 0.2
+  minEdgeSize: 66
+  maxEdgeSize: 199
+  minAvgHeight: 30
+  maxAvgHeight: 10000
+- name: Root Black Forest
+  enabled: true
+  biome: BlackForest
+  spawn:
+  - prefab: TentaRoot_wild
+    enabled: true
+    name: Root
+    biome: BlackForest
+    biomeArea: median
+    spawnChance: 50
+    maxSpawned: 150
+    spawnInterval: 180
+    maxLevel: 3
+    minAltitude: 0.1
+    maxAltitude: 1000
+    spawnDistance: 5
+    groupSizeMax: 3
+    groupRadius: 12
+    levelUpMinCenterDistance: 2000
+  - prefab: Greydwarf_Elite
+    enabled: true
+    name: greydwarf ELITE 2
+    biome: BlackForest
+    spawnChance: 50.6
+    maxSpawned: 3
+    spawnInterval: 120
+    maxLevel: 3
+    minAltitude: 0
+    maxAltitude: 1000
+    spawnAtDay: false
+    spawnDistance: 10
+    groupRadius: 1
+    levelUpMinCenterDistance: 2000
+  blockSpawnNames:
+  - Skeleton
+  minDistanceFromCenter: 2000
+  minAmountSpawned: 1
+  maxAmountSpawned: 4
+  chance: 0.2
+  incompatibleAltBiomes:
+  - Rock Black Forest
+  - Kalhygge Black Forest
+  minEdgeSize: 99
+  maxEdgeSize: 299
+  minAvgHeight: 30
+  maxAvgHeight: 10000
+- name: Ruin Black Forest
+  enabled: true
+  biome: BlackForest
+  minDistanceFromCenter: 500
+  minAmountSpawned: 1
+  maxAmountSpawned: 5
+  chance: 0.2
+  minEdgeSize: 33
+  maxEdgeSize: 199
+  minAvgHeight: 30
+  maxAvgHeight: 10000
+- name: Rock Black Forest
+  enabled: true
+  biome: BlackForest
+  levelUpChanceMultiplier: 2
+  blockVegetationNames:
+  - firtree_many_blackforest
+  - Pinetree_01_blackforest
+  - firtree_blackforest
+  blockLocationNames:
+  - TrollCave02
+  minDistanceFromCenter: 750
+  minAmountSpawned: 1
+  maxAmountSpawned: 5
+  chance: 0.2
+  incompatibleAltBiomes:
+  - Pinetree Black Forest
+  - Root Black Forest
+  minEdgeSize: 33
+  maxEdgeSize: 199
+  minAvgHeight: 30
+  maxAvgHeight: 10000
+- name: Pinetree Black Forest
+  enabled: true
+  biome: BlackForest
+  levelUpChanceMultiplier: 2
+  blockVegetationNames:
+  - firtree_blackforest
+  - firtree_many_blackforest
+  - firtree_small_blackforest
+  minDistanceFromCenter: 750
+  minAmountSpawned: 1
+  maxAmountSpawned: 5
+  chance: 0.2
+  incompatibleAltBiomes:
+  - Rock Black Forest
+  minEdgeSize: 33
+  maxEdgeSize: 199
+  minAvgHeight: 30
+  maxAvgHeight: 10000
+- name: Blueberry Black Forest
+  enabled: true
+  biome: BlackForest
+  minDistanceFromCenter: 500
+  minAmountSpawned: 1
+  maxAmountSpawned: 5
+  chance: 0.2
+  minEdgeSize: 33
+  maxEdgeSize: 199
+  minAvgHeight: 30
+  maxAvgHeight: 10000
+- name: Hut Swamp
+  enabled: true
+  biome: Swamp
+  spawn:
+  - prefab: Wraith
+    enabled: true
+    name: Wraith
+    biome: Swamp
+    spawnChance: 30
+    maxSpawned: 3
+    spawnInterval: 300
+    minAltitude: -2
+    maxAltitude: 1000
+    spawnAtDay: false
+    spawnDistance: 20
+    groupRadius: 1
+    huntPlayer: true
+    groundOffset: 20
+  blockVegetationNames:
+  - swamptree1
+  - swamptree2
+  minDistanceFromCenter: 1500
+  minAmountSpawned: 1
+  maxAmountSpawned: 3
+  chance: 0.2
+  incompatibleAltBiomes:
+  - Bog Swamp
+  minEdgeSize: 33
+  maxEdgeSize: 199
+  minAvgHeight: 30
+  maxAvgHeight: 10000
+- name: Bog Swamp
+  enabled: true
+  biome: Swamp
+  spawn:
+  - prefab: Abomination
+    enabled: true
+    name: Abomination
+    biome: Swamp
+    biomeArea: median
+    spawnChance: 20
+    maxSpawned: 3
+    spawnInterval: 2000
+    maxLevel: 0
+    minAltitude: -2
+    maxAltitude: 5
+    spawnDistance: 30
+    groupRadius: 1
+    groundOffset: 0
+  blockVegetationNames:
+  - swamptree1
+  - swamptree2
+  blockLocationNames:
+  - InfestedTree01
+  minDistanceFromCenter: 1500
+  minAmountSpawned: 1
+  maxAmountSpawned: 5
+  chance: 0.2
+  minEdgeSize: 33
+  maxEdgeSize: 145
+  minAvgHeight: 30
+  maxAvgHeight: 10000
+- name: Bat Swamp
+  enabled: true
+  biome: Swamp
+  spawn:
+  - prefab: Bat_Swamp
+    enabled: true
+    name: Bat
+    biome: Swamp
+    spawnChance: 5
+    maxSpawned: 10
+    spawnInterval: 100
+    minAltitude: 0
+    maxAltitude: 1000
+    spawnDistance: 5
+    groupSizeMin: 2
+    groupSizeMax: 3
+    groupRadius: 5
+    groundOffset: 6
+  minDistanceFromCenter: 2000
+  minAmountSpawned: 1
+  maxAmountSpawned: 3
+  chance: 0.2
+  minEdgeSize: 33
+  maxEdgeSize: 145
+  minAvgHeight: 30
+  maxAvgHeight: 10000
+- name: Abomination Swamp
+  enabled: true
+  biome: Swamp
+  spawn:
+  - prefab: Abomination
+    enabled: true
+    name: Abomination
+    biome: Swamp
+    biomeArea: median
+    spawnChance: 20
+    maxSpawned: 3
+    spawnInterval: 2000
+    maxLevel: 0
+    minAltitude: -2
+    maxAltitude: 5
+    spawnDistance: 30
+    groupRadius: 1
+    groundOffset: 0
+  minDistanceFromCenter: 2000
+  minAmountSpawned: 1
+  maxAmountSpawned: 3
+  chance: 0.2
+  minEdgeSize: 66
+  maxEdgeSize: 145
+  minAvgHeight: 30
+  maxAvgHeight: 10000
+- name: Wolf Mountain
+  enabled: true
+  biome: Mountain
+  levelUpChanceMultiplier: 2
+  spawn:
+  - prefab: Wolf
+    enabled: true
+    name: Wolf
+    biome: Mountain
+    biomeArea: median
+    spawnChance: 50
+    maxSpawned: 8
+    spawnInterval: 120
+    maxLevel: 3
+    minAltitude: 0
+    maxAltitude: 1000
+    spawnDistance: 30
+    groupSizeMin: 2
+    groupSizeMax: 4
+    groupRadius: 5
+    maxTilt: 45
+  blockSpawnNames:
+  - Skeleton
+  - Hatchling
+  blockVegetationNames:
+  - rock1_mountain
+  - rock2_mountain
+  minDistanceFromCenter: 2000
+  minAmountSpawned: 1
+  maxAmountSpawned: 5
+  chance: 0.2
+  incompatibleAltBiomes:
+  - Drake Mountain
+  - Fortress Mountain
+  minEdgeSize: 199
+  maxEdgeSize: 299
+  minAvgHeight: 30
+  maxAvgHeight: 10000
+- name: Drake Mountain
+  enabled: true
+  biome: Mountain
+  levelUpChanceMultiplier: 2
+  spawn:
+  - prefab: Hatchling
+    enabled: true
+    name: Hatchling
+    biome: Mountain
+    biomeArea: median
+    spawnChance: 25.6
+    maxSpawned: 4
+    spawnInterval: 120
+    minAltitude: 100
+    maxAltitude: 1000
+    spawnDistance: 10
+    groupSizeMax: 2
+    groupRadius: 4
+    maxTilt: 66
+    groundOffset: 10
+  blockSpawnNames:
+  - Wolf
+  - Skeleton
+  blockVegetationNames:
+  - firtree_mountain
+  minDistanceFromCenter: 2000
+  minAmountSpawned: 1
+  maxAmountSpawned: 3
+  chance: 0.2
+  incompatibleAltBiomes:
+  - Wolf Mountain
+  - Fortress Mountain
+  minEdgeSize: 199
+  maxEdgeSize: 299
+  minAvgHeight: 30
+  maxAvgHeight: 10000
+- name: Fortress Mountain
+  enabled: true
+  biome: Mountain
+  levelUpChanceMultiplier: 3
+  spawn:
+  - prefab: Skeleton_Mountains
+    enabled: true
+    name: Skeleton
+    biome: Mountain
+    spawnChance: 25
+    maxSpawned: 10
+    spawnInterval: 300
+    minAltitude: 0
+    maxAltitude: 1000
+    spawnDistance: 10
+    groupSizeMin: 3
+    groupSizeMax: 6
+    groupRadius: 5
+  - prefab: StoneGolem
+    enabled: true
+    name: StoneGolem
+    biome: Mountain
+    biomeArea: median
+    spawnChance: 25.6
+    maxSpawned: 1
+    spawnInterval: 120
+    minAltitude: 120
+    maxAltitude: 1000
+    spawnDistance: 10
+    groupSizeMax: 2
+    groupRadius: 4
+  blockVegetationNames:
+  - firtree_mountain
+  blockLocationNames:
+  - StoneTowerRuins05
+  minDistanceFromCenter: 2000
+  minAmountSpawned: 1
+  maxAmountSpawned: 2
+  chance: 0.2
+  incompatibleAltBiomes:
+  - Wolf Mountain
+  - Drake Mountain
+  minEdgeSize: 199
+  maxEdgeSize: 299
+  minAvgHeight: 30
+  maxAvgHeight: 10000
+- name: Lox Plains
+  enabled: true
+  biome: Plains
+  spawn:
+  - prefab: Lox
+    enabled: true
+    name: Lox
+    biome: Plains
+    spawnChance: 10
+    maxSpawned: 15
+    spawnInterval: 1000
+    minAltitude: 1
+    maxAltitude: 1000
+    spawnDistance: 50
+    groupSizeMin: 3
+    groupSizeMax: 5
+    groupRadius: 15
+  blockSpawnNames:
+  - Goblin
+  blockVegetationNames:
+  - birch2_aut_heath
+  blockLocationNames:
+  - GoblinCamp2
+  - StoneTower1
+  - StoneTower3
+  minDistanceFromCenter: 2000
+  maxAmountSpawned: 1
+  chance: 0.2
+  incompatibleAltBiomes:
+  - Goblin Plains
+  - Death Plains
+  minEdgeSize: 99
+  maxEdgeSize: 299
+  minAvgHeight: 30
+  maxAvgHeight: 10000
+- name: Goblin Plains
+  enabled: true
+  biome: Plains
+  levelUpChanceMultiplier: 2
+  spawn:
+  - prefab: Goblin
+    enabled: true
+    name: Goblin
+    biome: Plains
+    spawnChance: 33
+    maxSpawned: 5
+    spawnInterval: 60
+    maxLevel: 3
+    minAltitude: 0
+    maxAltitude: 1000
+    spawnDistance: 30
+    groupSizeMin: 5
+    groupSizeMax: 7
+    groupRadius: 5
+  blockSpawnNames:
+  - Lox
+  - Deathsquito
+  minDistanceFromCenter: 2000
+  maxAmountSpawned: 2
+  chance: 0.2
+  incompatibleAltBiomes:
+  - Lox Plains
+  - Death Plains
+  minEdgeSize: 66
+  maxEdgeSize: 199
+  minAvgHeight: 30
+  maxAvgHeight: 10000
+- name: Death Plains
+  enabled: true
+  biome: Plains
+  levelUpChanceMultiplier: 2
+  spawn:
+  - prefab: Deathsquito
+    enabled: true
+    name: Deathsquito
+    biome: Plains
+    spawnChance: 20
+    maxSpawned: 5
+    spawnInterval: 500
+    minAltitude: 1
+    maxAltitude: 1000
+    spawnDistance: 30
+    groupSizeMax: 3
+    groupRadius: 15
+    maxTilt: 99
+    groundOffset: 1
+  blockSpawnNames:
+  - Lox
+  - Goblin
+  blockVegetationNames:
+  - birch2_aut_heath
+  - heathrockpillar
+  blockLocationNames:
+  - GoblinCamp2
+  - StoneTower1
+  - StoneTower3
+  - StoneHenge1
+  - StoneHenge2
+  - StoneHenge3
+  minDistanceFromCenter: 1000
+  maxAmountSpawned: 1
+  chance: 0.2
+  incompatibleAltBiomes:
+  - Lox Plains
+  - Goblin Plains
+  minEdgeSize: 99
+  maxEdgeSize: 299
+  minAvgHeight: 30
+  maxAvgHeight: 10000
+- name: Kalhygge Black Forest
+  enabled: true
+  biome: BlackForest
+  blockVegetationNames:
+  - firtree_many_blackforest
+  - firtree_blackforest
+  - Pinetree_01_blackforest
+  - firtree_small_blackforest
+  minDistanceFromCenter: 500
+  minAmountSpawned: 1
+  maxAmountSpawned: 2
+  chance: 0.2
+  incompatibleAltBiomes:
+  - Root Black Forest
+  minEdgeSize: 20
+  maxEdgeSize: 80
+  minAvgHeight: 30
+  maxAvgHeight: 10000
+- name: Rockless Mistlands
+  enabled: true
+  biome: Mistlands
+  blockVegetationNames:
+  - cliff_mistlands1
+  - cliff_mistlands2
+  - rock_mistlands1
+  minDistanceFromCenter: 2000
+  minAmountSpawned: 2
+  maxAmountSpawned: 5
+  chance: 0.2
+  minEdgeSize: 99
+  maxEdgeSize: 599
+  minAvgHeight: 30
+  maxAvgHeight: 10000
+- name: Trees Mistlands
+  enabled: true
+  biome: Mistlands
+  minDistanceFromCenter: 2000
+  minAmountSpawned: 1
+  maxAmountSpawned: 5
+  chance: 0.2
+  minEdgeSize: 59
+  maxEdgeSize: 299
+  minAvgHeight: 30
+  maxAvgHeight: 10000
+- name: Swords Mistlands
+  enabled: true
+  biome: Mistlands
+  minDistanceFromCenter: 2000
+  minAmountSpawned: 1
+  maxAmountSpawned: 3
+  chance: 0.2
+  minEdgeSize: 59
+  maxEdgeSize: 199
+  minAvgHeight: 30
+  maxAvgHeight: 10000
+- name: Hare Mistlands
+  enabled: true
+  biome: Mistlands
+  spawn:
+  - prefab: Hare
+    enabled: true
+    name: Hare2
+    biome: Mistlands
+    spawnChance: 50
+    maxSpawned: 20
+    spawnInterval: 100
+    maxLevel: 3
+    minAltitude: 0
+    maxAltitude: 1000
+    spawnDistance: 10
+    groupSizeMax: 3
+    groupRadius: 6
+  minDistanceFromCenter: 2000
+  minAmountSpawned: 1
+  maxAmountSpawned: 3
+  chance: 0.2
+  minEdgeSize: 59
+  maxEdgeSize: 199
+  minAvgHeight: 30
+  maxAvgHeight: 10000
+- name: BroodSwarm Mistlands
+  enabled: true
+  biome: Mistlands
+  spawn:
+  - prefab: SeekerBrood
+    enabled: true
+    name: SeekerBroodSwarm
+    biome: Mistlands
+    biomeArea: median
+    spawnChance: 40
+    maxSpawned: 100
+    spawnInterval: 3000
+    minAltitude: 1
+    maxAltitude: 1000
+    spawnAtDay: false
+    spawnDistance: 10
+    groupSizeMin: 5
+    groupSizeMax: 10
+    groupRadius: 5
+  minDistanceFromCenter: 2000
+  minAmountSpawned: 1
+  maxAmountSpawned: 3
+  chance: 0.2
+  minEdgeSize: 59
+  maxEdgeSize: 199
+  minAvgHeight: 30
+  maxAvgHeight: 10000

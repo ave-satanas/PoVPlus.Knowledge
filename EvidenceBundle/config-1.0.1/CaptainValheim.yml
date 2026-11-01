@@ -1,0 +1,104 @@
+# Root key = `Global` fallback defaults or a shield prefab name from ObjectDB.
+# Listed prefabs inherit `Global`; omitted fields keep inherited or built-in defaults.
+# Set a mode block's `enabled: false` to disable that feature after inheritance.
+# Attack push only: F = max(0, deflectionForce); attackPushBase = F <= 15 ? F : sqrt(15 * F).
+# Existing pushFactor values multiply attackPushBase for primaryAttack, throw and charge.
+# Radius, TTL, reflection, normal blocking and blockCharge use their existing formulas.
+
+Global:
+  primaryAttack:
+    enabled: true
+    durabilityFactor: 1.00 # Primary attack durability cost = shield useDurabilityDrain * durabilityFactor
+    staminaFactor: 0.80     # Primary attack rawStamina = sqrt(baseBlockPower) * staminaFactor
+    pushFactor: 0.40        # Primary attack push = max(0, attackPushBase * pushFactor)
+    damageFactor: 0.40      # Primary attack damage = blockPower * damageFactor
+  throw:
+    enabled: true
+    durabilityFactor: 1.00 # Throw durability cost = shield useDurabilityDrain * durabilityFactor
+    staminaFactor: 2.00     # Throw rawStamina = sqrt(baseBlockPower) * staminaFactor
+    pushFactor: 1.00        # Throw push = max(0, attackPushBase * pushFactor)
+    damageFactor: 0.80      # Throw damage = blockPower * damageFactor
+    targets: 3              # Max enemy hits, including the first enemy hit.
+    damageDecay: 0.50       # nextDamage *= (1 - damageDecay)
+    ttlFactor: 1.00         # ttl = max(0.30, ttlFactor / cbrt(deflectionForce / 20))
+    radiusFactor: 6.00      # bounceSearchRadius = radiusFactor / cbrt(deflectionForce / 20)
+  charge:
+    enabled: true
+    cooldown: 10.0          # Charge base cooldown
+    cooldownReductionFactor: 0.50 # cooldown *= 1 - BlockingSkill / 100 * cooldownReductionFactor
+    durabilityFactor: 2.00 # Charge durability cost = shield useDurabilityDrain * durabilityFactor
+    staminaFactor: 3.00     # Charge rawStamina = sqrt(baseBlockPower) * staminaFactor
+    pushFactor: 2.00        # Charge push = max(0, attackPushBase * pushFactor)
+    damageFactor: 1.20      # Charge damage = blockPower * damageFactor
+    distance: 4.0           # Charge travel distance
+    speed: 12.0             # Charge travel speed
+    hitRadiusFactor: 0.40   # Charge hitRadius = sqrt(deflectionForce / 20) * hitRadiusFactor
+  reflect:
+    enabled: true           # Enable guard-based projectile reflection.
+    staminaFactor: 2.0      # totalReflectStamina = vanillaBlockStaminaCost * staminaFactor
+    reflectionFactor: 0.01  # reflectPowerScale = deflectionForce * reflectionFactor
+  blockCharge:
+    enabled: true           # Enable Valheim's vanilla block-charge counterattack.
+                            # Missing vanilla charge VFX are filled up to the final chargeCount.
+                            # Shields with zero attack damage get 5 generic block-charge damage.
+
+ShieldWoodTower:
+  primaryAttack:
+    enabled: true
+    damageFactor: 0.50 # Example partial override; other fields inherit Global.
+  # Example blockCharge override. Omitted fields keep each shield prefab's vanilla values.
+  # Vanilla normal shields/bucklers: chargeCount 3, decayTime 1.0, blockingDecayFactor 0.25
+  # Vanilla tower shields: chargeCount 5, decayTime 4.0, blockingDecayFactor 0.5
+  # blockCharge:
+  #   enabled: true
+  #   chargeCount: 5
+  #   decayTime: 4.0
+  #   blockingDecayFactor: 0.5
+
+# Additional prefab override examples:
+#
+# ShieldBronzeBuckler:
+#   primaryAttack:
+#     damageFactor: 0.35
+#     pushFactor: 0.30
+#   throw:
+#     targets: 1
+#     damageFactor: 0.70
+#     staminaFactor: 1.50
+#   blockCharge:
+#     enabled: true
+#     chargeCount: 3
+#     decayTime: 1.0
+#     blockingDecayFactor: 0.25
+#
+# ShieldIronTower:
+#   throw:
+#     enabled: false
+#   charge:
+#     cooldown: 12.0
+#     staminaFactor: 3.50
+#     distance: 3.0
+#     speed: 9.0
+#     hitRadiusFactor: 0.55
+#
+# ShieldSerpentscale:
+#   reflect:
+#     enabled: true
+#     staminaFactor: 1.50
+#     reflectionFactor: 0.015
+#   throw:
+#     targets: 2
+#     damageDecay: 0.35
+#
+# ShieldCarapaceBuckler:
+#   primaryAttack:
+#     damageFactor: 0.55
+#     pushFactor: 0.50
+#   throw:
+#     damageFactor: 1.00
+#     targets: 2
+#     radiusFactor: 5.00
+#   charge:
+#     cooldown: 8.0
+#     distance: 4.5
+#     speed: 14.0

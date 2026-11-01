@@ -1,0 +1,153 @@
+# Outdoor and dungeon Karma are stored separately; the rules below apply to both.
+
+karma:
+  thresholds: [60, 120, 180]             # +1, +2, ... level at each value; the last value caps gain. [] disables bonuses and the cap.
+  decay: [15, 30, 100]                   # [delayMinutes, karmaPerMinute, karmaRemovedOnPlayerDeath].
+  gain: [1, 25, 0.3, 0.15, 4]            # [kill, bossKill, killScalingPerExtraLevel, bossScalingPerExtraLevel, dungeonMultiplier].
+  prefabs:                               # Base gain overrides; level and dungeon scaling still apply.
+    Troll: 5
+    Abomination: 5
+    StoneGolem: 5
+    GoblinBrute: 3
+    Lox: 5
+    Gjall: 5
+    SeekerBrute: 5
+    Morgen: 5
+    Morgen_NonSleeping: 5
+    FallenValkyrie: 8
+
+Enforcer:
+  settings: [40, 30, 2]                  # [requiredKarma, consumeKarma, levelBonus].
+  checks: [50, 1200, 60, 24~48]          # [chance%, cooldownSeconds, intervalSeconds, outdoorRadiusMin~MaxMeters].
+  modifiers:                             # Partial map; omitted/{} inherits levels.yml, [] clears fallback, and trailing tuple values may be omitted.
+    # Offense: Enraged to Undodgeable
+    enraged: 10, 0.15                    # chance%, outgoingDamageBonus.
+    fire: 10, 0.2                        # chance%, addedFireDamage.
+    frost: 10, 0.1                       # chance%, addedFrostDamage.
+    lightning: 10, 0.1                   # chance%, addedLightningDamage.
+    spirit: 10, 0.05                     # chance%, addedSpiritDoT.
+    armorPiercing: 10, 0.3               # chance%, ignoredPlayerArmor.
+    staggering: 10, 0.6                  # chance%, staggerBonus.
+    undodgeable: 10, 0.25                # chance%, damageReduction.
+    # Defense: Armored to Chameleon
+    armored: 10, 0.3                     # chance%, damageReduction.
+    deathward: 10, 0.2, 10, 3            # chance%, restoredMaxHealthRatio, cooldownSeconds, maxActivations.
+    regenerating: 10, 0.005, 20          # chance%, maxHealthRatioPerSecond, healthPerSecondCap (0 = unlimited).
+    reflection: 10, 0.1, 0.5             # chance%, actualMeleeDamageReflected, procChance.
+    vortex: 10, 0.5                      # chance%, projectileIgnoreProc.
+    adaptive: 10, 0.5                    # chance%, rememberedTypeDamageReduction.
+    unflinching: 10                      # chance%.
+    chameleon: 10, 10                    # chance%, immunitySwitchSeconds.
+    # Affliction: Exposed to ToxicAura
+    exposed: 10, 0.2, 0.5, 5             # chance%, damageTaken, proc, duration.
+    weakened: 10, 0.2, 0.5, 5            # chance%, outgoingDamageReduction, proc, duration.
+    withered: 10, 0.5, 0.5, 5            # chance%, healingReduction, proc, duration.
+    crippling: 10, 0.5, 0.5, 0.5, 5     # chance%, moveReduction, jumpReduction, proc, duration.
+    disruptive: 10, 0.5, 0.5, 0.5, 5    # chance%, staminaRegenReduction, eitrRegenReduction, proc, duration.
+    adrenalineDrain: 10, 0.5, 0.5, 0.5, 5 # chance%, currentAdrenalineRemoved, adrenalineGainReduction, procChance, duration.
+    corrosive: 10, 0.5, 0.5, 5           # chance%, durabilityLossBonus, procChance, duration.
+    toxicAura: 10, 0.1   # chance%, maxHealthPoison per application; every 1s, body radius + 3m
+    # Special: Swift to Blamer
+    swift: 10, 0.4                       # chance%, movementSpeedBonus.
+    attackSpeed: 10, 0.3                 # chance%, attackSpeedBonus.
+    vampiric: 10, 0.3                    # chance%, actualDirectDamageHealing.
+    reaping: 10, 0.05, 20, 0.1, 2, 0.01, 0.2, 0.05, 0.5 # chance%, heal/base, healMaxActivations, maxHealth/base, maxHealthCap, damagePerKill, damageCap, scalePerKill, scaleCap.
+    blink: 10, 6, 16, fx_Adrenaline1    # chance%, cooldown, maxRange, startEffect.
+    omen: 10, 0.5                        # chance%, forcedEnforcerChance.
+    juggernaut: 10, 150, 5               # chance%, minimumPushForce, cooldownSeconds.
+    blamer: 0, 1, 60, 0.75               # chance%, karmaPerSecond, maxKarmaGain, fleeHealthRatio (0 maxKarmaGain = unlimited).
+
+# Use top-level Global as the fallback table for unmatched biomes.
+BlackForest:
+  enabled: true
+  enforcers:                             # Outdoor candidates.
+    - summon: [Greydwarf_Elite, Greydwarf:2, Greydwarf_Shaman] # [enforcerPrefab, minionPrefab[:count], ...]
+      settings: [40, 30, 1]             # [requiredKarma, consumeKarma, levelBonus]; omit to inherit Enforcer.settings.
+      weight: 1                          # Relative selection weight; default 1.
+      loot: [TrophyGreydwarfBrute:1, Amber:3] # Guaranteed extras as itemPrefab:amount; normal drops remain.
+      modifiers:                         # Partial map; omitted/{} inherits Enforcer.modifiers, while [] clears fallback.
+        staggering: 30, 0.6              # chance%, staggerBonus.
+        deathward: 30, 0.2, 10, 3        # chance%, restored max-health ratio, cooldown seconds, max activations.
+        toxicAura: 30, 0.1
+        juggernaut: 30, 150, 5
+    - summon: [Bjorn]
+      settings: [50, 40, 1]
+      weight: 3
+      loot: [TrophyBjorn:1, Amber:3]
+      modifiers:
+        lightning: 10, 0.1
+        deathward: 20, 0.2, 10, 3
+        disruptive: 10, 0.5, 0.5, 0.5, 5
+        blink: 10, 6, 16, fx_Adrenaline1
+  dungeonEnforcers:                      # Matching location > unrestricted dungeon > outdoor fallback.
+    - summon: [Skeleton_Poison, Skeleton:2]
+      # location: MountainCave02          # Optional; quote names containing ':'.
+      weight: 2
+      loot: [TrophySkeletonPoison:1, TrophySkeleton:1, Amber:3]
+    - summon: [Ghost, Skeleton]
+      loot: [TrophyGhost:1, Amber:3]
+
+Swamp:
+  enabled: true
+  enforcers:
+    - summon: [Wraith, Ghost:2]
+      loot: [TrophyWraith:1, AmberPearl:2]
+  dungeonEnforcers:
+    - summon: [Draugr_Elite, Draugr, Draugr_Ranged]
+      loot: [TrophyDraugrElite:1, AmberPearl:2]
+
+Mountain:
+  enabled: true
+  enforcers:
+    - summon: [Fenring, Wolf:2]
+      weight: 2
+      loot: [TrophyFenring:1, AmberPearl:2]
+    - summon: [Hatchling, Hatchling:2]
+      loot: [TrophyHatchling:1, AmberPearl:2]
+  dungeonEnforcers:
+    - summon: [Fenring_Cultist, Ulv:2]
+      loot: [TrophyCultist:1, AmberPearl:2]
+
+Plains:
+  enabled: true
+  enforcers:
+    - summon: [GoblinBrute, GoblinShaman, GoblinArcher, Goblin:2]
+      loot: [TrophyGoblinBrute:1, Ruby:2]
+    - summon: [Deathsquito, Deathsquito:4]
+      loot: [TrophyDeathsquito:1, Ruby:2]
+
+Mistlands:
+  enabled: true
+  enforcers:
+    - summon: [Gjall, Tick:4]
+      loot: [TrophyGjall:1, Ruby:2]
+  dungeonEnforcers:
+    - summon: [SeekerBrute, Seeker:2]
+      loot: [TrophySeekerBrute:1, Ruby:2]
+
+AshLands:
+  enabled: true
+  enforcers:
+    - summon: [Charred_Mage, Charred_Archer, Charred_Melee]
+      weight: 3
+      loot: [TrophyCharredMelee:1, TrophyCharredMage:1, TrophyCharredArcher:1, SilverNecklace:2]
+    - summon: [FallenValkyrie, Volture:2]
+      loot: [TrophyFallenValkyrie:1, SilverNecklace:2]
+    - summon: [Morgen_NonSleeping, Charred_Twitcher:2]
+      loot: [TrophyMorgen:1, SilverNecklace:2]
+
+DeepNorth:
+  enabled: true
+  enforcers:
+    - summon: [Barka]
+      settings: [40, 30, 2]
+      loot: [TrophyBarka:1, SilverNecklace:2]
+  dungeonEnforcers:
+    - summon: [ElakingMole, Elaking]
+      location: TheHole01
+      settings: [40, 30, 2]
+      loot: [TrophyMole:1, SilverNecklace:2]
+    - summon: [JotunWarrior, BlobMork]
+      location: MorkBorg
+      settings: [40, 30, 2]
+      loot: [TrophyJotunWarrior:1, SilverNecklace:2]

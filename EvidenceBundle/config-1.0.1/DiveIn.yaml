@@ -1,0 +1,139 @@
+# Monster dive configuration for DiveIn.
+# Unknown keys and duplicate keys are treated as errors and keep the previous applied settings.
+
+surface_patrol: # You can use any group name. Add your own groups
+  passive_min_depth: 0 # Shallowest passive dive depth used while the monster has no target and is not alerted.
+  passive_center_depth: 10 # Center depth used by the passive sine-wave swimming pattern.
+  passive_max_depth: 20 # Deepest passive dive depth used while the monster has no target and is not alerted.
+  active_min_depth: 0.25 # Shallowest active target depth used while alerted or chasing a target.
+  active_depth_adjust_speed: 2 # How quickly this group adjusts swim depth while alerted or chasing a target.
+  shallow_water_flee_depth: 0 # Current terrain water depth below this value makes the monster flee from its target. 0 disables it.
+  preserve_spawn_depth: false # If true, monsters spawned underwater keep their initial spawn depth instead of surfacing first.
+  avoidance_steering: true # If false, skips DiveIn's angled obstacle avoidance and swims directly toward the current target.
+  prefabs: # Monster prefab names assigned to this passive profile group.
+    - Leech
+    - Abomination
+    - Serpent
+    - BonemawSerpent
+
+mid_water:
+  passive_min_depth: 0
+  passive_center_depth: 15
+  passive_max_depth: 30
+  active_min_depth: 0.25
+  active_depth_adjust_speed: 2
+  shallow_water_flee_depth: 0
+  preserve_spawn_depth: false
+  avoidance_steering: true
+  prefabs: []
+
+deep_patrol:
+  passive_min_depth: 10
+  passive_center_depth: 20
+  passive_max_depth: 30
+  active_min_depth: 0.25
+  active_depth_adjust_speed: 2
+  shallow_water_flee_depth: 0
+  preserve_spawn_depth: false
+  avoidance_steering: true
+  prefabs: []
+
+## Mod prefabs sample
+
+mods_surface:
+  passive_min_depth: 0
+  passive_center_depth: 10
+  passive_max_depth: 20
+  active_min_depth: 0.25
+  active_depth_adjust_speed: 2
+  shallow_water_flee_depth: 0
+  preserve_spawn_depth: false
+  avoidance_steering: true
+  prefabs:
+    - Neck_RtD
+    - Animal_Dolphin_RtD
+    - Animal_Cod_RtD
+    - Monster_GreatWhiteShark_RtD
+    - Animal_Turtle_RtD
+    - Mirmaid_RtD
+    - BoneFish_RtD
+    - BoneSquid_RtD
+    - LuminousLooker_RtD
+    - MurkPod_RtD
+    - Animal_HumpbackWhale_RtD
+    - RDB_crocodile
+    - RDB_white_shark
+    - RDB_turtle
+    - Shark_TW
+    - ArcticSerpent_TW
+    - SA_Orca
+    - SA_Dolphin
+    - SA_HumboldtSquid
+    - SA_LeatherbackSeaTurtle
+    - SA_RightWhale
+    - SA_WhaleShark
+    - SA_BlueShark
+    - SA_HammerHeadShark
+    - SA_TigerShark
+    - SA_BlueTurtle
+    - SA_GreenTurtle
+    - SA_RedTurtle
+    - SA_YellowTurtle
+
+# Disable angled avoidance only for prefabs that jitter while diving.
+mods_surface_nosteering:
+  passive_min_depth: 0
+  passive_center_depth: 10
+  passive_max_depth: 20
+  active_min_depth: 0.25
+  active_depth_adjust_speed: 2
+  shallow_water_flee_depth: 0
+  preserve_spawn_depth: false
+  avoidance_steering: false
+  prefabs:
+    - SA_WhiteShark
+
+mods_midwater:
+  passive_min_depth: 0
+  passive_center_depth: 15
+  passive_max_depth: 30
+  active_min_depth: 0.25
+  active_depth_adjust_speed: 2
+  shallow_water_flee_depth: 0
+  preserve_spawn_depth: false
+  avoidance_steering: true
+  prefabs:
+    - Belzor_RtD
+    - Monster_HammerheadShark_RtD
+    - Animal_Marlin_RtD
+    - Shark_RtD
+    - Animal_SpermWhale_RtD
+    - Monster_Orca_RtD
+
+mods_deep:
+  passive_min_depth: 10
+  passive_center_depth: 20
+  passive_max_depth: 30
+  active_min_depth: 0.25
+  active_depth_adjust_speed: 2
+  shallow_water_flee_depth: 0
+  preserve_spawn_depth: false
+  avoidance_steering: true
+  prefabs:
+    - Animal_Tuna_RtD
+    - Animal_Squid_RtD
+
+mods_bottom:
+  passive_min_depth: 20
+  passive_center_depth: 30
+  passive_max_depth: 40
+  active_min_depth: 0.25
+  active_depth_adjust_speed: 2
+  shallow_water_flee_depth: 0
+  preserve_spawn_depth: false
+  avoidance_steering: true
+  prefabs:
+    - CatFish_RtD
+    - Reptile_RtD
+    - MirRake_RtD
+    - Animal_Manta_RtD

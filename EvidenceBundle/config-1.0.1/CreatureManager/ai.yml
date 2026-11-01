@@ -1,0 +1,58 @@
+# CreatureManager AI configuration.
+# An enabled AI definition whose name matches a loaded MonsterAI or AnimalAI creature prefab is applied directly to that prefab.
+# The same-name original prefab needs no creatures.yml 'ai:' field to receive those AI overrides.
+# A creatures.yml clone with no 'ai:' and no same-name AI definition keeps its clonedFrom prefab's baseline AI from before CreatureManager overrides; set 'ai: sourcePrefabName' to inherit the configured source AI.
+# A unique name that matches no supported AI creature prefab remains a reusable preset; use copyFrom or clonedFrom to choose its baseline.
+# In creatures.yml, 'ai:' assigns a reusable preset or another creature prefab's AI; explicit assignments take priority over same-name direct application.
+# Copy entries from ai.reference.yml into ai.yml to override that creature's AI directly, or rename them to create reusable presets.
+# Loaded files: ai.yml, ai.yaml, ai_*.yml, ai_*.yaml.
+# Hot reload updates AI templates used by later creature instances; loaded BaseAI and MonsterAI components keep their current values.
+# Omitted fields keep the baseline AI value. If no baseline is found, they keep the current target AI value.
+# Effect lists are intentionally not managed here.
+# Use baseAI for shared BaseAI fields. AnimalAI creatures use baseAI only; monsterAI adds MonsterAI-only fields.
+#
+# Schema:
+# - ai: draugr_melee                    # AI definition name; a same-name creature prefab is the direct target.
+#   enabled: true                         # false skips both direct application and preset use.
+#   copyFrom: ''                          # optional parent AI preset or creature prefab applied before this entry.
+#   clonedFrom: Draugr                    # optional AI prefab baseline copied before overrides.
+#   baseAI:
+#     senses: [30, 90, 999, false]          # viewRange, viewAngle, hearRange, mistVision.
+#     idleSound: [5, 0.5]                   # idleSoundInterval, idleSoundChance.
+#     movement: [false, Humanoid, 5, true]  # patrol, pathAgentType, moveMinAngle, smoothMovement.
+#     serpent: [false, 20]                  # serpentMovement, serpentTurnRadius.
+#     randomMove: [0, 5, 10, 20]           # jumpInterval, randomCircleInterval, randomMoveInterval, randomMoveRange.
+#     flight: [false, 0, 0, 5, 5, 2, 1, 2, 5, 0] # randomFly, chanceToTakeoff, chanceToLand, groundDuration, airDuration, maxLandAltitude, takeoffTime, flyAltitudeMin, flyAltitudeMax, flyAbsMinAltitude.
+#     avoid: [false, false, false, false, false, false] # avoidFire, afraidOfFire, avoidWater, avoidLava, skipLavaTargets, avoidLavaFlee.
+#     flee: [0, 90, 2]                      # fleeRange, fleeAngle, fleeInterval.
+#     aggressive: [true, false]             # aggravatable, passiveAggressive.
+#     messages: ['', '', '']                # spawnMessage, deathMessage, alertedMessage.
+#   monsterAI:
+#     alertRange: 20
+#     hunt: [true, true, 3]                 # enableHuntPlayer, attackPlayerObjects, privateAreaTriggerThreshold.
+#     chase: [0, 999, 200, 2]              # interceptTimeMin, interceptTimeMax, maxChaseDistance, minAttackInterval.
+#     circle: [5, 2, 6]                    # circleTargetInterval, circleTargetDuration, circleTargetDistance.
+#     hurtFlee: [false, 0, 0, false, 0, 0, false] # fleeIfHurtWhenTargetCantBeReached, fleeUnreachableSinceAttacking, fleeUnreachableSinceHurt, fleeIfNotAlerted, fleeIfLowHealth, fleeTimeSinceHurt, fleeInLava.
+#     charge: [false, false]                # circulateWhileCharging, circulateWhileChargingFlying.
+#     sleep: [false, 20, true, 50, 0, 0, 999] # sleeping, wakeupRange, noiseWakeup, maxNoiseWakeupRange, wakeUpDelayMin, wakeUpDelayMax, fallAsleepDistance.
+#     avoidLand: false
+#
+# Examples:
+# - ai: Draugr                          # same as an existing prefab, so this directly overrides Draugr.
+#   baseAI:
+#     senses: [40, 120, 999, false]
+#   monsterAI:
+#     chase: [0, 999, 400, 1]
+#
+# - ai: vincent_archer                  # unique reusable preset name, so copyFrom chooses the baseline.
+#   copyFrom: GoblinArcher
+#   monsterAI:
+#     circle: [8, 6, 8]
+#
+# - ai: Boar                            # directly overrides Boar; AnimalAI uses baseAI only.
+#   baseAI:
+#     senses: [20, 90, 999, false]
+#
+# - ai: disabled_example
+#   enabled: false
+#

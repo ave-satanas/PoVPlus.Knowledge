@@ -1,0 +1,133 @@
+# UsefulRunestones
+#
+# runestoneGlobalPins: pinless RuneStones can add map pins for configured locations.
+# Row: locationName, chance, pinName, pinType, sourceBiomes
+# ex) Vendor_BlackForest, 0.5, Some pin name, Icon3, [Meadows]
+# chance is the final selection chance. Remaining chance means no pin; totals over 1 are normalized.
+# normalized ex) three targets at 0.5 total 1.5, so each selected target has 0.5 / 1.5 = 33.3%.
+# sourceBiomes adds extra RuneStone source biomes; [] means only the target location's own biome.
+# pinName defaults to target Location.m_discoverLabel, then child Teleport.m_enterText, then locationName.
+# pinType defaults to Icon3. Options: Icon0, Icon1, Icon2, Icon3, Death, Bed, Icon4, Shout, None, Boss, Player, RandomEvent, Ping, EventArea, Hildir1, Hildir2, Hildir3.
+runestoneGlobalPins:
+  - Vendor_BlackForest, 0.5, Haldor, Icon3
+  - CombatRuin01, 0.5
+  - Hildir_camp, 0.5
+  - BogWitch_Camp, 0.5
+  - SunkenCrypt4, 0.5
+  - MountainCave02, 0.5
+  - StoneHenge1, 0.5
+  - StoneHenge3, 0.5
+  - StoneHenge4, 0.5
+  - StoneHenge5, 0.5
+  - Mistlands_DvergrTownEntrance1, 0.5
+  - Mistlands_DvergrTownEntrance2, 0.5
+  - Mistlands_Excavation1, 0.5
+  - Mistlands_Excavation2, 0.5
+  - Mistlands_Excavation3, 0.5
+  - PlaceofMystery1, 0.5
+  - PlaceofMystery2, 0.5
+  - PlaceofMystery3, 0.5
+
+# vegvisirGlobalEffects: weighted rewards when a normal Vegvisir interaction succeeds.
+# Row: StatusEffect, durationSeconds, cooldownSeconds, weight, effectPrefab
+# All is pooled with the current biome row; every other key must be one biome name.
+# Each loaded Vegvisir locks one weighted pick until unload; unload/load resets its pick and cooldown state.
+# Omitted duration/cooldown use StatusEffect prefab values; omitted weight defaults to 1.
+# cooldown 0 = none; cooldown < 0 = once per loaded Vegvisir/player.
+# VRS_ClearStatus ignores duration, clears current status effects, and shows "You got bamboozled".
+# If the selected StatusEffect is already active, it is not reapplied and no cooldown/fx starts.
+# effectPrefab is optional and must start with vfx_, sfx_, or fx_ case-insensitively.
+vegvisirGlobalEffects:
+  - All:
+    - CorpseRun, 60, 120, 0.1, vfx_StaminaUpgrade
+    - SoftDeath, 120, 240, 0.5, vfx_HealthUpgrade
+    - VRS_ClearStatus, 0, 5, 0.1, sfx_goblin_idle
+  - Meadows:
+    - Rested, 240, 480, 1, vfx_HealthUpgrade
+    - BeltStrength, 120, 240, 1, vfx_HealthUpgrade
+    - AdrenalineRush, 120, 240, 1
+    # - Lightning, 5, 10, 1000, fx_eikthyr_stomp
+  - BlackForest:
+    - GP_Eikthyr, 120, 240, 1
+    - Potion_health_minor
+    - Potion_stamina_minor
+    - Potion_tasty, 10, 20, 1, vfx_StaminaUpgrade
+    - SetEffect_BerserkerArmor, 120, 240, 1, vfx_HealthUpgrade
+    - SetEffect_TrollArmor, 120, 240, 1, vfx_StaminaUpgrade
+    - TrinketBronzeHealth, 60, 120, 1, fx_Adrenaline1
+    - TrinketBronzeStamina, 60, 120, 1, fx_Adrenaline1
+    - AdrenalineRush, 120, 240, 1
+    - Wet, 60, -1, 0.5, sfx_gdking_scream
+  - Swamp:
+    - GP_TheElder, 120, 240, 1
+    - Potion_hasty, 120, 240, 1
+    - Potion_strength, 120, 240, 1
+    - Potion_swimmer, 240, 360, 1
+    - Potion_TrollPheromones, 240, 360, 1
+    - Potion_poisonresist, 120, 240, 1
+    - Potion_health_medium
+    - Potion_stamina_minor
+    - SetEffect_RootArmor, 120, 240, 1
+    - TrinketIronHealth, 60, 120, 0.5, fx_Adrenaline1
+    - TrinketIronStamina, 60, 120, 0.5, fx_Adrenaline1
+    - AdrenalineRush2, 120, 240, 1, fx_Adrenaline1
+    - Puke, 5, 10, 0.5, fx_Bonemass_aoe_start
+  - Mountain:
+    - GP_Bonemass, 120, 240, 1
+    - Potion_frostresist, 120, 240, 1
+    - Potion_tamer, 240, 480, 1
+    - SetEffect_FenringArmor, 120, 240, 1, vfx_StaminaUpgrade
+    - SetEffect_WolfArmor, 120, 240, 1, vfx_HealthUpgrade
+    - SetEffect_FishingHat, 240, 480, 1, vfx_StaminaUpgrade
+    - SetEffect_HarvesterArmor, 240, 480, 1, vfx_StaminaUpgrade
+    - TrinketChitinSwim, 120, 240, 0.5, fx_Adrenaline1
+    - TrinketSilverDamage, 60, 120, 0.5, fx_Adrenaline1
+    - TrinketSilverResist, 60, 120, 0.5, fx_Adrenaline1
+    - AdrenalineRush2, 120, 240, 1, fx_Adrenaline1
+    - Frost, 5, 10, 0.5, sfx_dragon_scream
+  - Plains:
+    - GP_Moder, 120, 240, 1
+    - Potion_BugRepellent, 120, 240, 1
+    - Potion_bzerker, 30, 60, 1
+    - Potion_barleywine, 120, 240, 1
+    - Potion_stamina_medium
+    - SetEffect_BerserkerUndeadArmor, 120, 240, 1, vfx_StaminaUpgrade
+    - TrinketBlackDamageHealth, 60, 120, 0.5, fx_Adrenaline1
+    - TrinketBlackStamina, 60, 120, 0.5, fx_Adrenaline1
+    - AdrenalineRush3, 120, 240, 1, fx_Adrenaline1
+    - Tared, 5, 10, 0.5, sfx_goblinking_taunt
+  - Mistlands:
+    - GP_Yagluth, 120, 240, 1
+    - Potion_eitr_minor
+    - Potion_health_major
+    - Potion_LightFoot, 120, 240, 1
+    - Potion_stamina_lingering, 120, 240, 1
+    - SetEffect_MageArmor, 120, 240, 1, vfx_StaminaUpgrade
+    - SE_Dvergr_buff, 60, 120, 1, vfx_HealthUpgrade
+    - SlowFall, 60, 120, 1, vfx_StaminaUpgrade
+    - Staff_shield, 120, 240, 1, vfx_HealthUpgrade
+    - TrinketCarapaceEitr, 60, 120, 0.5, fx_Adrenaline1
+    - TrinketScaleStaminaDamage, 60, 120, 0.5, fx_Adrenaline1
+    - Demister, 120, 240, 1
+    - AdrenalineRush3, 120, 240, 1, fx_Adrenaline1
+    - Slimed, 5, 10, 0.5, sfx_HiveQueen_callout
+  - AshLands:
+    - GP_Queen, 120, 240, 1
+    - Potion_eitr_lingering, 120, 240, 1
+    - Potion_health_lingering, 120, 240, 1
+    - SetEffect_AshlandsMediumArmor, 120, 240, 1, vfx_StaminaUpgrade
+    - WindRun, 120, 240, 1, vfx_StaminaUpgrade
+    - TrinketFlametalEitr, 60, 120, 0.5, fx_Adrenaline1
+    - TrinketFlametalStaminaHealth, 60, 120, 0.5, fx_Adrenaline1
+    - Warm, 60, 120, 0.5, vfx_HealthUpgrade
+    - AdrenalineRush4, 120, 240, 1, fx_Adrenaline1
+    - Immobilized, 5, 10, 0.5, sfx_fader_taunt
+  - DeepNorth:
+    - GP_Fader, 120, 240, 1
+    - AdrenalineRush4, 120, 240, 1, fx_Adrenaline1
+
+localization:
+  messageVegvisirEffectReceived: "You have received {name}"
+  messageVegvisirClearStatus: "You got bamboozled"
+  messageVegvisirBuffCooldown: "Buff Cooldown {seconds}s"
+  messageVegvisirAlreadyActive: "Already active {name}"

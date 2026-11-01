@@ -14,7 +14,7 @@
 
 **Limitations that remain:** boosted waves are improved, not normalized; the boost end still steps; and the 1% hull loss is unattributed. See Feature checks.
 
-Records: [EVIDENCE.md](EVIDENCE.md) M15–M35, coverage: [COVERAGE.md](COVERAGE.md). This does not establish that the whole pack is compatible.
+Records: [EVIDENCE.md](EVIDENCE.md) M15–M36, coverage: [COVERAGE.md](COVERAGE.md). This does not establish that the whole pack is compatible.
 
 ## PoVPlus.Compat 1.0.1
 

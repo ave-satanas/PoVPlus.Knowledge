@@ -1,0 +1,9 @@
+# FineDining per-Steam64 Icebox limit overrides (server only).
+# The synchronized Icebox Default Placement Limit config applies to unlisted accounts.
+# This file accepts only overrides; the legacy defaultLimit field is not supported.
+#  0: deny placement, -1: unlimited, positive: maximum count.
+# Quote Steam64 ids so YAML always treats them as strings.
+overrides: {}
+# overrides:
+#   "<steamid>": 6
+#   "<steamid>": -1

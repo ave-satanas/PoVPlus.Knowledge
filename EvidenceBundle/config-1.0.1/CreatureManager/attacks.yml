@@ -1,0 +1,26 @@
+# CreatureManager attack configuration.
+# Copy entries from attacks.reference.yml and use the schema below for optional fields.
+# Loaded files: attacks.yml, attacks.yaml, attacks_*.yml, attacks_*.yaml.
+# Hot reload updates attack item templates used by later creature instances; loaded creatures keep their equipped attack data.
+# Omitted fields keep the current attack prefab value. The schema below is commented out and safe to leave in the file.
+#
+# Schema:
+# - prefab: attack_bow_alt1             # target attack item prefab id; use an existing prefab or a new clone name.
+#   enabled: true                         # false skips this attack entry.
+#   clonedFrom: attack_bow                # optional source attack item prefab used to create prefab.
+#   damage: { pierce: 50, poison: 50, attackForce: 15, toolTier: 0 } # damage keys plus attackForce and toolTier.
+#   attack: [Projectile, bow_fire]        # Attack.AttackType, animation name.
+#   statusEffect: [Puke, 0.4]            # ObjectDB StatusEffect name, application chance from 0 to 1.
+#   projectile: [BlobTar_projectile, 30, 2, 1] # projectile prefab, velocity, accuracy, projectile count.
+#   ai: [30, 2, 20, 25]                 # aiAttackInterval, aiAttackRangeMin, aiAttackRange, aiAttackMaxAngle.
+#
+# Examples:
+# - prefab: attack_bow_alt1
+#   clonedFrom: attack_bow               # Creates a new attack prefab before applying the fields below.
+#   damage: { pierce: 50, poison: 50, attackForce: 15, toolTier: 0 }
+#   attack: [Projectile, bow_fire]
+#   statusEffect: [Puke, 0.4]
+#
+# - prefab: StaffLightning
+#   enabled: false                       # Keeps this configuration entry loaded in the file but prevents it from applying.
+#

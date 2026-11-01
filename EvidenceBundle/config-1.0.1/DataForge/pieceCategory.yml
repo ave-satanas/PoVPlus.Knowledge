@@ -1,0 +1,23 @@
+# DataForge piece category order, display labels, and category moves.
+# Copy piece-table sections from pieceCategory.reference.yml and reorder their category entries here.
+# Piece-table keys use the build tool prefab name, such as Hammer, rather than an internal _HammerPieceTable name.
+# Category names are exact and case-sensitive. Leading and trailing whitespace is ignored.
+# An optional second value overrides the displayed tab label. Use a $token from DataForge/localization for per-language text.
+# Use '- Furniture: GB_Parchment_Tool' to move every Furniture piece from that source tool into this section's tool.
+# Use '- Furniture, $token: GB_Parchment_Tool' to move and set the destination tab's localized label together.
+# An exact category already present on the destination is merged; otherwise the source category is added there.
+# When an embedded PieceManager added a same-name usage tag, moved pieces use the matching vanilla usage tag so Categories does not show a duplicate filter.
+# Keep one plain category entry for its order/label, then repeat that category as mappings to merge one or more source tools.
+# A source tool/category pair can move to only one destination tool.
+# A pieces.yml pieceTable value has final priority over a category move. Removing a move restores its baseline membership.
+# After moving all categories out of a source tool, write 'GB_Parchment_Tool: []' to leave its section explicitly empty.
+# Categories omitted from a configured table keep their relative order after the listed categories.
+# A listed category with no matching pieces does not keep or create an empty build tab.
+# When Homestead is installed, its owner-managed category is omitted here and always remains last.
+#
+# Hammer:
+# - Misc
+# - Furniture, $hud_furniture
+# - Furniture: GB_Parchment_Tool
+# - Stone Building: GB_Parchment_Tool
+# GB_Parchment_Tool: []

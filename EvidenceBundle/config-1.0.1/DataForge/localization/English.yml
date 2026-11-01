@@ -1,0 +1,28 @@
+# DataForge server-synced localization.
+#
+# Put language files in this folder using Valheim language names:
+# English.yml, Korean.yml, Turkish.yml, German.yml, etc.
+#
+# English.yml is the fallback file. If a client uses another language,
+# DataForge first applies English.yml and then applies that client's language file.
+#
+# To use a localization key, put a token like $df_item_meadhealthtest in an override field.
+# To override text directly, put plain text in the field instead of a $ token.
+#
+# Example localization entry:
+# $df_item_meadhealthtest: "Test item"
+# $df_item_meadhealthtest_description: "A test item cloned from major healing mead."
+
+# Built-in DataForge tooltip tokens. You can edit these texts.
+$df_se_tooltip_attack_damage: "{0} attack damage: <color=orange>x{1}%</color>"
+$df_se_tooltip_raise_skill: "{0} skill XP: <color=orange>{1}</color>"
+$df_se_tooltip_max_health: "Max health: <color=orange>{0}</color>"
+$df_se_tooltip_max_stamina: "Max stamina: <color=orange>{0}</color>"
+$df_se_tooltip_max_eitr: "Max eitr: <color=orange>{0}</color>"
+$df_skill_all: "All"
+#
+# Example item override:
+# - item: MeadHealthtest
+#   cloneFrom: MeadHealthMajor
+#   name: $df_item_meadhealthtest
+#   description: Direct text override without localization

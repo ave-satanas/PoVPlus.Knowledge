@@ -1,0 +1,26 @@
+# Groundwork Pickable respawn and Farming overrides.
+# Cultivator recipes and post-harvest visuals are configured separately in cultivation.yml.
+# Copy exact prefab names and observed values from pickables.reference.yml.
+# This root document is a YAML sequence. Legacy mapping fields are not supported.
+#
+# Full schema:
+# - prefab: <prefab>[, <respawnMinutes>] # optional positive respawn minutes; omit it to keep the live value.
+#   farming: [foragingTarget, bonusYield, maxChanceAtLevel100, bonusAmount]
+#                                      # optional tuple; when present it must contain exactly four values.
+#                                      # use null in any position to keep automatic/live behavior.
+#
+# Farming tuple positions:
+# 1. foragingTarget: true enables Groundwork range/scythe harvest, respawn scaling, pollination, rain, hover, and bonus-effect fallback.
+#                    false opts out; null keeps edible-drop automatic detection.
+# 2. bonusYield: true temporarily uses Farming for vanilla skill gain and bonus-yield rolls.
+#                false or null does not add that behavior and never disables a native Farming bonus.
+# 3. maxChanceAtLevel100: 0..1 probability at Farming 100; null keeps the live prefab value.
+# 4. bonusAmount: non-negative extra item count on success; null keeps the live prefab value.
+#
+# A positive base respawn time is still required. A prefab whose live value is 0 cannot be made respawning here.
+# On a successful configured or native Farming bonus roll, Groundwork supplies fallback VFX/SFX when m_bonusEffect is empty.
+
+- prefab: Pickable_Dandelion # prefab only: keep the live respawn time
+  farming: [true, true, 0.25, 1] # target, bonus, chance at Farming 100, extra amount
+- prefab: Pickable_Thistle # prefab only: keep the live respawn time
+  farming: [true, true, 0.25, 1] # target, bonus, chance at Farming 100, extra amount
